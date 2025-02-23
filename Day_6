@@ -1,0 +1,18 @@
+Python is a high-level, interpreted programming language known for its simplicity and readability. It was created by **Guido van Rossum** and first released in **1991**. Python is widely used in various fields, including web development, data science, artificial intelligence, automation, and more.
+
+### **Key Features of Python:**
+1. **Easy to Learn & Readable** – Uses simple, English-like syntax.
+2. **Interpreted Language** – Runs line by line, making debugging easier.
+3. **Dynamically Typed** – No need to declare variable types explicitly.
+4. **Cross-Platform** – Works on Windows, macOS, and Linux.
+5. **Extensive Libraries** – Has built-in modules like NumPy, Pandas, TensorFlow, etc.
+6. **Object-Oriented & Functional Programming** – Supports multiple programming paradigms.
+7. **Huge Community Support** – Active developer community and open-source contributions.
+
+### **Popular Uses of Python:**
+- **Web Development**: Frameworks like Django, Flask
+- **Data Science & Machine Learning**: Libraries like NumPy, Pandas, TensorFlow, Scikit-learn
+- **Automation & Scripting**: Automating tasks with Selenium, BeautifulSoup
+- **Cybersecurity & Ethical Hacking**
+- **Game Development**: Using Pygame
+- **Embedded Systems & IoT**
