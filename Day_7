@@ -1,0 +1,33 @@
+Selenium is a **Python library** used for **automating web browsers**. It allows you to interact with websites by simulating user actions like clicking buttons, filling out forms, and navigating pages. It is widely used for **web scraping, testing, and automation**.
+
+### Key Features:
+- **Browser Automation** – Interact with web elements like buttons, input fields, and dropdowns.
+- **Cross-browser Support** – Works with Chrome, Firefox, Edge, and others.
+- **Headless Mode** – Run browsers in the background without a visible UI.
+- **Web Scraping** – Extract data from websites.
+- **Integration with Testing Frameworks** – Works with `pytest`, `unittest`, etc.
+
+### Installation:
+```bash
+pip install selenium
+```
+
+### Example: Open Google and search for "Selenium Python"
+```python
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+
+# Set up WebDriver (Make sure you have the correct driver installed)
+driver = webdriver.Chrome()  # Or webdriver.Firefox()
+
+# Open Google
+driver.get("https://www.google.com")
+
+# Find the search box, enter a query, and submit
+search_box = driver.find_element(By.NAME, "q")
+search_box.send_keys("Selenium Python")
+search_box.send_keys(Keys.RETURN)
+
+# Close the browser
+driver.quit()
