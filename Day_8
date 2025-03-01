@@ -1,0 +1,53 @@
+### 🔐 **Qubes OS: A Security-Focused Operating System**  
+
+**Qubes OS** is a security-centric operating system designed to provide strong isolation for different tasks and applications. It uses **Xen-based virtualization** to compartmentalize different parts of the system into **qubes (isolated virtual machines)**, preventing malware or security breaches from affecting the entire system.
+
+---
+
+## 🛡 **Key Features of Qubes OS**  
+
+### 1️⃣ **Security Through Isolation**  
+- Every application or task runs in its own **qube (virtual machine)**.  
+- If one qube gets compromised, the rest of the system remains secure.  
+
+### 2️⃣ **Multiple Types of Qubes**  
+- **App Qubes** – For running everyday applications (e.g., web browser, email client).  
+- **Network Qubes** – Handles all networking to keep it separate from applications.  
+- **USB Qubes** – Isolates USB devices to prevent firmware attacks.  
+- **Vault Qubes** – Keeps sensitive data like passwords and encryption keys.  
+
+### 3️⃣ **Color-Coded Window Borders**  
+- Qubes OS assigns different security levels to each window, using **color-coded borders** to visually distinguish them.  
+  - 🔴 **Red** – Untrusted (e.g., a random downloaded file).  
+  - 🟡 **Yellow** – Less trusted (e.g., personal browsing).  
+  - 🟢 **Green** – More trusted (e.g., work-related).  
+  - 🔵 **Blue** – Highly trusted (e.g., password manager).  
+
+### 4️⃣ **Privacy & Anonymity Features**  
+- **Built-in Tor support** via **Whonix integration** for anonymous browsing.  
+- **Disposable VMs** – Temporary qubes that disappear after closing (great for opening suspicious files).  
+
+### 5️⃣ **Template-Based System for Efficiency**  
+- Instead of installing software in every qube, **template qubes** allow shared software installations, making updates more efficient.  
+
+---
+
+## 🖥 **Who Should Use Qubes OS?**  
+✅ **Security-conscious users** (journalists, activists, researchers).  
+✅ **Developers and hackers** who need isolated environments.  
+✅ **Whistleblowers & privacy advocates** who need anonymity.  
+✅ **Anyone handling sensitive data** (e.g., cryptocurrency holders).  
+
+---
+
+## ⚠ **Downsides of Qubes OS**  
+❌ **High system requirements** (needs at least **16GB RAM** for smooth performance).  
+❌ **Not beginner-friendly** – It requires some technical knowledge.  
+❌ **Limited hardware compatibility** – Only certain laptops work well.  
+❌ **No gaming support** – Poor GPU acceleration due to virtualization.  
+
+---
+
+## 🛠 **How to Get Qubes OS?**  
+🔗 Official Website: [**Qubes OS**](https://www.qubes-os.org/)  
+💾 Download: [**Qubes Download Page**](https://www.qubes-os.org/downloads/)  
