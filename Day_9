@@ -1,0 +1,9 @@
+Kali Linux Purple is a specialized distribution of the well-known Kali Linux operating system, introduced in March 2023, to enhance defensive cybersecurity operations. While traditional Kali Linux focuses on offensive security tools for penetration testing, Kali Purple expands its scope to include defensive strategies, aligning with the NIST Cybersecurity Framework's five domains: Identify, Protect, Detect, Respond, and Recover.
+
+Key Features of Kali Linux Purple:
+- Comprehensive Toolset:** Kali Purple comes pre-installed with over a hundred defensive security tools, such as Arkime and Wireshark for packet analysis, CyberChef for data manipulation, Elastic for search and analytics, TheHive for incident response, GVM for vulnerability management, Malcolm for network traffic analysis, Suricata for intrusion detection, and Zeek for network monitoring.
+- SOC-in-a-Box Architecture:** Designed to function as a modular Security Operations Center (SOC), Kali Purple integrates various SOC components into a connected platform, streamlining workflows and enhancing collaboration among security professionals.
+- **Updated Desktop Environments:** The distribution includes the latest desktop environments, such as Xfce 4.18, KDE Plasma 5.27, and GNOME, providing a refined and user-friendly experience. citeturn0search1
+
+Installation and Usage:
+To install Kali Linux Purple, download the ISO image from the official Kali Linux website. It's recommended to create a bootable USB drive using tools like balenaEtcher and install it on a virtual machine for testing purposes. citeturn0search10 Kali Purple is best used alongside traditional Kali Linux, offering a distinct set of tools and layouts tailored for defensive cybersecurity practices.
