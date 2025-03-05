@@ -1,0 +1,12 @@
+💻 Project Components
+1️⃣ Python Automation Script
+🔹 Performs both manual and automated searches
+🔹 Fetches trending topics from an API or accepts user input
+🔹 Allows users to specify number of searches (1-20)
+🔹 Runs on both Parrot OS & Windows
+
+2️⃣ GitHub Pages Website
+🔹 Interactive setup guide with OS selection 🖥️
+🔹 Detailed step-by-step instructions with screenshots 📸
+🔹 Copy buttons for easy command execution ✂️
+🔹 Microsoft XP-inspired design for a fun user experience 🎨
