@@ -1,0 +1,25 @@
+An **Operating System (OS)** is system software that acts as an interface between computer hardware and users. It manages hardware resources and provides essential services for computer programs.
+
+### **Functions of an Operating System:**
+1. **Process Management** – Manages running applications, allocates CPU time, and handles multitasking.
+2. **Memory Management** – Allocates and deallocates memory for programs and processes.
+3. **File System Management** – Organizes and controls data storage, retrieval, and access.
+4. **Device Management** – Controls hardware components like printers, disks, and USB devices.
+5. **User Interface** – Provides a graphical or command-line interface for user interaction.
+6. **Security & Access Control** – Protects data and system resources from unauthorized access.
+7. **Networking** – Manages communication between computers over a network.
+
+### **Types of Operating Systems:**
+1. **Batch OS** – Processes jobs in batches without user interaction.
+2. **Time-Sharing OS** – Allows multiple users to access the system simultaneously.
+3. **Real-Time OS (RTOS)** – Ensures quick response times, used in critical systems like medical devices.
+4. **Distributed OS** – Manages multiple computers as a single system.
+5. **Mobile OS** – Designed for smartphones and tablets (e.g., Android, iOS).
+6. **Embedded OS** – Used in embedded systems like smart appliances and cars.
+
+### **Examples of Operating Systems:**
+- **Windows** – Microsoft OS for PCs and laptops.
+- **macOS** – Apple's OS for Mac computers.
+- **Linux** – Open-source OS used for servers and desktops.
+- **Android** – Google’s OS for mobile devices.
+- **iOS** – Apple’s mobile OS.
