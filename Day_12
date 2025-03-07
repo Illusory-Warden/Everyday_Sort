@@ -1,0 +1,37 @@
+### **Types of 3D Printing**
+There are several types of 3D printing technologies, but the most common ones include:
+
+1. **Fused Deposition Modeling (FDM) / Fused Filament Fabrication (FFF)**  
+   - Uses a heated nozzle to extrude thermoplastic filament layer by layer.  
+   - Common materials: PLA, ABS, PETG, TPU.  
+   - Affordable and widely used for prototyping and hobbyist applications.
+
+2. **Stereolithography (SLA)**  
+   - Uses a laser or UV light to cure liquid resin layer by layer.  
+   - Produces high-detail, smooth surface finishes.  
+   - Used in dentistry, jewelry, and high-detail prototyping.
+
+3. **Digital Light Processing (DLP)**  
+   - Similar to SLA but uses a digital light projector to cure resin layers.  
+   - Faster than SLA and ideal for fine-detailed prints.
+
+4. **Selective Laser Sintering (SLS)**  
+   - Uses a laser to fuse powdered materials (e.g., nylon, metal).  
+   - No need for support structures; ideal for strong and complex parts.  
+   - Used in aerospace and industrial prototyping.
+
+5. **Selective Laser Melting (SLM) / Direct Metal Laser Sintering (DMLS)**  
+   - Uses a high-powered laser to fully melt metal powder.  
+   - Used for creating strong, functional metal parts in aerospace and medical industries.
+
+6. **Binder Jetting**  
+   - Uses a liquid binder to fuse powder particles (metal, ceramic, or sand).  
+   - Used for metal parts, full-color prints, and casting molds.
+
+7. **Material Jetting (MJ)**  
+   - Similar to inkjet printing, but deposits layers of liquid photopolymer, which is cured by UV light.  
+   - Allows for high-detail, multi-material, and full-color prints.
+
+8. **Laminated Object Manufacturing (LOM)**  
+   - Uses layers of adhesive-coated paper, plastic, or metal sheets cut by a laser or blade.  
+   - A low-cost option but not widely used.
