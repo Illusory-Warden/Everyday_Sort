@@ -1,0 +1,53 @@
+### **GParted: Overview and Features**  
+
+**GParted (GNOME Partition Editor)** is a free and open-source partition management tool used for **creating, resizing, moving, deleting, and formatting disk partitions**. It provides a graphical user interface (GUI) for handling disk partitions safely and efficiently.  
+
+---
+
+### **Key Features of GParted**  
+
+✅ **Create, Resize, and Move Partitions** – Adjust disk partitions without losing data.  
+✅ **Format Partitions** – Supports multiple file systems including **ext2, ext3, ext4, NTFS, FAT32, XFS, and more**.  
+✅ **Delete and Merge Partitions** – Allows easy disk space management.  
+✅ **Copy and Clone Partitions** – Useful for backing up or migrating data.  
+✅ **Recover Lost Partitions** – Can help restore accidentally deleted partitions in some cases.  
+✅ **USB and Live CD Support** – Can be run from a **Live CD/USB** without installing it on the system.  
+
+---
+
+### **How to Use GParted**  
+
+1. **Install GParted** (if not pre-installed):  
+   - On Debian-based systems (e.g., Ubuntu, Parrot OS):  
+     ```bash
+     sudo apt update && sudo apt install gparted
+     ```
+   - On Arch-based systems:  
+     ```bash
+     sudo pacman -S gparted
+     ```
+  
+2. **Launch GParted**  
+   - Run it from the application menu or via terminal:  
+     ```bash
+     sudo gparted
+     ```
+
+3. **Select a Disk**  
+   - Choose the correct disk from the dropdown menu.
+
+4. **Perform Actions**  
+   - Right-click on a partition to **resize, delete, format, or move** it.
+
+5. **Apply Changes**  
+   - Click the **Apply** button to execute the selected operations.
+
+---
+
+### **Use Cases for GParted**  
+
+🔹 **Dual Boot Setup** – Create and manage partitions for installing multiple operating systems.  
+🔹 **Disk Cleanup** – Remove unwanted partitions and free up disk space.  
+🔹 **Data Recovery** – Attempt to recover lost partitions.  
+🔹 **USB and SD Card Management** – Format and partition USB drives or SD cards.  
+🔹 **Upgrading Storage** – Resize partitions when upgrading to a larger hard drive or SSD. 
