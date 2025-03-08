@@ -1,0 +1,72 @@
+Parrot OS, a security-focused Linux distribution, comes with a variety of network monitoring tools designed for penetration testing, security auditing, and digital forensics. Here are some key tools available in Parrot OS for network monitoring:
+
+### **1. Wireshark**
+   - A powerful packet analyzer used for network troubleshooting and security analysis.
+   - Allows capturing and inspecting packets in real-time.
+
+### **2. Nmap (Network Mapper)**
+   - A popular open-source network scanner.
+   - Used for network discovery, vulnerability scanning, and host detection.
+   - Supports advanced scanning techniques such as SYN scans, OS detection, and service fingerprinting.
+
+### **3. Zenmap**
+   - A graphical frontend for Nmap.
+   - Provides a more user-friendly interface for network scanning and mapping.
+
+### **4. Netdiscover**
+   - An active/passive network reconnaissance tool.
+   - Primarily used for discovering hosts on a local subnet.
+
+### **5. EtherApe**
+   - A graphical network traffic monitoring tool.
+   - Displays network traffic in real-time with color-coded connections.
+
+### **6. TCPDump**
+   - A command-line packet analyzer.
+   - Useful for network debugging and capturing packets for later analysis.
+
+### **7. IPTraf-NG**
+   - A console-based network monitoring tool.
+   - Provides real-time network statistics such as IP traffic, packet size, and protocol breakdown.
+
+### **8. Angry IP Scanner**
+   - A fast and simple network scanning tool.
+   - Used for detecting live hosts and open ports.
+
+### **9. ARPwatch**
+   - Monitors ARP traffic and detects ARP spoofing or poisoning attacks.
+   - Logs MAC address changes on the network.
+
+### **10. ntopng**
+   - A web-based network traffic analyzer.
+   - Provides detailed insights into network traffic, bandwidth usage, and security threats.
+
+### **11. WiFi-Pumpkin**
+   - A wireless network auditing framework.
+   - Used for creating rogue access points and testing network security.
+
+### **12. Bettercap**
+   - A powerful tool for network reconnaissance and penetration testing.
+   - Supports MITM attacks, packet manipulation, and credential sniffing.
+
+### **13. Hping3**
+   - A network tool for packet generation and response analysis.
+   - Can be used for network mapping, security auditing, and DoS attack simulation.
+
+### **14. Driftnet**
+   - A tool that captures and displays images transmitted over a network.
+   - Useful for analyzing unencrypted HTTP traffic.
+
+### **15. NetHogs**
+   - A bandwidth monitoring tool that displays real-time per-process network usage.
+   - Helps in identifying which processes are consuming network resources.
+
+### **16. Snort**
+   - A network intrusion detection system (NIDS).
+   - Monitors traffic and detects malicious activities using rule-based signatures.
+
+### **17. Suricata**
+   - An advanced NIDS with multi-threaded capabilities.
+   - Offers high-speed packet inspection and deep packet analysis.
+
+These tools collectively help in monitoring, analyzing, and securing networks from potential threats. Do you need recommendations on how to use any specific tool?
