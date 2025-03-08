@@ -1,0 +1,40 @@
+### **FoxyProxy: Overview and Features**  
+
+**FoxyProxy** is a popular browser extension for managing proxy settings efficiently. It enhances the default proxy capabilities of browsers like **Firefox, Chrome, and Edge**, allowing users to switch between multiple proxies automatically based on URL patterns.  
+
+---
+
+### **Key Features of FoxyProxy**  
+
+✅ **Proxy Automation** – Automatically switches between different proxies based on URL patterns.  
+✅ **Multiple Proxy Support** – Users can configure and switch between multiple proxies with ease.  
+✅ **Bypass Lists** – Allows users to set rules for bypassing proxies for specific websites.  
+✅ **Geo-Unblocking** – Helps in accessing region-restricted content by routing traffic through proxies.  
+✅ **Security & Privacy** – Hides the user's IP address to maintain anonymity while browsing.  
+✅ **Logging & Monitoring** – Displays proxy usage logs and connection details.  
+✅ **SOCKS and HTTP/HTTPS Support** – Works with both SOCKS (4/5) and HTTP/HTTPS proxies.  
+
+---
+
+### **How FoxyProxy Works**  
+
+1. **Install the Extension**  
+   - Available on Chrome Web Store and Mozilla Add-ons.  
+   
+2. **Configure Proxy Servers**  
+   - Add new proxies (manual input or import configuration files).  
+   
+3. **Set URL Patterns (Optional)**  
+   - Define which websites should use which proxy automatically.  
+
+4. **Enable and Switch Between Proxies**  
+   - Easily toggle between different proxy settings using the extension's interface.  
+
+---
+
+### **Use Cases for FoxyProxy**  
+
+🔹 **Penetration Testing & Security** – Security professionals use it to test website vulnerabilities from different IPs.  
+🔹 **Web Scraping** – Helps bypass anti-scraping mechanisms by switching proxies dynamically.  
+🔹 **Bypassing Geo-Restrictions** – Useful for accessing content blocked in certain countries.  
+🔹 **Anonymous Browsing** – Protects user identity by masking real IP addresses.  
