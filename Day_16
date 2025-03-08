@@ -1,0 +1,76 @@
+### **ARPwatch: Overview and Features**  
+
+**ARPwatch** is a network monitoring tool that tracks **Address Resolution Protocol (ARP)** traffic on a network. It is primarily used for **detecting ARP spoofing, monitoring MAC-IP pair changes, and alerting network administrators about suspicious activities**.  
+
+---
+
+### **Key Features of ARPwatch**  
+
+✅ **Monitors ARP Traffic** – Tracks ARP requests and responses in real time.  
+✅ **Detects ARP Spoofing & Poisoning** – Alerts when an IP address suddenly resolves to a different MAC address.  
+✅ **Logs MAC-IP Address Mappings** – Keeps a database of known MAC-to-IP associations.  
+✅ **Sends Alerts via Email** – Notifies administrators when an anomaly is detected.  
+✅ **Lightweight & Efficient** – Runs with minimal system resources.  
+✅ **Useful for Network Security** – Helps prevent **MITM (Man-in-the-Middle) attacks**.  
+
+---
+
+### **How ARPwatch Works**  
+
+1. **Listens to Network Traffic**  
+   - ARPwatch continuously captures ARP packets on the network interface.  
+   
+2. **Records MAC-IP Pairs**  
+   - It maintains a database of known MAC addresses and their corresponding IP addresses.  
+
+3. **Detects Changes**  
+   - If a MAC address is reassigned to a different IP or vice versa, it logs the event.  
+
+4. **Generates Alerts**  
+   - Sends alerts to the system logs or via email when it detects unusual behavior.  
+
+---
+
+### **Installing and Running ARPwatch**  
+
+#### **Install ARPwatch**  
+On Debian-based systems (like **Parrot OS, Ubuntu, Kali Linux**):  
+```bash
+sudo apt update && sudo apt install arpwatch
+```
+On Arch-based systems:  
+```bash
+sudo pacman -S arpwatch
+```
+
+#### **Start ARPwatch**  
+```bash
+sudo arpwatch -i eth0
+```
+*(Replace `eth0` with the appropriate network interface, e.g., `wlan0` for Wi-Fi.)*  
+
+#### **View Logs**  
+ARPwatch logs are stored in:  
+```bash
+/var/log/syslog
+```
+To view recent logs:  
+```bash
+sudo cat /var/log/syslog | grep arpwatch
+```
+
+#### **Enable Automatic Startup**  
+To run ARPwatch on system boot:  
+```bash
+sudo systemctl enable arpwatch
+sudo systemctl start arpwatch
+```
+
+---
+
+### **Use Cases of ARPwatch**  
+
+🔹 **Detecting ARP Spoofing & Poisoning Attacks** – Protects against **MITM attacks** where an attacker manipulates ARP tables to intercept network traffic.  
+🔹 **Monitoring Network Devices** – Keeps track of new and removed devices in a network.  
+🔹 **Tracking MAC Address Changes** – Useful in large networks where unauthorized devices might connect.  
+🔹 **Security Auditing** – Helps network admins detect suspicious activities.
