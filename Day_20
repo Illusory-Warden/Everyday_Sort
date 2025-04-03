@@ -1,0 +1,31 @@
+(
+echo ==== SYSTEM INFORMATION ====  
+systeminfo  
+
+echo. & echo ==== CPU DETAILS ====  
+wmic cpu get name,numberofcores,maxclockspeed  
+
+echo. & echo ==== MOTHERBOARD DETAILS ====  
+wmic baseboard get product,manufacturer,version,serialnumber  
+
+echo. & echo ==== RAM DETAILS ====  
+wmic memorychip get capacity,speed,manufacturer  
+
+echo. & echo ==== STORAGE DETAILS ====  
+wmic diskdrive get model,size,serialnumber  
+
+echo. & echo ==== PARTITION DETAILS ====  
+wmic logicaldisk get deviceid,volumename,size,freespace  
+
+echo. & echo ==== GRAPHICS DETAILS ====  
+wmic path win32_videocontroller get caption,adapterram  
+
+echo. & echo ==== BATTERY STATUS ====  
+wmic path Win32_Battery get BatteryStatus,EstimatedChargeRemaining  
+
+echo. & echo ==== NETWORK DETAILS ====  
+netsh wlan show interfaces  
+
+echo. & echo ==== LAN DETAILS ====  
+ipconfig /all  
+) > "%USERPROFILE%\Desktop\Complete_Laptop_Details.txt"
