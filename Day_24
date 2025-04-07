@@ -1,0 +1,147 @@
+📚 Complete Summary of Our Chat — MariaDB Setup + GUI on Parrot OS
+🧱 1. Installed MariaDB on Parrot OS
+We used the following commands:
+
+bash
+Copy
+Edit
+sudo apt update
+sudo apt install mariadb-server
+This installed the MariaDB server, which is a drop-in replacement for MySQL (fully compatible).
+
+🔐 2. Secured the MariaDB Installation
+We ran:
+
+bash
+Copy
+Edit
+sudo mysql_secure_installation
+During the prompts:
+
+Disabled Unix Socket Authentication: N
+
+Removed Anonymous Users: Y
+
+Disabled Remote Root Login: Y
+
+Removed Test Database: Y
+
+Reloaded privilege tables: Y
+
+This step helped lock down the database to prevent security issues.
+
+💡 3. Checked and Started MariaDB Service
+Verified if MariaDB is running:
+
+bash
+Copy
+Edit
+sudo systemctl status mariadb
+If needed, we started it:
+
+bash
+Copy
+Edit
+sudo systemctl start mariadb
+And optionally enabled it to start on boot:
+
+bash
+Copy
+Edit
+sudo systemctl enable mariadb
+🖥️ 4. Logged into MariaDB
+Used this command to enter the MariaDB shell:
+
+bash
+Copy
+Edit
+sudo mysql
+Prompt looked like this:
+
+nginx
+Copy
+Edit
+MariaDB [(none)]>
+This means it’s ready to use!
+
+📦 5. Downloaded & Extracted a Sample Database
+You downloaded mysqlsampledatabase.zip from MySQL Tutorial’s website.
+
+Right-clicked it → chose "Extract to" → selected your DBMS folder.
+
+Inside it was mysqlsampledatabase.sql.
+
+🛠️ 6. Imported the Sample Database
+First, created a new database:
+
+sql
+Copy
+Edit
+CREATE DATABASE sample;
+exit;
+Then imported the .sql file into that DB:
+
+bash
+Copy
+Edit
+cd ~/Desktop/DBMS
+sudo mysql sample < mysqlsampledatabase.sql
+✅ This loaded the tables and data into MariaDB.
+
+🧰 7. Installed MySQL Workbench (GUI Tool)
+First installed Snap (if not already):
+
+bash
+Copy
+Edit
+sudo apt install snapd
+Then installed Workbench via Snap:
+
+bash
+Copy
+Edit
+sudo snap install mysql-workbench-community
+🖱️ 8. Opened MySQL Workbench
+You can open the GUI:
+
+By running:
+
+bash
+Copy
+Edit
+mysql-workbench-community
+Or from the Application Menu
+
+Optionally, created a desktop shortcut
+
+🔗 9. Connected Workbench to Local MariaDB
+Created a new connection:
+
+Host: localhost
+
+Port: 3306
+
+Username: root
+
+Password: (blank if you didn’t set one)
+
+Clicked Test Connection
+
+Saved and connected ✅
+
+🔍 10. Explored Some SQL Basics (you asked briefly)
+Listed all databases
+
+Checked tables inside the mysql system database
+
+✅ You’re Now Set Up With:
+A working MariaDB server
+
+A sample database to practice with
+
+A full-featured GUI tool: MySQL Workbench
+
+Command-line access via sudo mysql
+
+GUI access for ease and exploration
+
