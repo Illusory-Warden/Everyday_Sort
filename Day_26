@@ -1,0 +1,111 @@
+Parrot OS is a security-focused Linux distribution based on Debian, widely used for penetration testing, digital forensics, reverse engineering, and **Open-Source Intelligence (OSINT)** gathering. OSINT in Parrot OS refers to tools and techniques that allow security researchers, investigators, and ethical hackers to collect information from publicly available sources.
+
+---
+
+## 🔍 What is OSINT?
+
+**Open Source Intelligence (OSINT)** is the process of collecting data from publicly accessible sources to be used in an intelligence context. These sources include:
+
+- Websites
+- Social media
+- Public records
+- News outlets
+- Forums
+- WHOIS databases
+- GitHub or other repositories
+
+OSINT is useful for:
+- Threat intelligence
+- Reconnaissance in ethical hacking
+- Corporate security
+- Investigative journalism
+- Law enforcement and forensics
+
+---
+
+## 🧰 OSINT Tools in Parrot OS
+
+Parrot OS comes preloaded with a wide array of OSINT tools categorized under the **"Information Gathering"** menu. Here’s a breakdown of some popular and powerful tools included:
+
+### 1. **theHarvester**
+- Gathers emails, domains, hosts, employee names from public sources.
+- Supports sources like Google, Bing, LinkedIn, Twitter, etc.
+- Useful for footprinting before phishing assessments.
+
+### 2. **Maltego**
+- Graphical link analysis tool.
+- Provides a visual interface to map relationships between people, organizations, websites, emails, etc.
+- Has both free (Community Edition) and paid versions.
+
+### 3. **Recon-ng**
+- A powerful web reconnaissance framework.
+- Modular structure, command-line interface similar to Metasploit.
+- Includes modules to extract data from social media, Shodan, HaveIBeenPwned, etc.
+
+### 4. **Sherlock**
+- Finds usernames across many social media platforms.
+- Great for tracking a person’s online presence by just their handle.
+
+### 5. **SpiderFoot**
+- Automates the process of gathering intelligence on IPs, domains, emails, etc.
+- Includes a web UI.
+- Integrates with over 100 OSINT data sources.
+
+### 6. **Metagoofil**
+- Extracts metadata from publicly available documents (PDF, DOCX, etc.).
+- Useful for discovering usernames, file paths, software versions.
+
+### 7. **GHunt**
+- Investigates Google Accounts using only an email address.
+- Can reveal calendar, public photos, Google Maps reviews, etc.
+
+### 8. **Censys & Shodan Tools**
+- Internet-wide scanning engines.
+- Find devices connected to the internet (webcams, routers, IoT).
+- Can be queried using tools or APIs to check exposed services or vulnerable devices.
+
+### 9. **Creepy**
+- Geolocation OSINT tool.
+- Extracts location information from photos (EXIF) and social media platforms.
+
+### 10. **Datasploit**
+- Combines multiple tools to perform OSINT in a semi-automated way.
+- Generates reports on domain names, emails, phone numbers, usernames.
+
+---
+
+## 📁 Location in Parrot OS Menu
+
+- `Applications → Information Gathering → OSINT Analysis`
+- You’ll also find related tools in categories like:
+  - Host Discovery
+  - Network Analysis
+  - Email Tools
+  - Social Networks Analysis
+
+---
+
+## 🛠️ Example Use Case
+
+Let’s say you’re tasked with gathering OSINT on a domain (e.g., `example.com`). Here's a possible tool chain in Parrot OS:
+
+1. **theHarvester** – to extract emails and subdomains.
+2. **WHOIS** / **dnsenum** – to pull domain registration data.
+3. **Maltego** – visualize relationships (e.g., owners, contact info).
+4. **Shodan CLI** – find connected devices with that domain or IP.
+5. **Metagoofil** – download and extract metadata from public documents.
+6. **SpiderFoot** – run a full automated scan for emails, IPs, leaks.
+
+---
+
+## 🧪 Tips for Using OSINT Tools in Parrot OS
+
+- **Use VPN or Tor**: OSINT may involve checking sensitive resources—hide your IP.
+- **API Keys**: Some tools (e.g., Shodan, Censys) need API keys—get them from the official site.
+- **Legal Boundaries**: OSINT only uses public data, but always act within legal and ethical boundaries.
+
+---
+
+## 🔐 Conclusion
+
+Parrot OS offers a rich OSINT environment, combining CLI tools, frameworks, and graphical interfaces. It’s ideal for professionals in cybersecurity, digital investigations, and intelligence gathering.
