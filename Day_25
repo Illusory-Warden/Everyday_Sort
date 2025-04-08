@@ -1,0 +1,26 @@
+Parrot Security OS is a Debian-based Linux distribution designed for security professionals, ethical hackers, and privacy enthusiasts. It offers a comprehensive suite of tools for penetration testing, vulnerability assessment, digital forensics, and anonymous web browsing. citeturn0search2
+
+One of the key tools integrated into Parrot OS is the Metasploit Framework, a powerful platform for developing, testing, and executing exploit code. Metasploit allows users to identify security vulnerabilities, develop and execute exploit code, and perform penetration testing to assess the security of systems. citeturn0search0
+
+In the Parrot OS 4.10 release, Metasploit was updated to version 6.0, bringing several enhancements and new features to the framework. This update improved the capabilities of security professionals using Parrot OS for penetration testing and vulnerability assessments. citeturn0search1
+
+Parrot OS provides different editions tailored to various user needs:
+
+- **Home Edition**: Designed for daily use, privacy, and software development. Users can manually install Parrot's security tools to create a customized penetration testing environment. citeturn0search2
+
+- **Security Edition**: Aimed at penetration testing and red team operations, this edition comes pre-installed with a full arsenal of security tools, including Metasploit. citeturn0search2
+
+To install Metasploit on Parrot OS Home Edition, you can use the package manager with the following commands:
+
+
+```bash
+sudo apt update
+sudo apt install metasploit-framework
+```
+
+
+This will download and install Metasploit along with its dependencies.
+
+For users seeking additional tools or customization, the "pimpmyparry" script offers a collection of utilities to enhance the Parrot OS experience. It includes tools like SearchSploit, Evil-WinRM, FFuf, and HTTPX. You can find this script on GitHub: citeturn0search5
+
+Parrot OS continues to evolve, regularly updating its toolset to provide the latest features and improvements for security professionals. For the most current information and updates, visit the official Parrot Security website: citeturn0search2 
