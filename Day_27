@@ -1,0 +1,97 @@
+**OpenMediaVault (OMV)** is a **free, open-source NAS (Network-Attached Storage)** operating system based on **Debian Linux**. It is designed to provide a simple and intuitive way to manage storage devices and serve files across a network. OMV is ideal for home users, small offices, and even medium-sized businesses that need centralized storage and backup capabilities.
+
+---
+
+## 🧰 **Core Features of OpenMediaVault**
+
+### 1. **Web-Based Interface**
+- Intuitive, responsive UI for managing the system.
+- Built using PHP, allowing remote administration without needing a command line.
+- Role-based user management.
+
+### 2. **Storage Management**
+- Support for various file systems: EXT4, Btrfs, XFS, JFS, and more.
+- Logical Volume Management (LVM) support.
+- RAID configuration (RAID 0, 1, 5, 6, 10 via mdadm).
+- Disk monitoring with S.M.A.R.T. status.
+- Quota support per user or group.
+
+### 3. **Network File Services**
+- **SMB/CIFS** (Windows file sharing).
+- **NFS** (Linux/Unix sharing).
+- **FTP** (standard file transfer).
+- **SFTP/SSH** (secure file transfer).
+- **rsync** for remote or local sync jobs.
+- WebDAV for browser-based access.
+
+### 4. **User & Permission Management**
+- Add users and groups with fine-grained permission control.
+- ACL (Access Control List) support.
+- Home directory management.
+
+### 5. **Monitoring & Reporting**
+- System and disk usage graphs.
+- Email notifications for system events.
+- Syslog and log file access.
+- Plugins for extended monitoring (e.g., SNMP).
+
+---
+
+## 🔌 **Plugin System**
+
+OMV is modular and supports a wide range of **official and community plugins**, such as:
+
+- **Docker** (via Portainer).
+- **Transmission** (BitTorrent client).
+- **Plex Media Server**.
+- **Nextcloud** or **Seafile** (cloud storage).
+- **Remote Mount** for mounting remote shares.
+- **UrBackup**, **Duplicati**, and other backup tools.
+- Antivirus integration (ClamAV).
+
+---
+
+## 🧱 **System Requirements**
+
+Typical minimum specs for OMV:
+- CPU: x86_64 processor (ARM versions available too)
+- RAM: 1 GB minimum (2+ GB recommended for plugins like Docker)
+- Disk: 4 GB for OS installation (preferably on SSD/USB)
+- Storage drives: 1 or more additional disks for storage
+
+---
+
+## 📦 **OMV Versions & Development**
+
+- OMV is based on **Debian**, inheriting its stability and wide hardware support.
+- Frequent updates and a vibrant community on forums and GitHub.
+- Current versions support **Debian 11 ("Bullseye")**, and OMV 7 (based on Debian 12) is under development or available as a preview.
+
+---
+
+## ⚙️ **Use Cases**
+
+- **Home media server**: Use OMV with Plex or Jellyfin to stream media.
+- **Backup server**: Regular backup solution for Windows, macOS, and Linux.
+- **Private cloud**: Host Nextcloud or similar apps for remote file access.
+- **Surveillance storage**: Use OMV with NVR software for CCTV footage.
+- **Small business file server**: Central file sharing and collaboration.
+
+---
+
+## 🔐 **Security**
+
+- SSH with key authentication.
+- Firewall configuration.
+- HTTPS support.
+- Fail2Ban and other intrusion prevention tools (via plugin or manual setup).
+
+---
+
+## 💡 **Why Use OMV?**
+
+- Easy to install and manage.
+- Runs on a wide range of hardware (from Raspberry Pi to full servers).
+- Highly customizable.
+- Strong community and documentation.
+- Free and open source.
