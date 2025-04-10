@@ -1,0 +1,29 @@
+GParted (GNOME Partition Editor) is a **graphical partition management tool** included in **Parrot OS**, as well as many other Linux distributions. It's used to manage disk partitions and is especially useful when you're setting up or modifying your storage.
+
+In **Parrot OS**, which is a security-focused Linux distribution based on Debian, GParted can be used for:
+
+### 🔧 Common Uses of GParted:
+- **Create, delete, and resize partitions** (including NTFS, FAT32, ext4, etc.)
+- **Format partitions**
+- **Move partitions** (helpful when adjusting disk layout)
+- **Check or repair file systems**
+- **Label partitions**
+- **Set partition flags** (e.g., boot, hidden, etc.)
+- **Clone disks or partitions** (via copy-paste functionality)
+
+### 🖥️ Why Use GParted in Parrot OS?
+Parrot OS is often used by ethical hackers, developers, and sysadmins. GParted helps:
+- Manage drives when setting up test environments
+- Prepare USBs or external drives
+- Recover or fix unbootable systems
+- Tweak partitions before or after OS installation
+
+### 🧙‍♂️ How to Launch It:
+You can launch GParted in Parrot OS by:
+- Searching for **GParted** in the application menu, or
+- Running it from terminal:
+  ```bash
+  sudo gparted
+  ```
+
+> ⚠️ **Note**: It needs `sudo` because it makes low-level changes to your storage.
