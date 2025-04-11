@@ -1,0 +1,217 @@
+IMEI tracking is a highly sensitive and tightly regulated topic, both ethically and legally. Here's a breakdown of what you can and cannot do in Parrot OS (or any Linux-based system) regarding IMEI numbers and phone tracking:
+
+🔐 What is an IMEI Number?
+IMEI (International Mobile Equipment Identity) is a unique 15-digit identifier assigned to mobile devices.
+
+It’s used by mobile networks to identify valid devices and can be used to block stolen phones from accessing the network.
+
+⚠️ Important Legal Disclaimer
+Tracking a phone using its IMEI without explicit permission from the user or proper legal authority (like law enforcement) is illegal in most countries. Tools capable of doing so are often restricted or considered black-hat.
+
+✅ What You Can Do on Parrot OS (Legally & Ethically)
+Parrot OS (a security-focused Linux distro) offers tools for network analysis, pen-testing, and digital forensics, not direct IMEI-based tracking. However, you can use tools in combination with legal cooperation from carriers or for your own devices (e.g., anti-theft tools).
+
+📡 Tools & Techniques in Parrot OS (Not Direct IMEI Trackers)
+Here are tools that are used for general mobile/network forensics, but do NOT directly track IMEI locations unless integrated with GSM networks:
+
+1. Osmocom Projects (like osmocom-bb)
+Used to communicate with GSM modems.
+
+You can capture and analyze GSM traffic.
+
+May extract IMEI from GSM handshake if you have a compatible SDR (e.g., HackRF, RTL-SDR).
+
+2. GR-GSM
+Works with SDR devices to sniff GSM traffic.
+
+Can be used to analyze traffic and potentially extract metadata like IMEI numbers.
+
+3. Wireshark
+Packet analyzer that can work with GSM captures.
+
+You can inspect IMEI numbers if they are transmitted unencrypted (rare today).
+
+4. Kali’s Snoopy-ng (can also be installed on Parrot)
+A framework for tracking devices via Wi-Fi probe requests.
+
+Doesn’t use IMEI but can fingerprint and track phones over time via MAC addresses.
+
+5. OpenBTS + Asterisk
+Can simulate a GSM base station.
+
+Ethically used for research and testing.
+
+You could capture IMEI numbers from devices connecting to your tower (again, only if you own those devices).
+
+❌ What You CANNOT Do (Without Breaking the Law)
+Track someone’s live location via IMEI using open-source tools alone.
+
+Get IMEI info from mobile networks without telecom provider access.
+
+Run tools that actively track phones via IMEI without consent.
+
+👮 If You Lost Your Phone
+You can:
+
+Report the IMEI to your carrier.
+
+Use services like:
+
+Google Find My Device
+
+Samsung Find My Mobile
+
+Or local police with the IMEI number.
+
+
+===========================================================================================================================================================================================
+
+🧠 PART 1: What is IMEI and How Is It Used in Tracking?
+📌 IMEI Basics:
+IMEI = International Mobile Equipment Identity (15-digit code).
+
+Tied to the physical hardware (not SIM card).
+
+Stored in:
+
+Baseband firmware
+
+Phone settings
+
+Sent during GSM registration to the cell tower.
+
+📡 PART 2: How Phones Reveal Their IMEI
+When a phone connects to a GSM network, it performs:
+
+Location Update Request → tells the tower it's online
+
+IMEI Transmission → phone may send IMEI in clear text
+
+TMSI/IMSI Allocation → temporary subscriber IDs used later
+
+Note: 4G and 5G networks encrypt more metadata. IMEI leakage is rare there unless devices fall back to 2G/GSM.
+
+🧰 PART 3: Tools in Parrot OS for IMEI/GSM Exploration
+🧪 1. GR-GSM
+Purpose: Capture GSM traffic and analyze it.
+
+Install:
+
+bash
+Copy
+Edit
+sudo apt install gr-gsm
+Hardware needed: SDR like RTL-SDR, HackRF.
+
+Process:
+
+Tune to GSM frequency (e.g., 900 MHz).
+
+Capture bursts using airprobe or grgsm_livemon.
+
+Analyze with Wireshark using grgsm decoder.
+
+You can sometimes catch IMEI, IMSI, TMSI, and call/SMS metadata—only on 2G unencrypted networks.
+
+🛰 2. Osmocom (Osmocom-BB)
+Purpose: Open-source GSM stack. Can be used to emulate or intercept baseband behavior.
+
+Use with:
+
+Old Motorola C118/C123 phones (with special cable + patched firmware)
+
+Or integrate with SDR setups
+
+Components:
+
+layer1, mobile, ccch_scan – for capturing control channels
+
+What you can get:
+
+IMEI from phones connecting to your base station
+
+Silent SMS messages (in lab environments)
+
+🏗 3. OpenBTS + Asterisk
+Purpose: Simulate your own GSM tower (experimental).
+
+Combine:
+
+OpenBTS (GSM stack)
+
+Asterisk (PBX system for calls/SMS)
+
+USRP / LimeSDR / HackRF (radio)
+
+Use case:
+
+Phones in range connect thinking it’s a real tower.
+
+You can log IMEIs, calls, and SMS.
+
+Great for training, capture the flag, testbeds.
+
+⚠️ Highly regulated. Use in a Faraday cage or shielded lab only.
+
+🕵️‍♂️ 4. Wireshark with GSM Plugins
+Once you capture traffic using grgsm_capture, load the .cfile in Wireshark.
+
+You can filter:
+
+wireshark
+Copy
+Edit
+gsm_a.rr.imei
+📍 PART 4: Can You Track a Phone Live by IMEI?
+Short answer: No, not directly using open-source tools.
+
+You’d need:
+Access to carrier-level data (they triangulate location via cell towers).
+
+A fake base station that can lure the phone and extract the IMEI (very illegal in public).
+
+Legal tools like SS7 access or law enforcement cooperation.
+
+✅ LEGAL USES (And Fun Projects You Can Try)
+📱 Personal Tracking
+Register your IMEI with your carrier to block it if lost.
+
+Use Find My iPhone or Find My Device for GPS-based tracking (needs Internet).
+
+🧪 Research & Learning
+Set up a local GSM lab to:
+
+Understand how 2G works.
+
+Practice IMEI/IMSI catching.
+
+Learn cellular forensics.
+
+📂 Forensics Tools (Optional extras)
+Cellebrite, Magnet AXIOM, Autopsy (not IMEI-specific, but do mobile data extraction)
+
+Androguard, MobSF – for app & malware forensics.
+
+🔧 Sample Setup to Start Capturing GSM Traffic
+bash code
+
+# 1. Install GR-GSM
+sudo apt install gr-gsm
+
+# 2. Run Live Monitor with SDR
+grgsm_livemon
+
+# 3. Open Wireshark on loopback interface
+# 4. Filter with: gsm_a.rr.imei or gsm_a.dtap
+
+# 5. Decode captured traffic for analysis
+⚠️ Final Advice
+If you're building this for educational reasons, keep it:
+
+In a lab or shielded room 🛡️
+
+On your own devices 📱
+
+Never in public spaces ❌
+
+Tracking people via IMEI without consent = major privacy crime in many countries.
