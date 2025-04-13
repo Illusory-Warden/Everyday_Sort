@@ -1,0 +1,32 @@
+Microservices are an architectural approach to building software systems that structures an application as a collection of **small, independent, and loosely coupled services**. Each service is:
+
+- **Focused on a specific business function** (like user management, payment processing, etc.)
+- **Developed and deployed independently**
+- Communicates with other services through **lightweight protocols** (often HTTP/REST, gRPC, or messaging queues)
+
+### Key Characteristics:
+1. **Single Responsibility**: Each microservice does one thing well.
+2. **Decentralized Data Management**: Each service typically has its own database.
+3. **Independent Deployment**: Services can be updated, deployed, or scaled without affecting the entire system.
+4. **Technology Agnostic**: Services can be built using different programming languages or frameworks.
+5. **Fault Isolation**: If one microservice fails, the rest of the system can continue to function.
+
+### Example:
+Think of an e-commerce application:
+- Product Service – manages product listings
+- Order Service – handles order processing
+- Payment Service – processes payments
+- User Service – manages user profiles
+
+Each service can be developed by a separate team and scaled as needed.
+
+### Benefits:
+- Faster development and deployment cycles
+- Easier scalability
+- Better fault tolerance
+- Flexibility in using different technologies
+
+### Challenges:
+- Increased complexity in communication and data consistency
+- Requires good DevOps and monitoring practices
+- Network latency and failure handling
