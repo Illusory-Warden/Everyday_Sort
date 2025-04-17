@@ -1,0 +1,113 @@
+**Quick summary of all the SQL joins** — with **short descriptions** and **syntax only** (no examples):
+
+---
+
+### 1. **INNER JOIN**
+- 🔹 Combines rows with **matching values** in both tables.
+```sql
+SELECT columns
+FROM table1
+INNER JOIN table2 ON table1.col = table2.col;
+```
+
+---
+
+### 2. **LEFT JOIN** (a.k.a. LEFT OUTER JOIN)
+- 🔹 Returns **all rows from the left** table + matched rows from right.
+```sql
+SELECT columns
+FROM table1
+LEFT JOIN table2 ON table1.col = table2.col;
+```
+
+---
+
+### 3. **RIGHT JOIN** (a.k.a. RIGHT OUTER JOIN)
+- 🔹 Returns **all rows from the right** table + matched rows from left.
+```sql
+SELECT columns
+FROM table1
+RIGHT JOIN table2 ON table1.col = table2.col;
+```
+
+---
+
+### 4. **FULL JOIN** / **FULL OUTER JOIN**
+- 🔹 Returns **all rows** from both tables; unmatched rows show NULLs.
+```sql
+SELECT columns
+FROM table1
+FULL OUTER JOIN table2 ON table1.col = table2.col;
+```
+
+> ⚠️ Not natively supported in MySQL — can be simulated using `UNION`.
+
+---
+
+### 5. **SELF JOIN**
+- 🔹 A table joined with **itself**, using aliases.
+```sql
+SELECT columns
+FROM table1 A
+JOIN table1 B ON A.col = B.col;
+```
+
+---
+
+### 6. **SELF OUTER JOIN**
+- 🔹 A **SELF JOIN** using `LEFT JOIN` or `RIGHT JOIN` to include unmatched rows.
+```sql
+SELECT columns
+FROM table1 A
+LEFT JOIN table1 B ON A.col = B.col;
+```
+
+---
+
+### 7. **IMPLICIT JOIN**
+- 🔹 An older form of `INNER JOIN` using the `WHERE` clause.
+```sql
+SELECT columns
+FROM table1, table2
+WHERE table1.col = table2.col;
+```
+
+---
+
+### 8. **EXPLICIT JOIN**
+- 🔹 Any join using the `JOIN` keyword — modern, recommended style.
+```sql
+SELECT columns
+FROM table1
+JOIN table2 ON table1.col = table2.col;
+```
+
+---
+
+### 9. **NATURAL JOIN**
+- 🔹 Automatically joins tables using **all columns with the same name**.
+```sql
+SELECT columns
+FROM table1
+NATURAL JOIN table2;
+```
+
+---
+
+### 10. **JOIN with USING**
+- 🔹 Joins tables on a column with the **same name** in both, explicitly.
+```sql
+SELECT columns
+FROM table1
+JOIN table2 USING (column_name);
+```
+
+---
+
+### 🔄 Bonus: `UNION` (Not a JOIN but discussed)
+- 🔹 Combines **result sets** of two SELECT queries (not rows like joins).
+```sql
+SELECT columns FROM table1
+UNION
+SELECT columns FROM table2;
+```
