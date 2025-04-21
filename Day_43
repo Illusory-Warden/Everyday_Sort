@@ -1,0 +1,27 @@
+YAGNI stands for "You Aren’t Gonna Need It."
+
+What it means:
+
+Don’t build something until you actually need it.
+
+Developers often try to anticipate future features or requirements and write extra code “just in case.” YAGNI says: don’t do that—focus only on what’s required right now.
+
+Why it matters:
+
+Saves time and effort.
+
+Keeps your codebase cleaner and smaller.
+
+Avoids over-engineering.
+
+Makes changes easier later because there’s less “unused” complexity to untangle.
+
+
+Example:
+
+Say you're building a blog app. You think, “Maybe one day, users will want to export posts as PDFs.” So you start adding a PDF export feature now, even though no one has asked for it yet.
+
+YAGNI would say: Don’t build that feature until there’s a real need.
+
+In short:
+Only build what you need—when you need it.
