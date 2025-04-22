@@ -1,0 +1,35 @@
+**Open Source Intelligence (OSINT) - Short Report**
+
+**Definition:**
+Open Source Intelligence (OSINT) refers to the process of collecting and analyzing publicly available data for intelligence purposes. It involves gathering information from free, legal, and accessible sources to support decision-making in various domains such as cybersecurity, law enforcement, business, and national security.
+
+**Key Sources:**
+- **Media:** Newspapers, TV, radio, podcasts
+- **Internet:** Blogs, websites, forums, social media platforms
+- **Public Government Data:** Reports, budgets, hearings, and records
+- **Academic Publications:** Journals, research papers, conference proceedings
+- **Commercial Data:** Market reports, corporate filings
+- **Geospatial Data:** Maps, satellite imagery
+
+**Uses:**
+- Threat intelligence in cybersecurity
+- Background checks and investigations
+- Competitive business analysis
+- Tracking geopolitical developments
+- Misinformation and disinformation detection
+
+**Tools:**
+Popular OSINT tools include:
+- **Maltego** – for link analysis and relationship mapping
+- **Shodan** – to discover internet-connected devices
+- **theHarvester** – for gathering emails, subdomains, and names
+- **OSINT Framework** – a collection of categorized tools and resources
+
+**Challenges:**
+- Information overload
+- Data verification and authenticity
+- Legal and ethical considerations
+- Rapidly changing digital landscape
+
+**Conclusion:**
+OSINT is a powerful and growing field, crucial for gathering intelligence in an increasingly digital world. When used ethically and effectively, it offers valuable insights without the need for intrusive or covert methods.
