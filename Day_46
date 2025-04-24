@@ -1,0 +1,48 @@
+You're on the right track already! Since you've set up Twingate using Docker on your Raspberry Pi 4 running OpenMediaVault (OMV), here's what happens and what you need to check after a power cycle or maintenance shutdown:
+
+### ✅ Good :
+If you **properly set up Twingate with Docker and persistent volumes**, and you **did not delete the Docker container or the associated data**, then:
+
+- You **do not** need to reconnect or reconfigure your Raspberry Pi to Twingate again.
+- When you power your RPi back on, as long as Docker and the Twingate connector container are set to start on boot (or you manually restart it), it should **automatically reconnect** to your Twingate network.
+
+---
+
+### ✅ Things to verify after turning your RPi back on:
+
+1. **Docker is running:**
+   Make sure the Docker daemon started properly:
+   ```bash
+   sudo systemctl status docker
+   ```
+
+2. **Twingate container is running:**
+   Check your running containers:
+   ```bash
+   docker ps
+   ```
+   You should see your Twingate container there. If not, run:
+   ```bash
+   docker start <container_name_or_id>
+   ```
+
+3. **Container was set with restart policy:**
+   When you created your Twingate container, if you used:
+   ```bash
+   --restart=always
+   ```
+   Then it should automatically start with your RPi on boot.
+
+4. **Network connectivity:**
+   - Check that your RPi has an internet connection.
+   - Make sure no firewall or DNS issue is blocking Twingate from connecting.
+
+5. **Twingate admin console:**
+   You can log into your [Twingate admin console](https://admin.twingate.com) and confirm that your connector shows as "Connected" or "Online".
+
+---
+
+### ❌ When you'd need to reconfigure:
+- If you deleted the Twingate Docker container and didn't use persistent storage/volumes.
+- If the tokens expired and you didn't store them in a volume or ENV.
+- If there were manual changes in OMV that affected Docker or networking setup.
