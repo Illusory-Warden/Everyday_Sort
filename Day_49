@@ -1,0 +1,41 @@
+✅ Things to verify after turning your RPi back on:
+Docker is running: Make sure the Docker daemon started properly:
+
+bash
+Copy
+Edit
+sudo systemctl status docker
+Twingate container is running: Check your running containers:
+
+bash
+Copy
+Edit
+docker ps
+You should see your Twingate container there. If not, run:
+
+bash
+Copy
+Edit
+docker start <container_name_or_id>
+Container was set with restart policy: When you created your Twingate container, if you used:
+
+bash
+Copy
+Edit
+--restart=always
+Then it should automatically start with your RPi on boot.
+
+Network connectivity:
+
+Check that your RPi has an internet connection.
+
+Make sure no firewall or DNS issue is blocking Twingate from connecting.
+
+Twingate admin console: You can log into your Twingate admin console and confirm that your connector shows as "Connected" or "Online".
+
+❌ When you'd need to reconfigure:
+If you deleted the Twingate Docker container and didn't use persistent storage/volumes.
+
+If the tokens expired and you didn't store them in a volume or ENV.
+
+If there were manual changes in OMV that affected Docker or networking setup.
