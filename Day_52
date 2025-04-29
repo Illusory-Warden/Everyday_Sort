@@ -1,0 +1,68 @@
+## 🔹 Raspberry Pi Pico
+
+The **Raspberry Pi Pico** is a compact, cost-effective microcontroller board designed for embedded applications.
+
+**Key Specifications:**
+
+- **Microcontroller:** RP2040 (Dual-core Arm Cortex-M0+ @ up to 133 MHz)
+- **Memory:** 264 KB SRAM
+- **Flash Storage:** 2 MB onboard QSPI Flash
+- **GPIO Pins:** 26 multi-function GPIOs (3 analog inputs)
+- **Interfaces:** 2× SPI, 2× I2C, 2× UART, 16× PWM channels
+- **USB:** USB 1.1 Host and Device support
+- **Power Input:** 1.8V to 5.5V DC
+- **Dimensions:** 21 mm × 51 mm
+- **Programming Support:** C/C++ and MicroPython ([Raspberry Pi Pico W](https://robu.in/product/raspberry-pi-pico-w/?utm_source=chatgpt.com), [Raspberry Pi Pico W Pinout, Projects & Spec - devboards.info](https://devboards.info/boards/raspberry-pi-pico-w?utm_source=chatgpt.com), [Raspberry Pi Pico W and Pico WH - Thingbits India](https://www.thingbits.in/products/raspberry-pi-pico-w?utm_source=chatgpt.com), [Raspberry Pi Pico W - About - DomoticX](https://domoticx.net/docs/raspberry-pi-pico-w-about/?utm_source=chatgpt.com))
+
+---
+
+## 🔹 Raspberry Pi Pico W
+
+The **Raspberry Pi Pico W** builds upon the Pico by adding wireless connectivity, making it suitable for IoT projects.
+
+**Key Specifications:**
+
+- **Microcontroller:** RP2040 (Dual-core Arm Cortex-M0+ @ up to 133 MHz)
+- **Memory:** 264 KB SRAM
+- **Flash Storage:** 2 MB onboard QSPI Flash
+- **Wireless Connectivity:** 2.4GHz 802.11n Wi-Fi and Bluetooth 5.2 via Infineon CYW43439 chip
+- **GPIO Pins:** 26 multi-function GPIOs (3 analog inputs)
+- **Interfaces:** 2× SPI, 2× I2C, 2× UART, 16× PWM channels
+- **USB:** USB 1.1 Host and Device support
+- **Power Input:** 1.8V to 5.5V DC
+- **Dimensions:** 21 mm × 51 mm
+- **Programming Support:** C/C++ and MicroPython ([Raspberry Pi Pico W](https://robu.in/product/raspberry-pi-pico-w/?utm_source=chatgpt.com), [Raspberry Pi Pico W Pinout, Projects & Spec - devboards.info](https://devboards.info/boards/raspberry-pi-pico-w?utm_source=chatgpt.com), [Raspberry Pi Pico W and Pico WH - Thingbits India](https://www.thingbits.in/products/raspberry-pi-pico-w?utm_source=chatgpt.com), [Raspberry Pi Pico W - About - DomoticX](https://domoticx.net/docs/raspberry-pi-pico-w-about/?utm_source=chatgpt.com), [Raspberry Pi Pico W Microcontroller Board, Built-in WiFi, Based on Official RP2040 Dual-core Processor](https://www.waveshare.com/raspberry-pi-pico-w.htm?utm_source=chatgpt.com))
+
+---
+
+## 🔹 Popular Raspberry Pi HATs
+
+**Raspberry Pi HATs** (Hardware Attached on Top) are add-on boards that conform to specific design standards, allowing for seamless integration with Raspberry Pi boards. Here are some commonly used HATs:
+
+### 1. **Sense HAT**
+
+Designed for environmental sensing and data logging.
+
+- **Sensors:** Temperature, Humidity, Barometric Pressure, Gyroscope, Accelerometer, Magnetometer
+- **Display:** 8×8 RGB LED matrix
+- **Additional Features:** Joystick for user input
+
+### 2. **Motor HAT**
+
+Ideal for robotics and motor control applications.
+
+- **Motor Control:** Dual H-Bridge for controlling DC motors
+- **PWM Channels:** Multiple channels for precise motor speed control
+- **Power Supply:** Supports external power sources for motors ([Raspberry Pi announces a $7 Pico 2 with built-in Wi-Fi](https://www.theverge.com/2024/11/25/24305455/raspberry-pi-pico-2-w-wi-fi-wireless-microcontroller?utm_source=chatgpt.com), [RP2040](https://en.wikipedia.org/wiki/RP2040?utm_source=chatgpt.com))
+
+### 3. **Audio HAT**
+
+Enhances audio capabilities of the Raspberry Pi.
+
+- **Audio Output:** High-quality DAC for stereo output
+- **Connectivity:** 3.5mm audio jack, RCA outputs
+- **Additional Features:** Some models include microphones for audio input ([Raspberry Pi Pico W and Pico WH - Thingbits India](https://www.thingbits.in/products/raspberry-pi-pico-w?utm_source=chatgpt.com))
+
+---
+
+These HATs expand the functionality of Raspberry Pi boards, enabling a wide range of projects from environmental monitoring to robotics and multimedia applications.
