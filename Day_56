@@ -1,0 +1,115 @@
+**Title: Master-Slave Embedded System Using Raspberry Pi and Raspberry Pi Pico**
+
+**Overview:**
+This report outlines a modular embedded system architecture in which a single Raspberry Pi functions as the master controller, communicating with multiple Raspberry Pi Pico (or Pico W) units that act as dedicated slaves. Each slave is responsible for a specific subsystem such as camera control, altitude sensing, parachute deployment, and telemetry communication. This design allows distributed processing and enhances system modularity, reliability, and scalability.
+
+---
+
+**1. System Architecture:**
+
+- **Master Device:**
+  - Raspberry Pi 4 / 3 / Zero (Linux OS)
+  - Acts as the central command unit
+  - Executes mission logic, logging, and coordination
+  - Communicates with all slave Picos via GPIO interfaces (UART/I2C/SPI)
+
+- **Slave Devices:**
+  - Raspberry Pi Pico or Pico W
+  - Each handles a distinct functional subsystem
+  - Operates with MicroPython or C/C++ firmware
+
+- **Physical Interface:**
+  - Custom or pre-built Raspberry Pi HAT or GPIO breakout
+  - Carries communication lines and power
+  - Connects all Picos to the master Pi
+
+---
+
+**2. Communication Protocols:**
+
+- **UART (Recommended):**
+  - Point-to-point serial communication
+  - Each Pico connects via a dedicated TX/RX line pair
+  - Simple, reliable, and well-supported in MicroPython and C SDK
+
+- **I2C:**
+  - Shared bus with unique addresses per Pico
+  - More complex to implement (limited slave support in MicroPython)
+
+- **SPI:**
+  - High-speed, with master and multiple slaves via chip select lines
+  - Requires careful pin and signal management
+
+- **GPIO Signaling:**
+  - Simple HIGH/LOW signals for flags, interrupts, or triggers
+  - Best for events or synchronization, not data
+
+---
+
+**3. Function Distribution:**
+
+| Pico Unit       | Task                     | Interface     | Notes                                 |
+|----------------|--------------------------|---------------|----------------------------------------|
+| Pico #1        | Altitude Sensor          | I2C or UART   | Reads data from BMP280, MS5611, etc.   |
+| Pico #2        | Camera Controller        | UART / SPI    | Triggers camera module, stores frames  |
+| Pico #3        | Parachute Deployment     | GPIO / UART   | Controls servo/relay for release       |
+| Pico #4        | Telemetry Comm (RF/WiFi) | UART / Wi-Fi  | Sends data to ground, handles packets  |
+
+---
+
+**4. Firmware Design (Slaves):**
+- Each Pico runs a loop waiting for commands
+- On receiving a command via UART (e.g., "SEND_ALT", "TRIGGER_CAM"), it executes a function
+- Sends responses back to the master (e.g., data, ACKs)
+- Optional: watchdog timer for resilience
+
+**Example Pseudo-code (Pico UART Receiver):**
+```python
+while True:
+    if uart.any():
+        cmd = uart.read()
+        if cmd == b"SEND_ALT":
+            uart.write(read_altitude())
+        elif cmd == b"DEPLOY":
+            activate_servo()
+```
+
+---
+
+**5. Master Pi Software:**
+- Written in Python, C++, or Node.js
+- Maintains connections to each Pico
+- Periodically polls for data or sends action commands
+- Logs responses and handles event sequencing
+
+**Example Command Sequence:**
+```
+1. Send "SEND_ALT" to Pico #1
+2. Wait for response
+3. If altitude < threshold:
+    - Send "DEPLOY" to Pico #3
+4. Log events and send telemetry via Pico #4
+```
+
+---
+
+**6. Power and Safety Considerations:**
+- Use level shifters if mixing 5V and 3.3V logic
+- Ensure shared ground between all devices
+- Use fuses or regulators for current protection
+- Consider watchdog timers and fail-safe logic on each Pico
+
+---
+
+**7. Advantages of This System:**
+- Modular design enables easy maintenance and testing
+- Separation of concerns improves reliability
+- Real-time tasks offloaded from the main Pi
+- Scalable to more sensors and subsystems
+
+---
+
+**Conclusion:**
+The master-slave design using a Raspberry Pi and multiple Raspberry Pi Picos provides a robust, scalable, and efficient architecture for complex embedded applications such as aerospace systems, robotics, and distributed monitoring. By leveraging simple communication protocols like UART and distributing functions across dedicated microcontrollers, the system remains both powerful and flexible.
+
+Future enhancements may include wireless Pico W interconnectivity, dynamic task allocation, and onboard data redundancy mechanisms.
