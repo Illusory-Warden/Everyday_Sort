@@ -1,0 +1,52 @@
+A **Use Case Diagram** is one of the **behavioral diagrams** in UML. It visually represents the **interactions between users (actors) and a system**, showing **what the system does** from a user's perspective.
+
+---
+
+## 🔹 Purpose of a Use Case Diagram
+
+- **Defines system boundaries**
+- **Identifies user goals (use cases)**
+- **Shows how users interact with the system**
+- Useful in the **requirements-gathering phase** of software development
+
+---
+
+## 🔹 Key Components
+
+| Element | Description |
+|--------|-------------|
+| **Actor** | A person, system, or device that interacts with the system. Represented by a stick figure. |
+| **System** | The software or process being designed. Enclosed in a box. |
+| **Use Case** | A specific action or service the system performs for an actor. Represented by an oval. |
+| **Relationships** | Links actors to use cases. Includes associations, includes, extends, and generalizations. |
+
+---
+
+## 🔹 Types of Relationships
+
+| Relationship | Symbol | Description |
+|--------------|--------|-------------|
+| **Association** | Line | Connects an actor to a use case. |
+| **Include** | <<include>> | One use case always includes behavior from another use case. |
+| **Extend** | <<extend>> | A use case may extend another if certain conditions are met. |
+| **Generalization** | Arrow | Inheritance between actors or use cases. |
+
+---
+
+## 🔹 Example Use Case Diagram
+
+Imagine an **online banking system**:
+
+- **Actors**: Customer, Bank System
+- **Use Cases**:
+  - Login
+  - View Account
+  - Transfer Funds
+  - Pay Bills
+
+```
+Customer → (Login)
+Customer → (View Account)
+Customer → (Transfer Funds)
+Customer → (Pay Bills)
+(Login) <<include>> (Authenticate)
