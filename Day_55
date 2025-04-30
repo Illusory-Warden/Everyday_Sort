@@ -1,0 +1,18 @@
+## 🔹 UML Relationships Table
+
+| **Relationship Type** | **Symbol/Notation** | **Used Between** | **Description** | **Example Use** |
+|------------------------|---------------------|------------------|------------------|------------------|
+| **Association**        | Solid line           | Actor ↔ Use Case | Shows interaction between an actor and a use case. | A `Customer` uses `Place Order` |
+| **Include**            | Dashed arrow with `<<include>>` | Use Case → Use Case | A use case **always includes** another use case. Represents **mandatory reuse**. | `Place Order` <<include>> `Authenticate User` |
+| **Extend**             | Dashed arrow with `<<extend>>` | Use Case → Use Case | A use case **optionally extends** another use case, often under a **condition**. | `View Cart` <<extend>> `Apply Discount` |
+| **Generalization (Actor)** | Solid line with hollow arrowhead | Actor → Actor | Indicates one actor is a specialized version of another. | `Admin` → `User` |
+| **Generalization (Use Case)** | Solid line with hollow arrowhead | Use Case → Use Case | A use case is a **specialized form** of another use case. | `Premium Login` → `Login` |
+| **Dependency**         | Dashed line with arrow | One element → Another | General relationship where one element **depends** on another. Includes `<<include>>` and `<<extend>>` as special forms. | `Process Order` depends on `Send Confirmation Email` |
+
+---
+
+### 🔸 Notes:
+
+- The **arrow always points toward the element being depended on**.
+- `<<include>>` and `<<extend>>` are **special kinds of dependency relationships** specific to use cases.
+- Generalization is used to **simplify** and **promote reuse** by showing inheritance.
