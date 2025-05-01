@@ -1,0 +1,76 @@
+The "RPI processor" refers to the **central processing unit (CPU)** used in **Raspberry Pi (RPI)** computers.
+Over the years, different Raspberry Pi models have used various **ARM-based** processors, mostly from **Broadcom**. 
+---
+
+### 🔹 **Raspberry Pi 1 Series (2012)**
+- **Processor:** Broadcom BCM2835
+- **CPU:** ARM1176JZF-S (ARMv6)
+- **Clock Speed:** 700 MHz
+- **Cores:** 1 (Single-core)
+- **Process Node:** 40nm
+- **GPU:** VideoCore IV
+
+---
+
+### 🔹 **Raspberry Pi 2 Model B (2015)**
+- **Processor:** Broadcom BCM2836
+- **CPU:** ARM Cortex-A7 (ARMv7)
+- **Clock Speed:** 900 MHz
+- **Cores:** 4 (Quad-core)
+- **Process Node:** 40nm
+- **GPU:** VideoCore IV
+
+---
+
+### 🔹 **Raspberry Pi 3 Series (2016–2018)**
+- **Processor:** Broadcom BCM2837 / BCM2837B0
+- **CPU:** ARM Cortex-A53 (ARMv8-A, 64-bit)
+- **Clock Speed:** 
+  - RPi 3 Model B: 1.2 GHz
+  - RPi 3 Model B+: 1.4 GHz
+- **Cores:** 4 (Quad-core)
+- **Process Node:** 40nm
+- **GPU:** VideoCore IV
+
+---
+
+### 🔹 **Raspberry Pi 4 Model B (2019)**
+- **Processor:** Broadcom BCM2711
+- **CPU:** ARM Cortex-A72 (ARMv8-A, 64-bit)
+- **Clock Speed:** 1.5 GHz (later models allow overclocking to ~1.8 GHz)
+- **Cores:** 4 (Quad-core)
+- **Process Node:** 28nm
+- **GPU:** VideoCore VI
+
+---
+
+### 🔹 **Raspberry Pi 400 (2020)**
+- **Processor:** Broadcom BCM2711 (same as Pi 4)
+- **CPU:** ARM Cortex-A72
+- **Clock Speed:** 1.8 GHz
+- **Cores:** 4 (Quad-core)
+- **Optimized for:** Desktop-style usage with better thermal performance
+
+---
+
+### 🔹 **Raspberry Pi 5 (2023)**
+- **Processor:** Broadcom BCM2712
+- **CPU:** ARM Cortex-A76 (ARMv8.2-A)
+- **Clock Speed:** 2.4 GHz
+- **Cores:** 4 (Quad-core)
+- **Process Node:** 16nm
+- **GPU:** VideoCore VII
+- **Major Upgrade:** PCIe support, real-time clock, more RAM options
+
+---
+
+### Summary Table:
+
+| Model         | Processor     | CPU Architecture | Clock Speed | Cores | GPU           |
+|---------------|---------------|------------------|-------------|-------|----------------|
+| RPi 1         | BCM2835       | ARM1176JZF-S     | 700 MHz     | 1     | VideoCore IV  |
+| RPi 2         | BCM2836       | Cortex-A7        | 900 MHz     | 4     | VideoCore IV  |
+| RPi 3         | BCM2837       | Cortex-A53       | 1.2–1.4 GHz | 4     | VideoCore IV  |
+| RPi 4         | BCM2711       | Cortex-A72       | 1.5 GHz     | 4     | VideoCore VI  |
+| RPi 400       | BCM2711       | Cortex-A72       | 1.8 GHz     | 4     | VideoCore VI  |
+| RPi 5         | BCM2712       | Cortex-A76       | 2.4 GHz     | 4     | VideoCore VII |
