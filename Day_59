@@ -1,0 +1,88 @@
+## 🔄 **How Process Synchronization Works (with 2 Processes)**
+
+---
+
+### 👥 **Let’s Take Two Processes:**
+
+* `P1` and `P2` are **cooperating processes**.
+* They both want to **increment a shared variable `counter`**.
+
+```c
+// Shared variable
+int counter = 0;
+
+P1:                          P2:
+-------------------         -------------------
+counter = counter + 1;      counter = counter + 1;
+```
+
+---
+
+### ⚠️ **Without Synchronization (Race Condition)**
+
+1. Both read `counter` at the same time (say value = 0).
+2. Both add 1 → result = 1.
+3. Both write 1 → final `counter` = 1 ❌ (it should be 2!)
+
+---
+
+## ✅ **With Synchronization**
+
+We now introduce a **protocol** so that **only one process enters the Critical Section at a time**.
+
+### 🧱 Let’s Use a Lock (Pseudocode Logic)
+
+```c
+do {
+   wait(lock);           // Entry section
+   // Critical Section
+   counter = counter + 1;
+   signal(lock);         // Exit section
+   // Remainder Section
+} while (1);
+```
+
+---
+
+### 🛠️ **What Happens Now?**
+
+#### Round 1:
+
+* P1 executes `wait(lock)` → enters the **critical section**.
+* P2 tries `wait(lock)` → but **lock is not free**, so P2 **waits**.
+* P1 increments `counter` safely → exits critical section via `signal(lock)`.
+* Now, P2 gets the lock and executes.
+
+### ✅ Final `counter` = 2 (correct and consistent!)
+
+---
+
+## 🧠 **Behind the Scenes – What the Lock Does**
+
+| Step                 | What Happens                                          |
+| -------------------- | ----------------------------------------------------- |
+| **wait(lock)**       | Checks if lock is free. If yes, enters. If no, waits. |
+| **critical section** | Safe zone for accessing shared resource.              |
+| **signal(lock)**     | Releases lock for the next process.                   |
+
+---
+
+## 📌 Summary Table
+
+| Concept          | Explanation                                                        |
+| ---------------- | ------------------------------------------------------------------ |
+| **Process Sync** | Controls access to shared data                                     |
+| **wait()**       | Entry control — checks and waits for access                        |
+| **signal()**     | Exit control — releases access for others                          |
+| **Outcome**      | Only one process accesses the critical section at a time — ✅ safe! |
+
+---
+
+## 🪟 Real-Life Analogy
+
+Imagine a **toilet with a lock on the door**:
+
+* P1 enters and **locks the door** (critical section).
+* P2 tries, but **finds the door locked**, so **waits** (sync).
+* P1 finishes and **unlocks the door** (signal).
+* P2 now enters safely.
