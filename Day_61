@@ -1,0 +1,89 @@
+1. **Combination of characteristics of BJT and MOSFET are hallmark of which device**
+   ✅ **IGBT**
+
+2. **Eo(rms)= \[Edc] is**
+   ✅ **RMS Output Voltage of Single Phase Full Bridge Voltage Source Inverter with R load**
+
+3. **Idc = \[Em/π] \* cosα is**
+   ✅ **Average Load Current of Full Wave Controlled Rectifier with R-L Load**
+
+4. **Turn On Time of IGBT is**
+   ✅ **2-4 µs**
+
+5. **GTO is controlled by**
+   ✅ **Current**
+
+6. **Edc = \[Em/2π] \[1+cosα] is**
+   ✅ **Average Load Voltage of Half Wave Controlled Rectifier with R-L Load**
+
+7. **For Cycloconverter**
+   ✅ **Both output frequency and voltage are variable**
+
+8. **Edc = \[2Em/π] \* \[cosα] is**
+   ✅ **Average Load Voltage of Full Wave Controlled Rectifier with R-L Load**
+
+9. **Erms = \[Em/2] is**
+   ✅ **Maximum RMS Load Voltage of Half Wave Controlled Rectifier with Resistive Load**
+
+10. **Eo = \[Edc] \* \[α] is**
+    ✅ **Output voltage of Step Down Chopper**
+
+11. **IGBT is controlled by**
+    ✅ **Voltage**
+
+12. **Turn Off Time of IGBT is**
+    ✅ **2 µs**
+
+13. **Edc = \[Em/π] is**
+    ✅ **Maximum Load Voltage of Full Wave Controlled Rectifier with Resistive Load**
+
+14. **For AC Voltage Regulator**
+    ✅ **We can use TRIACs as well as SCRs**
+
+15. **Edc = \[Em/π] \[1+cosα] is**
+    ✅ **Average Load Voltage of Full Wave Controlled Rectifier with Resistive Load**
+
+16. **Idc = \[Em/πR] \[1+cosα] is**
+    ✅ **Average Load Current of Full Wave Controlled Rectifier with Resistive Load**
+
+17. **Voltage Rating of GTO (MDS+KBK Book)**
+    ✅ **5 kV**
+
+18. **Eo(rms) = \[Edc/2] is**
+    ✅ **RMS Output Voltage of Single Phase Half Bridge Voltage Source Inverter with R load**
+
+19. **Turn Off Time of GTO is**
+    ✅ **30 µs**
+
+20. **Credits for MDM-II Power Electronics course are**
+    ✅ **3**
+
+21. **Turn On Time of GTO is**
+    ✅ **3-5 µs**
+
+22. **Current Rating of GTO (MDS+KBK Book)**
+    ✅ **3 kA**
+
+23. **In Fully Controlled Bridge Rectifier Circuit**
+    ✅ **4 SCRs and NO Diodes are used**
+
+24. **For AC Voltage Regulator**
+    ✅ **only output voltage is variable but frequency is not variable**
+
+25. **Idc = \[Em/2πR] \[1+cosα] is**
+    ✅ **Average Load Current of Half Wave Controlled Rectifier with Resistive Load**
+
+26. **In Half Controlled Bridge Rectifier Circuit**
+    ✅ **2 SCRs and 2 Diodes are used**
+
+27. **Voltage Rating of IGBT (MDS+KBK Book)**
+    ✅ **1200 V**
+
+28. **Eo = \[Edc]/\[1-α] is**
+    ✅ **Output voltage of Step Up Chopper**
+
+29. **Current Rating of IGBT (MDS+KBK Book)**
+    ✅ **400 A**
+
+30. **Eo = \[Edc] \* \[α / (1 - α)] is**
+    ✅ **Output voltage of Step Up/Down Chopper**
