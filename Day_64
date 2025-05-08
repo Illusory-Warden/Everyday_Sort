@@ -1,0 +1,30 @@
+### ✅ Standard Cost Notations:
+
+| Symbol | Name                   | Description                                                  |
+| ------ | ---------------------- | ------------------------------------------------------------ |
+| **C₁** | Holding/Carrying Cost  | Cost to hold one unit of inventory per unit of time.         |
+| **C₂** | Shortage/Stockout Cost | Cost incurred when inventory is insufficient to meet demand. |
+| **C₃** | Ordering/Setup Cost    | Fixed cost per order, regardless of quantity ordered.        |
+
+---
+
+### 🔄 Occasionally Seen or Custom Notations:
+
+While **C₁ to C₃** are **standard and widely accepted**, some textbooks or authors **extend the notation** further to **C₄, C₅, etc.** to cover more specific or advanced situations. These are not always standard but may represent:
+
+| Symbol | Possible Meaning (Context-Dependent) |
+| ------ | ------------------------------------ |
+| **C₄** | Purchase cost per unit               |
+| **C₅** | Transportation or delivery cost      |
+| **C₆** | Inspection cost per unit             |
+| **C₇** | Obsolescence or deterioration cost   |
+
+> ⚠️ **Important:** Not all sources use the same labels. **C₄ onwards is not universal**, so always check your specific textbook or exam material.
+
+---
+
+### 📌 Summary:
+
+* **C₁, C₂, C₃** are **core** in classical EOQ and inventory models.
+* **C₄ and beyond** are **occasionally used** in advanced or customized models.
+* Stick to **C₁ = holding**, **C₂ = shortage**, **C₃ = ordering** for your standard problems unless your syllabus specifies otherwise.
