@@ -1,0 +1,16 @@
+**Telnet** (short for **Teletype Network**) is a **network protocol** and command-line tool used to remotely access and manage devices over a **TCP/IP network**, typically on **port 23**.
+
+### Key Points:
+
+* **Purpose**: It allows users to **log into remote machines** and issue commands as if they were physically present at the system.
+* **Protocol Type**: **Text-based**, **unencrypted**, and **connection-oriented**.
+* **Typical Use Cases** (historically):
+
+  * Remote server administration.
+  * Testing and troubleshooting network services (like checking if a port is open).
+  * Accessing routers, switches, and legacy systems.
+
+### Security Note:
+
+* Telnet is **insecure** because it **transmits data, including passwords, in plaintext**, making it vulnerable to eavesdropping.
+* It's largely replaced by **SSH (Secure Shell)** in modern systems, which provides encrypted communication.
