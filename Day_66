@@ -1,0 +1,153 @@
+# 🧠 Armstrong’s Axioms (from scratch for exams)
+
+## 📘 What are Armstrong’s Axioms?
+
+> Armstrong’s Axioms are a set of **rules** (or inference rules) that allow us to **infer all possible functional dependencies** from a given set of FDs.
+
+These rules are **sound** (logically correct) and **complete** (can derive all FDs implied).
+
+---
+
+## 🧱 Why do we need them?
+
+* To **find hidden or implied dependencies**
+* To **simplify** the given set of dependencies
+* Used in **Normalization** (especially in 2NF, 3NF, BCNF)
+* To compute **closure of attributes**
+
+---
+
+## ✅ The 3 **Basic Axioms** (Core Rules)
+
+| Axiom Name          | Description                                | Symbolic Form             |
+| ------------------- | ------------------------------------------ | ------------------------- |
+| 1. **Reflexivity**  | If Y is a subset of X, then X → Y          | If Y ⊆ X, then X → Y      |
+| 2. **Augmentation** | If X → Y, then XZ → YZ for any attribute Z | If X → Y, then XZ → YZ    |
+| 3. **Transitivity** | If X → Y and Y → Z, then X → Z             | If X → Y and Y → Z, X → Z |
+
+---
+
+### 🔍 Let’s understand each with examples:
+
+### 1. **Reflexivity**
+
+If you already have more attributes than what you're trying to determine — it’s always true.
+
+🧠 Example:
+If you have `StudentID, Name`, you obviously know `StudentID`.
+
+So:
+`{StudentID, Name} → StudentID` ✅
+
+---
+
+### 2. **Augmentation**
+
+If a dependency is true, adding the **same attribute** on both sides **doesn’t break** it.
+
+🧠 Example:
+If `RollNo → Name`, then:
+`RollNo, Age → Name, Age` ✅
+
+You just "augmented" both sides with `Age`.
+
+---
+
+### 3. **Transitivity**
+
+Just like in math:
+If A determines B, and B determines C, then A determines C.
+
+🧠 Example:
+`RollNo → DeptID` and `DeptID → DeptName`
+⇒ `RollNo → DeptName` ✅
+
+---
+
+## ✅ Derived (Secondary) Axioms (Using the 3 Basic Ones)
+
+These are **not original axioms** but can be **derived** using the main three.
+
+| Axiom Name                 | Description                      | Based On                    |
+| -------------------------- | -------------------------------- | --------------------------- |
+| 4. **Union**               | If X → Y and X → Z, then X → YZ  | Augmentation + Transitivity |
+| 5. **Decomposition**       | If X → YZ, then X → Y and X → Z  | Reverse of Union            |
+| 6. **Pseudo Transitivity** | If X → Y and WY → Z, then WX → Z | Generalized Transitivity    |
+
+---
+
+### 🔍 Examples of Derived Axioms:
+
+### 4. **Union Rule**
+
+If:
+
+* `A → B`
+* `A → C`
+  Then:
+* `A → BC` ✅
+
+### 5. **Decomposition Rule**
+
+If:
+
+* `A → BC`
+  Then:
+* `A → B` and `A → C` ✅
+
+### 6. **Pseudo Transitivity**
+
+If:
+
+* `A → B`
+* `CB → D`
+  Then:
+* `CA → D` ✅
+
+This is very useful in **closure calculation**.
+
+---
+
+## 🧰 Applications of Armstrong's Axioms:
+
+* To **compute closure** of a set of attributes (**X⁺**)
+* To check **if a dependency is implied**
+* To find **candidate keys**
+* To perform **lossless decomposition** and **dependency preservation**
+
+---
+
+## 🔁 Closure of Attribute Set (X⁺)
+
+> Closure of a set of attributes **X** is the set of all attributes that can be **functionally determined** from X using the given FDs and Armstrong’s Axioms.
+
+🧠 Example:
+
+Let FDs be:
+
+* A → B
+* B → C
+
+Then:
+**A⁺ = {A, B, C}** using transitivity.
+
+---
+
+## ✍️ How to Use Armstrong’s Axioms in Exams:
+
+You're often given a set of FDs and asked to:
+
+1. **Prove a dependency** (Is A → C implied?)
+2. **Find closure**
+3. **Determine keys**
+4. **Simplify the FD set**
+
+---
+
+## 🧠 Simple Trick to Remember Armstrong’s Axioms:
+
+| Axiom        | Keyword        | Example                        |
+| ------------ | -------------- | ------------------------------ |
+| Reflexivity  | Subset logic   | If A, B → A                    |
+| Augmentation | Add same thing | If A → B, then AC → BC         |
+| Transitivity | Chain logic    | If A → B and B → C, then A → C |
