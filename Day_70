@@ -1,0 +1,184 @@
+ST. VINCENT PALLOTTI COLLEGE OF ENGINEERING & TECHNOLOGY, NAGPUR
+(An autonomous institution affiliated to Rashtrasant Tukadoji Maharaj Nagpur University)
+B. Tech. Scheme of Examination & Syllabus 2023-24
+COMPUTER SCIENCE & BUSINESS SYSTEMS
+FOURTH SEMESTER
+Course Code Course Name Th Tu Pr Credits Evaluation
+23CB505T Business Communication &amp;
+Value Science – III 2 -
+- 2
+CA ESE Total
+15 35 50
+Course Objectives Course Outcomes
+• Enable students to develop modern web application by
+leveraging latest technologies.
+• Recognize the best practices of communicative writing
+• Understand the importance of emotional intelligence in
+personal and professional lives
+• Apply emotional intelligence in real life scenarios.
+● Understand the importance of diversity in workplace [U]
+● Apply emotional intelligence in real life scenarios [AP]
+● Recognize the best practices of communicative writing [AP]
+● Understand the importance of corporate social responsibility
+(CSR) [C]
+● Recognize the importance of time management.
+UNIT I LEXICAL REASONING [8Hrs]
+Establishing Associations – Verbal Analogy – Logical Reasoning – Reasoning and Assertions – Cloze test – Single word Substitute –
+Creating and launching E-magazine – Common Errors– Report Writing
+UNIT II SOCIAL CORRESPONDENCE [8Hrs]
+Importance of Corporate Social Responsibility (CSR) – Professional Ethics – Organisational Structure in Workplace – Developing
+Leadership Qualities
+ART OF NETWORKING- Brain Storming Session – Discussing and Exploring the means of articulating and amplifying the Social
+issue their NGOs are working for – Addressing a Multitude – Welcome Address – Vote of Thanks – Public Speaking
+UNIT III CRITICAL THINKING [8Hrs]
+Learn Values from Movies – Film on Diversity – Discussion on key take away of the film – Mind Mapping – Conflict Management–
+Case Study – Time Management
+LISTENING SKILLSListening to Product Description-Listening to Inspirational speech – Listening Comprehension – Critical Review-Book / Movie Review
+– Comparative Analysis
+Text Books
+S.N Title Authors Edition Publisher
+1 ,“Development of Life Skills and
+Professional Practice”
+Shalini Verma 1 st edition, Vikas Publishing house
+Pvt. Ltd., 2014
+Reference Books
+S.N Title Authors Edition Publisher
+1 Abundance: “The Future is Better Than
+You Think”,
+Peter H. Diamandis and
+Steven Kotler
+1 st edition, Free Press, 2012
+2 “Advertising & IMC: Principles and
+Practice”,
+Sandra Moriarty, Nancy D,
+William D Mitchell
+10th edition Pearson Education India,
+2016.
+July 2024 1
+Applicable for
+2024-25
+Chairman - BoS Dean – Academics Date of Release Version
+ST. VINCENT PALLOTTI COLLEGE OF ENGINEERING & TECHNOLOGY,NAGPUR
+(An autonomous institution affiliated to Rashtrasant Tukadoji Maharaj Nagpur University)
+B. Tech. Scheme of Examination & Syllabus 2023-24
+COMPUTER SCIENCE AND BUSINESS SYSTEMS
+FOURTH SEMESTER
+Course Code Course Name Th Tu Pr Credits Evaluation
+23CB405T Database Management Systems 3 - - 3
+CA ESE Total
+30 70 100
+Course Objectives Course Outcomes
+This course is intended :
+1. To understand core database concepts and various data
+models.
+2. To Master data modeling and data manipulation using SQL3.
+3. To Design efficient relational databases and optimize
+queries.
+4. To explore storage strategies and transaction management.
+5. To Gain expertise in database security and advanced topics.
+Students will be able to
+CO1: Explain core database concepts and system
+architecture, including data models and data
+independence.
+CO2: Master data modeling, data manipulation, and SQL
+usage in various DBMS environments.
+CO3: Design relational databases for data integrity,
+optimize queries, and understand query processing.
+CO4: Evaluate storage strategies, transaction processing,
+and database recovery mechanisms.
+CO5: Gain a comprehensive understanding of database
+security and advanced topics in the field.
+Unit I : [ 8 Hrs]
+Introduction: Introduction to Database. Hierarchical, Network and Relational Models.
+Database system architecture: Data Abstraction, Data Independence, Data Definition Language (DDL), Data Manipulation Language
+(DML)
+Unit II : [ 8 Hrs]
+Data models: Entity-relationship model, network model, relational and object oriented data models, integrity constraints, data
+manipulation operations.
+Relational query languages: Relational algebra, Tuple and domain relational calculus,SQL3, DDL and DML constructs, Open source
+and Commercial DBMS - MYSQL,ORACLE, DB2, SQL server.
+Unit III : [ 8 Hrs]
+Relational database design: Domain and data dependency, Armstrong's axioms, Functional Dependencies, Normal forms,
+Dependency preservation, Lossless design.
+Query processing and optimization: Evaluation of relational algebra expressions, Query equivalence, Join strategies, Query optimization
+algorithms.
+Unit IV : [ 8 Hrs]
+Storage strategies: Indices, B-trees, Hashing.
+Transaction processing: Concurrency control, ACID property, Serializability of scheduling,
+Locking and timestamp based schedulers, Multi version and optimistic Concurrency Control
+schemes, Database recovery.
+Unit V : [ 8 Hrs]
+Database Security: Authentication, Authorization and access control, DAC, MAC and RBAC models, Intrusion detection, SQL injection.
+Advanced topics: Object oriented and object relational databases, Logical databases, Web databases, Distributed databases, Data
+warehousing and data mining.
+Text Books
+S.N Title Authors Edition Publisher
+1 Database System Concepts Abraham Silberschatz,
+Henry F. Korth and S.
+Sudarshan
+10th McGraw-Hill Education
+Reference Books
+S.N Title Authors Editio
+n
+Publisher
+1 Principles of Database and Knowledge –
+Base Systems
+J. D. Ullman 7th McGraw-Hill, Inc
+2 Fundamentals of Database Systems R. Elmasri and S. Navathe 3rd Pearson Education
+3 Foundations of Databases Serge Abiteboul, Richard
+Hull, Victor Vianu
+5th Addison-Wesley
+July 2024 1
+Applicable for
+2024-25
+Chairman - BoS Dean – Academics Date of Release Version
+ST. VINCENT PALLOTTI COLLEGE OF ENGINEERING & TECHNOLOGY,NAGPUR(An autonomous institution affiliated to Rashtrasant Tukadoji Maharaj Nagpur University)B. Tech. Scheme of Examination & Syllabus 2024-25
+COMPUTER SCIENCE & BUSINESS SYSTEMS
+Course Code Course Name Th Tu Pr Credits Evaluation
+CB405T OPERATIONS RESEARCH 2 - - 2
+CA ESE Total
+15 35 50
+Course Objectives Course Outcomes
+1. To understand the methodology of OR problem-solving,
+formulation linear programming problems and assignment
+model
+2. To know how project management techniques help in
+planning, scheduling a project and simulation.
+3. To understand the inventory control and queuing
+model.
+1. Recognize the importance and value of Operations
+research and linear programming in solving practical
+problems in industry
+2. Recognize and solve assignment problems.
+3. Gain knowledge of drawing project networks for quantitative
+analysis of projects
+Unit I : Introduction to OR and LPP [8 Hrs]
+Origin of OR and its definition, Types of OR problems, Phases of OR problem approach – problem formulation, building mathematical
+model, deriving solutions, validating model, controlling and implementing solution.
+Linear programming- Graphical Method
+Simplex Algorithm – slack, surplus & artificial variables, computational details.
+Assignment Problem - decision variables, constraints, formulation, Balanced &unbalanced situations, Solution method –
+Hungarian, test for optimality (MODI method)
+Unit II: PERT & Simulation Methodology [8 Hrs]
+Project definition, Project scheduling techniques – Gantt chart, PERT, Determination of critical paths, Estimation of Project time and its
+variance in PERT using statistical principles.
+Definition and steps of simulation, random number, random number generator. Simulation Model.
+Unit III : Inventory Control & Queuing Theory: [8 Hrs]
+Functions of inventory and its disadvantages, ABC analysis, Concept of inventory costs, Basic EOQ models for discrete units, sensitivity
+analysis and Robustness
+Queuing Theory – queue (waiting line), waiting costs, characteristics (arrival, queue, service discipline) of queuing system, queue
+types (channel vs. phase).M/M/1 Model and its performance measures.
+S.N Title Authors Edition Publisher
+1 Operations Research P.K. Gupta & D.S.
+Hajra 5
+th Edition S Chand
+2
+Operations Research: An
+Introduction. H.A. Taha 10th Edition Pearson
+3 Linear Programming. K.G. Murthy 5
+th Edition John Wiley & Sons
+4 Introduction to
+Operations Research F.S. Hiller and G.J. 9
+th Edition Mc Graw Hill
+Dec 2024 1 Applicable for
+2024-25 Chairman - BoS Dean – Academics Date of Release Version
