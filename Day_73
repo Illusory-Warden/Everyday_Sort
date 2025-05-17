@@ -1,0 +1,33 @@
+### ✅ Is SCR Current Controlled or Voltage Controlled?
+
+**SCR is a *current-controlled* device.**
+
+---
+### 🔹 Explanation:
+
+* To turn **ON** the SCR, a **small gate current** is applied between the **gate and cathode**.
+* This small current initiates the larger current flow from **anode to cathode**.
+* Once turned ON, the SCR **latches**, and the gate loses control — the SCR remains ON until the **anode current drops below a certain threshold** (called holding current).
+
+🔸 So, **the gate current is responsible for triggering**, not the gate voltage.
+Hence, **SCR is a current-controlled device** — unlike MOSFETs or IGBTs, which are voltage-controlled.
+
+---
+
+### ✅ SCR Ratings
+
+SCR ratings are important because they define the limits within which the device can operate **safely and reliably**.
+
+Below are the **typical ratings** (approximate values — exact values vary depending on manufacturer and model):
+
+| **Parameter**                     | **Symbol**        | **Typical Rating** | **Description**                                                   |
+| --------------------------------- | ----------------- | ------------------ | ----------------------------------------------------------------- |
+| Repetitive Peak Off-state Voltage | V<sub>DRM</sub>   | 600V – 3000V       | Max voltage SCR can block repeatedly without turning ON.          |
+| Average On-state Current          | I<sub>T(AV)</sub> | 10A – 2000A        | Max average current SCR can handle when ON.                       |
+| Gate Trigger Current              | I<sub>GT</sub>    | 50µA – 50mA        | Minimum gate current needed to turn ON the SCR.                   |
+| Gate Trigger Voltage              | V<sub>GT</sub>    | 0.6V – 2.5V        | Voltage required between gate and cathode to initiate conduction. |
+| Holding Current                   | I<sub>H</sub>     | 2mA – 100mA        | Minimum current below which SCR turns OFF.                        |
+| Latching Current                  | I<sub>L</sub>     | 10mA – 500mA       | Current needed to latch the SCR after triggering.                 |
+| Surge Current                     | I<sub>TSM</sub>   | 100A – 30kA        | Peak surge current SCR can tolerate for one cycle.                |
+
+> 💡 Note: Values vary across **low-power** and **high-power** SCRs.
