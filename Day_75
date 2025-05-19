@@ -1,0 +1,122 @@
+1. **Basic Principle of AC-AC Converters**
+2. **Operation of AC-AC Converters**
+
+Later, we can go into detail about the **Single Phase AC Voltage Controller for R and R-L Loads**.
+
+---
+
+# 🔄 **AC-AC Converters**
+
+---
+
+## 📘 **1. Basic Principle**
+
+**AC-AC Converters** are power electronic devices that **convert AC voltage of one magnitude to AC voltage of another magnitude** **without changing the frequency** (in most basic types). These converters are also known as **AC Voltage Controllers**.
+
+---
+
+### 🔌 **Definition:**
+
+> AC-AC converters are devices that control the output **RMS voltage** of an alternating current (AC) supply by **controlling the firing angle** of semiconductor switches like **SCRs or TRIACs**.
+
+---
+
+### 🧱 **Types of AC-AC Converters:**
+
+| Type                        | Output Type           | Frequency |
+| --------------------------- | --------------------- | --------- |
+| AC Voltage Controller       | AC → AC (same freq.)  | Unchanged |
+| Cycloconverter              | AC → AC (lower freq.) | Changed   |
+| Matrix Converter (advanced) | AC → AC (var freq.)   | Changed   |
+
+In your syllabus, we are focusing on **AC Voltage Controllers** (i.e., output voltage control at same input frequency).
+
+---
+
+### 🧩 **Where is it used?**
+
+* **Light dimmers**
+* **Fan speed control**
+* **Industrial heater control**
+* **AC motor speed control**
+
+---
+
+## ⚙️ **2. Operation of AC Voltage Controller (AC-AC Converter)**
+
+There are **two main operating methods**:
+
+---
+
+### 🔹 a) **Phase Control Method**
+
+* AC voltage is applied for a **part of the cycle only**.
+* SCRs/triacs are turned **ON at a certain firing angle α**.
+* Controls output voltage by **cutting off a portion of the waveform**.
+
+#### 🔁 Modes:
+
+| Mode                  | Description                                  |
+| --------------------- | -------------------------------------------- |
+| **Half-Wave Control** | Only one half of input waveform is used      |
+| **Full-Wave Control** | Both halves are used using two SCRs or TRIAC |
+
+#### 🔧 Example:
+
+* Firing angle α = 90° ⇒ Output voltage starts after 90° ⇒ RMS voltage is lower.
+
+---
+
+### 🔹 b) **ON-OFF Control Method**
+
+* The entire **input waveform is passed or blocked** for a few cycles.
+* No waveform chopping per cycle; just full cycles passed/blocked.
+* Slower control compared to phase control.
+
+| Comparison          | Phase Control        | ON-OFF Control                |
+| ------------------- | -------------------- | ----------------------------- |
+| Control             | Per cycle            | Per group of cycles           |
+| Switching Frequency | High                 | Low                           |
+| Output Quality      | Poorer (harmonics)   | Smoother for slow processes   |
+| Application         | Motor speed, dimmers | Heaters, slow thermal systems |
+
+---
+
+### ⚡ **Waveform Behavior in Phase Control:**
+
+Let’s say you have a 230 V AC input:
+
+* **If α = 0°:** Output = full sine wave
+* **If α = 90°:** Output starts halfway → Lower RMS value
+* **If α = 150°:** Even lower output
+
+**RMS Output Voltage:**
+
+For resistive load:
+
+$$
+V_{rms} = V_m \sqrt{\frac{1}{\pi} \int_{\alpha}^{\pi} \sin^2(\omega t) \, d(\omega t)}
+$$
+
+(You usually don't need to derive it in exams unless asked.)
+
+---
+
+## 🧪 **Example Use-Case: Fan Regulator**
+
+* TRIAC based regulator.
+* Adjusts firing angle based on the knob.
+* Controls RMS voltage sent to fan motor ⇒ adjusts speed.
+
+---
+
+## ✅ Summary Table
+
+| Aspect                | Details                                        |
+| --------------------- | ---------------------------------------------- |
+| Input                 | AC voltage                                     |
+| Output                | Controlled AC voltage (same frequency)         |
+| Control Method        | Phase angle or ON-OFF control                  |
+| Semiconductor Devices | SCRs, TRIACs                                   |
+| Applications          | Fans, lights, heaters, induction motor control |
+| Key Parameter         | Firing angle (α)                               |
