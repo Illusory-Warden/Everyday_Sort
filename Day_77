@@ -1,0 +1,23 @@
+### ✅ Topics in Unit III:
+
+1. **Package Diagram Model**
+
+   * Description of the model
+   * White box, black box
+   * Connections between packages
+   * Interfaces
+   * Create Package Diagram
+   * Drill Down
+
+2. **State Diagram / Activity Diagram**
+
+   * Description of the State Diagram
+   * Events Handling
+   * Description of the Activity Diagram
+
+3. **Component Diagram Model**
+
+   * Physical Aspect
+   * Logical Aspect
+   * Connections and Dependencies
+   * User interface
