@@ -1,0 +1,230 @@
+%-------------------------
+% Resume in Latex
+% Author : Gennadii Chursov
+% Based off of: https://github.com/sb2nov/resume and https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Rushi Daulatkar} \\ \vspace{1pt}
+    \small \textit{Creating Efficient Solutions Through Web \& Task Automation} \\
+    7559495612 $|$ \href{mailto:rushidaulatkar@proton.me}{\underline{rushidaulatkar@proton.me}} $|$ 
+    \href{https://www.linkedin.com/in/rushi-daulatkar-43669b299/}{\underline{LinkedIn}} $|$
+    \href{https://github.com/Illusory-Warden}{\underline{GitHub}}
+\end{center}
+
+%-----------SUMMARY-----------
+ \section*{Summary}
+Motivated Computer Science undergraduate with proven experience in full-stack web development, database
+management, and automation solutions. Demonstrated expertise in modern web technologies, data structures,
+and Linux systems through hands-on internships and hackathon victories. Seeking to leverage technical
+proficiency and collaborative mindset to contribute to innovative software development projects in a dynamic
+team environment.
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {St. Vincent Pallotti College of Engineering and Technology}{Nagpur Gavsi Manapur}
+      {B.Tech in Computer Science and Business Systems (CSBS)}
+      {2023 - Expected Graduation: 2027}
+      \resumeItem{CGPA: 9.05/10.0}
+    \resumeSubheading
+      {Dr. M.K. Umathe College of Science}{Nagpur, Maharashtra}
+      {Higher Secondary Certificate (HSC) - Science Stream}
+      {2022 - 2023}
+    \resumeSubheading
+      {Tapasya Public School}{Arvi, Wardha}
+      {Secondary School Certificate (SSC) - CBSE}
+      {2020 - 2021}
+  \resumeSubHeadingListEnd
+  
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: C, C++, HTML5, CSS3, JavaScript, Java, Python} \\
+     \textbf{Databases}{: MySQL, Database Design \& Optimization} \\
+     \textbf{Development Tools}{: Visual Studio Code, Git/GitHub, MySQL Workbench, IntelliJ IDEA} \\
+     \textbf{Libraries \& Frameworks}{: jQuery, Bootstrap} \\
+     \textbf{Core Competencies}{: Data Structures \& Algorithms, Linux Systems Administration, Task Automation (Python)} \\
+     \textbf{Languages}{: English (Fluent), Hindi (Native), German (Basic)}
+    }}
+ \end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Web Development Intern}{April 2024 -- May 2024}
+      {Pinnacle Labs}{Remote}
+      \resumeItemListStart
+        \resumeItem{Developed responsive web applications and managed databases in a remote collaborative environment}
+        \resumeItem{Gained hands-on experience with full-stack web development technologies and remote teamwork practices}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {Frontend Web Development Intern}{November 2023 -- December 2023}
+      {Motion Cut Video Studio}{Remote}
+      \resumeItemListStart
+        \resumeItem{Enhanced UI/UX design and optimized web performance using HTML, CSS, and JavaScript}
+        \resumeItem{Improved website functionality and user experience through frontend development best practices}
+    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+   \resumeSubHeadingListStart 
+     \resumeProjectHeading
+         {\textbf{Browser\_Automation\_3.0} $|$ \emph{Python, Selenium WebDriver, HTML/CSS/JavaScript}}
+         {Oct 2024 – Dec 2024}
+         \resumeItemListStart
+           \resumeItem{Developed a cross-platform Python automation tool that automatically earns Microsoft Rewards points through intelligent search automation, with an interactive GitHub Pages website for easy setup across Windows and Parrot OS}
+           \resumeItem{Implemented cross-platform compatibility for Windows and Parrot OS with automated search functionality using trending topics API integration}
+           \resumeItem{Created interactive setup website with step-by-step guides, screenshots, and copy-paste command functionality for easy installation}
+           \resumeItem{Features customizable search parameters (1-20 searches per session) with intelligent automation capabilities}
+         \resumeItemListEnd
+   \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+  \section{Achievements}
+   \resumeSubHeadingListStart
+     \resumeProjectHeading
+         {\textbf{Academic Excellence - 1st Rank}}{Academic Year 2024-25}
+         \resumeItemListStart
+           \resumeItem{Achieved first rank in academic performance at St. Vincent Pallotti College of Engineering \& Technology}
+         \resumeItemListEnd
+     \resumeProjectHeading
+         {\textbf{Innovolt Hackathon Winner}}{February 2025}
+         \resumeItemListStart
+           \resumeItem{Secured podium finish at Innovolt hackathon held at S. B. Jain Institute of Technology, Management and Research, Nagpur}
+           \resumeItem{Developed software-based solution for optimizing cargo ship navigation using routing algorithms and APIs to reduce fuel consumption and environmental impact}
+           \resumeItem{Collaborated with team members Shravan Sapate and Sumit Helonde to create real-world maritime technology solution}
+         \resumeItemListEnd
+   \resumeSubHeadingListEnd
+
+%-----------Certifications-----------
+\section{Certifications}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Entrepreneurship \& Innovation: Web Development Job Simulation}}{March 2024}
+      \resumeItemListStart
+        \resumeItem{Moreton Bay (Forage)}
+      \resumeItemListEnd
+      
+    \resumeProjectHeading
+      {\textbf{Data Structures in C}}{March 2024}
+      \resumeItemListStart
+        \resumeItem{Great Learning Academy}
+      \resumeItemListEnd
+      
+    \resumeProjectHeading
+      {\textbf{Developer and Technology Job Simulation}}{January 2024}
+      \resumeItemListStart
+        \resumeItem{Accenture (Forage)}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
