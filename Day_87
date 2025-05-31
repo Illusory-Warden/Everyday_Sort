@@ -1,0 +1,9 @@
+Other Useful Commands
+Command	Description
+EXIT	Exits the command prompt.
+HELP	Provides help information for commands.
+ATTRIB	Displays or changes file attributes.
+CLS	Clears the screen.
+ECHO	Displays messages or turns command echoing on or off.
+MORE	Displays output one screen at a time.
+FIND	Searches for a text string in a file.
