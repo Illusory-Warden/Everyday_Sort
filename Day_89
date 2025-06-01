@@ -1,0 +1,6 @@
+        ID                                             Branch                Op            Remote             Download
+ 1. [✓] org.freedesktop.Platform.GL.default            24.08                 i             flathub            155.3 MB / 155.7 MB
+ 2. [✓] org.freedesktop.Platform.GL.default            24.08extra            i             flathub             23.9 MB / 155.7 MB
+ 3. [✓] org.freedesktop.Platform.Locale                24.08                 i             flathub             18.6 kB / 381.1 MB
+ 4. [✓] org.freedesktop.Platform.openh264              2.5.1                 i             flathub              1.3 MB / 971.4 kB
+ 5. [✓] org.freedesktop.Platform                       24.08                 i             flathub            259.0 MB / 263.2 MB
