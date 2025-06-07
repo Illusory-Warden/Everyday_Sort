@@ -1,0 +1,56 @@
+To determine whether this investment is profitable **after adjusting for inflation**, we’ll follow these steps:
+
+---
+
+### 📌 Basic Data:
+
+* **Annual Investment:** ₹100,000
+* **Duration:** 10 years
+* **Total Invested:** ₹1,000,000 (₹100,000 × 10)
+* **Return After 10 Years:** ₹2,515,500
+
+---
+
+### 🧮 Step-by-Step Profitability Check (with Inflation Adjustment)
+
+We’ll use **Net Present Value (NPV)** to adjust for inflation. You’ll need to specify the **average annual inflation rate**—a common estimate is **6% per year** (can vary by country).
+
+---
+
+### 🎯 NPV Formula:
+
+We discount each ₹100,000 annual payment and the ₹2,515,500 final return back to today’s value.
+
+$$
+NPV = \sum_{t=1}^{10} \frac{-100,000}{(1 + r)^t} + \frac{2,515,500}{(1 + r)^{10}}
+$$
+
+Where **r = inflation rate** (e.g., 6% or 0.06)
+
+---
+
+### ✅ Using 6% Inflation:
+
+1. **Present Value of Outflows (investments):**
+
+   $$
+   PV_{\text{investments}} = \sum_{t=1}^{10} \frac{100,000}{(1.06)^t} \approx 790,787
+   $$
+
+2. **Present Value of Inflow (final return):**
+
+   $$
+   PV_{\text{return}} = \frac{2,515,500}{(1.06)^{10}} \approx 1,401,220
+   $$
+
+3. **NPV = PV of inflow – PV of outflows:**
+
+   $$
+   \text{NPV} = 1,401,220 - 790,787 = \boxed{₹610,433}
+   $$
+
+---
+
+### ✅ Conclusion:
+
+Yes, the investment is **profitable** after adjusting for **6% inflation** — with a **real gain of \~₹610,000** in today's money. The **inflation-adjusted return** is solid, assuming no hidden risks, taxes, or fees.
