@@ -1,0 +1,36 @@
+pi@warden:~ $ sudo apt install plexmediaserver
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  plexmediaserver
+0 upgraded, 1 newly installed, 0 to remove and 1 not upgraded.
+Need to get 75.7 MB of archives.
+After this operation, 200 MB of additional disk space will be used.
+Get:1 https://downloads.plex.tv/repo/deb public/main arm64 plexmediaserver arm64 1.41.7.9823-59f304c16 [75.7 MB]
+Fetched 75.7 MB in 18s (4211 kB/s)
+Selecting previously unselected package plexmediaserver.
+(Reading database ... 64548 files and directories currently installed.)
+Preparing to unpack .../plexmediaserver_1.41.7.9823-59f304c16_arm64.deb ...
+PlexMediaServer install: Pre-installation Validation.
+PlexMediaServer install: Pre-installation Validation complete.
+Unpacking plexmediaserver (1.41.7.9823-59f304c16) ...
+Setting up plexmediaserver (1.41.7.9823-59f304c16) ...
+PlexMediaServer install: PlexMediaServer-1.41.7.9823-59f304c16 - Installation starting.
+PlexMediaServer install:
+PlexMediaServer install: Now installing based on:
+PlexMediaServer install:   Installation Type:   New
+PlexMediaServer install:   Process Control:     systemd
+PlexMediaServer install:   Plex User:           plex
+PlexMediaServer install:   Plex Group:          plex
+PlexMediaServer install:   Video Group:         video
+PlexMediaServer install:   Metadata Dir:        /var/lib/plexmediaserver/Library/Application Support
+PlexMediaServer install:   Temp Directory:      /tmp
+PlexMediaServer install:   Lang Encoding:       en_US.UTF-8
+PlexMediaServer install:   Processor:
+PlexMediaServer install:   Intel i915 Hardware: Not found
+PlexMediaServer install:   Nvidia GPU card:     Not Found
+PlexMediaServer install:
+PlexMediaServer install: Completing final configuration.
+Created symlink /etc/systemd/system/multi-user.target.wants/plexmediaserver.service → /lib/systemd/system/plexmediaserver.service.
+PlexMediaServer install: PlexMediaServer-1.41.7.9823-59f304c16 - Installation successful.  Errors: 0, Warnings: 0
