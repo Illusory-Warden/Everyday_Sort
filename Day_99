@@ -1,0 +1,39 @@
+This SSH error occurs when the host key (cryptographic fingerprint) of the remote server has changed from what your SSH client previously recorded. Here's what's happening and how to fix it:
+
+**What the error means:**
+- Your SSH client previously connected to this Raspberry Pi (192.168.100.101) and saved its host key
+- Now the Pi is presenting a different host key than expected
+- SSH is blocking the connection as a security precaution
+
+**Common causes:**
+1. **Pi was re-imaged/reinstalled** - New OS installation generates new host keys
+2. **SD card was replaced** or system was restored from backup
+3. **SSH keys were regenerated** on the Pi
+4. **Network issue** - Different device now has the same IP address
+5. **Actual security threat** (less common on local networks)
+
+**How to fix it:**
+
+**Option 1: Remove the old host key (recommended)**
+```bash
+ssh-keygen -R 192.168.100.101
+```
+
+**Option 2: Edit the known_hosts file manually**
+- Open `C:\Users\rushi\.ssh\known_hosts` in a text editor
+- Delete line 8 (the line containing the old key for 192.168.100.101)
+- Save the file
+
+**Option 3: Bypass host key checking (less secure)**
+```bash
+ssh -o StrictHostKeyChecking=no pi@192.168.100.101
+```
+
+After using Option 1 or 2, try connecting again:
+```bash
+ssh pi@192.168.100.101
+```
+
+SSH will ask you to verify the new host key fingerprint. Type "yes" to accept and continue.
+
+**Security note:** If you didn't reinstall or modify your Pi recently, verify this is actually your Pi by checking its physical access or confirming the IP address hasn't been reassigned to another device.
