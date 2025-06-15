@@ -1,0 +1,47 @@
+What are two actions performed by a Cisco switch? (Choose two.)
+
+
+check_box_outline_blank
+utilizing the MAC address table to forward frames via the destination MAC address
+
+check_box_outline_blank
+using the source MAC addresses of frames to build and maintain a MAC address table
+
+check_box_outline_blank
+forwarding frames with unknown destination IP addresses to the default gateway
+
+check_box_outline_blank
+examining the destination MAC address to add new entries to the MAC address table
+
+check_box_outline_blank
+building a routing table that is based on the first IP address in the frame header
+
+
+✅ Correct answers:
+
+✔️ Using the source MAC addresses of frames to build and maintain a MAC address table
+
+✔️ Utilizing the MAC address table to forward frames via the destination MAC address
+
+Explanation:
+Cisco switches operate at Layer 2 (Data Link Layer) and primarily use MAC addresses to make forwarding decisions.
+
+✔️ Correct Actions:
+Using the source MAC address to build the MAC address table
+
+When a frame enters the switch, the switch learns the source MAC address and associates it with the incoming port.
+
+Using the MAC address table to forward frames via the destination MAC address
+
+If the destination MAC address is found in the MAC table, the switch forwards the frame to the corresponding port.
+
+❌ Incorrect Actions:
+Forwarding frames with unknown destination IP addresses to the default gateway
+→ Switches don’t use IP addresses for forwarding. That’s a router’s job.
+
+Examining the destination MAC address to add new entries
+→ The switch learns from the source MAC address, not the destination.
+
+Building a routing table based on IP addresses
+→ Switches don’t build routing tables. Routers do, at Layer 3.
+
