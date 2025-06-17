@@ -1,0 +1,43 @@
+✅ **Correct answer: 2001\:DB8:0:1111::200**
+
+---
+
+### Explanation:
+
+Let's examine each option to determine which is a **valid IPv6 address**:
+
+---
+
+### ✅ **`2001:DB8:0:1111::200`**
+
+* This is **valid**.
+* `::` is used correctly to compress one or more groups of `0000`.
+* The total number of segments is **no more than 8** when expanded.
+* All hextets contain **valid hexadecimal characters** (0–9, A–F).
+
+---
+
+### ❌ **`2001:0DB8::ABCD::1234`**
+
+* **Invalid**: An IPv6 address can only contain **one `::`**.
+* This address contains **two `::`**, which is **not allowed**.
+
+---
+
+### ❌ **`ABCD:160D::4GAB:FFAB`**
+
+* **Invalid**: `4GAB` contains the character **G**, which is **not valid in hexadecimal**.
+* IPv6 hextets must only use **0–9 and A–F**.
+
+---
+
+### ❌ **`2001::ABCD::`**
+
+* **Invalid**: Again, this has **two `::`**, which is not allowed.
+* Only **one `::`** can be used in an IPv6 address to represent contiguous zero hextets.
+
+---
+
+### ✅ Final Answer:
+
+**`2001:DB8:0:1111::200`** is the only **valid IPv6 notation** in the list.
