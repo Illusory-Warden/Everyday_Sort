@@ -1,0 +1,45 @@
+✅ **Correct answers:**
+
+* **IPv6 addresses are represented by hexadecimal numbers.**
+* **IPv4 addresses are 32 bits in length.**
+
+---
+
+### ✔️ Explanation of Correct Statements:
+
+1. **✅ IPv6 addresses are represented by hexadecimal numbers**
+
+   * IPv6 uses 128-bit addresses, displayed as **eight groups of four hexadecimal digits** (e.g., `2001:0db8:85a3::8a2e:0370:7334`).
+
+2. **✅ IPv4 addresses are 32 bits in length**
+
+   * IPv4 uses **32-bit** addresses, typically written in **dotted decimal** format (e.g., `192.168.1.1`).
+
+---
+
+### ❌ Explanation of Incorrect Statements:
+
+* **IPv4 addresses are represented by hexadecimal numbers**
+
+  * ✘ IPv4 uses **decimal** (e.g., `192.0.2.1`), **not hexadecimal**.
+
+* **IPv6 addresses are 32 bits in length**
+
+  * ✘ IPv6 is **128 bits**, not 32.
+
+* **IPv4 addresses are 128 bits in length**
+
+  * ✘ IPv4 is only **32 bits** long.
+
+* **IPv6 addresses are 64 bits in length**
+
+  * ✘ IPv6 is **128 bits**. Sometimes the **interface identifier** is 64 bits, but the full address is **128**.
+
+---
+
+### ✅ Summary:
+
+The two correct statements are:
+
+* **IPv6 addresses are represented by hexadecimal numbers.**
+* **IPv4 addresses are 32 bits in length.**
