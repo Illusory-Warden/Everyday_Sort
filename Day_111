@@ -1,0 +1,12 @@
+mysql> SHOW databases;
++---------------------+
+| Database            |
++---------------------+
+| CSBS                |
+| information_schema  |
+| mysql               |
+| mysqlsampledatabase |
+| performance_schema  |
+| sys                 |
++---------------------+
+6 rows in set (0.14 sec)
