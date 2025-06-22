@@ -1,0 +1,57 @@
+### ✅ Recap of Your Commands:
+
+```bash
+cd /opt
+sudo wget https://github.com/B00merang-Project/Windows-10/releases/download/v0.9.9-AU/Windows.10.Icons.v0.5.tar.gz
+tar -xvf Windows.10.Icons.v0.5.tar.gz
+sudo mv 'Windows 10 Icons' /usr/share/icons
+```
+
+**What this did:**
+
+* Downloaded the official Windows 10 icon pack from B00merang Project ✅
+* Extracted it ✅
+* Moved it to `/usr/share/icons` ✅
+
+---
+
+### ❗ But here's the key issue:
+
+Your theme is expecting the icon theme to be named **exactly**:
+
+```
+Windoes-10-icons
+```
+
+(yes, with the typo: “Windoes”, not “Windows”)
+
+But the folder you installed is named:
+
+```
+Windows 10 Icons
+```
+
+---
+
+## 🛠️ Final Fix: Rename the Folder to Match the Expected Name
+
+You now need to rename it so Parrot stops warning you.
+
+### 🔁 Rename it like this:
+
+```bash
+sudo mv "/usr/share/icons/Windows 10 Icons" "/usr/share/icons/Windoes-10-icons"
+```
+
+💡 (If there are spaces, use quotes or escape them)
+
+---
+
+### ✅ Final Steps
+
+1. **Apply the theme again** via Appearance > Themes.
+2. The warning should **no longer appear**.
+3. If it still appears, **log out and back in** or run:
+
+```bash
+sudo gtk-update-icon-cache /usr/share/icons/Windoes-10-icons
