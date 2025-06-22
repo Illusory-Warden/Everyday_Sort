@@ -1,0 +1,21 @@
+✅ Fix: Create a Symlink with the Expected Name
+
+Rather than renaming the folder (which might break the theme's internal references), you can create a **symlink** (shortcut) so both names work.
+
+### 🛠️ Run this in the terminal:
+
+```bash
+sudo ln -s /usr/share/icons/Windows-10 /usr/share/icons/Windoes-10-icons
+```
+
+This tells Parrot OS:
+
+> “Hey, here’s your ‘Windoes-10-icons’ theme... it just happens to point to the actual `Windows-10` folder.”
+
+---
+
+### 🔁 Then:
+
+1. Reapply the **Windows 10 Dark** theme from your Appearance/Theme settings.
+2. Log out and back in (or reboot) to fully refresh.
+3. **The warning should now disappear. ✅**
