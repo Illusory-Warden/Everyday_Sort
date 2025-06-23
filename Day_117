@@ -1,0 +1,6 @@
+🔗 SQL JOIN Types Summary
+Join Type	What It Does	Example Scenario
+INNER JOIN	Returns only rows where there is a match in both tables	Customers with orders only
+LEFT JOIN	Returns all rows from the left table + matched rows on right	All customers, even if they have no orders
+RIGHT JOIN	Returns all rows from the right table + matched rows on left	All orders, even if they have no matching customer
+FULL OUTER JOIN	Returns all rows from both tables, matched or not	All customers and all orders, including unmatched ones
