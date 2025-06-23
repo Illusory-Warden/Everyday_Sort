@@ -1,0 +1,4 @@
+Term	Meaning
+Self JOIN	Table joins to itself
+Self INNER JOIN	Show only rows with a match in the same table
+Self OUTER JOIN	Show all rows, even if they don’t match any other row (e.g., top-level rows)
