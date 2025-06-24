@@ -1,0 +1,77 @@
+**Question 1**
+✔ **Option 3 (443)** – HTTPS uses port 443.
+
+**Question 2**
+✔ **Option 2 (The client randomly selects a source port number)** – UDP is connectionless and the client selects a source port.
+
+**Question 3**
+✔ **Option 2 (transport)** – The Transport layer handles sequencing and reassembly.
+
+**Question 4**
+✔ **Option 4 (applications that are sensitive to delay)** – UDP is good for time-sensitive applications like VoIP.
+
+**Question 5**
+✔ **Option 4 (sequence numbers)** – TCP uses sequence numbers for reassembly.
+
+**Question 6**
+✔ **Option 2 (The web server will not acknowledge this segment. The PC1 timer will expire and PC1 will resend the segment.)**
+
+**Question 7**
+✔ **Option 1 (a list of all established active TCP connections)** – `netstat` without options shows active TCP connections.
+
+**Question 8** (Select 3)
+✔ **Option 2 (the protocol that is being used)**
+✔ **Option 5 (the location of the resource)**
+✔ **Option 6 (the domain name that is being accessed)**
+
+**Question 9** (Select 3)
+✔ **Option 1 (IMAP4)**
+✔ **Option 5 (POP3)**
+✔ **Option 6 (SMTP)** – These are email protocols.
+
+**Question 10**
+✔ **Option 4 (HTTP)** – Simulation mode would show HTTP being used to access a web page.
+
+**Question 11**
+✔ **Option 3 (HTTP)** – PC0 is likely requesting a web page.
+
+**Question 12**
+
+* A: **HTTPS** – secure protocol using port 443
+* B: **web server** – hosts a web page
+* C: **HTML** – used to create web pages
+* D: **HTTP** – protocol commonly used by a browser
+* E: **web client** – requests a web page
+
+**Question 13**
+✔ **Option 4 (192.168.1.1:80)** – A socket is IP address + port.
+
+**Question 14**
+✔ **Option 2 (A secure web server is running!)** – Based on common PT activities.
+
+**Question 15**
+✔ **Option 4 (The ping command tests end-to-end connectivity between two devices.)**
+
+**Question 16**
+
+* A: **netstat** – Displays network connections
+* B: **tracert** – Displays the route
+* C: **ipconfig** – Displays IP configuration
+* D: **ping** – Tests connections
+* E: **nslookup** – Queries the name server
+
+**Question 17**
+✔ **Option 2 (The tracert command shows the information of routers in the path.)**
+
+**Question 18**
+✔ **Option 2 (ipconfig /release)** – This releases the current IP address so a new one can be requested.
+
+**Question 19**
+
+* A: **ping -a** – Resolve address to hostname
+* B: **ping -4** – IPv4 only
+* C: **ping -6** – IPv6 only
+* D: **ping -t** – Continuous ping
+
+**Question 20**
+✔ **Option 2 (tracert)** – Used to find the path and faulty node.
