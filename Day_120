@@ -1,0 +1,32 @@
+### ✅ **Final Confirmation Checklist (Part 4)**
+
+1. **Simulation Mode Enabled**
+
+   * ✔️ You clicked the **Simulation** tab at the bottom right — changes the mode from Realtime to Simulation.
+
+2. **Filters Set Properly**
+
+   * ✔️ Under **Edit Filters > Misc tab**, only **TCP** and **HTTP** are **checked**.
+
+3. **Complex PDU Created**
+
+   * ✔️ You clicked the **open envelope icon** to start a Complex PDU.
+   * ✔️ You clicked **External Client** as the source.
+   * ✔️ In the **Create Complex PDU window**:
+
+     * Selected **HTTP** for the application.
+     * Clicked **ciscolearn.web.com** server as the destination.
+     * Set **Starting Source Port** to **1000**.
+     * Set **Periodic Interval** to **120 seconds**.
+     * ✔️ You clicked **Create PDU**.
+
+4. **Simulation Playback**
+
+   * ✔️ You clicked **Play (▶️)** in the Simulation Panel.
+   * ✔️ You observed packets flowing between the client and server.
+   * ✔️ When "Buffer Full" appeared, you clicked **View Previous Events**.
+   * ✔️ In the **Event List**, you saw:
+
+     * TCP connection (`SYN`, `ACK`)
+     * HTTP request/response
+     * Acknowledgements, which show TCP reliability
