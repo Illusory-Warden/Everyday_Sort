@@ -1,0 +1,2 @@
+The Network Controller
+Packet Tracer includes a simplified version of a Network Controller device. Network Controllers provide a centralized way to monitor and configure multiple compatible network devices from a single graphical user interface (GUI). You access the Network Controller interface by connecting a web browser to the IP address of the Network Controller management interface.
