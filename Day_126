@@ -1,0 +1,55 @@
+### ✅ Example: Declaration vs Initialization
+
+```java
+public class VariableExample {
+    public static void main(String[] args) {
+        // Declaration
+        int number; // We declare a variable named 'number' of type int
+
+        // Initialization
+        number = 10; // Now we initialize it by assigning the value 10
+
+        // Use the variable
+        System.out.println("The value of number is: " + number);
+    }
+}
+```
+
+---
+
+### 🧠 What Happens Here?
+
+1. **Declaration:**
+
+   ```java
+   int number;
+   ```
+
+   * This tells Java to reserve memory for an integer variable named `number`.
+   * At this point, `number` does not have a value yet (in local scope, it's not automatically set).
+
+2. **Initialization:**
+
+   ```java
+   number = 10;
+   ```
+
+   * This assigns the value `10` to `number`, making it ready to use.
+
+3. **Combined Declaration and Initialization (optional shortcut):**
+
+   ```java
+   int number = 10;
+   ```
+
+   * This is a common and convenient way to both declare and initialize at once.
+
+---
+
+### ⚠️ Note:
+
+If you **only declare** a local variable and try to use it **without initializing**, you’ll get a **compile-time error** in Java.
+
+```java
+int number;
+System.out.println(number); // ❌ Error: variable number might not have been initialized
