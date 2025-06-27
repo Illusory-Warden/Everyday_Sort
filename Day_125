@@ -1,0 +1,34 @@
+In Java, the **main difference** between **declaring** and **initializing** a variable is:
+
+---
+
+### 🔹 Declaration:
+
+* **Purpose:** Introduces a variable to the program by specifying its type and name.
+* **Syntax:** `type variableName;`
+* **Example:** `int number;`
+* **Effect:** Reserves memory for the variable, but **does not assign** it a value yet (except default values in some cases like class-level fields).
+
+---
+
+### 🔹 Initialization:
+
+* **Purpose:** Assigns an **initial value** to a variable (either at the time of declaration or later).
+* **Syntax:** `variableName = value;` (or during declaration)
+* **Examples:**
+
+  * `number = 10;` (initialization after declaration)
+  * `int number = 10;` (combined declaration and initialization)
+
+---
+
+### 🔸 Summary Table:
+
+| Term           | Action                         | Value Assigned? | Example                        |
+| -------------- | ------------------------------ | --------------- | ------------------------------ |
+| Declaration    | Define variable type and name  | ❌ No            | `int age;`                     |
+| Initialization | Give variable an initial value | ✅ Yes           | `age = 25;` or `int age = 25;` |
+
+---
+
+So, **declaration tells Java the variable exists**, while **initialization gives it a usable value**.
