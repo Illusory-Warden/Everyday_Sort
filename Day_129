@@ -1,0 +1,203 @@
+<!-- Instruction Carousel 6 -->
+<div id="instructionCarousel6" class="carousel slide col-12 mt-3" data-bs-interval="false" style="position: relative; min-height: 100%;">
+  <div class="carousel-inner">
+
+    <!-- Slides -->
+    <div class="carousel-item active">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.1.png" class="card-img-top rounded-3" alt="Step 17.1" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.1: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.1</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat for Steps 17.2 to 17.12 -->
+    <!-- Use a loop or copy/paste with minor edits -->
+    <!-- Step 17.2 to 17.12 -->
+    <!-- Replace only the step number in src, alt, and text -->
+
+    <!-- START auto-generated slides -->
+    <!-- Below code is generated for 17.2 through 17.12 -->
+    <!-- Copy/paste/edit only if you're adding more or fewer steps -->
+
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.2.png" class="card-img-top rounded-3" alt="Step 17.2" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.2: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.2</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.3.png" class="card-img-top rounded-3" alt="Step 17.3" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.3: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.3</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.4.png" class="card-img-top rounded-3" alt="Step 17.4" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.4: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.4</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.5.png" class="card-img-top rounded-3" alt="Step 17.5" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.5: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.5</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.6.png" class="card-img-top rounded-3" alt="Step 17.6" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.6: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.6</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.7.png" class="card-img-top rounded-3" alt="Step 17.7" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.7: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.7</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.8.png" class="card-img-top rounded-3" alt="Step 17.8" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.8: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.8</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.9.png" class="card-img-top rounded-3" alt="Step 17.9" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.9: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.9</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.10.png" class="card-img-top rounded-3" alt="Step 17.10" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.10: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.10</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.11.png" class="card-img-top rounded-3" alt="Step 17.11" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.11: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.11</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="carousel-item">
+      <div class="card shadow-sm">
+        <div class="p-3">
+          <img src="Step_17.12.png" class="card-img-top rounded-3" alt="Step 17.12" style="padding: 5px; border: 3px solid #1BFD9C;">
+        </div>
+        <div class="card-body">
+          <p class="card-text">Step 17.12: Description goes here.</p>
+          <small class="text-body-secondary">Instruction 17.12</small>
+        </div>
+      </div>
+    </div>
+    <!-- END auto-generated slides -->
+
+  </div>
+
+  <!-- Carousel Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#instructionCarousel6" data-bs-slide="prev"
+    style="top: 50%; transform: translateY(-50%); position: absolute;">
+    <span class="carousel-control-prev-icon" aria-hidden="true" style="
+      background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27white%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3E%3C/svg%3E');
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+    "></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#instructionCarousel6" data-bs-slide="next"
+    style="top: 50%; transform: translateY(-50%); position: absolute;">
+    <span class="carousel-control-next-icon" aria-hidden="true" style="
+      background-image: url('data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27white%27 viewBox=%270 0 16 16%27%3E%3Cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3E%3C/svg%3E');
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 1.5rem;
+    "></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
