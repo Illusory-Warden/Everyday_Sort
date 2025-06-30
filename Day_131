@@ -1,0 +1,18 @@
+<div class="card-body">
+  <p class="card-text">
+    Step 17.9: Confirm that your shared folder appears correctly in the list.<br><br>
+
+    🔹Breakdown:<br>
+    -----Once saved, your new shared folder (e.g., <code>NAS</code>) should now appear in the <b>Shared Folders</b> list.<br>
+    -----It will show details like <b>Name</b>, <b>Device</b>, <b>Relative Path</b>, and more.<br>
+    -----Refer to the image provided to verify your folder looks similar.<br><br>
+
+    💡 Make sure the folder appears exactly as configured. If not, go back and double-check the name, path, and selected disk. ✔️🗂️<br><br>
+
+    ⚠️ Follow the next steps carefully — this folder will be used for all your shared network storage!
+  </p>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group"></div>
+    <small class="text-body-secondary">Instruction 17.9</small>
+  </div>
+</div>
