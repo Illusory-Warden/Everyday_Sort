@@ -1,0 +1,19 @@
+<div class="card-body">
+  <p class="card-text">
+    Step 17.8: Create your first shared folder on the mounted USB disk.<br><br>
+
+    🔹Breakdown:<br>
+    -----Go to <b>Storage → Shared Folders</b> from the left sidebar.<br>
+    -----Click the <b>“+” (Add)</b> button at the top.<br>
+    -----In the <b>Name</b> field, enter a folder name (e.g., <code>NAS</code>).<br>
+    -----In the <b>File System</b> dropdown, select your mounted USB disk.<br>
+    -----In the <b>Relative Path</b> field, enter the folder name again with a <b>forward slash</b> (e.g., <code>NAS/</code>).<br>
+    -----Click <b>Save</b> to confirm.<br><br>
+
+    💡 This folder will store all your files — make sure to name it clearly! 📂💾
+  </p>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="btn-group"></div>
+    <small class="text-body-secondary">Instruction 17.8</small>
+  </div>
+</div>
