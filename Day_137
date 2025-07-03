@@ -1,0 +1,31 @@
+Option meanings (commonly 1-letter options):
+N (Keep your current version)
+
+Safe choice if you made changes you care about.
+
+Keeps your current file, avoids overwriting.
+
+Recommended if you customized LightDM (like auto-login, greeter settings, etc.).
+
+Y (Use the maintainer's version)
+
+Replaces your file with the default from the package.
+
+Use if you haven’t customized the file, or want a clean, updated default.
+
+D (Show differences)
+
+Shows a diff between your version and the new one.
+
+Useful for deciding whether to keep yours or take the new one.
+
+Z (Shell prompt)
+
+Opens a shell so you can manually inspect, back up, or compare files.
+
+✅ What you should do:
+If you haven’t manually edited /etc/lightdm/lightdm.conf yourself, you can safely choose "Y" (use the package maintainer's version).
+
+If you have customized it (e.g., set auto-login or theme), choose "D" to compare or "N" to keep your settings.
+
+If unsure, choose "N" (keep your current version), and review or merge changes later manually.
