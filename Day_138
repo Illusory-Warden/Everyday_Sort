@@ -1,0 +1,44 @@
+### 🧾 **What is `/etc/lightdm/lightdm.conf`?**
+
+This is a **configuration file** for **LightDM**, which is a **login display manager** used in many Linux distributions—including **Parrot OS**—to handle the graphical login screen (GUI login).
+
+It controls things like:
+
+* What greeter (login screen) to use
+* Whether to enable auto-login
+* Default user session (Xfce, MATE, etc.)
+* Timeout before login
+* Language and accessibility options
+
+---
+
+### 💡 **Why do you get the "modified by you or a script" message?**
+
+When **updating** your system, if the update includes a **new version** of a config file, and the one on your system is **different from the default**, the system detects this and asks:
+
+> “Do you want to replace your custom config with the new one?”
+
+This avoids **accidentally erasing your customizations**.
+
+---
+
+### 🧠 How does this happen?
+
+The system compares:
+
+* The **original default file** from when the package was first installed
+* Your **current file** (which may be changed)
+* The **new default file** from the update
+
+If it sees a difference, it stops and asks you what to do.
+
+---
+
+### 📌 Summary:
+
+You're being asked:
+
+* Do you want to keep your version (which may be customized)?
+* Or replace it with the new, possibly improved, default version?
+
+This is **normal** in Linux and helps prevent updates from breaking your system or overwriting your changes.
