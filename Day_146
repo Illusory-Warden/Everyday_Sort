@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Cards Grid</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Cards Container -->
+    <div class="container">
+      <div class="cards">
+
+        <!-- 🔹 Top Full-Width Card -->
+        <div class="card top purple">
+          <p class="tip">Overview</p>
+          <p class="second-text">Main Phase Summary</p>
+        </div>
+
+        <!-- 🔸 6 Grid Cards -->
+        <div class="card red">
+          <p class="tip">Phase_1</p>
+          <p class="second-text">Card 1</p>
+        </div>
+        <div class="card blue">
+          <p class="tip">Phase_2</p>
+          <p class="second-text">Card 2</p>
+        </div>
+        <div class="card green">
+          <p class="tip">Phase_3</p>
+          <p class="second-text">Card 3</p>
+        </div>
+        <div class="card red">
+          <p class="tip">Phase_4</p>
+          <p class="second-text">Card 4</p>
+        </div>
+        <div class="card blue">
+          <p class="tip">Phase_5</p>
+          <p class="second-text">Card 5</p>
+        </div>
+        <div class="card green">
+          <p class="tip">Phase_6</p>
+          <p class="second-text">Card 6</p>
+        </div>
+
+        <!-- 🔻 Bottom Full-Width Card -->
+        <div class="card bottom purple">
+          <p class="tip">Summary</p>
+          <p class="second-text">End of Phase Details</p>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
