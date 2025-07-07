@@ -1,0 +1,125 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  --color: rgba(114, 114, 114, 0.3);
+  background-color: #191a1a;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+/* Container to center everything */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cards grid wrapper */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-width: 345px;
+}
+
+/* Default card styling */
+.card {
+  flex: 0 0 calc(33.333% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.786);
+}
+
+/* Full-width top and bottom cards */
+.card.top,
+.card.bottom {
+  flex: 0 0 100%;
+  width: calc(100% - 10px);
+  height: 120px;
+  box-shadow: 0px 0px 12px rgba(126, 51, 255, 0.8);
+  margin: 10px 0;
+  transition: transform 0.4s;
+}
+
+/* Color variants */
+.red {
+  background-color: #007e9e;
+}
+
+.blue {
+  background-color: #0062ff;
+}
+
+.green {
+  background-color: #18cd5e;
+}
+
+.purple {
+  background-color: #7e33ff;
+}
+
+/* Typography */
+.card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.card p.second-text {
+  font-size: 0.7em;
+}
+
+/* Hover interactions */
+.card:hover {
+  transform: scale(1.2);
+}
+
+/* Blur all other cards (including top/bottom) when hovering over any card */
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9);
+}
