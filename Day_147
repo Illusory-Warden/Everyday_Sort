@@ -1,0 +1,197 @@
+To connect your HTML form with a MySQL database on Parrot OS running in VirtualBox, you need to go through a series of steps. Below is a complete **from-scratch** guide to get this working:
+
+---
+
+## ✅ Step 1: Set Up the Environment
+
+### 🧰 Requirements:
+
+* HTML Form
+* MySQL server (already installed)
+* PHP (to process form and connect to DB)
+* Apache server (to serve your PHP files)
+* phpMyAdmin (optional, for easy DB management)
+
+---
+
+## ✅ Step 2: Install Apache, PHP, and MySQL (if not yet)
+
+Run the following in Parrot OS terminal:
+
+```bash
+sudo apt update
+sudo apt install apache2 php libapache2-mod-php php-mysql mysql-server
+```
+
+To install phpMyAdmin (optional):
+
+```bash
+sudo apt install phpmyadmin
+```
+
+Enable PHP and restart Apache:
+
+```bash
+sudo a2enmod php7.*
+sudo systemctl restart apache2
+```
+
+---
+
+## ✅ Step 3: Start Apache and MySQL
+
+```bash
+sudo systemctl start apache2
+sudo systemctl start mysql
+```
+
+Enable them at boot:
+
+```bash
+sudo systemctl enable apache2
+sudo systemctl enable mysql
+```
+
+---
+
+## ✅ Step 4: Secure MySQL and Create Database
+
+```bash
+sudo mysql_secure_installation
+```
+
+Then, log in to MySQL:
+
+```bash
+sudo mysql -u root -p
+```
+
+Create database and user:
+
+```sql
+CREATE DATABASE myformdb;
+CREATE USER 'formuser'@'localhost' IDENTIFIED BY 'password123';
+GRANT ALL PRIVILEGES ON myformdb.* TO 'formuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+---
+
+## ✅ Step 5: Create Table in `myformdb`
+
+```bash
+sudo mysql -u root -p
+USE myformdb;
+
+CREATE TABLE contacts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    message TEXT
+);
+EXIT;
+```
+
+---
+
+## ✅ Step 6: Write the HTML Form
+
+Save this as `/var/www/html/form.html`:
+
+```html
+<!DOCTYPE html>
+<html>
+<head><title>Contact Form</title></head>
+<body>
+  <form action="submit.php" method="post">
+    Name: <input type="text" name="name" required><br>
+    Email: <input type="email" name="email" required><br>
+    Message:<br><textarea name="message" required></textarea><br>
+    <input type="submit" value="Send">
+  </form>
+</body>
+</html>
+```
+
+---
+
+## ✅ Step 7: Create the PHP Handler
+
+Save this as `/var/www/html/submit.php`:
+
+```php
+<?php
+// DB config
+$servername = "localhost";
+$username = "formuser";
+$password = "password123";
+$dbname = "myformdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get form data
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+// Insert into DB
+$sql = "INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("sss", $name, $email, $message);
+$stmt->execute();
+
+echo "Message submitted successfully!";
+$stmt->close();
+$conn->close();
+?>
+```
+
+---
+
+## ✅ Step 8: Set Permissions
+
+```bash
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+```
+
+---
+
+## ✅ Step 9: Test the Form
+
+Open your browser on the VM and go to:
+
+```
+http://localhost/form.html
+```
+
+Fill out the form and submit. You should see the success message.
+
+---
+
+## ✅ Step 10: (Optional) Access from Host Machine
+
+If you want to access the form from your **Windows host**:
+
+1. **Check VM IP:**
+
+   ```bash
+   ip a
+   ```
+
+   Look for something like `192.168.56.101`.
+
+2. On your Windows host, go to:
+
+   ```
+   http://192.168.56.101/form.html
+   ```
+
+Make sure port `80` is allowed in VirtualBox network settings (Bridged Adapter or Host-Only).
