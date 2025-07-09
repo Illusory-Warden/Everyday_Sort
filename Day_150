@@ -1,0 +1,86 @@
+Yes, you **can install Papra on your Parrot OS VM**, assuming your VM meets the system requirements and you're comfortable using Docker (which Papra requires for self-hosting).
+
+---
+
+### ✅ **Minimum Requirements**
+
+To install Papra on your Parrot OS VM, ensure the following:
+
+* **OS**: Parrot OS (based on Debian) – compatible ✔️
+* **Docker**: Required
+* **Docker Compose**: Required
+* **RAM**: At least **1–2 GB free**, ideally more for indexing/search
+* **Disk space**: Depends on your documents, but start with at least **5–10 GB**
+* **Internet access**: For pulling Docker images
+
+---
+
+### 🧰 Step-by-Step Installation Guide for Papra on Parrot OS (VM)
+
+#### 1. **Update your system**
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+#### 2. **Install Docker**
+
+```bash
+sudo apt install docker.io docker-compose -y
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+Confirm it's working:
+
+```bash
+docker --version
+docker-compose --version
+```
+
+#### 3. **Clone the Papra Repository**
+
+```bash
+git clone https://github.com/papra-hq/papra.git
+cd papra
+```
+
+#### 4. **Start Papra with Docker Compose**
+
+Papra provides a ready-to-use `docker-compose.yml`. To launch it:
+
+```bash
+docker-compose up -d
+```
+
+This will spin up the web interface, database, and necessary services.
+
+#### 5. **Access Papra in Your Browser**
+
+Open your VM’s browser or visit:
+
+```
+http://localhost:3000
+```
+
+If you're accessing from outside the VM (host machine), replace `localhost` with your VM’s IP.
+
+---
+
+### 🛠️ Optional: Auto-start on boot
+
+If you want Papra to start with the VM:
+
+```bash
+sudo crontab -e
+# Add this line:
+@reboot cd /path/to/papra && docker-compose up -d
+```
+
+---
+
+### 📦 Next Steps
+
+* Upload PDFs or images to test OCR and tagging
+* Enable email ingestion (e.g., forward invoices to an email address Papra checks)
+* Explore rule-based tagging and folder watching (requires configuration)
