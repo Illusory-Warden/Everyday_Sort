@@ -1,0 +1,75 @@
+Papra.app is a **cloud-based and open-source document archiving platform** designed for **long‑term storage, organization, and fast retrieval** of files such as receipts, warranties, invoices, and other documents ([github.com][1]).
+
+---
+
+## 🚀 What is Papra?
+
+* **Open‑source** (licensed under AGPL‑3.0) and **self‑hostable** using Docker, making it friendly for technical users to customize and deploy on their own infrastructure ([github.com][1]).
+* Also offers a **managed cloud service** via papra.app for those who prefer not to self‑host .
+* Provides features such as full‑text search, tagging, organization via “organizations” (for teams or projects), CLI/API/SDK tools, email ingestion, content extraction (OCR), folder ingestion, and rule‑based auto tagging ([forum.cloudron.io][2]).
+
+---
+
+## 🔧 Key Features (and Recent Enhancements)
+
+* **Folder ingestion**: Automatically import files from a designated directory ([arsturn.com][3]).
+* **Auto‑tagging rules**: Apply tags based on document content or filenames to streamline metadata organization ([arsturn.com][3]).
+* **Activity logging and improved invitation system**: Introduced in v0.6 along with full French localization and upgraded email handling .
+* **Developer tools**: CLI, SDKs, webhooks, API keys, and OAuth2 integrations in early releases (v0.4 & v0.5) .
+
+---
+
+## 💬 Community Reputation & Comparison
+
+* Reddit users and self-hosting communities highlight Papra as a **lightweight, modern alternative** to tools like Paperless‑ngx, admired for its sleek UI and simplicity ([reddit.com][4]).
+
+  > “Minimalistic approach … with a fresh new design and a big focus on simplicity.”
+* Reviews from tech outlets like XDA‑Developers and Geeky‑Gadgets praise its **speed, flexibility, automation, and zero licensing cost** ([reddit.com][4], [geeky-gadgets.com][5]).
+
+---
+
+## 🎬 Video Overview
+
+[Papra: The Open‑Source Document Manager You'll Actually Use](https://www.youtube.com/watch?v=r3DdVXZ06Ho&utm_source=chatgpt.com)
+
+This recent video (published \~4 weeks ago) provides a helpful walkthrough of Papra’s interface and core features, ideal if you're evaluating it visually ([youtube.com][6]).
+
+---
+
+## 📋 Summary Table
+
+| Category                | Details                                                                 |
+| ----------------------- | ----------------------------------------------------------------------- |
+| What it is              | Open-source document archiving and management platform                  |
+| Usage                   | Self-host via Docker or use managed service at papra.app                |
+| Core capabilities       | Upload, full-text search, tags, organizations, email + folder ingestion |
+| Automation & AI-powered | Auto-tagging rules, OCR-based content extraction                        |
+| Community sentiment     | Lauded for speed, simplicity, modern UI, and developer tools            |
+| Actively maintained     | New features like logging and invitation management added in 2025       |
+
+---
+
+## 🛠️ Should You Use Papra?
+
+✅ **Yes**, if you want a simple but powerful self-hostable document archiving system with full-text search and automation — whether for personal or small team use.
+
+Consider Papra especially if:
+
+* You value **open-source transparency** and want to avoid vendor lock-in.
+* You prefer **streamlined functionality** over monolithic feature sets.
+* You plan to scale gradually and appreciate **Docker‑based deployment** and community engagement via GitHub or Discord.
+
+---
+
+### Want to dive further?
+
+You might also explore the official live demo (demo.papra.app), the [documentation and roadmap on docs.papra.app](https://docs.papra.app), or the GitHub repo for deployment instructions and source code.
+
+Let me know if you’d like a deeper walkthrough of a particular feature like tagging rules, setting up email ingestion, or self-hosting via Docker!
+
+[1]: https://github.com/papra-hq/papra?utm_source=chatgpt.com "papra-hq/papra: The minimalistic document archiving platform."
+[2]: https://forum.cloudron.io/post/109402?utm_source=chatgpt.com "Papra - Document Management Platform | Cloudron Forum"
+[3]: https://www.arsturn.com/blog/papra-v03-folder-ingestion-auto-tagging-rules?utm_source=chatgpt.com "Papra v0.3 - Folder Ingestion, Auto-Tagging Rules, and More! - Arsturn"
+[4]: https://www.reddit.com/r/selfhosted/comments/1jqngdu/papra_a_minimalistic_document_archiving_platform/?utm_source=chatgpt.com "Papra - A minimalistic document archiving platform : r/selfhosted"
+[5]: https://www.geeky-gadgets.com/open-source-document-management-solution/?utm_source=chatgpt.com "Papra Open-Source Document Manager : Say Goodbye to File Chaos"
+[6]: https://www.youtube.com/watch?v=r3DdVXZ06Ho&utm_source=chatgpt.com "Papra: The Open-Source Document Manager You'll Actually Use"
