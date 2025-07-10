@@ -1,0 +1,51 @@
+Got it — if you ran:
+
+```bash
+systemctl status docker
+```
+
+and got something like:
+
+```
+Unit docker.service could not be found.
+```
+
+or
+
+```
+Unit docker.service not found.
+```
+
+That means the **Docker Engine is not actually installed yet** — so we need to **go back and complete Step 4** of the setup:
+
+---
+
+## 🔧 Install Docker Engine (Step 4 Recap)
+
+Run these commands **in order**:
+
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+> If you get errors here, it likely means the Docker repo (Step 3) wasn’t set up correctly — let me know if that happens and I’ll guide you through it.
+
+---
+
+### ✅ Then try:
+
+```bash
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo systemctl status docker
+```
+
+You should now see Docker running ✅.
+
+---
+
+### 🔍 Quick Sanity Test
+
+```bash
+sudo docker run hello-world
