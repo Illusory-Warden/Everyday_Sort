@@ -1,0 +1,57 @@
+## 🧰 Fix "No Installation Candidate" – Add Docker Repo (Properly)
+
+Run **ALL** the following commands exactly — copy/paste one block at a time.
+
+---
+
+### 🟩 **1. Install prerequisites**
+
+```bash
+sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+---
+
+### 🟨 **2. Add Docker’s GPG key**
+
+```bash
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/debian/gpg | \
+    sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+```
+
+---
+
+### 🟦 **3. Add Docker’s official APT repository**
+
+```bash
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+> `$(lsb_release -cs)` will automatically detect your codename (like `bullseye` or `bookworm`)
+
+---
+
+### 🟥 **4. Update APT and install Docker**
+
+```bash
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+---
+
+### 🧪 Test it
+
+```bash
+sudo docker run hello-world
