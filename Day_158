@@ -1,0 +1,21 @@
+The maximum file size you can upload to GitHub is 100 MB. For files larger than this, you need to use Git Large File Storage (Git LFS), which allows files up to 2 GB for free accounts. GitHub GitHub
+
+GitHub File Size Limits
+Individual File Size Limits
+Plan Type	Maximum File Size
+GitHub Free	2 GB
+GitHub Pro	2 GB
+GitHub Team	4 GB
+GitHub Enterprise	5 GB
+Files larger than 100 MB cannot be uploaded directly to GitHub.
+If you upload via a browser, the limit is 25 MB for individual files.
+Repository Size Recommendations
+GitHub recommends keeping repositories under 1 GB for optimal performance.
+A repository size of less than 5 GB is strongly advised to avoid issues.
+Using Git Large File Storage (LFS)
+For files exceeding the standard limits, Git Large File Storage (LFS) can be used.
+LFS allows you to track large files by storing references in the repository instead of the actual files.
+Each GitHub plan has specific limits for LFS usage, including storage and bandwidth.
+Important Notes
+If you attempt to add a file larger than 50 MB, you will receive a warning, but the upload will still proceed.
+Exceeding the per-file limit of 5 GB will result in an error message, and the file will be rejected.
