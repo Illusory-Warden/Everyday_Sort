@@ -1,0 +1,124 @@
+## 🧠 Here's What Needs to Persist After Reboot:
+
+1. 🔌 **USB auto-mount**
+2. 🐳 **Docker containers auto-start**
+3. ✅ Paperless-ngx reads/writes to USB as expected
+
+Let’s automate **each**:
+
+---
+
+## ✅ 1. Auto-Mount USB on Boot
+
+### 🧪 First, find the USB device:
+
+```bash
+lsblk
+```
+
+Let’s say the USB is `/dev/sda1`.
+
+### 🆔 Get its UUID:
+
+```bash
+sudo blkid /dev/sda1
+```
+
+You’ll get something like:
+
+```bash
+UUID="AB12-34CD" TYPE="vfat"
+```
+
+### 📝 Edit `/etc/fstab`:
+
+```bash
+sudo nano /etc/fstab
+```
+
+Add this line at the bottom:
+
+```fstab
+UUID=AB12-34CD  /media/pi/paperless-usb  vfat  defaults,nofail,uid=1000,gid=1000  0  0
+```
+
+> 🔁 Replace with your actual UUID and filesystem type (`vfat`, `ext4`, etc.)
+
+Then test it:
+
+```bash
+sudo mount -a
+```
+
+Check:
+
+```bash
+ls /media/pi/paperless-usb
+```
+
+Your USB should now auto-mount on every boot.
+
+---
+
+## ✅ 2. Auto-Start Docker on Boot
+
+Docker should already start on boot, but let’s make sure:
+
+```bash
+sudo systemctl enable docker
+```
+
+Now enable your Paperless-ngx stack to start automatically too.
+
+### 📝 Create a systemd service
+
+```bash
+sudo nano /etc/systemd/system/paperless.service
+```
+
+Paste this:
+
+```ini
+[Unit]
+Description=Paperless-NGX Docker Compose Service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/pi/paperless-ngx/docker/compose
+ExecStart=/usr/bin/docker compose -f docker-compose.postgres.yml --env-file .env up -d
+ExecStop=/usr/bin/docker compose -f docker-compose.postgres.yml --env-file .env down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Then enable it:
+
+```bash
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable paperless
+```
+
+Now, every time your Pi boots:
+
+* Docker starts ✅
+* Paperless starts ✅
+* It uses your USB as data volume ✅
+
+---
+
+## 🧪 Test the Full Reboot
+
+1. Reboot your Pi:
+
+```bash
+sudo reboot
+```
+
+2. Wait 30–60 seconds, then open:
+   `http://<your-rpi-ip>:8000`
