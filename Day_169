@@ -1,0 +1,56 @@
+## 📦 Default Storage Locations (Without Volume Overrides)
+
+In the default `docker-compose.postgres.yml`, the `webserver` container uses paths like this **inside the container**:
+
+```yaml
+/usr/src/paperless/data
+/usr/src/paperless/media
+/usr/src/paperless/consume
+/usr/src/paperless/export
+```
+
+If you don't map these to host folders (with `volumes:`), Docker creates **anonymous volumes**.
+
+You can see them by running:
+
+```bash
+docker volume ls
+```
+
+Example output:
+
+```
+local     compose_media
+local     compose_data
+```
+
+Then inspect where on your system they live:
+
+```bash
+docker volume inspect compose_media
+```
+
+It will show something like:
+
+```json
+"Mountpoint": "/var/lib/docker/volumes/compose_media/_data"
+```
+
+So by default:
+
+| Type    | Path (host)                                     |
+| ------- | ----------------------------------------------- |
+| Data    | `/var/lib/docker/volumes/compose_data/_data`    |
+| Media   | `/var/lib/docker/volumes/compose_media/_data`   |
+| Consume | `/var/lib/docker/volumes/compose_consume/_data` |
+| Export  | `/var/lib/docker/volumes/compose_export/_data`  |
+
+> 📌 These live on your **SD card or system drive**, and they will persist unless the volumes or containers are explicitly removed.
+
+---
+
+## 🔒 Why This Matters
+
+* If you **don’t map volumes**, you’re using internal Docker volumes on the SD card.
+* If your SD card dies, you **lose all your documents**.
+* That’s why mapping to your USB stick is a smart move 👍
