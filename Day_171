@@ -1,0 +1,97 @@
+## 🧭 Overview
+
+Paperless-ngx stores documents and data in Docker **volumes**, but we can override them to point to a specific folder — in your case, the mounted USB drive.
+
+---
+
+## ✅ Step-by-Step: Store Documents on USB Drive
+
+### 🔌 1. **Mount the USB Drive**
+
+Check where your USB is mounted (it might be something like `/media/pi/USB`):
+
+```bash
+lsblk
+df -h
+```
+
+Assume it's mounted at:
+
+```bash
+/media/pi/paperless-usb
+```
+
+If it's not auto-mounted, mount it manually:
+
+```bash
+sudo mkdir -p /media/pi/paperless-usb
+sudo mount /dev/sda1 /media/pi/paperless-usb
+```
+
+> 🔒 (Optional) Make it auto-mount on boot — let me know if you want that.
+
+---
+
+### 📁 2. **Create Required Subdirectories on the USB**
+
+Paperless needs a few folders:
+
+```bash
+mkdir -p /media/pi/paperless-usb/{data,media,consume,export}
+```
+
+---
+
+### 📝 3. **Edit Your `docker-compose.postgres.yml` File**
+
+Open it:
+
+```bash
+nano docker-compose.postgres.yml
+```
+
+Find the `volumes:` section under the `webserver` service and modify it like so:
+
+```yaml
+volumes:
+  - /media/pi/paperless-usb/data:/usr/src/paperless/data
+  - /media/pi/paperless-usb/media:/usr/src/paperless/media
+  - /media/pi/paperless-usb/export:/usr/src/paperless/export
+  - /media/pi/paperless-usb/consume:/usr/src/paperless/consume
+```
+
+If `volumes:` already exist, just **replace the existing paths** with the ones pointing to your USB.
+
+Save and exit (`CTRL+O`, `Enter`, then `CTRL+X`).
+
+---
+
+### 🔄 4. **Recreate Containers with the New Volumes**
+
+```bash
+docker compose -f docker-compose.postgres.yml --env-file .env down
+docker compose -f docker-compose.postgres.yml --env-file .env up -d
+```
+
+> 📦 This will now use your USB drive for document storage.
+
+---
+
+### 🧪 5. **Test It**
+
+Upload a document in the web UI, then run:
+
+```bash
+ls /media/pi/paperless-usb/media
+```
+
+You should see some files appear.
+
+---
+
+## ✅ Done!
+
+Now Paperless-ngx will:
+
+* Consume documents from: `/media/pi/paperless-usb/consume`
+* Store all internal data and media on the USB stick
