@@ -1,0 +1,186 @@
+Let’s **fully automate your Raspberry Pi** so that on every boot:
+
+✅ Your USB stick mounts automatically
+✅ Required folders (`data`, `media`, `consume`, `export`) are created
+✅ Docker & Paperless-NGX start up automatically
+✅ Paperless stores & loads everything from the USB
+
+---
+
+## 🎯 Assumptions
+
+* Your USB device is `/dev/sda1`
+* You want it mounted at `/media/pi/paperless-usb`
+* Your `docker-compose.postgres.yml` is in:
+  `~/paperless-ngx/docker/compose`
+
+---
+
+## 🧩 1. Format the USB (Optional — Do this once)
+
+If it’s new or has junk:
+
+```bash
+sudo mkfs.ext4 /dev/sda1
+```
+
+> ⚠️ This **erases** everything on the USB.
+> Skip this if it's already clean/formatted.
+
+---
+
+## 📁 2. Create Mount Point & Folders
+
+Run this once:
+
+```bash
+sudo mkdir -p /media/pi/paperless-usb
+sudo mkdir -p /media/pi/paperless-usb/{data,media,consume,export}
+```
+
+---
+
+## 🆔 3. Get the USB UUID
+
+```bash
+sudo blkid /dev/sda1
+```
+
+Output will look like:
+
+```bash
+/dev/sda1: UUID="1234-ABCD" TYPE="ext4"
+```
+
+Copy the UUID string (e.g., `1234-ABCD`).
+
+---
+
+## 🛠️ 4. Add Auto-Mount to `/etc/fstab`
+
+Edit fstab:
+
+```bash
+sudo nano /etc/fstab
+```
+
+Add this at the end:
+
+```fstab
+UUID=1234-ABCD  /media/pi/paperless-usb  ext4  defaults,nofail,uid=1000,gid=1000  0  2
+```
+
+> Replace `1234-ABCD` with **your actual UUID**
+> Replace `ext4` with your file system if it’s different (`vfat`, `ntfs`, etc.)
+
+Test:
+
+```bash
+sudo mount -a
+```
+
+Make sure it's mounted:
+
+```bash
+df -h | grep paperless-usb
+```
+
+---
+
+## 📝 5. Edit `docker-compose.postgres.yml`
+
+Open it:
+
+```bash
+nano ~/paperless-ngx/docker/compose/docker-compose.postgres.yml
+```
+
+Update the `webserver:` service’s `volumes:` like so:
+
+```yaml
+    volumes:
+      - /media/pi/paperless-usb/data:/usr/src/paperless/data
+      - /media/pi/paperless-usb/media:/usr/src/paperless/media
+      - /media/pi/paperless-usb/consume:/usr/src/paperless/consume
+      - /media/pi/paperless-usb/export:/usr/src/paperless/export
+```
+
+Save (`Ctrl+O`, `Enter`, `Ctrl+X`)
+
+---
+
+## 🔄 6. Set Docker to Autostart Paperless
+
+Create a systemd service:
+
+```bash
+sudo nano /etc/systemd/system/paperless.service
+```
+
+Paste this:
+
+```ini
+[Unit]
+Description=Paperless-NGX Docker Compose Service
+Requires=docker.service
+After=network.target docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/home/pi/paperless-ngx/docker/compose
+ExecStart=/usr/bin/docker compose -f docker-compose.postgres.yml --env-file .env up -d
+ExecStop=/usr/bin/docker compose -f docker-compose.postgres.yml --env-file .env down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable it:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable paperless
+```
+
+Also ensure Docker starts on boot:
+
+```bash
+sudo systemctl enable docker
+```
+
+---
+
+## 🚀 7. Reboot & Test
+
+```bash
+sudo reboot
+```
+
+Then:
+
+* After 1–2 minutes, open in browser:
+  **`http://<your-pi-ip>:8000`**
+* Or check status:
+
+```bash
+docker ps
+```
+
+Make sure it's running & using USB:
+
+```bash
+ls /media/pi/paperless-usb/media
+```
+
+---
+
+## ✅ You're Done!
+
+Now every time you power on your Pi:
+
+* USB is mounted
+* Paperless auto-starts
+* Data is saved to USB, **not your SD card**
+* You don’t have to do anything manually
