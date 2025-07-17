@@ -1,0 +1,50 @@
+> ❌ `permission denied while trying to connect to the Docker daemon socket`
+
+---
+
+## ✅ Solution: Run Docker with `sudo`
+
+Docker needs root privileges unless you've configured it for non-root users.
+
+### 🔧 Fix 1: Use `sudo` for now
+
+Just prefix your commands like this:
+
+```bash
+sudo docker compose -f docker-compose.postgres.yml --env-file .env up -d
+```
+
+Check containers:
+
+```bash
+sudo docker ps
+```
+
+This will work immediately.
+
+---
+
+## ✅ (Optional but Recommended) Fix 2: Add Your User to the `docker` Group
+
+This avoids needing `sudo` every time.
+
+### Run these:
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+Then **log out and back in**, or run:
+
+```bash
+newgrp docker
+```
+
+Now you can run Docker without `sudo`.
+
+---
+
+### 🚀 Once That's Done, Try Again:
+
+```bash
+docker compose -f docker-compose.postgres.yml --env-file .env up -d
