@@ -1,0 +1,86 @@
+## ✅ Recommended Setup for Headless Pi (Easy + Powerful): **Netdata**
+
+### 🔧 Step-by-Step Installation (1 Command):
+
+SSH into your Pi, then run:
+
+```bash
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+```
+
+This installs everything needed, sets it to run as a service, and exposes the web dashboard.
+
+---
+
+### 🌐 Accessing the Dashboard:
+
+After install, in your browser go to:
+
+```
+http://<your-pi-ip>:19999
+```
+
+*Replace `<your-pi-ip>` with the actual IP (e.g. `192.168.1.42`)*
+
+---
+
+### 📊 What You Get:
+
+* Live graphs of:
+
+  * CPU usage (core-wise)
+  * RAM & swap
+  * Disk I/O
+  * Network bandwidth
+  * Processes, system load
+* No login required (local only by default)
+
+---
+
+### 🔐 Optional: Secure Access
+
+For remote access outside your LAN (like from the internet), you'd want:
+
+* A reverse proxy (e.g. Caddy or Nginx with HTTPS)
+* A VPN (e.g. Tailscale)
+* Or SSH tunneling (for secure remote port forwarding)
+
+Let me know if you want help securing or remotely accessing it.
+
+---
+
+## 🟡 Lightweight Alternative: Glances (Web Mode)
+
+For a simpler but less visual experience:
+
+### Install:
+
+```bash
+sudo apt install glances
+```
+
+### Run Web Interface:
+
+```bash
+glances -w
+```
+
+### Access:
+
+```
+http://<your-pi-ip>:61208
+```
+
+Uses less CPU/RAM than Netdata, good for resource-constrained Pis.
+
+---
+
+## ⚙️ Bonus: Enable Autostart on Boot (Optional)
+
+To make Netdata start on boot:
+
+```bash
+sudo systemctl enable netdata
+```
+
+For Glances (web mode), you’d need to set up a systemd service. Ask if you want help with that.
