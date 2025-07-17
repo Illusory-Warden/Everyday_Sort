@@ -1,0 +1,71 @@
+## ✅ Step-by-Step: What to Do Next
+
+### 1. **Confirm Paperless-ngx is Running**
+
+Run:
+
+```bash
+docker ps
+```
+
+You should see at least these containers running:
+
+* `compose-webserver-1` → Paperless app
+* `compose-db-1` → PostgreSQL
+* `compose-broker-1` → Redis
+
+If they're **"Up"**, you're good.
+
+---
+
+### 2. **Get Your IP Address (for Browser Access)**
+
+Run:
+
+```bash
+ip a | grep inet
+```
+
+Look for your LAN IP — something like:
+
+```
+inet 192.168.x.x
+or
+inet 10.0.2.x
+```
+
+That’s your server's IP.
+
+---
+
+### 3. **Open Paperless in Your Browser**
+
+From your current machine or any device on the same network:
+
+> 🌐 Open:
+> **`http://<your-ip>:8000`**
+> Example: `http://10.0.2.4:8000`
+
+---
+
+### 4. **Login with Default Admin Credentials**
+
+Default credentials from `.env`:
+
+```
+Username: admin
+Password: admin
+```
+
+> ✅ You’ll be prompted to change the password after first login.
+
+---
+
+## ✅ Success! You Now Have Paperless-NGX Running
+
+You can now:
+
+* Upload PDFs and images
+* Organize them with tags
+* Use OCR and full-text search
+* Automate with rules or email import
