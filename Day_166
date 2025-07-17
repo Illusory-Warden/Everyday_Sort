@@ -1,0 +1,61 @@
+## 🔧 Your Twingate Deployment — 4 Core Components
+
+### 1. **Controller** (Managed in the Cloud)
+
+* **What it does**: Centralized brain of your Twingate network. It doesn’t live on your Pi.
+* **In your case**: You manage this from the Twingate web console. It:
+
+  * Stores your network setup (e.g., which resource is on your Pi)
+  * Talks to your Identity Provider (Google, Microsoft, etc.) for login
+  * Issues **access rules** (ACLs) to both your Windows PC and your Pi
+
+🔐 *It handles who can access what, but doesn’t touch your actual data.*
+
+---
+
+### 2. **Client** (Installed on your Windows PC)
+
+* **What it does**: Creates secure tunnels to your private resources.
+* **In your case**: This is on your **Windows machine**. It:
+
+  * Authenticates with the Controller using your login
+  * Gets permission to access your Raspberry Pi services (e.g., Plex, OMV)
+  * Securely routes traffic (DNS + network packets) to your Pi via Twingate
+
+🧭 *You use your PC like normal — but under the hood, Twingate routes your Plex/OMV access through a private, encrypted tunnel.*
+
+---
+
+### 3. **Connector** (Docker container on your Raspberry Pi)
+
+* **What it does**: Acts like a secure "gatekeeper" inside your private network.
+* **In your case**: The Docker command you pasted set this up on your **RPi**. It:
+
+  * Keeps a secure outbound connection to Twingate Relays
+  * Waits for authorized access from Clients (like your Windows PC)
+  * Forwards traffic to local services (e.g., `localhost:32400` for Plex)
+
+🛡 *It never opens any ports — it just securely “answers the door” when you’re allowed in.*
+
+---
+
+### 4. **Relay** (Twingate-managed infrastructure)
+
+* **What it does**: Makes the Client ↔ Connector connection work, even through NAT or CGNAT.
+* **In your case**: Your **RPi Connector** and **Windows Client** both connect to this. It:
+
+  * Handles encrypted traffic tunneling if direct connection isn’t possible
+  * Never sees your data (fully end-to-end encrypted)
+
+🌐 *Think of it like a “matchmaker” helping your devices find each other securely.*
+
+---
+
+## 🔄 How It All Works for You:
+
+1. You open Plex or OMV on your **Windows PC**.
+2. Twingate **Client** sees a request for a private resource (`plex.local` or an IP).
+3. It checks with the **Controller**: “Is this allowed?” ✔
+4. The Client builds a secure TLS tunnel to your **Raspberry Pi’s Connector** (via a **Relay** if needed).
+5. The Connector forwards traffic to Plex, OMV, etc. — all within your home LAN.
+6. All encrypted, no need for port forwarding, and access is Zero Trust secure.
