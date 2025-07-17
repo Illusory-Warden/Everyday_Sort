@@ -1,0 +1,49 @@
+## 🧭 Your Local Network IP:
+
+```bash
+inet 192.168.100.101/24
+```
+
+This is the address your Paperless-ngx server (your Pi) uses on the LAN.
+
+---
+
+## ✅ How to Access Paperless Now
+
+From **any device on the same Wi-Fi or Ethernet network** (e.g., a phone, laptop, or another PC):
+
+> 🌐 Open this in a browser:
+> **`http://192.168.100.101:8000`**
+
+You should see the **Paperless-ngx login screen**.
+
+---
+
+## 🔑 Default Login Credentials
+
+If you haven't changed them in `.env`, use:
+
+```
+Username: admin
+Password: admin
+```
+
+You'll be prompted to change the password after logging in.
+
+---
+
+## 🛠️ If It Doesn't Load
+
+Check:
+
+* Is port `8000` exposed? (`sudo docker ps` → look for `0.0.0.0:8000`)
+* Any firewall on the Pi? If yes, allow with:
+
+  ```bash
+  sudo ufw allow 8000
+  ```
+
+Also check logs if needed:
+
+```bash
+docker logs -f compose-webserver-1
