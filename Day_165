@@ -1,0 +1,71 @@
+## 🌐 **Port-Based Monitoring Tools**
+
+### 🔹 **Netdata**
+
+* **Default Port**: `19999`
+* **Access**:
+  `http://<your-pi-ip>:19999`
+* **Notes**: Real-time, beautiful dashboard. Open only on your local network unless configured otherwise.
+
+---
+
+### 🔹 **Glances (Web Mode)**
+
+* **Default Port**: `61208`
+* **Access**:
+  Run with `glances -w`, then go to:
+  `http://<your-pi-ip>:61208`
+* **Notes**: Lightweight and easy. Good for resource-constrained Pis.
+
+---
+
+### 🔹 **Grafana**
+
+* **Default Port**: `3000`
+* **Access**:
+  `http://<your-pi-ip>:3000`
+* **Default login**:
+  `admin / admin` (change it on first login)
+
+---
+
+### 🔹 **InfluxDB (Optional Web UI)**
+
+* **Default Port**: `8086` (for API)
+* **Note**: InfluxDB itself doesn’t have a UI—you connect it to Grafana for dashboarding.
+
+---
+
+## 🔐 Important: Port Access Tips
+
+1. **Check Your Firewall**
+   Make sure the Raspberry Pi firewall (if enabled) allows traffic to the desired port:
+
+   ```bash
+   sudo ufw allow 19999  # Example for Netdata
+   ```
+
+2. **Local Network Only**
+   By default, these tools bind to `localhost` or `0.0.0.0`. That means they are only visible from inside your LAN unless you configure port forwarding.
+
+3. **Remote Access (Optional)**
+   If you want to access your Pi’s dashboard remotely:
+
+   * Use **SSH tunneling**, or
+   * Set up **ngrok** or **Tailscale**, or
+   * Expose the ports via router port forwarding (not secure unless you add auth + SSL).
+
+---
+
+## ✅ Recommendation
+
+If you want the easiest **port-based dashboard**, go with:
+
+```bash
+bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+```
+
+Then go to:
+
+```
+http://<your-pi-ip>:19999
