@@ -1,0 +1,36 @@
+### **1. Smart Farming Drone – PEAS Representation**
+
+| **Component**           | **Description**                                                                          |
+| ----------------------- | ---------------------------------------------------------------------------------------- |
+| **Performance Measure** | Crop health monitoring accuracy, pesticide usage efficiency, area coverage, battery life |
+| **Environment**         | Farmland, crops, pests, weather, flying conditions                                       |
+| **Actuators**           | Propellers, pesticide sprayer, camera gimbal                                             |
+| **Sensors**             | Camera (multispectral or infrared), GPS, wind speed sensor, altimeter                    |
+
+📝 **Use Case**: Crop monitoring, disease detection, and precision spraying.
+
+---
+
+### **2. AI Music Composer – PEAS Representation**
+
+| **Component**           | **Description**                                                             |
+| ----------------------- | --------------------------------------------------------------------------- |
+| **Performance Measure** | Melody originality, harmony quality, listener satisfaction, genre adherence |
+| **Environment**         | Musical data, genres, instruments, user preferences                         |
+| **Actuators**           | Audio output system, digital instruments, music file generator              |
+| **Sensors**             | User input, style/genre selection, mood detection from user behavior        |
+
+📝 **Use Case**: Composing background scores, personalized playlists, or AI-generated songs.
+
+---
+
+### **3. AI-Based Mental Health Chatbot – PEAS Representation**
+
+| **Component**           | **Description**                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------- |
+| **Performance Measure** | User satisfaction, emotional support success, accuracy of responses, session length |
+| **Environment**         | Conversations, emotional states, context history                                    |
+| **Actuators**           | Text generator, voice output (optional), sentiment-based response selector          |
+| **Sensors**             | Text input, voice tone analyzer (if available), sentiment analysis engine           |
+
+📝 **Use Case**: Offering emotional support, stress reduction, and mental health check-ins.
