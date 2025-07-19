@@ -1,0 +1,78 @@
+**Artificial Intelligence (AI)** is a branch of computer science that focuses on creating systems capable of performing tasks that typically require human intelligence. These tasks include **learning, reasoning, problem-solving, perception, understanding language**, and even **decision-making**.
+
+In simple terms, AI enables machines to **mimic human cognitive functions**, allowing them to interpret data, learn from it, and make decisions based on that knowledge.
+
+---
+
+### **Techniques of AI:**
+
+There are several core techniques used in AI, which can be broadly classified into the following categories:
+
+---
+
+#### **1. Machine Learning (ML):**
+
+A subset of AI that allows systems to **learn from data** and improve their performance without being explicitly programmed.
+
+* **Supervised Learning**: Trains the model on labeled data (e.g., spam detection).
+* **Unsupervised Learning**: Uses unlabeled data to find hidden patterns (e.g., clustering customers).
+* **Reinforcement Learning**: Agents learn by interacting with an environment and receiving rewards or penalties (e.g., game playing).
+
+---
+
+#### **2. Deep Learning:**
+
+A specialized form of machine learning using **artificial neural networks** with many layers. It is especially powerful for tasks like:
+
+* Image recognition
+* Natural language processing
+* Speech recognition
+
+---
+
+#### **3. Expert Systems:**
+
+These use a **knowledge base** of human expertise and an **inference engine** to solve complex problems. Example: medical diagnosis systems.
+
+---
+
+#### **4. Natural Language Processing (NLP):**
+
+Allows machines to **understand, interpret, and generate human language**. Techniques include:
+
+* Text analysis
+* Sentiment analysis
+* Language translation
+* Chatbots and virtual assistants
+
+---
+
+#### **5. Computer Vision:**
+
+Enables machines to **see and interpret visual data**. Key applications:
+
+* Object detection
+* Facial recognition
+* Medical imaging analysis
+
+---
+
+#### **6. Fuzzy Logic:**
+
+Used for reasoning that is **approximate rather than fixed and exact**. Useful in systems where decisions are made with uncertain or imprecise information (e.g., automatic climate control).
+
+---
+
+#### **7. Robotics:**
+
+Combines AI with mechanical systems to create **autonomous agents** that can interact with the physical world, such as:
+
+* Self-driving cars
+* Industrial robots
+* Drones
+
+---
+
+#### **8. Evolutionary Algorithms:**
+
+Inspired by natural selection, these are used to **optimize complex problems** by evolving solutions over generations (e.g., genetic algorithms).
