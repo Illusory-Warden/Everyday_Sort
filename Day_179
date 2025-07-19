@@ -1,0 +1,37 @@
+**PEAS** stands for:
+
+* **P**: Performance Measure – Criteria to evaluate success.
+* **E**: Environment – The surrounding where the agent operates.
+* **A**: Actuators – Components that allow the agent to act on the environment.
+* **S**: Sensors – Components that perceive the environment.
+
+PEAS helps define the **task environment** for designing an intelligent agent.
+
+---
+
+### **1. Robotic Vacuum Cleaner – PEAS Representation**
+
+| Component               | Description                                                                           |
+| ----------------------- | ------------------------------------------------------------------------------------- |
+| **Performance Measure** | Cleanliness of the floor, efficient battery use, coverage area, time taken            |
+| **Environment**         | Home environment: rooms, furniture, floors (carpet, tiles, etc.)                      |
+| **Actuators**           | Wheels/motors (for movement), vacuum suction, brushes, possibly voice/audio           |
+| **Sensors**             | Dirt sensors, bump sensors, cliff sensors (to detect stairs), cameras, GPS, gyroscope |
+
+---
+
+### **2. Mail Spam Filter System – PEAS Representation**
+
+| Component               | Description                                                      |
+| ----------------------- | ---------------------------------------------------------------- |
+| **Performance Measure** | Accuracy of spam detection, false positive/negative rate, speed  |
+| **Environment**         | Email server/system, incoming emails, user preferences           |
+| **Actuators**           | Marking emails as spam/ham, deleting or moving to spam folder    |
+| **Sensors**             | Email content, metadata (sender address, subject), user feedback |
+
+---
+
+### **Summary**
+
+* **Robotic Vacuum Cleaner** operates in a physical environment and interacts with it via motors and sensors.
+* **Mail Spam Filter** works in a digital environment, "sensing" through data analysis and acting by filtering messages.
