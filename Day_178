@@ -1,0 +1,12 @@
+### **Self-Driving Car – PEAS Representation**
+
+| **Component**           | **Description**                                                                |
+| ----------------------- | ------------------------------------------------------------------------------ |
+| **Performance Measure** | Safe driving, obeying traffic rules, passenger comfort, fuel efficiency, speed |
+| **Environment**         | Roads, traffic lights, pedestrians, other vehicles, weather conditions         |
+| **Actuators**           | Steering wheel, accelerator, brake, signal lights, horn                        |
+| **Sensors**             | Cameras, radar, LIDAR, GPS, speedometer, ultrasonic sensors                    |
+
+---
+
+This PEAS model helps in designing and understanding the **task environment** of an intelligent autonomous vehicle.
