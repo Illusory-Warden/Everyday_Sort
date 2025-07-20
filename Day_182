@@ -1,0 +1,134 @@
+## 🎯 Goal
+
+* ✅ Add a "Forgot Password?" link to your login page
+* ✅ Let the user reset their password **by verifying their UID and DOB**
+* ✅ Save the new password securely
+* ✅ Show success or error messages
+
+---
+
+## 🧱 What You’ll Add
+
+| File                | Purpose                                 |
+| ------------------- | --------------------------------------- |
+| `forgot.html`       | Form to ask for UID and DOB             |
+| `reset.php`         | Logic to verify and update the password |
+| Modify `index.html` | Add “Forgot Password?” link             |
+
+---
+
+## 📝 Step 1: Add Link in `index.html`
+
+Add this inside your login box (below the form):
+
+```html
+<div style="text-align:center; margin-top: 10px;">
+  <a href="forgot.html">Forgot Password?</a>
+</div>
+```
+
+---
+
+## 🧾 Step 2: Create `forgot.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reset Password</title>
+</head>
+<body>
+  <h2>Reset Your Password</h2>
+  <form action="reset.php" method="POST">
+    <label>Student UID:</label><br>
+    <input type="text" name="uid" required><br><br>
+
+    <label>Date of Birth (YYYY-MM-DD):</label><br>
+    <input type="text" name="dob" required><br><br>
+
+    <label>New Password:</label><br>
+    <input type="password" name="newpass" required><br><br>
+
+    <input type="submit" value="Reset Password">
+  </form>
+</body>
+</html>
+```
+
+---
+
+## 🧠 Step 3: Create `reset.php`
+
+```php
+<?php
+include 'db.php';
+
+$uid = $_POST['uid'];
+$dob = $_POST['dob'];
+$newpass = $_POST['newpass'];
+
+// Optionally hash the password:
+$hashed = $newpass; // Replace with: password_hash($newpass, PASSWORD_DEFAULT);
+
+$sql = "SELECT * FROM students WHERE Student_UID='$uid' AND DOB='$dob'";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 1) {
+    $update = "UPDATE students SET password='$hashed' WHERE Student_UID='$uid'";
+    if ($conn->query($update) === TRUE) {
+        echo "✅ Password reset successful! <a href='index.html'>Login</a>";
+    } else {
+        echo "❌ Something went wrong. Try again.";
+    }
+} else {
+    echo "❌ Student UID and DOB do not match. <a href='forgot.html'>Try again</a>";
+}
+?>
+```
+
+---
+
+## ✅ Bonus: Hash Passwords for Security
+
+Change:
+
+```php
+$hashed = $newpass;
+```
+
+To:
+
+```php
+$hashed = password_hash($newpass, PASSWORD_DEFAULT);
+```
+
+Then update your login check (`login.php`) to:
+
+```php
+$sql = "SELECT * FROM students WHERE Student_UID='$uid'";
+$result = $conn->query($sql);
+
+if ($result->num_rows == 1) {
+  $row = $result->fetch_assoc();
+  if (password_verify($pass, $row['password'])) {
+    $_SESSION['uid'] = $uid;
+    header("Location: welcome.php");
+  } else {
+    echo "Invalid credentials.";
+  }
+}
+```
+
+---
+
+## 🧪 Test Flow
+
+1. Click “Forgot Password?”
+2. Enter:
+
+   * UID: `23016001`
+   * DOB: `2005-03-15`
+   * New password: `test123`
+3. Submit → should see success message
+4. Go back and log in with new password
