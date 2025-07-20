@@ -1,0 +1,43 @@
+## ✅ Updated `login.php` (Secure Version with Password Hash)
+
+```php
+<?php
+session_start();
+include 'db.php';
+
+$uid = $_POST['uid'];
+$pass = $_POST['password'];
+
+// Look up user by UID
+$sql = "SELECT * FROM students WHERE Student_UID = '$uid'";
+$result = $conn->query($sql);
+
+if ($result->num_rows === 1) {
+    $row = $result->fetch_assoc();
+    $stored_hashed_password = $row['password'];
+
+    // Verify the entered password against the hash
+    if (password_verify($pass, $stored_hashed_password)) {
+        $_SESSION['uid'] = $uid;
+        header("Location: welcome.php");
+        exit();
+    } else {
+        echo "❌ Incorrect password. <a href='index.html'>Try again</a>";
+    }
+} else {
+    echo "❌ UID not found. <a href='index.html'>Try again</a>";
+}
+?>
+```
+
+---
+
+## 🔐 Important Notes
+
+* Make sure you’ve used `password_hash()` when storing passwords:
+
+  ```php
+  $hashed = password_hash($newpass, PASSWORD_DEFAULT);
+  ```
+
+* All users must be updated with **hashed passwords**. Plain-text won’t work with `password_verify()`.
