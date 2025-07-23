@@ -1,0 +1,27 @@
+### What is **MCP Server** on GitHub?
+
+There are a few things "MCP Server" could refer to, depending on the context. Let's go over the likely meanings:
+
+---
+
+## 🔧 1. **MCP = Minecraft Coder Pack**
+
+**Minecraft Coder Pack (MCP)** was a set of tools used to **decompile and deobfuscate Minecraft Java Edition** source code. It was widely used for modding before tools like Forge and Fabric took over.
+
+However, MCP **is not a server** by itself. It’s more of a toolset for mod developers.
+
+---
+
+## 🖥️ 2. **MCP Server** Might Refer to a Forked or Custom Server Built with MCP
+
+Some mod developers use MCP to:
+
+* Reverse-engineer Minecraft server code
+* Build **custom Minecraft servers** or tools
+* Host them on GitHub under the name "MCP Server"
+
+In these cases, "MCP Server" could be:
+
+* A custom Minecraft Java server built using MCP
+* A modded server project based on decompiled code
+* A server-compatible modding framework
