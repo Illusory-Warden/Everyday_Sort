@@ -1,0 +1,17 @@
+"MCB Server" on GitHub likely refers to a **Minecraft Bedrock Server** project, although without a specific repository name, there could be several interpretations. Let’s break it down:
+
+### 1. **MCB = Minecraft Bedrock**
+
+"MCB" commonly stands for **Minecraft Bedrock**, the version of Minecraft that's designed for mobile, console, and Windows 10 platforms (as opposed to the Java Edition).
+
+* A **Minecraft Bedrock Server (MCB Server)** is a multiplayer server designed to host Bedrock Edition players.
+* These servers are different from Java Edition servers in terms of plugins, mods, and technical setup.
+
+### 2. **GitHub MCB Server Projects**
+
+There are many open-source MCB server implementations and tools hosted on GitHub. Some popular ones include:
+
+* **[Nukkit](https://github.com/NukkitX/Nukkit)** – A Java-based Minecraft Bedrock server software.
+* **[PocketMine-MP](https://github.com/pmmp/PocketMine-MP)** – A PHP-based Bedrock server software, very popular for plugin development.
+* **[LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS)** – A plugin loader for the official Minecraft Bedrock Dedicated Server (BDS).
+* **[MCBEPlay](https://github.com/mcbeet/MCBEPlay)** – A tool or library for interacting with Minecraft Bedrock Edition.
