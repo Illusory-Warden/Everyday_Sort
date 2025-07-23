@@ -1,0 +1,54 @@
+### ✅ Here's What You Need to Confirm
+
+1. **Check your Raspberry Pi's IP** (where n8n is running):
+
+   ```bash
+   hostname -I
+   ```
+
+   Let's say it's: `192.168.1.42`
+
+2. **Check where your Twingate Connector is running**:
+
+   * If it's running on a **server, PC, or NAS** in the same network as your Raspberry Pi (e.g., also on `192.168.1.x`), you're good.
+
+3. **Ping test (optional)** from the Connector host:
+
+   ```bash
+   ping 192.168.1.42
+   ```
+
+   Or from the Connector container using:
+
+   ```bash
+   docker exec -it <connector_container_name> ping 192.168.1.42
+   ```
+
+---
+
+### 🔧 What to Do Next
+
+1. **In your Twingate Admin Console**, add a new **Resource**:
+
+   * Name: `n8n`
+   * Address: `192.168.1.42`
+   * Port: `5678`
+
+2. **Assign this Resource to a Group** that your Twingate user or device is in.
+
+3. **Open the Twingate Client** on your device, and go to:
+
+   ```
+   http://192.168.1.42:5678
+   ```
+
+   Or whatever private DNS alias you use.
+
+---
+
+### 🧠 Pro Tip
+
+If you want to simplify things long-term, consider:
+
+* Setting up **a reverse proxy + domain** (e.g., `n8n.local`) on the Pi.
+* Configuring **Twingate DNS overrides** for friendly access like `http://n8n.internal`.
