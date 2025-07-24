@@ -1,0 +1,18 @@
+Create a file named start-login-system.sh on Desktop:
+
+bash
+Copy
+Edit
+#!/bin/bash
+echo "Starting Apache & MySQL..."
+sudo systemctl start apache2
+sudo systemctl start mysql
+echo "Starting PHP server on localhost:8000"
+cd ~/Desktop/loginapp
+php -S localhost:8000
+Then make it executable:
+
+bash
+Copy
+Edit
+chmod +x ~/Desktop/start-login-system.sh
