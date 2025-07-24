@@ -1,0 +1,132 @@
+## ✅ AFTER REBOOT — DO THIS STEP-BY-STEP
+
+### 🟢 1. **Start Apache Web Server**
+
+Apache must be started again every time after reboot.
+
+```bash
+sudo systemctl start apache2
+```
+
+To make it auto-start on every boot (optional):
+
+```bash
+sudo systemctl enable apache2
+```
+
+---
+
+### 🟢 2. **Start MySQL Server**
+
+```bash
+sudo systemctl start mysql
+```
+
+Enable auto-start (optional):
+
+```bash
+sudo systemctl enable mysql
+```
+
+---
+
+### 🟢 3. **(Optional) Start PHP Built-in Server** — if you were using this instead of Apache
+
+If you're working from `~/Desktop/loginapp/`, run:
+
+```bash
+cd ~/Desktop/loginapp
+php -S localhost:8000
+```
+
+Then visit:
+
+```
+http://localhost:8000/index.html
+```
+
+> ✅ Use this **instead of Apache** if you're working outside `/var/www/html/`.
+
+---
+
+### 🟢 4. **Verify Your Database Exists**
+
+Check in terminal or DBeaver that `CSBS_DATA` still exists:
+
+```bash
+mysql -u root -p
+SHOW DATABASES;
+USE CSBS_DATA;
+SHOW TABLES;
+```
+
+If your DB is missing (unlikely unless you deleted it), re-import your `.sql` file using:
+
+```bash
+mysql -u root -p < CSBS_DATA.sql
+```
+
+---
+
+### 🟢 5. **Verify the Password Column Exists**
+
+In MySQL terminal:
+
+```sql
+USE CSBS_DATA;
+DESC students;
+```
+
+Ensure there's a `password` column and that it's filled.
+
+---
+
+### 🟢 6. **Test the Web UI**
+
+If you’re using Apache:
+
+```
+http://localhost/loginapp/index.html
+```
+
+If you’re using PHP built-in server:
+
+```
+http://localhost:8000/index.html
+```
+
+---
+
+## 🔁 Summary of Commands to Run
+
+```bash
+# Start servers
+sudo systemctl start apache2
+sudo systemctl start mysql
+
+# (Optional if using built-in PHP server)
+cd ~/Desktop/loginapp
+php -S localhost:8000
+```
+
+---
+
+## 🚀 BONUS TIP: Create a Helper Script
+
+Create a file named `start-login-system.sh` on Desktop:
+
+```bash
+#!/bin/bash
+echo "Starting Apache & MySQL..."
+sudo systemctl start apache2
+sudo systemctl start mysql
+echo "Starting PHP server on localhost:8000"
+cd ~/Desktop/loginapp
+php -S localhost:8000
+```
+
+Then make it executable:
+
+```bash
+chmod +x ~/Desktop/start-login-system.sh
+```
