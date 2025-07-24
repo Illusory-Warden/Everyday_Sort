@@ -1,0 +1,87 @@
+```php
+if (password_verify($pass, $stored_hashed_password)) {
+```
+
+But your passwords in the database are **not hashed**, so `password_verify()` always fails.
+
+---
+
+## ✅ THE FIX — Rehash All Passwords in the Database
+
+We’ll:
+
+* Loop through all students
+* Take their **current plain password** (like `Csbs@001`)
+* Convert it to a **secure hash**
+* Update the `password` field
+
+---
+
+## 🛠️ Fix Option 1 — PHP Script to Hash All Passwords
+
+### 📄 Create `rehash_passwords.php`
+
+```php
+<?php
+include 'db.php';
+
+function generatePassword($uid) {
+    // Same rule you used earlier
+    $last3 = substr($uid, -3);
+    return "Csbs@$last3";
+}
+
+$sql = "SELECT Student_UID FROM students";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $uid = $row['Student_UID'];
+        $plain = generatePassword($uid);
+        $hashed = password_hash($plain, PASSWORD_DEFAULT);
+
+        $update = "UPDATE students SET password='$hashed' WHERE Student_UID='$uid'";
+        $conn->query($update);
+    }
+    echo "✅ All passwords rehashed!";
+} else {
+    echo "❌ No students found.";
+}
+?>
+```
+
+---
+
+### ✅ How to Run It:
+
+1. Save that file as `rehash_passwords.php` inside your `loginapp` folder
+
+2. Open browser and go to:
+
+   ```
+   http://localhost/loginapp/rehash_passwords.php
+   ```
+
+   or if using PHP server:
+
+   ```
+   http://localhost:8000/rehash_passwords.php
+   ```
+
+3. You should see:
+
+   ```
+   ✅ All passwords rehashed!
+   ```
+
+Now all passwords in your DB are hashed, and your login will work again.
+
+---
+
+### 🔐 Example Login After Rehash
+
+| UID        | Password   |
+| ---------- | ---------- |
+| `23016001` | `Csbs@001` |
+| `23016002` | `Csbs@002` |
+| ...        | ...        |
