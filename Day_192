@@ -1,0 +1,51 @@
+## 🔐 Where Hashing Happens
+
+### ✅ In `reset.php` (when resetting password)
+
+```php
+$hashed = password_hash($newpass, PASSWORD_DEFAULT);
+```
+
+> This hashes the new password before saving it to the database.
+
+---
+
+### ✅ In `login.php` (when logging in)
+
+```php
+if (password_verify($pass, $stored_hashed_password)) {
+    $_SESSION['uid'] = $uid;
+    header("Location: welcome.php");
+}
+```
+
+> This verifies the entered password **against the hashed password** in your database.
+
+---
+
+## ❗Important Reminders
+
+* Any password saved manually via SQL or an admin tool **must be hashed**, or login will fail.
+
+  Example of inserting hashed password manually (optional):
+
+  ```php
+  INSERT INTO students (Student_UID, ..., password)
+  VALUES ('23016001', ..., '$2y$10$u....'); -- hashed using PHP
+  ```
+
+* You cannot do something like:
+
+  ```sql
+  UPDATE students SET password = '1234' WHERE Student_UID = '23016001';
+  ```
+
+  ❌ That's a plain-text password. It won't work anymore.
+
+---
+
+## ✅ You're Secure Now
+
+* Passwords are **never stored in plain text**
+* They are hashed using `password_hash()` with bcrypt
+* They are verified securely using `password_verify()`
