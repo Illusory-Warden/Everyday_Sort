@@ -1,0 +1,96 @@
+## ✅ Step-by-Step to Fix "Not Found" Error
+
+### 🔎 1. **Check Your Folder Location**
+
+Your file must be inside the **Apache root directory**, which depends on your environment.
+
+If you're using **XAMPP** on **Windows**, this should be:
+
+```
+C:/xampp/htdocs/Login_App_V2/rehash_passwords.php
+```
+
+If you're using **Linux/Debian**, the default root directory is usually:
+
+```
+/var/www/html/
+```
+
+👉 So put your file here:
+
+```
+/var/www/html/Login_App_V2/rehash_passwords.php
+```
+
+> Use the following command in Linux to copy:
+
+```bash
+sudo cp rehash_passwords.php /var/www/html/Login_App_V2/
+```
+
+---
+
+### 🧠 2. **Access the Script in Browser**
+
+Once it's placed correctly, open your browser and go to:
+
+```
+http://localhost/Login_App_V2/rehash_passwords.php
+```
+
+---
+
+### 🔧 3. **Still Not Working? Check Apache Folder Setup**
+
+* Confirm Apache is looking at the right directory by checking `/etc/apache2/sites-enabled/000-default.conf`:
+
+```bash
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+Look for:
+
+```apache
+DocumentRoot /var/www/html
+```
+
+If it’s different, either:
+
+* Move your project there, **or**
+* Change the DocumentRoot to your actual project directory and run:
+
+```bash
+sudo systemctl restart apache2
+```
+
+---
+
+### ✅ 4. **Ensure File Permissions Are Correct**
+
+On Linux, give Apache permission to read your file:
+
+```bash
+sudo chmod -R 755 /var/www/html/Login_App_V2
+```
+
+And change ownership if needed:
+
+```bash
+sudo chown -R www-data:www-data /var/www/html/Login_App_V2
+```
+
+---
+
+### 🔁 Final Check
+
+Now reload:
+
+```
+http://localhost/Login_App_V2/rehash_passwords.php
+```
+
+You should see:
+
+```
+✅ All passwords rehashed successfully!
+```
