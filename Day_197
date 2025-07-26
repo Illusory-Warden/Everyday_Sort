@@ -1,0 +1,73 @@
+## ✅ **Project Summary: CSBS Student Login System**
+
+### 📦 **Project Name:** `Login_App_V2`
+
+---
+
+### 🎯 **Goal:**
+
+To build a **secure login and logout web portal** for your **CSBS classmates**, using their **UID + password + verified email** stored in a database.
+
+---
+
+### 🏗️ **Current Features Implemented**
+
+#### ✅ **Frontend**
+
+* `index.html`:
+  A clean login form with fields for:
+
+  * **UID**
+  * **Password**
+  * **Email**
+    Linked to `login.php` for processing.
+
+* `index.css`:
+  Styles for layout, responsiveness, and form design.
+
+* `forgot.html` + `forgot.css`:
+  Optional UI for users who forget their password (not fully functional yet).
+
+---
+
+#### ✅ **Backend**
+
+* `db.php`:
+  Connects to MySQL database `CSBS_DATA`.
+
+* `login.php`:
+
+  * Validates UID and Email from the `students` table.
+  * Verifies password using PHP `password_verify()`
+  * Starts a secure session and redirects to `welcome.php` if login is successful.
+
+* `rehash_passwords.php`:
+
+  * Automatically regenerates and hashes default passwords for all students.
+  * Format: `Csbs@<last3_digits_of_UID>`
+  * Updates the `password` field in the DB securely.
+
+---
+
+### 🗂️ **Project Structure**
+
+```
+Login_App_V2/
+├── index.html
+├── index.css
+├── forgot.html
+├── forgot.css
+├── login.php
+├── welcome.php         # (to be created)
+├── db.php
+├── rehash_passwords.php
+```
+
+---
+
+### 🔒 Security Best Practices
+
+* Passwords are stored as **secure hashes**
+* Sessions are used for login state
+* All login inputs are validated
+* Future scope: HTTPS + rate-limiting + password reset flow
