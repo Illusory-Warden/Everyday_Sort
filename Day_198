@@ -1,0 +1,86 @@
+## ✅ Here's How to Run `rehash_passwords.php` from Your Desktop Folder
+
+You have **two options** — choose the one that fits your setup:
+
+---
+
+### ✅ **Option 1: Move Project to Apache's Root Folder (Recommended)**
+
+If you're on **Linux (Debian)**:
+
+1. **Move your project from Desktop to Apache's web root**:
+
+```bash
+sudo mv ~/Desktop/Login_App_V2 /var/www/html/
+```
+
+2. Now go to:
+
+```
+http://localhost/Login_App_V2/rehash_passwords.php
+```
+
+✅ Done! This is the easiest and cleanest way to make it work.
+
+---
+
+### ✅ **Option 2: Tell Apache to Serve from Desktop Folder** (Not recommended for long-term)
+
+If you **really want to serve directly from Desktop**, you'd need to:
+
+#### Step 1: Edit Apache config
+
+```bash
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+```
+
+Change:
+
+```apache
+DocumentRoot /var/www/html
+```
+
+To:
+
+```apache
+DocumentRoot /home/YOUR_USERNAME/Desktop/Login_App_V2
+```
+
+> Replace `YOUR_USERNAME` with your Linux username.
+
+#### Step 2: Restart Apache
+
+```bash
+sudo systemctl restart apache2
+```
+
+Then go to:
+
+```
+http://localhost/rehash_passwords.php
+```
+
+---
+
+## 🧠 Best Practice
+
+Use Option 1 (move to `/var/www/html/`) so you don’t mess with Apache settings, especially if you're new to server setup.
+
+---
+
+## Final Folder Check
+
+After the move, your structure should look like this:
+
+```
+/var/www/html/Login_App_V2/
+├── rehash_passwords.php
+├── db.php
+├── login.php
+├── ...
+```
+
+Now access in browser:
+
+```
+http://localhost/Login_App_V2/rehash_passwords.php
