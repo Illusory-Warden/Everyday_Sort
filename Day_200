@@ -1,0 +1,67 @@
+## ✅ Step-by-Step: How to Run `rehash_passwords.php`
+
+---
+
+### 🧩 1. **Make Sure It’s in the Right Place**
+
+Place your file inside the project directory that is being served by your local web server (like XAMPP):
+
+**Example Path:**
+
+```
+C:/xampp/htdocs/Login_App_V2/rehash_passwords.php
+```
+
+Also confirm you have:
+
+* ✅ A `db.php` file with correct DB credentials
+* ✅ A `students` table in the `CSBS_DATA` database with `Student_UID` and `password` columns
+
+---
+
+### ▶️ 2. **Start Apache and MySQL (XAMPP)**
+
+1. Open **XAMPP Control Panel**
+2. Click **Start** on:
+
+   * **Apache** (web server)
+   * **MySQL** (database)
+
+---
+
+### 🌐 3. **Run the Script in Browser**
+
+Open your browser and go to:
+
+```
+http://localhost/Login_App_V2/rehash_passwords.php
+```
+
+If everything is correct, you’ll see:
+
+```
+✅ All passwords rehashed successfully!
+```
+
+And it will create a file named `rehash_log.txt` in the same folder (if logging is enabled).
+
+---
+
+### 🔎 4. **Verify It Worked (Optional)**
+
+Check using **phpMyAdmin**:
+
+1. Open: [http://localhost/phpmyadmin](http://localhost/phpmyadmin)
+2. Select your `CSBS_DATA` database
+3. Open the `students` table
+4. You should see new hashed passwords in the `password` column (they'll look like `$2y$10$...`)
+
+---
+
+### 🧹 5. **Clean Up**
+
+Once done:
+
+* ✅ **Delete or rename** `rehash_passwords.php`
+* ✅ **Delete** `rehash_log.txt` if it contains plain passwords
+* ✅ Optionally log this operation elsewhere for future tracking
