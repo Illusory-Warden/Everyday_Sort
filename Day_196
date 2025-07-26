@@ -1,0 +1,93 @@
+* ✅ Users log in with: **UID**, **Password**, and **Email**
+* 🔐 And for password recovery, they'll also provide their **Mother’s Name** as a form of identity verification
+
+Here’s your updated **project summary** for the next chat (reflecting that there’s no OTP and that you’ve added a recovery method using security questions):
+
+---
+
+## ✅ **Project Summary: CSBS Student Login System (Password-Based)**
+
+### 📦 **Project Name:** `Login_App_V2`
+
+---
+
+### 🎯 **Purpose:**
+
+A secure login portal for your **CSBS classmates**, where users log in with credentials stored in a MySQL database, and can recover passwords by verifying a personal detail (**Mother’s Name**).
+
+---
+
+### 🏗️ **Current Features**
+
+#### ✅ **Login Flow**
+
+* `index.html`:
+  Login form includes:
+
+  * **UID**
+  * **Password**
+  * **Email**
+    → Verified in `login.php` with secure password hashing.
+
+* `login.php`:
+
+  * Checks UID + Email match in DB
+  * Verifies password using `password_verify()`
+  * Starts PHP session and redirects to `welcome.php`
+
+#### ✅ **Password Recovery Flow**
+
+* `forgot.html`:
+  Recovery form with:
+
+  * **UID**
+  * **Email**
+  * **Mother’s Name** (new)
+  * (Optional: New password field to reset)
+
+* `resend_code.php` or `reset_password.php` (To be built):
+
+  * Verifies the info
+  * Allows password reset if details are correct
+
+---
+
+### 🗃️ **Backend & DB**
+
+* `db.php`:
+  Database connection to `CSBS_DATA`
+
+* Table `students` includes:
+
+  * `Student_UID`
+  * `email`
+  * `password`
+  * `mother_name`
+
+* `rehash_passwords.php`:
+  Used once to generate default hashed passwords.
+
+---
+
+### 🗂️ **Folder Structure**
+
+```
+Login_App_V2/
+├── index.html
+├── index.css
+├── forgot.html         # Now includes mother’s name
+├── forgot.css
+├── login.php
+├── db.php
+├── rehash_passwords.php
+├── welcome.php         # To be built
+```
+
+---
+
+### 🔐 Security Features
+
+* Passwords stored using `password_hash()`
+* Secure PHP sessions
+* Extra recovery verification via **Mother’s Name**
+* (Optional) HTTPS, password strength enforcement
