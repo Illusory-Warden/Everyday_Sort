@@ -1,0 +1,21 @@
+The problematic part is:
+
+```java
+System.out.println("The total sum of the " + number + " is " + sumDigits(13));
+```
+
+---
+
+### ❌ What's wrong:
+
+* `number` is not defined in the `main` method, so this will cause a **"cannot find symbol"** compilation error.
+
+---
+
+### ✅ Fix:
+
+Replace it with:
+
+```java
+int number = 13;
+System.out.println("The total sum of the digits in " + number + " is " + sumDigits(number));
