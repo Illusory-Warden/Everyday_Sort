@@ -1,0 +1,50 @@
+```java
+System.out.println("The total sum of the " + number + " is " + sumDigits(13));
+```
+
+The variable `number` is **not defined** in the `main` method, so Java will give you a **compilation error** like:
+
+```
+error: cannot find symbol
+System.out.println("The total sum of the " + number + " is " + sumDigits(13));
+```
+
+---
+
+### ✅ Fix:
+
+You need to define the variable `number` in `main` **before** using it in the print statement.
+
+---
+
+### 🔧 Fixed Code:
+
+```java
+class Main {
+    public static void main(String[] args) {
+        int number = 13;
+        System.out.println("The total sum of the digits in " + number + " is " + sumDigits(number));
+    }
+
+    public static int sumDigits(int number) {
+        if (number < 0) {
+            return -1;
+        }
+
+        int sum = 0;
+        while (number > 0) {
+            int digit = number % 10;
+            sum = sum + digit;
+            number = number / 10;
+        }
+        return sum;
+    }
+}
+```
+
+---
+
+### 🧾 Output:
+
+```
+The total sum of the digits in 13 is 4
