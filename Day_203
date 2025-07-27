@@ -1,0 +1,56 @@
+### ❌ Problem Line:
+
+```java
+System.out.println("The total sum of the " + number + " is " + sumDigits(13));
+```
+
+---
+
+### ❗ Error Explanation:
+
+* You're using the variable `number` in that line, but:
+
+  * You **never declared** a variable named `number` in the `main` method.
+  * `number` **only exists** inside the `sumDigits(int number)` method.
+  * Variables inside methods are **local** — they cannot be accessed from outside that method.
+
+---
+
+### 🛠️ How to Fix:
+
+You must **declare and assign** the variable `number` inside `main` **before using it**.
+
+---
+
+### ✅ Correct Version:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int number = 13; // ✅ Declare the variable
+        System.out.println("The total sum of the digits in " + number + " is " + sumDigits(number));
+    }
+
+    public static int sumDigits(int number) {
+        if (number < 0) {
+            return -1;
+        }
+
+        int sum = 0;
+        while (number > 0) {
+            int digit = number % 10;
+            sum = sum + digit;
+            number = number / 10;
+        }
+
+        return sum;
+    }
+}
+```
+
+---
+
+### ✅ Output:
+
+```
+The total sum of the digits in 13 is 4
