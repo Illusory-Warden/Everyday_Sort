@@ -1,0 +1,25 @@
+### 🧾 Output (when `number = 1234`):
+
+```
+The total digit sum of the 1234 is 10
+```
+
+### ✅ What’s Right:
+
+* `number` is declared properly in `main`.
+* You're passing `number` to `sumDigits()`.
+* The `sumDigits()` method correctly:
+
+  * Extracts digits using `% 10`.
+  * Removes digits using `/ 10`.
+  * Accumulates the sum.
+* The `if(number < 0)` check handles negatives properly.
+
+---
+
+### 🧠 Small Improvement (Optional, for clarity):
+
+You might want to reword the print message slightly to read more naturally:
+
+```java
+System.out.println("The total sum of the digits in " + number + " is " + sumDigits(number));
