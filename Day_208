@@ -1,0 +1,41 @@
+## ✅ Export MySQL Database from Terminal
+
+### 🟩 Run this command in your terminal (outside MySQL prompt):
+
+First, **exit the MySQL prompt** by typing:
+
+```sql
+exit;
+```
+
+Then, in your **Parrot OS terminal**, run:
+
+```bash
+mysqldump -u root -p CSBS_DATA > ~/Downloads/CSBS_DATA.sql
+```
+
+> Replace `root` with your username if different.
+
+* It will ask for your MySQL password.
+* The file `CSBS_DATA.sql` will be saved in your `Downloads` folder.
+
+---
+
+## ✅ To Verify Exported File
+
+After export, check:
+
+```bash
+ls ~/Downloads/CSBS_DATA.sql
+```
+
+You should see the `.sql` file there.
+
+---
+
+## 🔁 To Import Later (Optional):
+
+You can restore it into MySQL using:
+
+```bash
+mysql -u root -p new_db_name < ~/Downloads/CSBS_DATA.sql
