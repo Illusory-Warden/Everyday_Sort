@@ -1,0 +1,92 @@
+## ✅ Step-by-Step: Export MySQL Database (`CSBS_DATA`) in DBeaver
+
+### 🔹 Step 1: Right-click the Database
+
+* In the **Projects** tab, right-click on `CSBS_DATA`.
+
+### 🔹 Step 2: Select `Tools > Dump Database`
+
+* Choose:
+
+  ```
+  Tools > Dump database
+  ```
+
+If you **don’t see “Dump database”**, you may need to:
+
+* Ensure you’re connected.
+* Make sure you selected the database root (not a table).
+
+### 🔹 Step 3: Configure the Dump
+
+You'll see a window like this:
+
+| Option              | What to Set                                                   |
+| ------------------- | ------------------------------------------------------------- |
+| **Use native tool** | ✅ Check this box (uses `mysqldump`)                           |
+| **Output file**     | Browse to choose a folder (e.g., `~/Downloads/CSBS_DATA.sql`) |
+| **Dump content**    | ✅ Schema and ✅ Data                                           |
+| **Dump format**     | SQL (default)                                                 |
+
+> 🔧 If DBeaver can't find `mysqldump`, it will ask you to configure it (see below).
+
+---
+
+## 🔧 Set Up `mysqldump` (if needed)
+
+DBeaver needs `mysqldump` to be installed on your system.
+
+### On Linux (Parrot OS):
+
+Run in terminal:
+
+```bash
+sudo apt install mysql-client
+```
+
+Then, confirm the path to `mysqldump`:
+
+```bash
+which mysqldump
+```
+
+It should output something like `/usr/bin/mysqldump`.
+
+### Set in DBeaver:
+
+1. Go to **DBeaver > Preferences**.
+2. Navigate to:
+
+   ```
+   Database > MySQL > Tools
+   ```
+3. Set path to `mysqldump`, e.g.:
+
+   ```
+   /usr/bin/mysqldump
+   ```
+
+---
+
+### 🔹 Step 4: Start the Export
+
+* Click **Start** or **Finish**.
+* A `.sql` file will be generated in your selected location (e.g., `Downloads`).
+
+---
+
+## 🟩 Done!
+
+You now have a downloadable `.sql` backup of `CSBS_DATA`.
+
+---
+
+### ❓To Re-import later:
+
+You can use:
+
+* DBeaver's **"Execute Script"** tool
+* Or command line:
+
+  ```bash
+  mysql -u username -p CSBS_DATA < CSBS_DATA.sql
