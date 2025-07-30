@@ -1,0 +1,25 @@
+## ✅ Step-by-Step Command
+
+First, make sure the folder exists:
+
+```bash
+mkdir -p ~/Desktop/loginapp
+```
+
+Then, run this **`mysqldump`** command to export the database:
+
+```bash
+mysqldump -u root -p CSBS_DATA > ~/Desktop/loginapp/CSBS_DATA.sql
+```
+
+* It will prompt you for the MySQL **root password**.
+* After successful execution, the file `CSBS_DATA.sql` will be saved in `~/Desktop/loginapp/`.
+
+---
+
+## ✅ To Confirm:
+
+Check that the file is saved:
+
+```bash
+ls ~/Desktop/loginapp/CSBS_DATA.sql
