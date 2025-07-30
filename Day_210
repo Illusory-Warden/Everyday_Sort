@@ -1,0 +1,47 @@
+### 🟨 If You Haven’t Exported Yet:
+
+Right now, your database **is not stored as a file** until you **export it**.
+
+To export your data (e.g., from the `students` table):
+
+#### ✅ Steps to Export a Table (e.g., `students`) as SQL or CSV:
+
+1. **Right-click** the `students` table.
+2. Click **Export Data**.
+3. Choose format:
+
+   * **SQL** (for re-importing into MySQL)
+   * **CSV** (for spreadsheets)
+4. Choose destination folder.
+5. Click **Finish**.
+
+---
+
+### 🟦 Where is it stored?
+
+When you export, **you choose the export location** — DBeaver does **not** store exports automatically.
+
+#### ✅ To Find Previous Export Locations:
+
+1. Click on the **`Downloads` tab** at the bottom (as seen in your screenshot).
+2. Or check these default folders:
+
+   * **\~/Downloads/**
+   * Or the custom folder you chose during export
+
+---
+
+### 🟥 If You're Looking for DBeaver's Internal Project Files:
+
+If you're trying to locate DBeaver project files:
+
+* They are stored in your workspace folder (default):
+
+  ```
+  ~/.dbeaver4/General/
+  ```
+
+  or
+
+  ```
+  ~/.dbeaver/
