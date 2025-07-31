@@ -1,0 +1,43 @@
+**Project Title:**  
+Remotely Accessible Personal Cloud Storage System
+
+**Abstract:**  
+As data volumes continue to grow among students, professionals, and content creators, traditional storage solutions like portable drives and commercial clouds fail to address concerns over privacy, control, and ease of access. To bridge this gap, we propose a remotely accessible storage system that keeps all user data physically at their premises while enabling seamless remote access from anywhere. Our system leverages open-source and modern tools—OpenMediaVault for intuitive storage management, Plex Media Server for direct media streaming, Paperless-NGX for document handling, Docker and Docker Compose for modular deployment, and Twingate for zero-trust secure connectivity, all running on a lightweight Linux-based OS—to deliver a user-controlled, secure, and convenient data management solution.
+
+**Objective:**  
+To design and implement a secure, user-empowered storage platform for large media and data files, maintaining data privacy by keeping storage local while enabling reliable remote access from any location.
+
+**Methodology:**  
+- Install and configure RPI OS Lite (or suitable Linux OS) on a Raspberry Pi 4 or spare computer.
+- Use OpenMediaVault for local file management and storage services.
+- Set up Plex Media Server for media streaming.
+- Enable document management with Paperless-NGX.
+- Containerize and orchestrate services using Docker and Docker Compose.
+- Integrate Twingate to establish a zero-trust, secure remote network for accessing the storage from anywhere.
+- Connect the device to a home router for network access and administer all services through a unified web interface.
+- Test for accessibility, security, and performance across various user scenarios.
+
+**S/w H/w Requirement:**  
+**Hardware:**  
+- Raspberry Pi 4 (or spare PC)  
+- USB card reader  
+- Micro SD card  
+- Ethernet cable (RJ45)  
+- Power supply  
+- Home router (modem/switch)  
+- Mouse and keyboard  
+- Stable internet connection  
+
+**Software:**  
+- RPI OS Lite 64bit (or equivalent Linux OS)  
+- OpenMediaVault  
+- Plex Media Server  
+- Docker  
+- Docker Compose  
+- Paperless-NGX  
+- Twingate  
+
+**Expected Output:**  
+- A secure, easy-to-use storage system that enables users to upload, download, stream, and manage large files remotely, with all data stored locally at the user’s premises.
+- Enhanced privacy and control, thanks to the use of open-source software and a zero-trust security model.
+- Flexible and practical solution for students, teachers, creators, and data-intensive users seeking cloud-like convenience without reliance on commercial cloud service providers.
