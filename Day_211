@@ -1,0 +1,16 @@
+PROJECT TOPIC
+Development of a Cost-Effective Personal Cloud Storage Solution Using Raspberry Pi and Open-Source Technologies
+
+Abstract:
+In the digital age, individuals and families generate vast amounts of personal data, including photos, documents, videos, and academic materials. However, storing and accessing this data securely and remotely remains a challenge—especially with the high cost of commercial cloud services and growing concerns about data privacy and ownership. This project addresses these issues by developing a cost-effective, privacy-focused personal cloud storage system using the Raspberry Pi 4 and open-source technologies.
+
+The system functions as a personal Network Attached Storage (NAS) server, offering secure local file storage as well as encrypted remote access through Twingate’s zero-trust networking approach. OpenMediaVault is used to manage NAS functionalities, Plex Media Server enables media streaming capabilities, and Docker is employed for efficient service containerization and deployment. Our aim is to provide an affordable and scalable alternative to paid cloud services such as Google Drive or iCloud, while ensuring complete data ownership for the user.
+
+The project is particularly beneficial for students and families who need secure, remote access to their data without incurring recurring subscription fees. It allows multiple-user support, access control, and system scalability, all managed by a lightweight, energy-efficient hardware setup. This solution not only emphasizes user privacy and cost reduction but also serves as a replicable model for digital independence using modern open-source technologies.
+
+GROUP MEMBERS AND ROLES:
+
+1. Rushi Daulatkar – Team Lead, Research and Development, Innovation Lead
+2. Abhijeet Pathode – Documentation Lead, Research Paper Drafter, and Research Analyst for Originality Verification
+3. Atharva Dhote – Presentation Designer, Narrator, and System Tester
+4. Harsh Yadav – Project Tester (Benchmark Testing), Cost and System Performance Analyst
