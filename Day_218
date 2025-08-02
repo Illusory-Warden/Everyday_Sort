@@ -1,0 +1,215 @@
+Aim : Analyze the time complexity of the given algorithm and determine it's all  notations 
+The algorithm is given as an unsorted array  of Integers and find the minimum and maximum Element , also calculate the space complexity of the program.
+
+Code : Make the program in cpp such a way that it includes a random number of elements max limit is 10000 numbers in the array and then it sorts the array along with the time complexity.
+
+Theory Part : 
+Time Complexity
+Space Complexity 
+Asymptotic Notation
+Code
+Analysis of code Line by Line
+Conclusion in detail 
+
+
+File:
+
+Here is your **full practical journal entry**, formatted exactly as per your enhanced prompt and details:
+
+---
+
+## **Subject:** Design and Analysis of Algorithm (DAA)
+
+## **Semester:** 5th Semester
+
+## **Experiment Number:** 1
+
+---
+
+### 🔬 **Aim**
+
+To analyze the time and space complexity of the given algorithm. The algorithm involves generating a random unsorted array of integers (up to 10,000 elements), finding the minimum and maximum elements, sorting the array, and determining the asymptotic notations representing the algorithm’s complexity.
+
+---
+
+### 📚 **Theory**
+
+#### **Time Complexity**
+
+Time complexity refers to the computational time an algorithm takes to complete relative to the size of the input (denoted as _n_). It helps evaluate the performance and scalability of algorithms. Common time complexities include:
+
+- **O(1)** – Constant time
+    
+- **O(log n)** – Logarithmic time
+    
+- **O(n)** – Linear time
+    
+- **O(n log n)** – Linearithmic time
+    
+- **O(n²)** – Quadratic time
+    
+
+In this experiment, time complexity will be analyzed for three operations:
+
+- Finding min/max in an array – **O(n)**
+    
+- Sorting the array – **O(n log n)** (assuming an efficient algorithm like `std::sort`)
+    
+- Overall – **O(n log n)**
+    
+
+#### **Space Complexity**
+
+Space complexity measures the total memory space required by an algorithm as a function of the input size. It includes:
+
+- Input storage
+    
+- Temporary variables
+    
+- Function call stack
+    
+
+For this experiment:
+
+- Input array: O(n)
+    
+- Auxiliary variables: O(1)
+    
+- Overall space complexity: **O(n)**
+    
+
+#### **Asymptotic Notation**
+
+Asymptotic notations describe the limiting behavior of an algorithm:
+
+- **Big O (O)** – Worst-case scenario
+    
+- **Omega (Ω)** – Best-case scenario
+    
+- **Theta (Θ)** – Average-case scenario
+    
+
+For our algorithm:
+
+- Finding min/max: Θ(n), Ω(n), O(n)
+    
+- Sorting using C++ STL sort: Θ(n log n), O(n log n), Ω(n log n)
+    
+- Combined: O(n log n)
+    
+
+---
+
+### 💻 **Code (C++)**
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    srand(time(0));
+
+    int n;
+    cout << "Enter the number of elements (max 10000): ";
+    cin >> n;
+
+    if (n > 10000 || n <= 0) {
+        cout << "Invalid input. Please enter a value between 1 and 10000." << endl;
+        return 1;
+    }
+
+    vector<int> arr(n);
+    for (int i = 0; i < n; ++i) {
+        arr[i] = rand() % 100000; // generate random numbers
+    }
+
+    // Finding min and max
+    int minElement = arr[0];
+    int maxElement = arr[0];
+    for (int i = 1; i < n; ++i) {
+        if (arr[i] < minElement) minElement = arr[i];
+        if (arr[i] > maxElement) maxElement = arr[i];
+    }
+
+    // Sorting
+    sort(arr.begin(), arr.end());
+
+    // Output
+    cout << "Minimum Element: " << minElement << endl;
+    cout << "Maximum Element: " << maxElement << endl;
+    cout << "First 10 Sorted Elements: ";
+    for (int i = 0; i < min(10, n); ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    return 0;
+}
+```
+
+---
+
+### 📊 **Analysis of Code (Line-by-Line)**
+
+1. `#include` directives include necessary standard libraries.
+    
+2. `srand(time(0));` seeds the random number generator to ensure different sequences on each run.
+    
+3. User input for `n`, with a safety check to ensure `n <= 10000`.
+    
+4. `vector<int> arr(n);` creates a dynamic array of size `n`.
+    
+5. Random numbers are generated using `rand() % 100000`.
+    
+6. A simple linear scan is used to find the **min** and **max** values: **O(n)** time.
+    
+7. The array is sorted using `std::sort()`, which uses **IntroSort** internally (average and worst-case: O(n log n)).
+    
+8. Outputs include the min, max, and first 10 sorted elements for verification.
+    
+
+---
+
+### 🧠 **Time and Space Complexity Analysis**
+
+- **Time Complexity**
+    
+    - Random number generation: O(n)
+        
+    - Finding min and max: O(n)
+        
+    - Sorting: O(n log n)
+        
+    - Overall: **O(n log n)**
+        
+- **Space Complexity**
+    
+    - Input array: O(n)
+        
+    - Temporary variables: O(1)
+        
+    - Overall: **O(n)**
+        
+
+---
+
+### 🌍 **Real-Life Applications**
+
+- Preprocessing large datasets before analysis
+    
+- Embedded systems performing sensor data evaluation
+    
+- Game engines needing quick performance optimizations
+    
+- Server-side scripts processing batch user data
+    
+
+---
+
+### ✅ **Conclusion**
+
+The experiment successfully demonstrated an algorithm to find the minimum and maximum values from a randomly generated array and sort the array using efficient sorting techniques. We analyzed its **time complexity** (O(n log n)) and **space complexity** (O(n)) and reviewed how the code behaves in detail. Such analysis is essential in algorithm design, ensuring optimal performance and scalability for real-world applications.
