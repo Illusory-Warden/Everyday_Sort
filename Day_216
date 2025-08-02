@@ -1,0 +1,227 @@
+
+---
+## **Experiment Number: [3]**
+
+### **Aim**
+
+To simulate both **Insertion Sort** and **Selection Sort** algorithms on the given arrays  
+`U = [1, 2, 3, 4, 5, 6]`, `V = [6, 5, 4, 3, 2, 1]`, and `W = [1, 3, 4, 5, 2, 6]`,  
+and analyze their performance.  
+Additionally, to simulate both sorting algorithms on array  
+`X = [1, 1, 1, 1, 1, 1]`,  
+compare the execution time and behavior on different input types, and derive the time complexities of both algorithms.
+
+---
+
+### **Theory**
+
+Sorting is a fundamental operation in computer science used to arrange elements in a specific order (typically ascending or descending). Two classic comparison-based sorting algorithms are:
+
+#### **1. Insertion Sort**
+
+- Builds the sorted array one element at a time by inserting each new element into its correct position.
+    
+- Works well on small or nearly sorted data.
+    
+- **Best Case:** O(n) (for already sorted arrays)
+    
+- **Worst Case:** O(n²) (for reverse-sorted arrays)
+    
+
+#### **2. Selection Sort**
+
+- Repeatedly selects the minimum element from the unsorted part and swaps it with the first unsorted element.
+    
+- Performance is not affected by the initial order of elements.
+    
+- **Best, Average, and Worst Case:** O(n²)
+    
+
+#### **Time Complexities**
+
+|Algorithm|Best Case|Average Case|Worst Case|Space Complexity|
+|---|---|---|---|---|
+|Insertion Sort|O(n)|O(n²)|O(n²)|O(1)|
+|Selection Sort|O(n²)|O(n²)|O(n²)|O(1)|
+
+---
+
+### **Algorithm**
+
+#### **Insertion Sort Algorithm**
+
+1. Iterate from index `1` to `n-1`.
+    
+2. Store the current element as `key`.
+    
+3. Compare it with elements before it and shift larger elements to the right.
+    
+4. Insert `key` at its correct position.
+    
+
+#### **Selection Sort Algorithm**
+
+1. Iterate from index `0` to `n-2`.
+    
+2. For each position `i`, find the minimum element in the unsorted part.
+    
+3. Swap the found minimum with the element at index `i`.
+    
+
+---
+
+### **Code**
+
+**Language Used: C++**
+
+```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Insertion Sort
+void insertionSort(vector<int> arr) {
+    cout << "Insertion Sort Steps: ";
+    for (int i = 1; i < arr.size(); i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    for (int val : arr)
+        cout << val << " ";
+    cout << endl;
+}
+
+// Selection Sort
+void selectionSort(vector<int> arr) {
+    cout << "Selection Sort Steps: ";
+    int n = arr.size();
+    for (int i = 0; i < n - 1; i++) {
+        int minIdx = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[minIdx])
+                minIdx = j;
+        swap(arr[i], arr[minIdx]);
+    }
+    for (int val : arr)
+        cout << val << " ";
+    cout << endl;
+}
+
+// Driver Code
+int main() {
+    vector<int> U = {1, 2, 3, 4, 5, 6};
+    vector<int> V = {6, 5, 4, 3, 2, 1};
+    vector<int> W = {1, 3, 4, 5, 2, 6};
+    vector<int> X = {1, 1, 1, 1, 1, 1};
+
+    cout << "\n--- Array U ---\n";
+    insertionSort(U);
+    selectionSort(U);
+
+    cout << "\n--- Array V ---\n";
+    insertionSort(V);
+    selectionSort(V);
+
+    cout << "\n--- Array W ---\n";
+    insertionSort(W);
+    selectionSort(W);
+
+    cout << "\n--- Array X ---\n";
+    insertionSort(X);
+    selectionSort(X);
+
+    return 0;
+}
+```
+
+---
+
+### **Input/Output Examples**
+
+**Array U = [1, 2, 3, 4, 5, 6]**
+
+- Insertion Sort Output: 1 2 3 4 5 6 (Minimal comparisons and shifts)
+    
+- Selection Sort Output: 1 2 3 4 5 6 (Full comparisons, swaps only once per pass)
+    
+
+**Array V = [6, 5, 4, 3, 2, 1]**
+
+- Insertion Sort Output: 1 2 3 4 5 6 (Maximum comparisons and shifts)
+    
+- Selection Sort Output: 1 2 3 4 5 6 (Still full comparisons, same as U)
+    
+
+**Array W = [1, 3, 4, 5, 2, 6]**
+
+- Insertion Sort Output: 1 2 3 4 5 6
+    
+- Selection Sort Output: 1 2 3 4 5 6
+    
+
+**Array X = [1, 1, 1, 1, 1, 1]**
+
+- Insertion Sort Output: 1 1 1 1 1 1 (Minimal shifts as no element is greater)
+    
+- Selection Sort Output: 1 1 1 1 1 1 (Full comparisons made)
+    
+
+---
+
+### **Analysis of Code and Algorithm**
+
+#### **Insertion Sort**
+
+- Runs **fastest on Array U**: Already sorted → O(n)
+    
+- **Slowest on Array V**: Reverse sorted → O(n²)
+    
+- **Performs well on Array W**: Nearly sorted → close to O(n)
+    
+- **Very efficient on Array X**: All elements equal → O(n)
+    
+
+#### **Selection Sort**
+
+- Performs **similarly** on **U, V, W, and X**
+    
+- Number of comparisons always **n(n - 1)/2**, independent of order
+    
+- Consistent runtime → always O(n²)
+    
+
+---
+
+### **Real-Life Applications**
+
+- **Insertion Sort**:
+    
+    - Ideal for small datasets (e.g., real-time systems, online sorting)
+        
+    - Used in hybrid algorithms like TimSort for nearly sorted data
+        
+- **Selection Sort**:
+    
+    - Useful in cases where memory writes are more expensive than reads
+        
+    - Embedded systems or hardware-based sorting circuits
+        
+
+---
+
+### **Conclusion**
+
+In this experiment, we simulated and compared **Insertion Sort** and **Selection Sort** on various input patterns.
+
+- **Insertion Sort** was faster on sorted and nearly sorted arrays (U, W, X), and slower on reverse-ordered arrays (V).
+    
+- **Selection Sort** had a **consistent runtime** regardless of the input order.  
+    We also analyzed time complexities and behavior on equal-value arrays (X), reinforcing the impact of input distribution on algorithm efficiency. This experiment deepened understanding of both algorithm design and performance analysis.
+    
+
+---
