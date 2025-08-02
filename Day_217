@@ -1,0 +1,177 @@
+Aim : Analyze the time complexity of the given algorithm and determine its Big O notation. The algorithm is: Given
+an unsorted array of integers, count how many times a specific number occurs in the array.
+
+
+---
+## **Experiment Number: 2**
+
+### **Aim**
+
+Analyze the time complexity of the given algorithm and determine its Big O notation. The algorithm is: Given an unsorted array of integers, count how many times a specific number occurs in the array.
+
+---
+
+### **Theory**
+
+In the study of algorithms, **time complexity** is used to describe the computational time an algorithm takes to complete as a function of the input size (_n_). It helps in comparing the efficiency of algorithms under different input sizes.
+
+The **Big O notation** expresses the upper bound of an algorithm's runtime in the worst-case scenario. It abstracts away constant factors and lower-order terms to focus on growth rate as input size increases.
+
+In this experiment, the task is to count how many times a particular number appears in an unsorted array. Since the array is not sorted, we must traverse the entire array to examine each element.
+
+Key concepts involved:
+
+- **Array Traversal**: Iterating over each element of the array using loops.
+    
+- **Frequency Counting**: Using a simple counter variable to record matches.
+    
+- **Time Complexity Analysis**: Determining the runtime based on loop iterations and operations performed.
+    
+
+---
+
+### **Algorithm**
+
+1. Start.
+    
+2. Initialize a counter variable to 0.
+    
+3. Input the size of the array `n`.
+    
+4. Input `n` elements into the array.
+    
+5. Input the target element to be counted.
+    
+6. For each element in the array:
+    
+    - If the element equals the target, increment the counter.
+        
+7. Output the value of the counter.
+    
+8. End.
+    
+
+---
+
+### **Code**
+
+**Language Used: C++**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Function to count occurrences of a number in the array
+int countOccurrences(int arr[], int n, int target) {
+    int count = 0; // Initialize counter
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            count++; // Increment counter when match is found
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n;
+
+    // Input the size of the array
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    int arr[n];
+
+    // Input elements of the array
+    cout << "Enter the elements of the array:" << endl;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int target;
+
+    // Input the number to count
+    cout << "Enter the number to count: ";
+    cin >> target;
+
+    // Call the function and display result
+    int result = countOccurrences(arr, n, target);
+    cout << "The number " << target << " occurs " << result << " time(s) in the array." << endl;
+
+    return 0;
+}
+```
+
+---
+
+### **Input/Output Examples**
+
+**Example 1:**
+
+```
+Input:
+Enter the size of the array: 6
+Enter the elements of the array:
+3 5 3 2 3 1
+Enter the number to count: 3
+
+Output:
+The number 3 occurs 3 time(s) in the array.
+```
+
+**Example 2 (Edge Case - Number Not Found):**
+
+```
+Input:
+Enter the size of the array: 5
+Enter the elements of the array:
+1 2 4 6 7
+Enter the number to count: 5
+
+Output:
+The number 5 occurs 0 time(s) in the array.
+```
+
+---
+
+### **Analysis of Code and Algorithm**
+
+- **Time Complexity:**
+    
+    - The array is traversed once, checking each element.
+        
+    - **Worst Case Time Complexity:** O(n)
+        
+    - **Best Case Time Complexity:** O(n) – all elements must be checked regardless of position.
+        
+    - Hence, **Overall Time Complexity:** **O(n)**
+        
+- **Space Complexity:**
+    
+    - Only a counter and a fixed-size array are used → **O(1)** (ignoring input array).
+        
+- **Logic Flow:**
+    
+    - Input array → traverse → match check → count → output.
+        
+    - Simple and effective for a single search operation.
+        
+
+---
+
+### **Real-Life Applications**
+
+- **Data Analytics**: Counting word or number frequencies in large datasets.
+    
+- **Inventory Systems**: Checking how many units of a product exist.
+    
+- **Surveys and Polls**: Counting how many times a response option was selected.
+    
+
+---
+
+### **Conclusion**
+
+In this experiment, we developed a C++ program to count the occurrences of a specified number in an unsorted array. By analyzing the algorithm, we determined that its **time complexity is O(n)**, which is efficient for single-pass operations. This exercise reinforced understanding of array traversal and basic complexity analysis, fulfilling the stated aim.
+
+---
+
