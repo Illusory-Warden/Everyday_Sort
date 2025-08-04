@@ -1,0 +1,61 @@
+Here are the answers for the questions shown in your images:
+
+1. **The full form of MQTT is**  
+   **b. Message Query Telemetry Transport**
+
+2. **Which of the following is NOT a method in MQTT?**  
+   **a. Break**  
+   ("Stick" and "Run" are not MQTT methods either, but "Break" is the standout incorrect option in context.)
+
+3. **Which of the following is/are component/components of MQTT?**  
+   **d. All of these**  
+   (Publishers, Subscribers, and Brokers are all core components.)
+
+4. **SMQTT is an extension of MQTT which uses lightweight attribute based encryption. It has three main stages.**  
+   **b. False**  
+   (SMQTT is an extension using encryption, but the "three main stages" part is incorrect.)
+
+5. **The OSI model has _________ layers.**  
+   **c. Both (a) and (b)**  
+   (Correct answers are both 7 and 8 layers, but standard answer is 7. However, per the options, select both.)
+
+6. **The two sub-layers of CoAP are :**  
+   **a. Messaging and Holding**
+
+7. **What is the full form of AMQP in the context of IoT protocol?**  
+   **b. Advanced Message Queuing Protocol**
+
+8. **XMPP uses the __________ architecture.**  
+   **c. Both (a) and (b)**  
+   (Supports both publish-subscribe and client-server.)
+
+9. **How many message delivery guarantee modes are there in the AMQP protocol?**  
+   **c. 3**
+
+10. **Which of the following is/are NOT an AMQP frame type?**  
+    **c. Random**  
+    (Random is not a frame type.)
+
+11. **IEEE 802.15.5 was developed for low data rate monitoring and control applications and extended life low power communication uses.**  
+    **a. True**
+
+12. **Which of the following is/are exchange types in AMQP?**  
+    **c. Both (a) and (b)**  
+    (Both direct and indirect.)
+
+13. **IEEE 802.15.4 operates in ISM band.**  
+    **a. True**
+
+14. **The networking topologies supported in the IEEE 802.15.4 are:**  
+    **b. Star and Mesh**  
+    (Both are supported.)
+
+15. **Generation of Route Requests (RREQs) by a LOADng Router for discovering a route to a destination is a valid operation of the LOADng routing protocol.**  
+    **b. True**
+
+Let me know if you need any explanations!
+
+[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/87004061/c219a068-d60c-49af-b4d6-90fab4dfc4e7/image.jpg?AWSAccessKeyId=ASIA2F3EMEYE5LWV5I46&Signature=fHKDfBmqJmhebw3E4EBqSCNZ6GQ%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEBMaCXVzLWVhc3QtMSJIMEYCIQDFyXDwIkz7iY%2Bv2W61ebL8Ths5%2FPfEYpd7IUqvg7tSwgIhAMCbXE0D6AK9BDo0JJkTwROgwbqTjIhep9MTNaV6MFBkKvEECEsQARoMNjk5NzUzMzA5NzA1IgzQ63RYe1sUqXegcpUqzgRZisgYBsDFCkOwkHvKGYKBACm89BZL6Ft9QPb95Zpi0j13tfrso0M2nXS9erYX%2BkZKfxTV%2FzdxTj0DPEUGJozulyMElKlK8m5YawkaY6MRWtVjbDHTGitodBEQcElpPI%2BqFh4ZUs%2F2gdErWG%2BTinK7my5SXdZ%2FdCYsr8meeDGf%2FTxJ88ZALC9ilhKtt8QJM3VFTfmKfXiRHCREdU4K6Nwk%2FxJPH5dkMO6VTs4DSyfV7EO%2Fp4%2FjyWYNffX9%2BGAsU5E63N1Y2XS3NsZEf0BpaBno2qEbFlyV4Ff1iaMwlTkNHuEBPLz44rnSD6y6gHNyc6ZRWDkbwGPTPX6uXtDqRL%2ByMH2mKhJjq5iZi%2Bldyyn3fVL92Qm7pafJYckJWXhNk0AeGRy%2FWqLFckUKzDLCEzIXWihdCn72j%2BLO9XAV51PUb%2F1XU5xJkFQfxunm%2FMeQ5iX6F%2BWq9o90tKEJZc3ef0dY%2FbLXhKJl7Q56AKPnXAlPisP0OaPfXhKo3a6I0Evwgbw%2BJKE%2FieHrTnayJC%2FtyDSNwCpHc%2F4m8ShLk4AnKE1NrIzGFO80H6%2FyjSZVUuxc1MWiesoJiTtaPbZhCMARAZyRvnqk3b7TP%2FZvFehQhbCXvPaL1T4nDqp2A9%2BpCL9ceuzw6cOJtaNSBt0FD5oc6DuWT%2FzRAku66aKoyk8buFlpnYT34OwLtyhL9GDxPd2jtsvh2e1ktiP11EBepRJftg1zfpP0plr7Z841ArrDK0S9OeHHKqhi4ZzHFXuxJpXlLg2db8p6dEGA3lTuu6cFBTCv7cPEBjqZASywjxFNQH9wyPv0fRms%2FLnr11SstBPxjSeuTNYjT2Rnxzx2aTdq7fssx45qjwhY%2FfTlnDaB3ygKSgUeDvjpMZbjikxlpWaxFBK9dKIPUQxAIxYHQKNwhyqZ63ck%2BjGCo%2BfuzO1lv%2BnM%2BKCXWZVnMUGa7n8eZQpSa5thMJPW6fsYcAdeiiUaGflAjdmAQsv1hYKG83d83wUiHw%3D%3D&Expires=1754331732
+[2] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/87004061/9f87b3a4-fe40-412b-b56c-988b5ac19569/image.jpg?AWSAccessKeyId=ASIA2F3EMEYE5LWV5I46&Signature=I932MYTT9%2FG0AiR5HHbWelgLxNw%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEBMaCXVzLWVhc3QtMSJIMEYCIQDFyXDwIkz7iY%2Bv2W61ebL8Ths5%2FPfEYpd7IUqvg7tSwgIhAMCbXE0D6AK9BDo0JJkTwROgwbqTjIhep9MTNaV6MFBkKvEECEsQARoMNjk5NzUzMzA5NzA1IgzQ63RYe1sUqXegcpUqzgRZisgYBsDFCkOwkHvKGYKBACm89BZL6Ft9QPb95Zpi0j13tfrso0M2nXS9erYX%2BkZKfxTV%2FzdxTj0DPEUGJozulyMElKlK8m5YawkaY6MRWtVjbDHTGitodBEQcElpPI%2BqFh4ZUs%2F2gdErWG%2BTinK7my5SXdZ%2FdCYsr8meeDGf%2FTxJ88ZALC9ilhKtt8QJM3VFTfmKfXiRHCREdU4K6Nwk%2FxJPH5dkMO6VTs4DSyfV7EO%2Fp4%2FjyWYNffX9%2BGAsU5E63N1Y2XS3NsZEf0BpaBno2qEbFlyV4Ff1iaMwlTkNHuEBPLz44rnSD6y6gHNyc6ZRWDkbwGPTPX6uXtDqRL%2ByMH2mKhJjq5iZi%2Bldyyn3fVL92Qm7pafJYckJWXhNk0AeGRy%2FWqLFckUKzDLCEzIXWihdCn72j%2BLO9XAV51PUb%2F1XU5xJkFQfxunm%2FMeQ5iX6F%2BWq9o90tKEJZc3ef0dY%2FbLXhKJl7Q56AKPnXAlPisP0OaPfXhKo3a6I0Evwgbw%2BJKE%2FieHrTnayJC%2FtyDSNwCpHc%2F4m8ShLk4AnKE1NrIzGFO80H6%2FyjSZVUuxc1MWiesoJiTtaPbZhCMARAZyRvnqk3b7TP%2FZvFehQhbCXvPaL1T4nDqp2A9%2BpCL9ceuzw6cOJtaNSBt0FD5oc6DuWT%2FzRAku66aKoyk8buFlpnYT34OwLtyhL9GDxPd2jtsvh2e1ktiP11EBepRJftg1zfpP0plr7Z841ArrDK0S9OeHHKqhi4ZzHFXuxJpXlLg2db8p6dEGA3lTuu6cFBTCv7cPEBjqZASywjxFNQH9wyPv0fRms%2FLnr11SstBPxjSeuTNYjT2Rnxzx2aTdq7fssx45qjwhY%2FfTlnDaB3ygKSgUeDvjpMZbjikxlpWaxFBK9dKIPUQxAIxYHQKNwhyqZ63ck%2BjGCo%2BfuzO1lv%2BnM%2BKCXWZVnMUGa7n8eZQpSa5thMJPW6fsYcAdeiiUaGflAjdmAQsv1hYKG83d83wUiHw%3D%3D&Expires=1754331732
+[3] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/87004061/3eec891c-5d70-4465-9c6e-5d2f28decddb/image.jpg?AWSAccessKeyId=ASIA2F3EMEYE5LWV5I46&Signature=GKBs9dPYCZu6D2TgM2JJyL424EI%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEBMaCXVzLWVhc3QtMSJIMEYCIQDFyXDwIkz7iY%2Bv2W61ebL8Ths5%2FPfEYpd7IUqvg7tSwgIhAMCbXE0D6AK9BDo0JJkTwROgwbqTjIhep9MTNaV6MFBkKvEECEsQARoMNjk5NzUzMzA5NzA1IgzQ63RYe1sUqXegcpUqzgRZisgYBsDFCkOwkHvKGYKBACm89BZL6Ft9QPb95Zpi0j13tfrso0M2nXS9erYX%2BkZKfxTV%2FzdxTj0DPEUGJozulyMElKlK8m5YawkaY6MRWtVjbDHTGitodBEQcElpPI%2BqFh4ZUs%2F2gdErWG%2BTinK7my5SXdZ%2FdCYsr8meeDGf%2FTxJ88ZALC9ilhKtt8QJM3VFTfmKfXiRHCREdU4K6Nwk%2FxJPH5dkMO6VTs4DSyfV7EO%2Fp4%2FjyWYNffX9%2BGAsU5E63N1Y2XS3NsZEf0BpaBno2qEbFlyV4Ff1iaMwlTkNHuEBPLz44rnSD6y6gHNyc6ZRWDkbwGPTPX6uXtDqRL%2ByMH2mKhJjq5iZi%2Bldyyn3fVL92Qm7pafJYckJWXhNk0AeGRy%2FWqLFckUKzDLCEzIXWihdCn72j%2BLO9XAV51PUb%2F1XU5xJkFQfxunm%2FMeQ5iX6F%2BWq9o90tKEJZc3ef0dY%2FbLXhKJl7Q56AKPnXAlPisP0OaPfXhKo3a6I0Evwgbw%2BJKE%2FieHrTnayJC%2FtyDSNwCpHc%2F4m8ShLk4AnKE1NrIzGFO80H6%2FyjSZVUuxc1MWiesoJiTtaPbZhCMARAZyRvnqk3b7TP%2FZvFehQhbCXvPaL1T4nDqp2A9%2BpCL9ceuzw6cOJtaNSBt0FD5oc6DuWT%2FzRAku66aKoyk8buFlpnYT34OwLtyhL9GDxPd2jtsvh2e1ktiP11EBepRJftg1zfpP0plr7Z841ArrDK0S9OeHHKqhi4ZzHFXuxJpXlLg2db8p6dEGA3lTuu6cFBTCv7cPEBjqZASywjxFNQH9wyPv0fRms%2FLnr11SstBPxjSeuTNYjT2Rnxzx2aTdq7fssx45qjwhY%2FfTlnDaB3ygKSgUeDvjpMZbjikxlpWaxFBK9dKIPUQxAIxYHQKNwhyqZ63ck%2BjGCo%2BfuzO1lv%2BnM%2BKCXWZVnMUGa7n8eZQpSa5thMJPW6fsYcAdeiiUaGflAjdmAQsv1hYKG83d83wUiHw%3D%3D&Expires=1754331732
+[4] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/images/87004061/002124db-0cb1-4485-93d9-0205e007e617/image.jpg?AWSAccessKeyId=ASIA2F3EMEYE5LWV5I46&Signature=VOj9rarjzDrghraYS%2FLmIPBm%2FUo%3D&x-amz-security-token=IQoJb3JpZ2luX2VjEBMaCXVzLWVhc3QtMSJIMEYCIQDFyXDwIkz7iY%2Bv2W61ebL8Ths5%2FPfEYpd7IUqvg7tSwgIhAMCbXE0D6AK9BDo0JJkTwROgwbqTjIhep9MTNaV6MFBkKvEECEsQARoMNjk5NzUzMzA5NzA1IgzQ63RYe1sUqXegcpUqzgRZisgYBsDFCkOwkHvKGYKBACm89BZL6Ft9QPb95Zpi0j13tfrso0M2nXS9erYX%2BkZKfxTV%2FzdxTj0DPEUGJozulyMElKlK8m5YawkaY6MRWtVjbDHTGitodBEQcElpPI%2BqFh4ZUs%2F2gdErWG%2BTinK7my5SXdZ%2FdCYsr8meeDGf%2FTxJ88ZALC9ilhKtt8QJM3VFTfmKfXiRHCREdU4K6Nwk%2FxJPH5dkMO6VTs4DSyfV7EO%2Fp4%2FjyWYNffX9%2BGAsU5E63N1Y2XS3NsZEf0BpaBno2qEbFlyV4Ff1iaMwlTkNHuEBPLz44rnSD6y6gHNyc6ZRWDkbwGPTPX6uXtDqRL%2ByMH2mKhJjq5iZi%2Bldyyn3fVL92Qm7pafJYckJWXhNk0AeGRy%2FWqLFckUKzDLCEzIXWihdCn72j%2BLO9XAV51PUb%2F1XU5xJkFQfxunm%2FMeQ5iX6F%2BWq9o90tKEJZc3ef0dY%2FbLXhKJl7Q56AKPnXAlPisP0OaPfXhKo3a6I0Evwgbw%2BJKE%2FieHrTnayJC%2FtyDSNwCpHc%2F4m8ShLk4AnKE1NrIzGFO80H6%2FyjSZVUuxc1MWiesoJiTtaPbZhCMARAZyRvnqk3b7TP%2FZvFehQhbCXvPaL1T4nDqp2A9%2BpCL9ceuzw6cOJtaNSBt0FD5oc6DuWT%2FzRAku66aKoyk8buFlpnYT34OwLtyhL9GDxPd2jtsvh2e1ktiP11EBepRJftg1zfpP0plr7Z841ArrDK0S9OeHHKqhi4ZzHFXuxJpXlLg2db8p6dEGA3lTuu6cFBTCv7cPEBjqZASywjxFNQH9wyPv0fRms%2FLnr11SstBPxjSeuTNYjT2Rnxzx2aTdq7fssx45qjwhY%2FfTlnDaB3ygKSgUeDvjpMZbjikxlpWaxFBK9dKIPUQxAIxYHQKNwhyqZ63ck%2BjGCo%2BfuzO1lv%2BnM%2BKCXWZVnMUGa7n8eZQpSa5thMJPW6fsYcAdeiiUaGflAjdmAQsv1hYKG83d83wUiHw%3D%3D&Expires=1754331732
