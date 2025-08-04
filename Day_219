@@ -1,0 +1,64 @@
+Here are the answers to your questions, each with a brief explanation:
+
+1. **Which of the following allows us to identify objects and extract information?**  
+   **a. RFID**  
+   *RFID (Radio Frequency Identification) is used to identify objects and extract stored information from tags attached to them.*
+
+2. **How many layers does Zigbee consist of?**  
+   **d. 4**  
+   *The Zigbee protocol stack is often described in a simplified OSI-like model as consisting of four layers: Physical, MAC, Network, and Application layers. Note, sometimes more sub-layers are discussed, but standard multiple-choice sources typically note 4 layers as the answer[1][2][3].*
+
+3. **Which of the following is not a component of cloud computing?**  
+   **b. Local Servers**  
+   *Clients, Services, and Applications are all core to cloud computing, whereas Local Servers are specific to traditional IT infrastructure and are not integral to cloud infrastructure hosting[4].*
+
+4. **Which of the following is a distance measuring sensor module?**  
+   **b. HC-SR04**  
+   *The HC-SR04 is an ultrasonic sensor module commonly used for distance measurement[5][6].*
+
+5. **Which of the following is a component in a typical sensor network?**  
+   **d. All of these**  
+   *Typical sensor networks include sinks, gateways, and routers as part of their architecture[7][8].*
+
+6. **Which of the following sensors are responsible for measuring orientation and angular velocity?**  
+   **a. Accelerometer**  
+   *Accelerometers can measure orientation, but for angular velocity, the correct sensor is typically a gyroscope. Among the given choices, accelerometer is the closest correct answer, as GPS and temperature sensors do not measure either property[9][10].*
+
+7. **“ISA 100.11A” is a wireless networking technology standard. ISA stands for _______.**  
+   **a. International Society of Automation**  
+   *ISA is officially the International Society of Automation[11].*
+
+8. **Which of the following is not a difference between traditional data center and cloud computing?**  
+   **d. Storage**  
+   *Both traditional data centers and cloud computing provide storage. Scalability, flexibility, and elasticity are unique advantages of the cloud[12].*
+
+9. **Smart grid is also known as the energy internet.**  
+   **a. True**  
+   *Smart grids are often referred to as the "energy internet" due to their ability to use digital communication technology for efficient management and distribution of electricity[13][14].*
+
+10. **Can a point of node failure result in the partition of the network in the stationary sensor network?**  
+    **a. Yes**  
+    *In stationary sensor networks, if a critical node fails (especially one functioning as a bridge), it can result in network partition, disrupting communication between network segments.*
+
+If you need further explanations on any answer or references to the sources, please let me know!
+
+[1] https://www.geeksforgeeks.org/computer-networks/introduction-of-zigbee/
+[2] https://www.digi.com/resources/documentation/Digidocs/90002002/Content/Reference/r_zb_stack.htm?TocPath=zigbee+networks%7C_____3
+[3] https://www.sciencedirect.com/topics/computer-science/zigbee-specification
+[4] https://www.geeksforgeeks.org/cloud-computing/architecture-of-cloud-computing/
+[5] https://techtonics.in/product/hc-sr04-ultrasonic-sensor-distance-measuring-module/
+[6] https://www.flyrobo.in/ultrasonic_module_hc_sr04_distance_measuring_sensor
+[7] https://www.scaler.in/wireless-sensor-network/
+[8] https://nilesecure.com/network-design/what-is-a-wireless-sensor-network-how-does-it-work
+[9] https://blog.endaq.com/how-to-measure-angular-motion
+[10] https://www.millenniumsemi.com/product/sensors-transducers/gyro-sensor/
+[11] https://en.wikipedia.org/wiki/ISA100.11a
+[12] https://www.talend.com/resources/cloud-vs-data-center/
+[13] https://en.wikipedia.org/wiki/Smart_grid
+[14] https://e.huawei.com/at/knowledge/2024/industries/grid/what-is-smart-grid
+[15] https://en.wikipedia.org/wiki/Zigbee
+[16] https://wiki.st.com/stm32mcu/wiki/Connectivity:Introduction_to_Zigbee
+[17] https://spot.io/resources/cloud-optimization/cloud-infrastructure-4-key-components-and-deployment-models/
+[18] https://www.rfwireless-world.com/tutorials/zigbee-protocol-stack-explained
+[19] https://blog.isa.org/analysis-wireless-industrial-automation-standards-isa-100-11a-wirelesshart
+[20] https://www.geeksforgeeks.org/cloud-computing/difference-between-cloud-and-data-center/
