@@ -1,0 +1,7 @@
+This project explores the development of a personal cloud storage system using the Raspberry Pi, aiming to provide a secure, affordable, and customizable alternative to commercial cloud services. Motivated by rising concerns over privacy, recurring costs, and limited control in mainstream storage platforms, the solution utilizes open-source technologies like OpenMediaVault, Docker, and Plex, integrated with Twingate’s Zero Trust Network Access for secure remote connectivity.
+
+The presentation outlines the technical stack, emphasizing modularity, ease of use, and cross-platform compatibility. Key innovations include a robust authentication framework, energy-efficient hardware, and detailed performance and cost evaluations. Compared to Google Drive or Dropbox, the system delivers significant long-term savings and full data sovereignty.
+
+A literature review supports the feasibility, citing existing implementations and improvements such as enhanced encryption, media streaming, and advanced security mechanisms. The proposed architecture ensures data ownership, scalability, and usability—even for non-technical users. Evaluation metrics assess ROI, access speed, security, power usage, and user experience.
+
+Ultimately, this seminar presents a forward-thinking solution that empowers users to take control of their digital data, moving beyond the limitations of commercial storage through a cost-effective, privacy-respecting, and highly personalized system.
