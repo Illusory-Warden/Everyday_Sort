@@ -1,0 +1,100 @@
+## 📘 **Case Study: AirAsia Builds Disaster Recovery on AWS**
+
+### 🏢 Organization
+
+**AirAsia**
+**Industry:** Aviation / Transportation
+**Headquarters:** Malaysia
+
+---
+
+## 🚨 Challenge: Ensuring Business Continuity for Critical Systems
+
+AirAsia, one of Asia's largest low-cost carriers, depends heavily on its digital platforms for:
+
+* **Flight booking**
+* **Passenger check-in**
+* **Operations and logistics**
+* **Customer service portals**
+
+Any downtime could mean **loss of revenue**, **reputational damage**, and **disrupted customer experience**.
+
+**Key risks:**
+
+* Data center outages due to power failures, fire, or natural disasters
+* Manual recovery procedures were slow and error-prone
+* Lack of real-time redundancy and geographic failover
+* High cost and complexity of traditional DR solutions
+
+---
+
+## 💡 Solution: Disaster Recovery on AWS
+
+AirAsia adopted a **cloud-native disaster recovery (DR) strategy using AWS**, which allowed them to:
+
+1. Replicate on-premises workloads to AWS.
+2. Enable rapid recovery in a secondary region.
+3. Automate infrastructure provisioning and failover.
+
+### 🔧 Key AWS Services Used:
+
+| AWS Service                             | Purpose                                                  |
+| --------------------------------------- | -------------------------------------------------------- |
+| **AWS Elastic Disaster Recovery (DRS)** | Real-time replication of workloads from on-prem to AWS   |
+| **Amazon EC2**                          | Provisioning compute resources in disaster recovery mode |
+| **Amazon S3**                           | Secure backup storage for application and customer data  |
+| **Amazon Route 53**                     | DNS failover routing to alternate regions                |
+| **AWS CloudFormation**                  | Automated recovery infrastructure as code                |
+| **Amazon RDS**                          | Replication of critical databases for quick failover     |
+
+---
+
+## ✅ Results
+
+| Outcome                                    | Impact                                                    |
+| ------------------------------------------ | --------------------------------------------------------- |
+| **Reduced RTO (Recovery Time Objective)**  | From several hours to **under 15 minutes**                |
+| **Reduced RPO (Recovery Point Objective)** | Near real-time replication via AWS DRS                    |
+| **Lowered Costs**                          | Pay-as-you-go model reduced CAPEX by **over 40%**         |
+| **Increased Availability**                 | Systems remained operational during outages and DR drills |
+| **Faster Compliance Audits**               | Easily met aviation regulatory requirements for DR        |
+
+---
+
+## ✈️ Real-World Incident: Data Center Cooling Failure
+
+In 2019, one of AirAsia’s primary data centers experienced a **cooling system failure** during peak operational hours. Thanks to the AWS-based DR plan:
+
+* Mission-critical applications automatically failed over to AWS.
+* Passengers continued to check-in and board without delays.
+* Engineers used AWS CloudFormation to spin up mirrored infrastructure in minutes.
+* No data loss occurred due to continuous replication via AWS DRS.
+
+---
+
+## 🧠 Lessons Learned
+
+1. **Automation reduces recovery time** – Infrastructure-as-code allowed AirAsia to spin up systems quickly and consistently.
+2. **Hybrid models offer flexibility** – They maintained key on-prem operations with AWS as a warm standby.
+3. **Testing is critical** – Regular DR drills in AWS helped identify gaps and build confidence across teams.
+
+---
+
+## 🔐 Security & Compliance
+
+AirAsia implemented strict access controls, encryption, and monitoring through:
+
+* **AWS IAM**
+* **Amazon GuardDuty**
+* **AWS KMS (Key Management Service)**
+
+They met regional compliance and aviation IT regulations with robust AWS logging and audit trails.
+
+---
+
+## 📌 Summary
+
+By migrating its disaster recovery to AWS, **AirAsia gained faster recovery times, lower costs, and greater resilience**. Their cloud-based DR strategy helped ensure uninterrupted service for passengers and regulatory compliance for the business.
+
+> “AWS allowed us to reduce our recovery time from hours to minutes while keeping costs under control. It changed the way we think about resilience.”
+> – Group CIO, AirAsia
