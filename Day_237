@@ -1,0 +1,35 @@
+Awesome! Here’s the **final chunk** of student records including:
+
+1. Remaining regular students (UIDs `23016051` to `23016066`)
+2. **DSY (Direct Second Year)** students (UIDs `24105001` and up) — note: these have no `roll_no`
+
+---
+
+### ✅ PART 4: Insert Remaining Students + DSY Entries
+
+```sql
+INSERT INTO CSBS_MAIN_INFO (uid, roll_no, name, mother_name) VALUES
+('23016051', 51, 'MAITHILIDEVANAND DORKHANDE', 'RUPALI'),
+('23016052', 52, 'AKSHAT JAGDISH MOURYA', 'KALA'),
+('23016053', 53, 'SUMIT DEVENDRA HELONDE', 'JAYSHRI'),
+('23016054', 54, 'HARSHAD NARAYAN PATHEKAR', 'SANGITA'),
+('23016060', 60, 'RUSHI JAIKANT DAULATKAR', 'SAROJ'),
+('23016061', 61, 'PROMITI SAPTAK BANERJEE', 'BITHIKA'),
+('23016062', 62, 'JOE FRANCIS JOISON', 'DIVYA'),
+('23016063', 63, 'ALWYN CHARLES', NULL),
+('23016065', 65, 'REET DEEPAK GOENKA', 'SONAL'),
+('23016066', 66, 'ANUSIKA PRAKASH MAHLUKAR', 'SHUBHANGI'),
+
+-- DSY Students (roll_no = NULL)
+('24105001', NULL, 'NEHA JANARDHAN SATAQ', 'KAVITA'),
+('24105002', NULL, 'SHUBHAM INDRAJEET RAMTEKE', 'BEENA'),
+('24105003', NULL, 'AVANTEE DINESH SAWIE', 'YAURJ'),
+('24105004', NULL, 'ON KAMLAKAR GONDE', 'MANGALA'),
+('24105005', NULL, 'LAVANYA LAXVEDHI NIKOSE', 'MEENA'),
+('24105006', NULL, 'FRITI KISHOR PETLE', 'VARSHA'),
+('24105007', NULL, 'SIREAKSII YUVRAJ NICHKOLA', 'SHEIMNKITA');
+```
+
+---
+
+✅ **That’s the full set of inserts** for all students from both the original list and the old `examiners` table.
