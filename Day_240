@@ -1,0 +1,34 @@
+## 🔷 STEP 1: Understand the Scope (Entities & Data You Have)
+
+Before we design anything, we need to know:
+
+### 🔍 What kind of real information do you have about your class?
+
+Please tell me what kind of data you've been given. For example:
+
+* List of students (name, roll number, email, etc.)
+* Courses or subjects they study
+* Faculty/teachers teaching them
+* Attendance records
+* Marks/grades
+* Class timetable
+* Departments or sections
+* Extracurricular activities
+* Assignments/submissions
+* Exams
+
+Please **list everything** you’ve got or been allowed to include. The more detailed you are, the more realistic and normalized our database will be.
+
+---
+
+## 🛠️ STEP 2: Once We Know the Data — We Will:
+
+1. **Identify Entities (Tables)** — like Student, Course, Faculty, etc.
+2. **Define Attributes (Columns)** — e.g., student\_id, name, email.
+3. **Define Relationships** — e.g., many students attend many courses.
+4. **Normalize the Schema** — ensure 1NF, 2NF, 3NF.
+5. **Add Primary & Foreign Keys** — for relational integrity.
+6. **Design an ER Diagram (optional)** — to visualize.
+7. **Generate SQL Code** — to create the DB and tables.
+8. **Add Sample Data** — with `INSERT INTO` queries.
+9. **Query Examples** — like joins, aggregations, etc.
