@@ -1,0 +1,52 @@
+To uninstall Gigolo after installing it with `sudo apt install gigolo`, you can use these commands:
+
+## Method 1: Complete Removal (Recommended)
+```bash
+sudo apt remove --purge gigolo
+```
+This removes Gigolo and its configuration files.
+
+## Method 2: Basic Removal
+```bash
+sudo apt remove gigolo
+```
+This removes Gigolo but keeps configuration files (in case you want to reinstall later).
+
+## Method 3: Remove with Dependencies
+```bash
+sudo apt autoremove --purge gigolo
+```
+This removes Gigolo, its config files, and any dependencies that were installed with it and are no longer needed.
+
+## Clean Up After Removal:
+```bash
+# Clean the package cache
+sudo apt autoclean
+
+# Remove any leftover dependencies
+sudo apt autoremove
+```
+
+## Check if Gigolo is Completely Removed:
+```bash
+# Check if the package is still installed
+dpkg -l | grep gigolo
+
+# Check if the binary still exists
+which gigolo
+```
+
+If the commands return nothing, Gigolo has been successfully removed.
+
+## Alternative: Using apt-get
+If you prefer `apt-get`:
+```bash
+sudo apt-get remove --purge gigolo
+sudo apt-get autoremove
+```
+
+## Note:
+- Your personal Gigolo bookmarks/settings are typically stored in `~/.config/gigolo/` - these won't be removed automatically
+- If you want to remove these manually: `rm -rf ~/.config/gigolo/`
+
+The `--purge` flag is recommended as it ensures complete removal including configuration files.
