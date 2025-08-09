@@ -1,0 +1,63 @@
+Based on your setup, I'll guide you through configuring Gigolo on your Parrot OS laptop to connect to your Raspberry Pi NAS running Open Media Vault.
+
+Looking at your screenshots, I can see you have:
+- A shared folder named "NAS" 
+- FTP service configured on your OMV
+- The default FTP port 21
+
+Here's how to configure Gigolo:
+
+## Step-by-Step Configuration:
+
+### 1. **Basic Bookmark Settings:**
+- **Name:** Give it a descriptive name like "RPI NAS" or "Home NAS"
+- **Color:** Choose any color for easy identification
+- **Auto-Connect:** Enable this if you want it to connect automatically
+
+### 2. **Connection Settings:**
+- **Service type:** Keep it as "FTP" (as shown in your screenshot)
+- **Server:** Enter `192.168.100.100` (your RPI's IP address)
+
+### 3. **Optional Information:**
+- **Port:** Keep it as `21` (default FTP port)
+- **Folder:** Enter `/NAS/` (this is your shared folder path)
+- **User Name:** Enter the username you configured in OMV for FTP access
+
+### 4. **Authentication:**
+When you click "Add" and try to connect, Gigolo will prompt you for:
+- **Password:** Enter the password for the FTP user you configured in OMV
+
+## Alternative Connection Methods:
+
+If you want better performance and security, consider these alternatives:
+
+### **Option 1: SMB/CIFS (Recommended)**
+If you have SMB/CIFS enabled in OMV:
+- Service type: "Windows share"
+- Server: `192.168.100.100`
+- Folder: `NAS`
+
+### **Option 2: SFTP (More Secure)**
+If SSH is enabled on your RPI:
+- Service type: "SSH"
+- Server: `192.168.100.100`
+- Port: `22`
+- User Name: Your SSH username (usually `pi` or whatever you configured)
+
+## Troubleshooting Tips:
+
+1. **Ensure FTP is enabled** in your OMV web interface
+2. **Check firewall settings** on both devices
+3. **Verify the shared folder permissions** in OMV
+4. **Test connection** from terminal first: `ftp 192.168.100.100`
+
+## Quick Test:
+Before using Gigolo, you can test the connection via terminal:
+```bash
+ftp 192.168.100.100
+# Enter username and password when prompted
+# Type 'ls' to see if you can list files
+# Type 'quit' to exit
+```
+
+Once configured properly in Gigolo, you should be able to browse and access your NAS files directly from your Parrot OS file manager. The mounted share will typically appear under `/media/` or in your file manager's network section.
