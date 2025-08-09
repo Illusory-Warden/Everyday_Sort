@@ -1,0 +1,106 @@
+To access your Raspberry Pi's local files from Parrot OS, you have several options. Here's the best approach:
+
+## Method 1: SSH/SFTP (Recommended - Most Secure)
+
+### **Using Terminal (SSH):**
+```bash
+ssh pi@192.168.100.100
+```
+- Replace `pi` with your actual RPI username
+- Enter your password when prompted
+- Now you can navigate and manage files using terminal commands
+
+### **Using Gigolo for SFTP:**
+1. Open Gigolo
+2. Create new bookmark:
+   - **Service type:** SSH
+   - **Server:** 192.168.100.100
+   - **Port:** 22
+   - **User Name:** pi (or your RPI username)
+   - **Folder:** / (to access root, or specify a path like /home/pi)
+3. Click "Add" and connect
+
+### **Using File Manager (Nautilus/Thunar):**
+1. Open your file manager
+2. Go to "Other Locations" or "Network"
+3. In the address bar, type: `sftp://192.168.100.100`
+4. Enter your RPI credentials
+
+## Method 2: SMB/CIFS Shares
+
+### **Enable SMB on your RPI first:**
+```bash
+# SSH into your RPI and install Samba
+sudo apt update
+sudo apt install samba samba-common-bin
+
+# Configure a share
+sudo nano /etc/samba/smb.conf
+```
+
+Add this to the end of the file:
+```
+[RPIFiles]
+path = /home/pi
+browseable = yes
+writeable = yes
+only guest = no
+create mask = 0777
+directory mask = 0777
+public = no
+```
+
+### **Set Samba password:**
+```bash
+sudo smbpasswd -a pi
+```
+
+### **Connect from Parrot OS:**
+- **Via Gigolo:** Service type "Windows share", Server: 192.168.100.100
+- **Via File Manager:** `smb://192.168.100.100`
+
+## Method 3: SCP for File Transfer
+
+### **Copy files from RPI to Parrot OS:**
+```bash
+scp pi@192.168.100.100:/path/to/file /local/destination/
+```
+
+### **Copy files from Parrot OS to RPI:**
+```bash
+scp /local/file pi@192.168.100.100:/remote/destination/
+```
+
+## Prerequisites Check:
+
+### **On your RPI, ensure SSH is enabled:**
+```bash
+sudo systemctl enable ssh
+sudo systemctl start ssh
+```
+
+### **Check if SSH is running:**
+```bash
+sudo systemctl status ssh
+```
+
+## Quick Test:
+
+Test connectivity first:
+```bash
+ping 192.168.100.100
+```
+
+Then test SSH:
+```bash
+ssh pi@192.168.100.100
+```
+
+## For Full File System Access:
+
+If you want to browse the entire RPI file system:
+- Use SSH/SFTP method
+- Set folder path to `/` in Gigolo
+- This gives you access to all directories: `/home/`, `/var/`, `/etc/`, etc.
+
+The **SSH/SFTP method** is the most straightforward since SSH is usually enabled by default on most RPI installations. This will give you full access to your RPI's file system through a secure connection.
