@@ -1,0 +1,31 @@
+### **Reality Check**
+
+* **No official UBports port** for the Galaxy A32.
+* Ubuntu Touch only works on devices with:
+
+  1. **Mainline Linux kernel support**
+  2. Or an **existing Android HAL (hardware abstraction layer) port** done by the UBports community.
+
+The A32 doesn’t have either, and Samsung devices are especially tricky because:
+
+* **Exynos/Mediatek SoCs** (the A32 variants use one or the other depending on region) have **poor open-source driver support**.
+* The proprietary GPU and modem firmware is closed, so even if Ubuntu Touch boots, **no mobile calls, Wi-Fi, or camera** without custom driver work.
+
+---
+
+### **Possible Workarounds**
+
+* **Halium Porting**: Ubuntu Touch can be ported to Android devices using the Halium project, which reuses Android’s kernel and drivers.
+
+  * This is a **heavy development project**, not a plug-and-play install.
+  * You’d need to unlock the bootloader, build Halium for your device, and patch Ubuntu Touch to run on top of it.
+* Even with a successful port, you might face **unstable telephony, no fingerprint sensor, and missing sensors**.
+
+---
+
+### **Realistic Path**
+
+If you want a Linux phone experience without building from scratch:
+
+* Get a **PinePhone** or **Librem 5** (full Linux support).
+* Or a device on [the official Ubuntu Touch devices list](https://devices.ubuntu-touch.io/), many of which can be found cheaply used.
