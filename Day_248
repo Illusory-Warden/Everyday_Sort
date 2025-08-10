@@ -1,0 +1,37 @@
+Yes, you technically can run **Kali Linux** on a phone as the primary OS, but it’s not straightforward, and it’s not really the intended use case for either the phone or Kali.
+
+Here’s the breakdown:
+
+### 1. **Direct Installation vs. Chroot/VM**
+
+* **Direct installation (primary OS)** means replacing your phone’s existing Android/iOS firmware with Kali Linux ARM.
+
+  * This requires an **unlocked bootloader**, a compatible device (usually older Androids with good Linux kernel support), and a **custom recovery** (like TWRP).
+  * You’d need the **Kali NetHunter** or ARM image for your device.
+  * Risk: Very high chance of *bricking* your device if the kernel and drivers aren’t perfectly matched.
+  * Issues: Many phone hardware features (camera, modem, sensors) may not work well or at all.
+
+* **Chroot / VM method (most common)** uses apps like **UserLAnd** or Termux + proot to run Kali inside Android, without replacing Android itself.
+
+  * This is much safer and keeps full phone functionality.
+  * Downsides: Slight performance loss, not a true "primary OS."
+
+---
+
+### 2. **Why it’s tricky as a primary OS**
+
+* **Drivers**: Kali’s ARM builds aren’t tuned for every phone’s hardware.
+* **No phone calling/SMS**: Modem support in mainline Linux is poor for most consumer smartphones.
+* **Touchscreen issues**: You might need custom patches.
+* **Updates**: No OTA updates like Android/iOS — you’d need to flash manually.
+
+---
+
+### 3. **Best realistic approach**
+
+If your goal is **penetration testing on a phone**, use **Kali NetHunter** (which is Kali Linux adapted for Android) rather than fully replacing the OS.
+NetHunter can:
+
+* Run full Kali tools.
+* Keep your Android’s phone features.
+* Use special hardware (OTG WiFi adapters, HID attacks, etc.).
