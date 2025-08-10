@@ -1,0 +1,81 @@
+Here’s the **clean start** process for Debian/Parrot OS:
+
+---
+
+## **1. Stop and disable the service**
+
+```bash
+sudo systemctl stop twingate
+sudo systemctl disable twingate
+```
+
+---
+
+## **2. Remove all Twingate packages**
+
+```bash
+sudo apt purge -y twingate twingate-latest
+```
+
+---
+
+## **3. Delete leftover data and configs**
+
+```bash
+sudo rm -rf /var/lib/twingate
+sudo rm -rf /etc/twingate
+sudo rm -rf /usr/share/keyrings/twingate-client-keyring.gpg
+sudo rm -f /etc/apt/sources.list.d/twingate.list
+```
+
+---
+
+## **4. Update package list**
+
+```bash
+sudo apt update
+```
+
+---
+
+## **5. Reinstall from scratch**
+
+```bash
+curl -fsSL https://packages.twingate.com/apt/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/twingate-client-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/twingate-client-keyring.gpg] https://packages.twingate.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/twingate.list
+sudo apt update
+sudo apt install twingate
+```
+
+---
+
+## **6. Set correct permissions (to prevent last issue)**
+
+```bash
+sudo chown -R root:root /var/lib/twingate
+sudo chmod -R 755 /var/lib/twingate
+```
+
+---
+
+## **7. Run setup again**
+
+```bash
+sudo twingate setup
+```
+
+Enter your Twingate network name and finish the authentication.
+
+---
+
+## **8. Start the service**
+
+```bash
+sudo systemctl enable twingate
+sudo systemctl start twingate
+```
+
+Check:
+
+```bash
+twingate status
