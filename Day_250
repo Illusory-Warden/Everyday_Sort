@@ -1,0 +1,68 @@
+Got it — Parrot OS is Debian-based, so you can install the Twingate client using the **Debian/Ubuntu repository method**.
+
+Here’s what you should run:
+
+---
+
+### **1. Add Twingate’s GPG key**
+
+```bash
+curl -fsSL https://packages.twingate.com/apt/gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/twingate-client-keyring.gpg
+```
+
+---
+
+### **2. Add the Twingate repository**
+
+```bash
+echo "deb [signed-by=/usr/share/keyrings/twingate-client-keyring.gpg] https://packages.twingate.com/apt/ * *" | sudo tee /etc/apt/sources.list.d/twingate.list
+```
+
+---
+
+### **3. Update package list**
+
+```bash
+sudo apt update
+```
+
+---
+
+### **4. Install the Twingate client**
+
+```bash
+sudo apt install twingate
+```
+
+*(If you want the latest beta version, use `twingate-latest` instead.)*
+
+---
+
+### **5. Run setup**
+
+```bash
+sudo twingate setup
+```
+
+* This will ask for your **Twingate network name** (provided by your Twingate admin or account).
+* You’ll authenticate in a browser window.
+
+---
+
+### **6. Start Twingate**
+
+```bash
+sudo twingate start
+```
+
+Check status:
+
+```bash
+twingate status
+```
+
+Stop:
+
+```bash
+sudo twingate stop
+```
