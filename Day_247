@@ -1,0 +1,33 @@
+Installing Kali Linux as the **primary OS** on a Samsung Galaxy A32 would be *extremely* difficult and likely not worth the risk — for a few reasons:
+
+---
+
+### **Why it’s a problem on the A32**
+
+1. **No official ARM build for A32**
+
+   * Kali ARM images are made for specific devices (like some Raspberry Pi boards, PinePhone, etc.), and the A32 isn’t one of them.
+   * Without a device-specific kernel + drivers, you’d lose most hardware functions.
+
+2. **Locked-down bootloader**
+
+   * While you *can* unlock the bootloader on many Samsung models, Samsung uses **Knox** security. Unlocking it will **permanently trip Knox**, void warranty, and disable some hardware-backed features forever.
+
+3. **No mainline Linux support**
+
+   * Mainline Linux (the generic Linux kernel) barely supports any modern Samsung Galaxy devices fully.
+   * Even if you managed to flash Kali, things like **cellular calls, mobile data, camera, fingerprint reader** likely wouldn’t work.
+
+4. **Modem firmware**
+
+   * Phones like the A32 have proprietary modem firmware that is tightly integrated with Android. Pure Linux builds generally can’t use it, meaning **no calling or texting**.
+
+---
+
+### **What you *can* do instead**
+
+If your goal is to have Kali tools on your A32:
+
+* Install **Kali NetHunter** (the “Rootless” edition works without root, but root gives more features).
+* Or use **UserLAnd** or **Termux + proot** to run a full Kali environment *inside* Android.
+* This way you keep phone features *and* get Kali’s pentesting tools.
