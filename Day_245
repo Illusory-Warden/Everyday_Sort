@@ -1,0 +1,49 @@
+Here’s the breakdown of what *can* run:
+
+---
+
+### **1. Stock & Modified Android**
+
+* **Stock Samsung One UI** (what it comes with)
+* **Custom ROMs** based on Android, if your model has an unlocked bootloader and a port:
+
+  * **LineageOS** (most popular custom Android)
+  * **Pixel Experience**
+  * **/e/ OS** (privacy-focused)
+  * **crDroid**, **ArrowOS**, etc.
+* Benefits:
+
+  * Fully working calls, Wi-Fi, cameras, etc.
+  * Feels similar to stock Android but can be lighter, faster, or more private.
+
+---
+
+### **2. Kali Linux Inside Android**
+
+* You won’t be replacing Android, but you can run a full Kali environment using:
+
+  * **Kali NetHunter** (Rootless or Full version)
+  * **UserLAnd**
+  * **Termux + proot**
+* Benefits:
+
+  * Keep all phone features
+  * Get access to most Linux/Kali tools
+  * No risk of bricking like flashing a whole new OS
+
+---
+
+### **3. Experimental / Not Fully Working**
+
+* **PostmarketOS**, **Ubuntu Touch**, or **PureOS** would require a **full port** for the A32 (none exists right now).
+* Even if you somehow ported them, things like mobile data and cameras would probably be broken.
+
+---
+
+### **Bottom Line**
+
+Right now, your realistic daily-driver options for the A32 are:
+
+1. Stock Samsung firmware
+2. A custom Android ROM (if available for your variant)
+3. Android + Linux in a chroot/VM (NetHunter, UserLAnd)
