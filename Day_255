@@ -1,0 +1,50 @@
+## Ford’s "Consumer-Driven Six Sigma" Case Study
+
+### Program Launch & Approach
+
+* **Initiation**: Six Sigma was formally adopted at Ford starting in **late 1999**, under the banner of **“Consumer-Driven Six Sigma”**. The initiative was intended to elevate vehicle quality and customer satisfaction dramatically.([ibscdc.org][1], [ibscdc.org][2])
+* **DMAIC Framework**: Projects followed the structured DMAIC cycle—Define, Measure, Analyze, Improve, Control—while top executives, including CEO Jacques Nasser, and 200 senior managers received executive training by January 2000.([ibscdc.org][1], [qualitydigest.com][3])
+
+### Impact & Results
+
+* Within its **first year**, the methodology delivered **\$52 million** in savings. Savings then climbed to **\$325 million** in fiscal 2001 and **\$359 million** in 2002.([ibscdc.org][4])
+* Over time, Ford completed thousands of Six Sigma projects, achieving global savings in the **billion-dollar range**. By the early 2000s, total savings reached **\$1 billion** in waste elimination.([qualitydigest.com][3], [Scribd][5])
+* Project accomplishments include over **9,500 completed projects**, yielding savings of **\$1.7 billion**, including **\$731 million in 2003** alone. Customer satisfaction also rose by approximately **five percentage points**.([Scribd][5])
+
+### Detailed Example – Transit Protection Film Project
+
+* **Problem**: Vehicles shipped for export suffered exterior paint damage due to poorly performing protective film used during transit.([saferpak.com][6])
+* **Analysis & Intervention**:
+
+  * Used DOE (Design of Experiments) and statistical tools to evaluate film material quality, operator training, and application supervision.
+  * Switching to a better film and improving installation training reduced defects from **2.89 per vehicle (289%)** to **1.03 per vehicle (103%)**.([saferpak.com][6])
+  * By shifting film application from manufacturing plants to port-processing centers, Ford freed up floor space and saved **over \$500,000** per project—exceeding their minimum savings target of \$250,000.([saferpak.com][6])
+
+### Organizational Adoption & Culture Shift
+
+* Ford trained extensively for Six Sigma roles: **200 Master Black Belts**, **2,200 Black Belts**, and nearly **40,000 Green Belts** globally, supported by around **3,000 Project Champions** to oversee initiatives.([qualitydigest.com][3])
+* One notable project involved resolving body-side molding adhesion issues on the Ford Focus. After applying DMAIC, the project saved **\$100,000 annually** and eliminated complaints post-implementation.([qualitydigest.com][3])
+* Six Sigma became ingrained in Ford’s operational culture, aligning waste reduction, cost savings, and customer focus.([ibscdc.org][2], [qualitydigest.com][3])
+
+---
+
+## Summary Table
+
+| **Category**         | **Details**                                                                   |
+| -------------------- | ----------------------------------------------------------------------------- |
+| **Launch Year**      | Late 1999 (“Consumer-Driven Six Sigma”)                                       |
+| **Savings Timeline** | \$52M (Year 1), \$325M (2001), \$359M (2002), \~\$1B total early 2000s        |
+| **Notable Project**  | Transit film—defects down from 2.89 to 1.03 per vehicle; \$500K+ saved        |
+| **Scale**            | Thousands of projects, global savings in billions, major belt training effort |
+| **Customer Impact**  | Customer satisfaction increased \~5 points; warranty defects dropped          |
+
+---
+
+Would you like a step-by-step breakdown of a particular project—like the molding adhesion one—or insights into how Ford structured its training and belt certification?
+
+[1]: https://ibscdc.org/Case_Studies/Operations/Operations/Consumer%20Driven%20Six%20Sigma-Ford-Operations%20Management.htm?utm_source=chatgpt.com "Consumer Driven Six Sigma at Ford | Operations Case Studies"
+[2]: https://www.ibscdc.org/Case_Studies/Operations/Operations/Consumer%20Driven%20Six%20Sigma%20at%20Ford.htm?utm_source=chatgpt.com "Consumer Driven Six Sigma at Ford | Operations Case Studies"
+[3]: https://www.qualitydigest.com/static/magazine/june03/articles/02_article.shtml?utm_source=chatgpt.com "Quality Digest Magazine"
+[4]: https://ibscdc.org/Case_Studies/Operations/Operations/Six%20Sigma-Ford-Operations%20Management%20Case%20Study.htm?utm_source=chatgpt.com "Consumer Driven Six Sigma at Ford | Operations Case Studies"
+[5]: https://www.scribd.com/presentation/517641941/FORD-pinto?utm_source=chatgpt.com "Ford-Pinto: Case Study | PDF | Six Sigma | Lean Manufacturing"
+[6]: https://www.saferpak.com/six_sigma_art4.htm?utm_source=chatgpt.com "Six Sigma (Ford Motor Company - Driving Down Defect Rates) - Saferpak.com"
