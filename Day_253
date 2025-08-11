@@ -1,0 +1,53 @@
+## **Ford’s DMAIC Approach under Six Sigma**
+
+**1. Define**
+
+* **Goal**: Improve customer satisfaction by reducing defects and warranty issues.
+* In the **Transit Protection Film Project**, the problem was paint damage on exported vehicles due to poor-quality protective film during shipping.
+* The project team defined the target: reduce exterior paint defects per vehicle by at least 50% and cut costs.
+
+---
+
+**2. Measure**
+
+* Collected baseline data:
+
+  * Average of **2.89 defects per vehicle** during transit.
+  * Cost impact of defects + rework.
+* Mapped the process from plant application of film to arrival at the customer.
+
+---
+
+**3. Analyze**
+
+* Used statistical tools and Design of Experiments (DOE) to identify root causes:
+
+  * Low-grade protective film quality.
+  * Inconsistent application process at plants.
+  * Inadequate operator training and oversight.
+* Determined that material quality and process control were the main drivers of defects.
+
+---
+
+**4. Improve**
+
+* Switched to higher-quality protective film.
+* Standardized the application process.
+* Trained operators and improved supervision.
+* Moved film application from manufacturing plants to **port-processing centers** to improve efficiency and reduce floor space usage.
+
+---
+
+**5. Control**
+
+* Developed process control charts to monitor defect rates.
+* Established regular audits and supplier quality checks.
+* Defect rate dropped to **1.03 per vehicle** (about 64% reduction).
+* Annual savings exceeded **\$500,000**, surpassing Ford’s minimum project savings target of \$250,000.
+
+---
+
+### **Key Takeaways**
+
+* Ford’s DMAIC projects directly tied **quality improvements** to **financial outcomes**.
+* The focus on customer impact (“Consumer-Driven”) ensured projects were not just about cost but also about long-term brand reputation.
