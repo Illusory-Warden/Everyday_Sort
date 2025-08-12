@@ -1,0 +1,18 @@
+That log output means your connector container is stuck looping between **"Offline"** and **"Authentication"** states.
+In Twingate terms, that’s almost always because **the connector’s authentication token is invalid or expired**.
+
+Even if nothing changed in your Pi or network, this happens when:
+
+* The token used to start the connector has a limited lifetime and was issued before your 3-day downtime.
+* Twingate invalidated the token after a long period of disconnection.
+* The container restarted but kept trying with the old token.
+
+**The fix**:
+
+1. Stop and remove the old containers:
+
+   ```bash
+   sudo docker rm -f 22d4 4b498b1d 52617d6c
+   ```
+2. In the Twingate admin console, create **a new connector** (or reissue token for an existing one). You’ll get a new Docker run command with a fresh token.
+3. Deploy only **one** connector on the Pi using that new command.
