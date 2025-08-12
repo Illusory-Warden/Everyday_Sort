@@ -1,0 +1,49 @@
+Your screenshots show that while the Twingate connector Docker containers are running and healthy, the Twingate admin console still marks all connectors as "Could not connect" or "Not yet connected."
+
+This usually happens because when your Raspberry Pi was powered off for 3 days:
+
+1. **The connector’s network path to Twingate servers is blocked or disrupted**
+
+   * If your Pi’s IP changed (especially in a DHCP network) or your firewall/router settings changed, the container might not be able to reach Twingate servers.
+
+2. **DNS or outbound connection issues**
+
+   * If DNS resolution or outbound TCP/UDP ports needed by Twingate (e.g., 443, sometimes 3478 for STUN) are blocked, the connector can’t register as online.
+
+3. **Authentication tokens expired**
+
+   * If the connector tokens were invalidated (e.g., due to being inactive or reset from the admin panel), the containers will run but fail to authenticate with Twingate.
+
+4. **Multiple connectors from same device without proper configuration**
+
+   * You have **three running connectors** on the same Pi. If all are trying to register with Twingate using the same outbound IP and possibly conflicting configs, only the correctly authenticated one should work — but if none are properly registered, all will appear offline.
+
+---
+
+**What you should do:**
+
+1. Check logs of one connector to see the actual error:
+
+   ```bash
+   sudo docker logs <container_id>
+   ```
+
+   Replace `<container_id>` with one from `docker ps` (e.g., `22d4`).
+
+2. Ensure your Pi has outbound internet and can resolve DNS:
+
+   ```bash
+   ping google.com
+   curl https://twingate.com
+   ```
+
+3. Confirm that the connector tokens in your Docker `run` command or `docker-compose.yml` are still valid.
+   If not, **redeploy with a fresh token** from the Twingate admin panel.
+
+4. If these connectors are duplicates or stale, **stop and remove all containers** and redeploy only the ones you actually need:
+
+   ```bash
+   sudo docker rm -f $(sudo docker ps -aq --filter ancestor=twingate/connector:1)
+   ```
+
+   Then deploy **a single connector** per site, using a fresh token.
