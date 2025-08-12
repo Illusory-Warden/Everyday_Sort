@@ -1,0 +1,22 @@
+Alright — let’s confirm exactly why they’re offline.
+
+For each container, run this command (replace with the container ID from your `docker ps` output):
+
+```bash
+sudo docker logs 2563addfe2d4 | tail -n 50
+```
+
+Do the same for:
+
+```bash
+sudo docker logs 4b4b1d | tail -n 50
+sudo docker logs 52b | tail -n 50
+```
+
+You’re looking for lines that mention things like:
+
+* `authentication failed`
+* `invalid token`
+* `could not register`
+* `connection refused`
+* `timeout`
