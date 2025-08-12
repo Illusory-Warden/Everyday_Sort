@@ -3,7 +3,7 @@ Alright — let’s confirm exactly why they’re offline.
 For each container, run this command (replace with the container ID from your `docker ps` output):
 
 ```bash
-sudo docker logs 2563addfe2d4 | tail -n 50
+sudo docker logs 252d4 | tail -n 50
 ```
 
 Do the same for:
