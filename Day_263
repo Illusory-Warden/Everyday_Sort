@@ -1,0 +1,24 @@
+Resolver error: Error: Remote - SSH is only supported in Microsoft versions of VS Code
+```
+
+Here’s a breakdown:
+
+1. **You’re using VSCodium** – this is the open-source build of VS Code, not the official Microsoft build.
+2. **The Remote - SSH extension** (`ms-vscode-remote.remote-ssh`) is checking the VS Code build and refuses to run if it’s not the official Microsoft version. That’s why the connection is failing immediately.
+3. All the other log lines (SSH config, ports, etc.) are standard debug info, but the actual failure is due to the extension itself blocking non-Microsoft builds.
+
+✅ **In short:** Remote-SSH won’t work in VSCodium because the extension is designed to run only in the official VS Code.
+
+### Options to fix this:
+
+1. **Use official VS Code**
+
+   * Download it from [code.visualstudio.com](https://code.visualstudio.com/) and install the Remote-SSH extension there. Everything should work.
+
+2. **Use VSCodium with a patched version of the extension** (less straightforward)
+
+   * Some people have forked Remote-SSH to work on VSCodium, but it requires manual installation and can be tricky.
+
+3. **Use plain SSH in the terminal**
+
+   * You can always connect via `ssh warden` in your terminal and then use VS Code’s **Remote Development via SSH in official VS Code**, or just work in the terminal directly.
