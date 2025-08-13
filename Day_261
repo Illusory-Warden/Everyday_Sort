@@ -1,0 +1,41 @@
+### 1. Open a terminal
+
+### 2. Navigate to the Downloads folder
+
+```bash
+cd ~/Downloads
+```
+
+---
+
+### 3. Install the `.deb` package with `apt`
+
+```bash
+sudo apt install ./code_1.103.0-1754517494_amd64.deb
+```
+
+This will install VS Code and automatically handle any dependencies.
+
+---
+
+### 4. Verify installation
+
+```bash
+code --version
+```
+
+You should see something like `1.103.0` printed in the terminal.
+
+---
+
+### 5. Launch VS Code
+
+```bash
+code
+```
+
+Or open it from your applications menu.
+
+---
+
+After this, you can install **Remote-SSH** in the official VS Code, and it should work without the “only supported in Microsoft versions” error.
