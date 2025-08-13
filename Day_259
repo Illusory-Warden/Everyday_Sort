@@ -1,0 +1,35 @@
+* Twingate is a **private network overlay**, not a direct SSH tunnel.
+* In this case, **TCP port forwarding via SSH is usually blocked** intentionally — it’s part of Twingate’s security model. That’s why VS Code Remote-SSH is failing with:
+
+```
+channel 3: open failed: administratively prohibited: open failed
+```
+
+Essentially, **VS Code Remote-SSH tries to open a tunnel for its server**, but Twingate doesn’t allow that by default. This is **not a problem with your Pi**, it’s a network restriction.
+
+---
+
+### What you can do:
+
+1. **Use “Twingate + local port forwarding”**:
+
+   * Instead of letting VS Code open dynamic ports on the SSH connection, you can manually forward a local port to your Pi over Twingate, and then connect to that local port with Remote-SSH.
+   * Example:
+
+     ```bash
+     ssh -L 40207:localhost:40207 pi@warden
+     ```
+
+     Then in VS Code, connect to `localhost:40207`.
+
+2. **Use VS Code Web version or VS Code Server manually**:
+
+   * You could manually install VS Code Server on your Pi and then connect using **VS Code in the browser** if Remote-SSH tunneling isn’t possible.
+
+3. **Check if Twingate supports “TCP forwarding”**:
+
+   * Some Twingate setups allow it via **application connectors**. If so, your admin can enable it.
+
+---
+
+In short: **you don’t need to change `/etc/ssh/sshd_config`**, because the failure isn’t your Pi—it’s Twingate blocking the port forwarding.
