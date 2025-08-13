@@ -1,0 +1,57 @@
+### 1. Open Terminal
+
+Navigate to the folder where your `.deb` file is located. For example, if it’s in `~/Downloads`:
+
+```bash
+cd ~/Downloads
+```
+
+---
+
+### 2. Install the `.deb` package
+
+Use `apt` (preferred over `dpkg` because it will handle dependencies automatically):
+
+```bash
+sudo apt install ./<filename>.deb
+```
+
+Replace `<filename>.deb` with the actual file name, for example:
+
+```bash
+sudo apt install ./code_1.102.35058_amd64.deb
+```
+
+> ⚠️ Note: Make sure to include `./` if you’re in the same directory as the file.
+
+---
+
+### 3. Alternative: Using `dpkg` (manual dependency fix)
+
+You could also use:
+
+```bash
+sudo dpkg -i <filename>.deb
+```
+
+If there are missing dependencies, fix them with:
+
+```bash
+sudo apt install -f
+```
+
+---
+
+### 4. Launch VS Code
+
+After installation, you can start VS Code with:
+
+```bash
+code
+```
+
+or find it in your application menu.
+
+---
+
+After this, you can install **Remote-SSH** in the official VS Code and it should work properly.
