@@ -1,0 +1,43 @@
+ERROR: TCP port forwarding appears to be disabled on the remote host. 
+Ensure that the sshd_config has `AllowTcpForwarding yes`. 
+channel 3: open failed: administratively prohibited: open failed
+```
+
+This means the VS Code Remote-SSH server cannot set up the necessary tunnel because **TCP port forwarding is disabled on your Raspberry Pi (`warden`)**. VS Code Remote-SSH relies on this to communicate with the remote server.
+
+---
+
+### How to fix it:
+
+1. **SSH into your Pi manually**
+
+```bash
+ssh pi@192.168.100.100
+```
+
+2. **Edit the SSH server configuration**
+
+```bash
+sudo nano /etc/ssh/sshd_config
+```
+
+3. **Find and set the following options**
+   Make sure these lines exist and are set as follows:
+
+```text
+AllowTcpForwarding yes
+PermitTunnel yes
+```
+
+4. **Restart the SSH server**
+
+```bash
+sudo systemctl restart ssh
+```
+
+5. **Try connecting again from VS Code**
+
+---
+
+💡 **Extra tip:**
+After changing these settings, VS Code should be able to connect normally. If you still see errors, you can also check if `GatewayPorts` is needed (set `GatewayPorts yes`) depending on your network setup.
