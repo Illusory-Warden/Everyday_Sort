@@ -1,0 +1,62 @@
+### **1. Install required build tools**
+
+Some npm packages need compilation, so Debian-based systems require `build-essential` and Python:
+
+```bash
+sudo apt update && sudo apt install -y curl build-essential python3
+```
+
+---
+
+### **2. Install Node.js (LTS)**
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+---
+
+### **3. Install n8n globally**
+
+```bash
+sudo npm install -g n8n
+```
+
+---
+
+### **4. Create a local n8n data folder (so workflows persist)**
+
+By default, n8n stores data in `~/.n8n`.
+If you want a dedicated directory:
+
+```bash
+mkdir -p ~/n8n_data
+```
+
+---
+
+### **5. Run n8n locally with persistent data**
+
+```bash
+n8n --userFolder ~/n8n_data
+```
+
+Access it at:
+
+```
+http://localhost:5678
+```
+
+✅ No account required
+✅ Unlimited usage
+✅ Fully offline
+
+---
+
+### **6. (Optional) Keep it running**
+
+```bash
+sudo npm install -g pm2
+pm2 start "n8n --userFolder ~/n8n_data" --name n8n
+pm2 save
