@@ -1,0 +1,47 @@
+```bash
+sudo npm install -g n8n
+```
+
+there are a few alternatives, depending on why you want to avoid it.
+
+---
+
+### **1. Install n8n without `-g` (local project install)**
+
+This keeps it in a local folder instead of system-wide:
+
+```bash
+mkdir ~/n8n_local && cd ~/n8n_local
+npm init -y
+npm install n8n
+npx n8n
+```
+
+Here `npx n8n` runs it without needing a global install.
+
+---
+
+### **2. Use `pnpm` or `yarn` instead of npm**
+
+```bash
+sudo npm install -g pnpm
+pnpm add -g n8n
+```
+
+or
+
+```bash
+sudo npm install -g yarn
+yarn global add n8n
+```
+
+---
+
+### **3. Install from source with curl + npm**
+
+```bash
+git clone https://github.com/n8n-io/n8n.git
+cd n8n
+npm install
+npm run build
+./packages/cli/bin/n8n
