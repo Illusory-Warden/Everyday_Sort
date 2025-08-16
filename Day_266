@@ -1,0 +1,42 @@
+### Security & Data Practices
+
+* According to the Play Store’s **Data Safety** section, the app **may share** data—including your **location**, **personal info**, and **photos/videos**—with third parties. Importantly, it specifies that **audio data is encrypted in transit** ([Google Play][1]).
+
+This suggests that while your audio is transmitted securely, other types of data (like images or location) may not be, and the handling of personal info involves external parties.
+
+---
+
+### Official Safeguards & Transparency
+
+* **NHAI** developed and maintains Rajmargyatra. As per a **Press Information Bureau** release on February 6, 2025, the app is integrated into a web-based system that updates information and monitors complaint redressals with transparency—including **geo-tagging** and **time-stamping**, aiming to promote accountability ([Press Information Bureau][2]).
+
+* The app is continuously updated; user feedback and technical glitches (like crashes or data delays) are being addressed through optimization and updates ([Press Information Bureau][2]).
+
+These details signal a commitment to responsible development and responsiveness from the authorities.
+
+---
+
+### What This Means for You
+
+| Feature                  | Security Implication                                                              |
+| ------------------------ | --------------------------------------------------------------------------------- |
+| Audio Encryption         | Audio data is encrypted in transit—good for privacy during voice interactions     |
+| Location & Media Sharing | May be shared with third parties—be cautious about permissions granted to the app |
+| Official Oversight       | Developed by NHAI and integrated into a secure infrastructure with monitoring     |
+| User Feedback Loop       | Authorities actively address reported bugs and technical issues                   |
+
+**Bottom line:** Rajmargyatra is a legitimate and officially sanctioned app, with some security protections (notably audio encryption). Still, users should be mindful of the permissions they grant—especially around location, photos, and videos—and assess whether they’re comfortable sharing that data.
+
+---
+
+### Tips for Safer Use
+
+1. **Review permissions**: In your device settings, check exactly what permissions the app requests and modify them if needed.
+2. **Limit location access**: Consider setting it to “while using the app” rather than “always” if your device supports it.
+3. **Be selective with media sharing**: Only attach photos or videos when absolutely necessary.
+4. **Keep the app updated**: Regular updates may include important security improvements.
+5. **Use trusted networks**: Prefer using mobile data or known Wi-Fi networks over public ones for sensitive actions.
+
+---
+[1]: https://play.google.com/store/apps/details?hl=en-US&id=com.nhai.rajmargyatra&utm_source=chatgpt.com "Rajmargyatra - Apps on Google Play"
+[2]: https://pib.gov.in/PressReleasePage.aspx?PRID=2100383&utm_source=chatgpt.com "Rajmarg Yatra And NHAI One Initiatives"
