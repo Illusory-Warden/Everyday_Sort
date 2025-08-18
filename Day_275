@@ -1,0 +1,85 @@
+OSINT is a big field, and the tools are grouped by the kind of data you’re trying to investigate.
+
+Here’s a breakdown:
+
+---
+
+## 🔎 **OSINT Tools by Category**
+
+### 🧑 People Search
+
+* **Sherlock** – finds usernames across many social networks.
+* **WhatsMyName** – checks if a username exists on 500+ platforms.
+* **SpiderFoot** – automated data gathering, including people.
+* **Pipl** / **PeekYou** – commercial people search engines.
+
+---
+
+### 🌍 Social Media Investigation
+
+* **Social-Searcher** – search public posts on social media.
+* **Twint** – Twitter/X scraping tool (without API).
+* **Creepy** – gathers geolocation data from social media.
+* **Hoaxy** – track how misinformation spreads online.
+
+---
+
+### 📧 Email / Phone / Identity
+
+* **Have I Been Pwned** – checks if an email/phone is in a breach.
+* **EmailRep.io** – reputation of an email (spam/fraud check).
+* **Hunter.io** – find company emails from a domain.
+* **Truecaller (Web/Pro)** – reverse lookup for phone numbers.
+
+---
+
+### 🌐 Domain & Website Investigation
+
+* **Whois.domaintools.com** – domain ownership info.
+* **DNSDumpster** – DNS mapping of domains.
+* **Shodan** – search for internet-connected devices & servers.
+* **Censys** – similar to Shodan, deeper certificate search.
+* **Wayback Machine** – see historical versions of websites.
+
+---
+
+### 📸 Image & Video OSINT
+
+* **Google Reverse Image Search** / **Yandex Images** / **TinEye** – find where an image appears online.
+* **Exiftool** – extract metadata from photos (camera model, GPS, etc.).
+* **InVID** – verify videos/images (used by journalists).
+* **FotoForensics** – check if an image is manipulated.
+
+---
+
+### 📍 Geolocation / Maps
+
+* **Google Earth / Google Maps** – obvious but powerful.
+* **Mapillary** – street-level imagery from users.
+* **OpenStreetMap** – crowdsourced mapping.
+* **SunCalc** – check sun position at a place & time (to verify photos).
+
+---
+
+### 🖥️ Dark Web OSINT
+
+* **Ahmia** – search engine for Tor hidden services.
+* **OnionSearch** – scans dark web domains.
+* **DarkSearch.io** – another dark web search engine.
+
+---
+
+### 🛠️ General / Multi-source Frameworks
+
+* **OSINT Framework** – a huge collection of categorized tools (web-based).
+* **Maltego** – maps relationships between people, orgs, domains, etc.
+* **Recon-ng** – OSINT framework in Python for penetration testers.
+* **TheHarvester** – collects emails, subdomains, hosts from search engines.
+* **SpiderFoot** – automates data collection across 100+ sources.
+
+---
+
+## ⚖️ Reminder
+
+* All these tools work on **publicly available information**.
+* OSINT does **not** mean hacking; it’s about **investigating open sources legally**.
