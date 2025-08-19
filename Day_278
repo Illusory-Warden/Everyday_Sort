@@ -1,0 +1,7 @@
+Of course. Here it is in short:
+
+The **public method names** (like `getModel()`) are the **buttons on the dashboard** that everyone can see and press. This is the public interface.
+
+The **private field names** (like `model`) are the **wires and chips behind the dashboard**. They are the hidden implementation.
+
+You can change the wires and chips all you want, and as long as the buttons still work the same way, no driver will ever know or care. The interface (the buttons) is what users interact with, not the implementation (the wires).
