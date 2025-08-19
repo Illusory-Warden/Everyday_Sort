@@ -1,0 +1,39 @@
+The public interface shows you the "type of data" you're *allowed to give* and *will get back*, but it hides the specific technical details of how that data is stored *inside* the object.
+
+### Simple Example:
+
+Imagine a `BankAccount` class.
+
+**Public Interface (What you see):**
+*   `getBalance()` returns a **`double`** (e.g., `250.75`)
+*   `deposit(int dollars)` accepts an **`int`** (e.g., `10` for $10)
+
+**Private Implementation (The Secret):**
+The class might not store the balance as a `double` at all! It could store it as an **`int`** representing the total number of **pennies** (cents) to avoid rounding errors.
+
+```java
+public class BankAccount {
+    // SECRET IMPLEMENTATION: The "type" of the field is HIDDEN
+    private int balanceInCents; // Type is 'int', not 'double'!
+
+    // PUBLIC INTERFACE: The method signatures define the "types" you work with
+    public double getBalance() { // I promise to return a 'double'
+        // Secret Conversion: int -> double
+        return balanceInCents / 100.0;
+    }
+
+    public void deposit(int dollars) { // I ask you for an 'int'
+        // Secret Conversion: int -> int
+        balanceInCents += (dollars * 100);
+    }
+}
+```
+
+### What "Type" Means Here:
+
+*   **You** interact with types **`double`** and **`int`** (the public interface).
+*   The **object** internally uses a field of type **`int`** (the private implementation).
+
+The getter/setter **signatures** are part of the public interface because they advertise these types (`double getBalance()`, `void deposit(int)`). But the actual **type of the field** (`private int balanceInCents`) is a hidden implementation detail.
+
+**In short:** "Type" means the specific primitive or class (like `int`, `double`, `String`) used for the field. The public interface doesn't reveal if the internal type matches the external type. It's part of the secret.
