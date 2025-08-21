@@ -1,0 +1,80 @@
+## 🔹 BFS: **Breadth-First Search**
+
+**Breadth-First Search (BFS)** is a **graph/tree traversal algorithm** in Artificial Intelligence and Computer Science.
+
+It explores a graph **level by level** (or breadth-wise) starting from a given node (initial state).
+
+---
+
+### 🔹 How BFS Works
+
+1. Start from the **initial node** (root).
+2. Visit all its neighbors (children).
+3. Then, visit the neighbors’ neighbors (next level), and so on.
+4. Stop when the **goal state** is found (in search problems).
+
+It uses a **queue (FIFO)** data structure.
+
+---
+
+### 🔹 Pseudocode (Simple Version)
+
+```
+BFS(start):
+    create an empty queue
+    enqueue(start)
+    mark start as visited
+    
+    while queue is not empty:
+        node = dequeue()
+        if node is goal:
+            return solution
+        for each neighbor of node:
+            if not visited:
+                enqueue(neighbor)
+                mark as visited
+```
+
+---
+
+### 🔹 Example
+
+Imagine a graph:
+
+```
+     A
+   / | \
+  B  C  D
+ / \     \
+E   F     G
+```
+
+* Start at **A**
+* BFS order of visiting:
+  **A → B → C → D → E → F → G**
+
+---
+
+### 🔹 BFS in AI Search (like 8-Puzzle or Jug Problem)
+
+* **Initial State:** Starting configuration.
+* **Goal State:** Desired solution.
+* BFS expands nodes **in increasing depth order**.
+* It guarantees finding the **shortest path (minimum moves)** if all moves have equal cost.
+
+---
+
+### 🔹 Properties of BFS
+
+* **Completeness:** Yes (always finds a solution if one exists).
+* **Optimality:** Yes, if all step costs = 1.
+* **Time Complexity:** $O(b^d)$
+
+  * $b$ = branching factor (number of children per node)
+  * $d$ = depth of the solution
+* **Space Complexity:** $O(b^d)$ (because it stores all nodes at a level in memory).
+
+---
+
+✅ **In short:**
+**BFS (Breadth-First Search)** explores nodes level by level using a **queue**, guarantees the shortest solution path, but can use a lot of memory for large problems.
