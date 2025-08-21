@@ -1,0 +1,15 @@
+Example using jugs of **8 L**, **5 L**, and **12 L** (start empty) with the goal of getting **exactly 6 L** in any jug.
+
+We’ll only use the 8 L and 5 L jugs:
+
+* Start: **(A=12L, B=8L, C=5L) → (0, 0, 0)**
+  (We’ll track state as `(A, B, C)`.)
+
+1. **Fill B (8 L):** (0, **8**, 0)
+2. **Pour B → C** (fill C to 5): (0, **3**, **5**)
+3. **Empty C:** (0, 3, 0)
+4. **Pour B → C** (move 3 into C): (0, 0, **3**)
+5. **Fill B (8 L):** (0, **8**, 3)
+6. **Pour B → C** (C needs 2 to reach 5, so B loses 2): (0, **6**, **5**)
+
+✅ Goal reached: **6 liters** in jug **B**.
