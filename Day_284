@@ -1,0 +1,55 @@
+## 🔹 The 3-Jug Problem
+
+You are given **three jugs** (or pitchers) with different capacities. The goal is to measure out a specific quantity of water using them.
+
+* The jugs usually start **empty**.
+* You can:
+
+  1. **Fill** a jug completely.
+  2. **Empty** a jug completely.
+  3. **Pour** water from one jug into another, until one is empty or the other is full.
+
+---
+
+### Example Setup:
+
+* Jug A: 12 liters capacity
+* Jug B: 8 liters capacity
+* Jug C: 5 liters capacity
+* Goal: Measure **6 liters** of water in one of the jugs.
+
+---
+
+## 🔹 State Space Representation
+
+Each **state** can be represented as a triple **(x, y, z)**
+
+* where **x, y, z** are the current amounts of water in jugs A, B, and C.
+
+For example:
+
+* Start state: (0, 0, 0) → all empty
+* Goal state: (6, \_, *) or (*, 6, *) or (*, \_, 6)
+
+---
+
+## 🔹 Operators (Actions)
+
+* Fill a jug: (x, y, z) → (12, y, z) \[fill jug A]
+* Empty a jug: (x, y, z) → (0, y, z) \[empty jug A]
+* Pour from one jug to another until one is full or the other is empty
+
+---
+
+## 🔹 Solution in AI Terms
+
+This is solved using **state-space search**:
+
+* **Nodes** → states of the jugs
+* **Edges** → transitions (fill, empty, pour)
+* **Algorithms**: BFS, DFS, or A\*
+
+---
+
+✅ **In short:**
+The **3-jug problem** is a **state-space search problem** in AI where the objective is to measure out an exact amount of water using three jugs with different capacities, by filling, emptying, and pouring between them.
