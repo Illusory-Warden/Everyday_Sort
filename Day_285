@@ -1,0 +1,37 @@
+The notation **9!** is read as **“9 factorial.”**
+
+---
+
+### 🔹 Definition of Factorial
+
+For any positive integer **n**,
+
+$$
+n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1
+$$
+
+So:
+
+$$
+9! = 9 \times 8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1
+$$
+
+---
+
+### 🔹 Value of 9!
+
+$$
+9! = 362,880
+$$
+
+---
+
+### 🔹 Why Factorials matter in 8-puzzle
+
+* There are **9 positions** (8 tiles + 1 blank).
+* The total number of ways to arrange them = **9! = 362,880** possible states.
+* But only **half of these are solvable** (≈181,440).
+
+---
+
+✅ So, **9! is “9 factorial,” the product of all integers from 1 to 9.*
