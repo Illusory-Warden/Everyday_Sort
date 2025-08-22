@@ -1,0 +1,59 @@
+## Download Links for U.S. Missile `.ork` Files
+
+### **1. AGM-78 Standard ARM**
+
+* A user named **mtnmanak** shared a version of the AGM-78 Standard ARM in OpenRocket format (.ork), converted from a RockSim file.
+* The `.ork` file is available as an attachment in the Rocketry Forum thread titled *"Wildman AGM-78 ARM Thread"* ([Rocketry Forum - Model Rocketry Forums][1]).
+
+#### How to access:
+
+1. Visit the Rocketry Forum and locate the *Wildman AGM-78 ARM Thread*.
+2. Look for the post where **mtnmanak** says:
+
+   > “Based on WM’s listed specs and some clues within the RockSim file, I created an OpenRocket version… if anyone is interested in it, here it is.”
+3. Download the attached file named **AGM-78 Standard ARM.ork** ([Rocketry Forum - Model Rocketry Forums][1]).
+
+---
+
+### **2. AIM-45A Sentinel (Estes Kit Replica)**
+
+* **K’Tesh** shared multiple variants of the AIM-45A Sentinel missile as `.ork` files on the Rocketry Forum. Options include:
+
+  * **Stock (Decaled)**
+  * **E-powered clone**
+  * **D-to-E-powered two-stage mod with payload**
+  * **E-to-E two-stage payload version**
+* These files are posted as attachments within K’Tesh’s *OpenRocket Files* thread ([Rocketry Forum - Model Rocketry Forums][2]).
+
+#### How to access:
+
+1. Go to K’Tesh’s “OpenRocket Files” thread.
+2. Scroll to the page with AIM-45A attachments (around page 6).
+3. Download any of the `.ork` files matching your interest (e.g., Stock, E-powered, etc.) ([Rocketry Forum - Model Rocketry Forums][2]).
+
+---
+
+## Quick Setup: Making the Models “Naked” in OpenRocket
+
+Once you’ve downloaded the desired `.ork` files:
+
+1. Open the file in **OpenRocket**.
+2. Navigate to **Component → Appearance**.
+3. Set **Surface finish** to **None** and remove any decals or textures.
+4. In the 3D view, the rocket will render as a plain, unpainted model—perfect for geometry-only simulation.
+
+---
+
+## Summary Table
+
+| Missile Model           | Source / Access                            | Notes                         |
+| ----------------------- | ------------------------------------------ | ----------------------------- |
+| **AGM-78 Standard ARM** | Rocketry Forum — Wildman thread attachment | Simple, geometry-only         |
+| **AIM-45A Sentinel**    | K’Tesh’s thread — several `.ork` variants  | Choose your preferred version |
+
+---
+
+Let me know if you want help downloading and importing the files, or if you'd like tips for adjusting mass, stability, or customizing the geometry further!
+
+[1]: https://www.rocketryforum.com/threads/wildman-agm-78-arm-thread.163436/?utm_source=chatgpt.com "Wildman AGM-78 ARM Thread - Rocketry Forum"
+[2]: https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-6?utm_source=chatgpt.com "K'Tesh's OpenRocket Files... | Page 6 - Rocketry Forum"
