@@ -1,0 +1,40 @@
+## From the U.S. missile `.ork` models I mentioned:
+
+### ✅ Best candidates for “naked” simulations
+
+1. **AGM-78 Standard ARM**
+
+   * Simple cylindrical body with a pointed nose and straight fins.
+   * Works well in OpenRocket stripped down to geometry only.
+   * Stability simulations remain accurate without paint or decals.
+
+2. **AIM-45A Sentinel**
+
+   * Basic fin-can and ogive nosecone.
+   * Easy to run in a naked configuration since its design is fairly minimal.
+
+3. **GTR-18 Smokey Sam (manual build)**
+
+   * Extremely simple geometry (short body, small fins).
+   * If you model it from specs, it’ll naturally be “naked” unless you add graphics.
+
+---
+
+### ⚠️ More challenging as “naked”
+
+* Models like the **ATACMS (Steel Rain)** semi-scale can look plain when stripped, but they still fly correctly. Since the real missile’s visual identity comes from paint/decal schemes, a “naked” version will look like a plain tube with fins — still stable, but visually underwhelming.
+
+---
+
+## Practical Tip in OpenRocket
+
+* You can **toggle off decorations**:
+
+  * Go to **Component edit → Appearance**.
+  * Set **Surface finish = None** (instead of glossy/painted).
+  * Don’t assign any textures or decals.
+* You’ll then have a **bare cardboard/metal-tube look** in the 3D view, i.e., a “naked” rocket.
+
+---
+
+👉 So if you want a **stable, clean “naked” missile simulation**, I’d recommend starting with the **AGM-78 Standard ARM** or **AIM-45A Sentinel** `.ork` files. Both keep their proportions and stability without needing external paint or detailing.
