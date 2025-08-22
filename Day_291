@@ -1,0 +1,99 @@
+# ABS 3D printing BOM (India) — concise table
+
+> All quantities assume a single-printer small workshop. Prices are ranges/estimates (Aug 2025) — final cost depends on brand, size, and seller.
+
+### Essentials (required to print ABS reliably)
+
+| Item                                                 | Qty | Why you need it                     | Example / note                                                                                                                   |                      Est. price (INR) |
+| ---------------------------------------------------- | --: | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------: |
+| ABS filament, 1 kg spool (1.75 mm or 2.85 mm)        |  1+ | Main material                       | Many Indian sellers sell 1 kg spools; typical street price \~₹800–₹1,500/kg depending on brand & quality. ([tesseract3d.com][1]) |                       **₹900–₹1,500** |
+| Enclosure for printer (insulate ambient temperature) |   1 | Prevents warping/delamination       | Off-the-shelf enclosures available; e.g., Creality-style enclosures. ([Amazon India][2])                                         | **₹6,000–₹25,000** (simple DIY <\$2k) |
+| Heated bed (if not already fitted)                   |   1 | Needed to reduce warping            | Most printers include it; ensure 90–110 °C capability                                                                            |                       **₹500–₹3,500** |
+| Filament dryer / dry box (or desiccant storage)      |   1 | Keeps ABS dry for consistent prints | Dedicated dryers (e.g., Creality Space Pi) or simple dry boxes. ([Cart2India][3])                                                |                    **₹1,500–₹12,000** |
+
+### Consumables & adhesion
+
+| Item                                             |                Qty | Why                                              | Example / note                                                |        Est. price |
+| ------------------------------------------------ | -----------------: | ------------------------------------------------ | ------------------------------------------------------------- | ----------------: |
+| PEI sheet / Build surface                        |                  1 | Better bed adhesion for ABS                      | Precut sheets for Ender/Prusa sizes. ([Amazon][4], [IARS][5]) |   **₹500–₹2,000** |
+| Kapton tape / glue stick / ABS slurry            |           multiple | Adhesion aids; choose one                        | ABS slurry = ABS dissolved in acetone for strong adhesion     |     **₹100–₹800** |
+| Support filament (HIPS for soluble ABS supports) | 1 spool (optional) | If complex geometries & soluble supports desired | HIPS soluble in limonene, pairs with ABS                      | **₹1,000–₹2,000** |
+
+### Safety & storage
+
+| Item                                                           |  Qty | Why                                                            | Example / note                                                                               |        Est. price |
+| -------------------------------------------------------------- | ---: | -------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------: |
+| Respirator with organic-vapor cartridges (or NIOSH-equivalent) |    1 | Protect from styrene fumes during ABS printing/post-processing | Reusable masks with cartridges available on Amazon/industrial suppliers. ([Amazon India][6]) | **₹1,200–₹6,000** |
+| Silica gel desiccant packs & humidity indicator                | sets | Keep spools dry in airtight containers                         | Bulk packs or individual 2–10 g packs. ([Amazon India][7], [Dry & Dry][8])                   |   **₹200–₹2,000** |
+| Nitrile gloves & eye protection                                | pack | Safety for acetone/sanding                                     | **₹200–₹800**                                                                                |                   |
+
+### Nozzles, wear parts & spare hardware
+
+| Item                                                       |     Qty | Why                                                                        | Example / note                                                                               |            Est. price |
+| ---------------------------------------------------------- | ------: | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | --------------------: |
+| Spare nozzles (brass) + hardened steel or stainless nozzle | several | Different diameters; hardened recommended for abrasive composite filaments | Nozzle prices range small — brass cheap; hardened costlier. Example vendor Robu. ([Robu][9]) | **₹40–₹1,500** (each) |
+| PTFE Bowden tube / liner, PTFE couplers                    |   1 set | Replace when degraded                                                      | **₹200–₹800**                                                                                |                       |
+| Spare thermistor / heater cartridge / bed springs          |   1 set | Prevent downtime                                                           | **₹200–₹1,500**                                                                              |                       |
+
+### Tools & finishing
+
+| Item                                                       |            Qty | Why                                 |                                            Est. price |
+| ---------------------------------------------------------- | -------------: | ----------------------------------- | ----------------------------------------------------: |
+| Digital calipers (0–150 mm)                                |              1 | Measure filament & printed parts    |                                       **₹800–₹2,000** |
+| Flush cutters, deburring tool, craft knife, sanding papers |       assorted | For removing supports and finishing |                                       **₹200–₹1,200** |
+| Heat gun                                                   |              1 | Local annealing/smoothing aid       |                                       **₹800–₹2,500** |
+| Acetone (for smoothing, ABS slurry)                        | 1 small bottle | Post-processing & making ABS slurry | **₹200–₹900** (handle with PPE). ([Amazon India][10]) |
+
+### Nice-to-have / upgrades (high ROI)
+
+| Item                                                        | Qty | Why                                                |                                                  Est. price |                      |
+| ----------------------------------------------------------- | --: | -------------------------------------------------- | ----------------------------------------------------------: | -------------------- |
+| Glass plate (borosilicate)                                  |   1 | Flat bed surface for repeatable first layers       |                                             **₹500–₹1,500** |                      |
+| BuildTak / PEI magnetic flexible plate                      |   1 | Easy part removal & consistent adhesion            |                                           **₹1,000–₹3,000** |                      |
+| Filament spool scale or weigh-check                         |   1 | Avoid running out mid-print; check true net weight |                                             **₹200–₹1,500** |                      |
+| Hardened nozzle (for carbon/glass filled filaments)         |   1 | Required for abrasive filaments                    |                                             **₹500–₹1,500** |                      |
+| Filament recycler / extruder (for heavy in-house recycling) |   1 | Recycle failed prints/supports into fresh filament | Desktop recyclers exist; cost & quality vary. ([Amazon][4]) | **₹15,000–₹80,000+** |
+
+---
+
+# Quick shopping checklist (copy/paste)
+
+* [ ] ABS filament, 1 kg (match diameter)
+* [ ] Enclosure (or materials to make DIY box)
+* [ ] Filament dryer or airtight box + silica gel packs
+* [ ] PEI / glass build plate & adhesives (gluestick / ABS slurry)
+* [ ] Spare nozzles (0.4 mm brass + 1 hardened nozzle)
+* [ ] Respirator + cartridges, nitrile gloves, goggles
+* [ ] Acetone (for smoothing & slurry) + heat gun
+* [ ] Calipers, cutters, sandpaper, files
+* [ ] Optional: filament recycler, filament dryer, spool scale
+
+---
+
+# Five short purchasing tips (actionable)
+
+1. **Buy at least one backup spool** — filament weight variance and underfilled spools exist; keep a spare to avoid mid-print failures. (We cited typical prices and availability). ([tesseract3d.com][1])
+2. **Invest in a dryer if you print ABS frequently** — prevents moisture-related print failures; dryers like the Creality Space Pi are widely available. ([Cart2India][3])
+3. **Use a PEI or textured spring steel sheet over Kapton for reliable adhesion + easier removal.** ([Amazon][4], [IARS][5])
+4. **Get at least one respirator with organic vapor cartridges** rather than a disposable dust mask — ABS releases odorous VOCs (styrene). ([Amazon India][6])
+5. **Keep silica gel packs with spools and monitor humidity** — cheap insurance against brittle/noisy extrusion. ([Amazon India][7], [Dry & Dry][8])
+
+---
+
+If you want, I can:
+
+* Turn this into an exportable **spreadsheet (CSV/Excel)** of the BOM with exact product links and totals for a final shopping list.
+* Or make a **budget BOM** (min cost) and a **pro/production BOM** (higher-reliability, faster ROI).
+
+Which would you like next?
+
+[1]: https://www.tesseract3d.com/product/abs-1-75mm-filament/?utm_source=chatgpt.com "ABS Filament 1.75mm (1kg) - 3D Printing Services in Mumbai"
+[2]: https://www.amazon.in/Enclosure-Fireproof-Temperature-Protective-750X700x900mm/dp/B08FD8M2BP?utm_source=chatgpt.com "3D Printer Enclosure, Creality Fireproof and Dustproof ... - Amazon.in"
+[3]: https://www.cart2india.com/3d-printing-filament/2025-official-creality-space-pi-filament-dryer-plus-2-spools-360-160w-ptc-fast-heating-3d-printer-filament-dryer-box-4-lcd-touch-screen-onekey-set-3d-filament-dehydrator-for-pla-petg-abs-tpu/00000000004393550335?srsltid=AfmBOooB5PptCA5Jlb7ugHkVBc4Y3nuUW1opVRGxYXLdPiA5CGMSlMfc&utm_source=chatgpt.com "2025 Official CREALITY Space Pi Filament Dryer Plus, 2 Spools 360 ..."
+[4]: https://www.amazon.com/Gizmo-Dorks-Preapplied-Laminated-Adhesive/dp/B07GSJSDWR?utm_source=chatgpt.com "Gizmo Dorks PEI Sheet 3D Printer Build Surface ... - Amazon.com"
+[5]: https://www.iars.co.in/1039652/Printing-Sheet-Double-Sided-Texture-PEI-Sheet-Flexible-Magnetic?utm_source=chatgpt.com "Elegoo 3d Printer Textured PEI Printing Sheet Double Sided ... - IARS"
+[6]: https://www.amazon.in/Respirator-Reusable-Painting-Construction-Woodworking/dp/B0DMNPXPFF?utm_source=chatgpt.com "Respirator Mask, Respirator Mask with 6001 Filters, Reusable Paint ..."
+[7]: https://www.amazon.in/Packets-Desiccants-Moisture-Absorbers-Desiccant/dp/B0CFJYNQYY?utm_source=chatgpt.com "Silica Gel Packets, 2 Gram 500Pcs Desiccants Packs ... - Amazon.in"
+[8]: https://dryndry.com/products/200g-x-100-ea-high-quality-pure-reusable-silica-gel-desiccant-1?srsltid=AfmBOorZlU1AFCLNe6Gcjnxg8nTXgR-e-Z4c8it-RblCBiy-_KGPEM6-&utm_source=chatgpt.com "200 Gram [100 Packets] \"Dry & Dry\" Premium Silica Gel Desiccant ..."
+[9]: https://robu.in/product-category/3d-printer-parts/3d-printers-parts/nozzle/?utm_source=chatgpt.com "Buy 3D Printer Nozzle, Brass, Steel Nozzle at Best Price - Robu.in"
+[10]: https://www.amazon.in/Smoothing-prints-using-acetone-vapors/dp/6200095620?utm_source=chatgpt.com "Smoothing 3D prints from ABS using acetone vapors - Amazon.in"
