@@ -1,0 +1,15 @@
+1. **Print-farm mass**: What’s the **total estimated weight (in grams)** of all the parts the farm will print? (Rate is ₹15/gram, so this drives that line item.)
+
+2. **Shipping containers & foam** (you said multiple smaller containers, skip/short bubble wrap):
+
+   * How many **airtight plastic containers** do you want, and roughly what **capacity each** (e.g., 20 L, 30 L)?
+   * **Foam for custom cutouts**: what **thickness** (e.g., 10 mm or 20 mm EVA/PE foam) and how many **sheets** (e.g., 1 m × 2 m sheets)?
+
+Once I have those, I’ll generate the detailed BOM with:
+
+* Sr. No
+* Item name
+* Quantity
+* Total cost per item
+* Purchase/booking link (IRCTC for tickets, product pages for items)
+* **Grand total** at the bottom
