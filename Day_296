@@ -1,0 +1,72 @@
+## Where to Find Ready-to-Use OpenRocket Models
+
+### 1. RocketReviews – *OpenRocket Design Library*
+
+A vast curated collection of `.ork` files available for direct download. Many non-military and commercial model designs are available and often well-documented. ([Rocketry Forum - Model Rocketry Forums][1])
+
+### 2. Rocketry Forum – *K'Tesh's OpenRocket Files*
+
+K'Tesh, a prolific contributor, has shared hundreds of `.ork` files on the Rocketry Forum. These include popular Estes kits like:
+
+* Estes Mini Max
+* Estes Citation Series Red Max (multiple variants)
+* Estes Der Red Max (2007 re-release)
+* Estes Mega Der Red Max
+* Estes Der Big Red Max (1977) and Big Red Max II (2-stage) ([Rocketry Forum - Model Rocketry Forums][2])
+
+These are ideal starting points if you're looking for stable, tried-and-tested designs.
+
+### 3. Rocketry Forum – *Download OpenRocket Designs Thread*
+
+A helpful community thread that aggregates links and tips to downloadable designs, including both `.ork` and RockSim (`.rkt`) files (which OpenRocket can import). ([Rocketry Forum - Model Rocketry Forums][3])
+
+### 4. OpenRocket Distribution Archive
+
+An archived site (“openrocket.distrib.free.fr”) attempted to distribute `.ork` designs widely. However, be cautious—the software available there is outdated and may not be compatible with the latest version of OpenRocket. ([Rocketry Forum - Model Rocketry Forums][3])
+
+---
+
+## Insights from the Community
+
+> “File > Open Example has several example files. While none of them is really '10,000 feet altitude rocket,' they do demonstrate many features of OpenRocket.” ([Reddit][4])
+
+Community users suggest starting with built-in examples to explore features and simulation behaviors.
+
+> On using Estes kits or motors within OpenRocket:
+> “This website has a lot of Rocksim files (usable in OpenRocket)…” ([Reddit][4])
+
+That means you can adapt many existing RockSim designs into OpenRocket for experimentation.
+
+> On building from downloaded models versus scratch:
+> Many users recommend creating your own files—often simpler and more accurate for your specific model. Downloaded designs might not always reflect real-world dimensions or masses perfectly. ([Rocketry Forum - Model Rocketry Forums][3])
+
+---
+
+## Summary Table
+
+| Source                                                  | Highlights                                               |
+| ------------------------------------------------------- | -------------------------------------------------------- |
+| **RocketReviews – OpenRocket Design Library**           | Large catalog of `.ork` files across many model types    |
+| **K'Tesh's OpenRocket Files (Rocketry Forum)**          | Hundreds of `.ork` files of Estes and other popular kits |
+| **Rocketry Forum – Download OpenRocket Designs Thread** | Direct links and community-curated downloads             |
+| **OpenRocket Distribution Archive**                     | Historic designs (use with caution due to software age)  |
+| **Built-in OpenRocket Examples**                        | Great for learning and prototyping base designs          |
+
+---
+
+## Suggested Next Steps
+
+1. **Browse the RocketReviews design library** to find models that match your style or level.
+2. **Explore K’Tesh’s threads** on Rocketry Forum for a rich collection of downloadable `.ork` files.
+3. **Load built-in example files** via `File > Open Example` in OpenRocket to experiment with design and stability.
+4. **Use downloaded models as templates**—adjust dimensions, masses, or aesthetics for your custom builds.
+5. **Consider designing from scratch** if you want complete control or to replicate a military-inspired model like "Steel Rain" with accuracy.
+
+---
+
+Let me know if you’d like guidance on modifying one of these models—or help interpreting how to adjust stability, mass, or fin design in OpenRocket. Happy rocketing!
+
+[1]: https://www.rocketryforum.com/threads/where-to-get-general-openrocket-or-rocksim-files.52183/?utm_source=chatgpt.com "Where to get general OpenRocket or Rocksim files? | Rocketry Forum - Model Rocketry Forums"
+[2]: https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-7?utm_source=chatgpt.com "K'Tesh's OpenRocket Files... | Page 7 | Rocketry Forum - Model Rocketry Forums"
+[3]: https://www.rocketryforum.com/threads/download-openrocket-designs.174727/?utm_source=chatgpt.com "Download OpenRocket designs | Rocketry Forum - Model Rocketry Forums"
+[4]: https://www.reddit.com/r/rocketry/comments/logtj5?utm_source=chatgpt.com "How can I find some example rocket desings for OpenRocket?"
