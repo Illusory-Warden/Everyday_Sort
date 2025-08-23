@@ -1,0 +1,41 @@
+### 🔹 The Rule
+
+For **tight bound (Θ)**, you need **any** two positive constants $c_1$ and $c_2$ (with $c_1 < c_2$) such that:
+
+$$
+c_1 n \;\le\; f(n) \;\le\; c_2 n \quad \text{for all } n \ge n_0
+$$
+
+There’s no requirement that you *must* use 2 and 3.
+We picked 2 and 3 because they are the simplest values around the coefficient of the leading term (2).
+
+---
+
+### 🔹 If 2 and 3 don’t work…
+
+You can **try larger constants**, like 4 and 5, or even 10 and 20.
+As long as the inequality holds **eventually** (for some $n_0$), the proof is valid.
+
+For example:
+
+Check with $c_2 = 5$:
+
+$$
+2n+5 \le 5n \quad \iff \quad 5 \le 3n
+$$
+
+This is true for all $n \ge 2$. ✅
+
+So it still works.
+
+---
+
+### 🔹 The key idea
+
+* $c_1$ should be **≤ leading coefficient** (so the lower inequality holds).
+* $c_2$ should be **≥ leading coefficient** (so the upper inequality holds).
+* If first guess fails for small $n$, just **increase $n_0$** or pick slightly bigger constants.
+
+---
+
+✅ So yes, if 2 and 3 don’t work, you can take 4 and 5 (or any other pair), and the bound will still be correct.
