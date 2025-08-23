@@ -1,0 +1,54 @@
+When we prove **tight bound (Θ)**, we’re comparing the function $f(n)$ to a *simpler growth function* $g(n)$ (usually the **dominant term**).
+
+---
+
+### 🔹 Step 1: Pick the comparison function
+
+For $f(n)=2n+5$, the dominant term is **$n$**, so we test against $g(n)=n$.
+
+---
+
+### 🔹 Step 2: Sandwich $f(n)$ between two multiples of $g(n)$
+
+We want constants $c_1, c_2$ such that:
+
+$$
+c_1 g(n) \le f(n) \le c_2 g(n)
+$$
+
+That is:
+
+$$
+c_1 n \le 2n+5 \le c_2 n
+$$
+
+---
+
+### 🔹 Step 3: Pick constants near the coefficient of $n$ (here coefficient = 2)
+
+* For the **lower bound**: choose $c_1 = 2$ (since $2n+5 \ge 2n$ always for $n \ge 1$).
+* For the **upper bound**: pick a constant slightly **larger** than 2, say $c_2=3$. Then for $n \ge 5$,
+
+  $$
+  2n+5 \le 3n
+  $$
+
+So, we’ve bounded it:
+
+$$
+2n \le 2n+5 \le 3n
+$$
+
+---
+
+### 🔹 Step 4: Conclude
+
+This means:
+
+$$
+2n+5 \in \Theta(n)
+$$
+
+---
+
+✅ So yes — we **pick constants around the dominant coefficient** of the leading term, and then check from which $n_0$ onwards the inequalities hold.
