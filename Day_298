@@ -1,0 +1,26 @@
+## ❌ Not Covered Yet (by name / formally):
+
+1. **Formal Definitions** of
+
+   * Big-O (O)
+   * Big-Omega (Ω)
+   * Big-Theta (Θ)
+
+2. **Properties of Asymptotic Notations**, such as:
+
+   * Reflexivity
+   * Transitivity
+   * Symmetry (for Θ)
+   * Addition rule
+   * Multiplication/scaling rule
+
+3. **Formal explanation of Best, Worst, and Average Case Analysis** with examples (searching/sorting).
+
+4. **Difference between Worst-case complexity vs Upper bound** (subtle point many teachers ask).
+
+5. **Graphical/Intuitive explanation of O, Ω, Θ** (how they sandwich a function).
+
+---
+
+✅ What we *did* cover are examples (like $2n+5$, $5n^2$), intuition about choosing constants, and informal talk about best/worst cases.
+❌ What we *haven’t* covered yet is the **formal definitions + properties** (the theory side).
