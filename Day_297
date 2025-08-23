@@ -1,0 +1,73 @@
+# 🔹 What are **Algorithmic Design Principles**?
+
+They are **general strategies / guidelines** that help us design efficient algorithms to solve computational problems.
+
+Instead of writing algorithms randomly, these principles give a **structured approach** to problem-solving.
+
+---
+
+# 🔹 Major Algorithmic Design Principles
+
+### 1. **Divide and Conquer**
+
+* Break the problem into smaller subproblems, solve them independently, and combine their results.
+* Example: Merge Sort, Quick Sort, Binary Search.
+
+---
+
+### 2. **Greedy Method**
+
+* Build the solution step by step, always choosing the **locally optimal choice** at each step.
+* Works if local optimum leads to global optimum.
+* Example: Kruskal’s MST, Prim’s MST, Dijkstra’s shortest path, Huffman coding.
+
+---
+
+### 3. **Dynamic Programming (DP)**
+
+* Break the problem into overlapping subproblems, store results (memoization/tabulation), and reuse them.
+* Avoids repeated computation.
+* Example: Fibonacci sequence, Matrix Chain Multiplication, Longest Common Subsequence.
+
+---
+
+### 4. **Backtracking**
+
+* Try building a solution step by step, but **abandon** (backtrack) if it leads to an invalid solution.
+* Useful for **search problems**.
+* Example: N-Queens, Sudoku Solver, Hamiltonian Path.
+
+---
+
+### 5. **Branch and Bound**
+
+* Systematically explore solution space, but use bounds to eliminate (prune) unpromising branches.
+* More efficient than brute force.
+* Example: Travelling Salesman Problem (TSP), Knapsack.
+
+---
+
+### 6. **Decrease and Conquer**
+
+* Solve the problem by **reducing it to a smaller version** (usually size n–1).
+* Example: Insertion Sort, Depth First Search.
+
+---
+
+### 7. **Transform and Conquer**
+
+* Modify the problem into a different form that is easier to solve.
+* Example: Balanced BSTs (like AVL, Red-Black Trees), Heap Sort.
+
+---
+
+# 🔹 Why Important?
+
+* Helps design algorithms systematically.
+* Helps in **analyzing time/space complexity**.
+* Provides reusable strategies across different problem domains.
+
+---
+
+✅ So, in short:
+**Algorithmic Design Principles = General strategies (like Divide & Conquer, Greedy, DP, Backtracking, etc.) used to design efficient algorithms.**
