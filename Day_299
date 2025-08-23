@@ -1,0 +1,19 @@
+## 🔹 What we have already covered in this chat:
+
+* **Time & Space Complexity basics** (O(1), O(n), O(log n), O(n log n), etc.)
+* **Best case, worst case, average case idea** (e.g., we talked about best case for $5n^2$ being Θ(n²))
+* **Asymptotic bounds examples** (finding O, Ω, Θ for $2n+5$, including constants $c_1, c_2$)
+* **Cost analysis of code** (sum of array with a for loop → exact cost, total = 3n+4 → O(n))
+* **Algorithmic design principles** (Divide & Conquer, Greedy, DP, etc.)
+
+---
+
+## 🔹 What we have **not fully formalized yet:**
+
+* A **formal introduction of the 3 Asymptotic Notations**:
+
+  * **Big-O (O)** → upper bound
+  * **Big-Omega (Ω)** → lower bound
+  * **Big-Theta (Θ)** → tight bound
+* Their **properties** (transitivity, reflexivity, addition rule, multiplication rule, etc.).
+* A **clear definition of best case, worst case, and average case analysis** in terms of these notations.
