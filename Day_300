@@ -1,0 +1,17 @@
+The problems where you:
+
+* Take a function like $2n+5$, $5n^2$, etc.
+* Try to **find upper bound (O)**, **lower bound (Ω)**, and **tight bound (Θ)**
+* Prove them with constants $c_1, c_2, n_0$ or using the limit method
+
+are called **Asymptotic Analysis problems** (or sometimes just **Complexity Analysis problems**).
+
+---
+
+### 📘 In textbooks / exams you’ll see them named as:
+
+* **Asymptotic Analysis**
+* **Asymptotic Notation problems**
+* **Big-O, Big-Ω, Big-Θ analysis**
+* **Growth rate comparison**
+* **Order of growth analysis**
