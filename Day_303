@@ -1,0 +1,21 @@
+Here’s the SQL query:
+
+```sql
+SELECT DISTINCT category
+FROM products
+ORDER BY category ASC;
+```
+
+### ✅ Explanation:
+
+* `DISTINCT category` ensures each category is returned only once.
+* `ORDER BY category ASC` sorts the categories alphabetically for easier readability.
+
+### Expected Output:
+
+| category    |
+| ----------- |
+| Accessories |
+| Clothing    |
+| Electronics |
+| Homeware    |
