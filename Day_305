@@ -1,0 +1,24 @@
+Here’s the SQL query:
+
+```sql
+SELECT 
+    category,
+    SUM(quantity_sold) AS total_quantity_sold
+FROM sales
+GROUP BY category
+ORDER BY category ASC;
+```
+
+### ✅ Explanation:
+
+* `SUM(quantity_sold)` adds up all products sold for each category.
+* `GROUP BY category` groups sales data by category.
+* `ORDER BY category ASC` sorts results alphabetically by category.
+
+### Expected Output:
+
+| category    | total\_quantity\_sold |
+| ----------- | --------------------- |
+| Clothing    | 15                    |
+| Electronics | 61                    |
+| Furniture   | 26                    |
