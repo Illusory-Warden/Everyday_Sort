@@ -1,0 +1,72 @@
+          2
+       /     \
+     7         5
+   /   \      /   \
+ 13    14   14    34
+```
+
+---
+
+### Step 1: Recall Max Heap property
+
+* Each **parent ≥ children**.
+* Tree must remain **complete**.
+
+---
+
+### Step 2: Start Heapify (bottom-up)
+
+**Level 2 nodes:**
+
+* Node **7** with children (13, 14) → largest = 14. Swap.
+
+  ```
+        14
+       /  \
+     13    7
+  ```
+
+* Node **5** with children (14, 34) → largest = 34. Swap.
+
+  ```
+       34
+      /  \
+    14    5
+  ```
+
+---
+
+### Step 3: Root (2) with children (14, 34)
+
+* Largest child = 34. Swap 34 ↔ 2.
+
+Tree now:
+
+```
+          34
+       /      \
+     14        2
+   /   \      /   \
+ 13    7    14    5
+```
+
+---
+
+### ✅ Final Max Heap
+
+```
+          34
+       /      \
+     14        2
+   /   \      /   \
+ 13    7    14    5
+```
+
+---
+
+### Step 4: Array Representation
+
+If we store this heap in an array (level-order):
+
+```
+[34, 14, 2, 13, 7, 14, 5]
