@@ -1,0 +1,83 @@
+Here’s how it works step by step for your tree:
+
+---
+
+### Given tree
+
+```
+          2
+       /     \
+     7         5
+   /   \      /   \
+ 13    14   14    34
+```
+
+---
+
+### Step 1: Identify last non-leaf
+
+* Leaf nodes: `13, 14, 14, 34`.
+* Last non-leaf = **7 (index 2 if array)**.
+* We process **from left to right bottom-up**.
+
+---
+
+### Step 2: Heapify at Node 7
+
+Children = (13, 14).
+
+* Largest = 14. Swap with 7.
+
+Subtree becomes:
+
+```
+       14
+      /  \
+    13    7
+```
+
+---
+
+### Step 3: Heapify at Node 5
+
+Children = (14, 34).
+
+* Largest = 34. Swap with 5.
+
+Subtree becomes:
+
+```
+      34
+     /  \
+   14    5
+```
+
+---
+
+### Step 4: Heapify at Root (2)
+
+Children = (14, 34).
+
+* Largest = 34. Swap with 2.
+
+Now check subtree rooted at 2:
+Children = (14, 5). Largest = 14 → swap with 2.
+
+---
+
+### Final Max Heap
+
+```
+          34
+       /      \
+     14        14
+   /   \      /   \
+ 13    7     2     5
+```
+
+---
+
+### Array Representation
+
+```
+[34, 14, 14, 13, 7, 2, 5]
