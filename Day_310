@@ -1,0 +1,61 @@
+So the given tree is actually like this:
+
+```
+          2
+       /     \
+     7         5
+   /   \         \
+ 13    14         34
+```
+
+---
+
+### Step 1: Start heapify bottom–up
+
+* **Leaves (13, 14, 34)** are already heaps.
+
+---
+
+### Step 2: Node 7 with children (13, 14)
+
+* Largest child = 14.
+* 14 > 7 → swap.
+
+Subtree becomes:
+
+```
+       14
+      /  \
+    13    7
+```
+
+---
+
+### Step 3: Node 5 with child (34)
+
+* 34 > 5 → swap.
+
+Subtree becomes:
+
+```
+     34
+       \
+        5
+```
+
+---
+
+### Step 4: Root (2) with children (14, 34)
+
+* Largest child = 34.
+* Swap 34 and 2.
+
+Tree becomes:
+
+```
+          34
+       /      \
+     14         2
+   /   \          \
+ 13     7          5
+```
