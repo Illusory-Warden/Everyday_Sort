@@ -1,0 +1,56 @@
+In the context of **DAA (Design and Analysis of Algorithms):**
+
+---
+
+### 🔹 What is **T** ?
+
+* $T(n)$ usually denotes the **time complexity** (or running time) of an algorithm on an input of size $n$.
+* It is a **function** that tells us how much time (or number of basic operations) the algorithm takes depending on the size of the input.
+
+---
+
+### 🔹 Examples
+
+1. **Factorial (recursive):**
+
+   ```c
+   int factorial(int n) {
+       if (n == 0 || n == 1)
+           return 1;
+       return n * factorial(n - 1);
+   }
+   ```
+
+   * Work done: constant ($O(1)$) + recursive call with $n-1$.
+   * Recurrence relation:
+
+     $$
+     T(n) = T(n-1) + O(1)
+     $$
+
+     Here, $T(n)$ = time required to compute factorial of $n$.
+
+---
+
+2. **Binary Search (recursive):**
+
+   ```c
+   int binarySearch(int arr[], int l, int r, int x) {
+       if (r >= l) {
+           int mid = l + (r - l) / 2;
+           if (arr[mid] == x) return mid;
+           if (arr[mid] > x) return binarySearch(arr, l, mid - 1, x);
+           return binarySearch(arr, mid + 1, r, x);
+       }
+       return -1;
+   }
+   ```
+
+   * Work done: $O(1)$ + recursive call with input size $n/2$.
+   * Recurrence relation:
+
+     $$
+     T(n) = T\left(\frac{n}{2}\right) + O(1)
+     $$
+
+     Here, $T(n)$ = time taken to search in an array of size $n$.
