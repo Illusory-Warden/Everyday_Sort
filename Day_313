@@ -1,0 +1,19 @@
+n - k = 1 \quad \;\;\Rightarrow\;\; k = n - 1
+$$
+
+**Exactly, $k = n-1$.**
+So strictly speaking, **$k = n$ is not correct**.
+
+---
+
+But: in algorithm analysis (recurrences, substitution, recursion trees), people sometimes **approximate** and say $k \approx n$ because:
+
+* Asymptotically, $n-1$ and $n$ are the same (they both grow like $n$).
+* In $\Theta$-notation, the difference of a constant (like 1) is ignored.
+
+---
+
+✅ So the answer is:
+
+* **Exactly:** $k = n-1$.
+* **Asymptotically / approximately in big-O analysis:** some people simplify and write $k=n$, since the $-1$ does not change the result.
