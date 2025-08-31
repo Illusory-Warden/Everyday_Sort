@@ -1,0 +1,55 @@
+# Your handwritten recurrence
+
+It looks like you have:
+
+$$
+T(n)=\begin{cases}
+4 & n=1,\\[4pt]
+2T(n/2)+4n & \text{otherwise.}
+\end{cases}
+$$
+
+**Recursion-tree view (easy to see):**
+
+* Level 0 (root): cost $=4n$.
+* Level 1: two subproblems of size $n/2$, each contributes $4\cdot(n/2)$, so total $=2\cdot 4(n/2)=4n$.
+* Level 2: $2^2$ subproblems of size $n/2^2$, each contributes $4\cdot(n/2^2)$, so total $=2^2\cdot 4(n/2^2)=4n$.
+
+So **every level** contributes $4n$. How many levels? The recursion stops when size becomes 1, so height $= \log_2 n$. Thus total internal cost
+
+$$
+\sum_{i=0}^{\log_2 n -1} 4n = 4n\cdot \log_2 n.
+$$
+
+Leaves: there are $2^{\log_2 n}=n$ leaves each cost $\Theta(1)$ so leaf cost $=\Theta(n)$, which is lower order than $n\log n$.
+
+Therefore
+
+$$
+T(n) = 4n\log_2 n + \Theta(n) = \Theta(n\log n).
+$$
+
+**Master Theorem view (quick):** here $a=2,\; b=2$ so $\log_b a = 1$. The nonrecurrence term is $f(n)=4n=\Theta(n^{1})$. This is the boundary case $f(n)=\Theta(n^{\log_b a}\log^k n)$ with $k=0$, so $T(n)=\Theta(n^{\log_b a}\log^{k+1}n)=\Theta(n\log n)$.
+
+---
+
+# Why that doesn’t contradict the earlier result
+
+The earlier recurrence you asked about first was
+
+$$
+T(n)=3T(n/4)+c n^2.
+$$
+
+Here $a=3,\; b=4$ so $\log_b a=\log_4 3\approx 0.792$. The nonrecurrence term $f(n)=cn^2$ grows much faster than $n^{\log_4 3}$. By Master Theorem (case 3) the cost is dominated by $f(n)$, giving
+
+$$
+T(n)=\Theta(n^2).
+$$
+
+So:
+
+* $2T(n/2)+4n \Rightarrow \Theta(n\log n)$.
+* $3T(n/4)+cn^2 \Rightarrow \Theta(n^2)$.
+
+They are different recurrences, so they have different asymptotic complexities.
