@@ -1,0 +1,9 @@
+Terminal Maria DB Remove : 
+	sudo systemctl status mysql
+	sudo apt-get remove --purge mariadb*
+	Y
+	Yes
+	sudo apt autoremove
+	Y
+	sudo systemctl status mysql
+	sudo systemctl status mariadb
