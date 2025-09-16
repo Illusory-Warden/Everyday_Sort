@@ -1,0 +1,66 @@
+## 🔎 IEEE Format Compliance (Page 1)
+
+1. **Title**
+
+   * ✅ Clear, descriptive title.
+   * ⚠️ IEEE format usually uses **Title Case** and centered formatting in bold. Currently it looks like plain text.
+
+2. **Authors & Affiliations**
+
+   * ✅ Authors are listed with affiliation.
+   * ⚠️ In IEEE format, affiliations should follow the style: *Author Name, Affiliation, City, Country, Email*. Currently, emails are missing and department formatting is inconsistent.
+
+3. **Abstract**
+
+   * ✅ Structured, contains problem, methodology, evaluation, results, and significance.
+   * ⚠️ Formatting: In IEEE style, “Abstract” should be centered and bold, followed by the abstract text in a block (not “Abstract-” with a hyphen).
+
+4. **Keywords**
+
+   * ✅ Keywords are provided.
+   * ⚠️ IEEE requires keywords after the abstract in *italicized "Index Terms—"* style. Example: *Index Terms—Raspberry Pi, Personal Cloud, Data Sovereignty*.
+
+5. **Introduction**
+
+   * ✅ Starts right after keywords.
+   * ⚠️ IEEE style prefers **Roman numeral headings (I. INTRODUCTION, II. RELATED WORK, etc.)**. Here, “I INTRODUCTION” is missing the period (should be “I. INTRODUCTION”).
+
+---
+
+## 🚨 Potential Warnings (Content & Style Issues)
+
+* **Overly Long Abstract**: At \~300+ words, it exceeds IEEE’s typical limit (\~150–250 words). Risk of rejection.
+* **Too Many Keywords**: IEEE usually limits keywords to 4–6. You currently have 17.
+* **Reference Style**: Some references are cited as `[1], [12]` etc., which is correct, but spacing and order should be checked (IEEE prefers `[1], [2]` not `[1], [12]` unless non-sequential).
+* **Technical Density**: The abstract is very detail-heavy (specific HDD models, timings, ISP plan). IEEE abstracts should summarize key contributions/results, not implementation minutiae.
+
+---
+
+## ✍️ Suggested Edits (Page 1)
+
+### Major Edits
+
+1. **Reformat Title & Author Block**:
+
+   * Example IEEE style:
+
+     ```
+     Pi-Vate Cloud: A Self-Sovereign, Cost-Effective Personal Data-Ecosystem on Raspberry Pi
+     Rushi Daulatkar, Atharva Dhote, Abhijeet Pathode, Harsh Yadav, Prof. Renuka Raut  
+     Dept. of Computer Science and Business Systems, St. Vincent Pallotti College of Engineering and Technology, Nagpur, India  
+     Email: {email1, email2, …}@domain.com
+     ```
+2. **Abstract Simplification**:
+
+   * Reduce word count, keep only **problem, method, results, conclusion**. Move detailed hardware specs, timings, and security steps into methodology/results sections.
+3. **Keywords Reduction**:
+
+   * Limit to 4–6 most important ones (e.g., Raspberry Pi, Personal Cloud, Data Sovereignty, OpenMediaVault, Nextcloud, Plex).
+
+### Minor Edits
+
+* Change **“Abstract-”** → **“Abstract—”** (em dash, per IEEE style).
+* Replace **“Keywords-”** → **“Index Terms—”**.
+* Change headings: “I INTRODUCTION” → **“I. INTRODUCTION”**.
+* Watch grammar: e.g., “introduces recurring costs, privacy exposures, and vendor lock in” → should be **“vendor lock-in”**.
+* Abstract: “empirical measurements include” → better phrased as **“We conducted empirical measurements including…”** for readability.
