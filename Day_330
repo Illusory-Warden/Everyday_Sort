@@ -1,0 +1,59 @@
+In Azure, IAM is handled mainly through **Azure Active Directory (Azure AD)** and **Role-Based Access Control (RBAC)**. It’s one of the most important areas to learn early because **everything in Azure needs secure access management**.
+
+Here’s a beginner-friendly breakdown:
+
+---
+
+### 🔑 **1. Azure Active Directory (Azure AD)**
+
+Azure AD is Microsoft’s cloud-based identity and access management service. It helps you:
+
+* **Manage users and groups** (employees, guests, service accounts).
+* **Single Sign-On (SSO):** One login for multiple apps (Office 365, SaaS apps, custom apps).
+* **Multi-Factor Authentication (MFA):** Extra security with phone, app, or SMS verification.
+* **Conditional Access:** Define rules like *"only allow login from company devices."*
+
+👉 Think of Azure AD as the **identity hub**.
+
+---
+
+### 🔑 **2. Role-Based Access Control (RBAC)**
+
+RBAC controls **who can do what** in Azure.
+
+* Roles define permissions (like *Reader*, *Contributor*, *Owner*).
+* You assign roles to **users, groups, or service principals** (apps).
+* Assignments happen at **different scopes**:
+
+  * Subscription level (all resources in a subscription).
+  * Resource group level (subset of resources).
+  * Resource level (single VM, database, etc).
+
+👉 Example:
+
+* Developer = Contributor role on a resource group.
+* Manager = Reader role (can view, not change).
+
+---
+
+### 🔑 **3. Managed Identities**
+
+Instead of storing secrets or passwords, you can let Azure assign an identity to a resource (like a VM or Function App). That resource can then securely access other Azure services (like Key Vault or Storage).
+
+👉 This removes the need for manual secret management.
+
+---
+
+### 🔑 **4. Privileged Identity Management (PIM)** *(advanced, but good to know)*
+
+* Just-in-time (JIT) access for admins.
+* Reduces risks by only giving elevated permissions **when needed**.
+
+---
+
+✅ **Beginner Path for IAM in Azure:**
+
+1. Learn how to **create users and groups** in Azure AD.
+2. Practice assigning **RBAC roles** to control access.
+3. Enable **MFA** for extra security.
+4. Try a **Managed Identity** with an App Service or VM accessing a Storage Account.
