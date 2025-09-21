@@ -1,0 +1,76 @@
+Got it! I'll now provide you with updated values per simulation tab (Launch Conditions, Simulation Options, and Plot Data) based on your images. These values will be tuned to help your rocket reach at least 1 km altitude.
+
+I'll list them section-by-section so you can easily plug them into OpenRocket.
+Updated Simulation Values for OpenRocket Launch to Exceed 1 km
+
+Updated Simulation Settings for ≥1 km Altitude
+
+First, set a high-impulse motor in the flight configuration (outside these tabs). For example, choose an Aerotech G80T (29 mm SU) with Total Impulse ≈136.6 N·s
+thrustcurve.org
+ (well above 100 N·s). Then use these settings:
+
+Launch Conditions
+
+Wind (Average model): 2.0 m/s (mean), 0.2 m/s (std. dev), Turbulence: 10%, Direction: 90°. (Model = “Average”
+openrocket.readthedocs.io
+ gives a steady light eastward breeze; this minimal wind won’t significantly reduce apex.)
+
+Atmospheric: Check Use ISA (standard atmosphere)
+openrocket.readthedocs.io
+. (Defaults to T=15 °C, P=1013 mbar at sea level.)
+
+Launch site: Latitude 28.61° N, Longitude 80.60° W, Altitude 0 m. (Use your actual site; these match ~Cape Canaveral.) This ensures correct density/gravity for the simulation
+openrocket.readthedocs.io
+.
+
+Launch rod length: 200 cm. (Set the rod to 2.0 m instead of 1.0 m to give the stronger motor more time to accelerate the rocket
+openrocket.readthedocs.io
+.)
+
+Launch angle: 0° (vertical). Check “Always launch directly up/down wind” so the Direction field is handled automatically (with 90° wind, this effectively points vertical). This ensures a straight upward launch.
+
+Simulation Options
+
+Calculation method: Extended Barrowman
+openrocket.readthedocs.io
+. (Standard stability/aero model for rockets.)
+
+Simulation method: 6-DOF (Runge-Kutta 4)
+openrocket.readthedocs.io
+. (Full dynamics integration.)
+
+Earth model: Spherical
+openrocket.readthedocs.io
+. (Accounts for Earth curvature; suitable for high-altitude flight.)
+
+Time step: 0.05 s. (Provides fine temporal resolution. You may use 0.02 s for extra accuracy.)
+
+Max. simulation time: 1200 s. (Long enough to cover the entire flight; you can safely set 300–600 s since the rocket will be done far earlier, but 1200 s guarantees no cutoff.)
+
+Plot Data
+
+Preset: Select “Vertical motion vs. time”
+wiki.openrocket.info
+. (This automatically plots Altitude, Vertical velocity, and Vertical acceleration versus time.)
+
+X-axis: Time (s).
+
+Y-axes: Left = Altitude (m); Right = Vertical velocity (m/s) and Vertical acceleration (m/s²)
+wiki.openrocket.info
+.
+
+Flight events: Check Launch, Motor ignition, Lift-off, Rod clearance, Motor burnout, Ejection charge, and Apogee. In particular, ensure Apogee is checked so the plot marks the peak altitude
+wiki.openrocket.info
+. (The other events help interpret the ascent profile.)
+
+Each value above should be entered exactly as shown. These settings (especially the high-impulse motor and longer rod) will allow the simulated rocket to reach beyond 1 km apogee under realistic conditions.
+
+ 
+
+Sources: OpenRocket Flight Sim documentation
+openrocket.readthedocs.io
+openrocket.readthedocs.io
+ (launch and simulation settings) and example plots
+wiki.openrocket.info
+; motor impulse from ThrustCurve
+thrustcurve.org
