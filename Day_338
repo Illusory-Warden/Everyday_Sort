@@ -1,0 +1,26 @@
+{
+  "name": "Weather API Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "authentication": "headerAuth",
+        "headerAuth": {
+          "name": "x-api-key",
+          "value": "43967e9b565d49a3fb0c53c5d0e59f9c"
+        },
+        "url": "https://example.com/api/weather",
+        "method": "GET",
+        "responseFormat": "json",
+        "options": {}
+      },
+      "name": "n8n-weather",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        400,
+        300
+      ]
+    }
+  ],
+  "connections": {}
+}
