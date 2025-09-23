@@ -1,0 +1,41 @@
+An **access token** is like a **digital key** that proves you’re allowed to use an API or a service.
+
+---
+
+### 🔑 How it works
+
+* When you **sign up / log in** to an API service, the server gives you an **access token**.
+* You send this token along with each API request.
+* The server checks:
+
+  * If the token is valid
+  * If it hasn’t expired
+  * If you have permission to access the resource
+* If all good → you get the data.
+* If not → you get errors like **401 Unauthorized**.
+
+---
+
+### 🔐 Example
+
+Suppose you’re using an API that requires Bearer tokens.
+
+* The service gives you:
+
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+  ```
+* You add it in the HTTP headers:
+
+  ```
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+  ```
+
+Now, every request has proof that you’re authenticated.
+
+---
+
+### 📌 Access token vs API key
+
+* **API key**: usually static, a simple string you paste into your request.
+* **Access token**: often temporary (expires after minutes or hours), you must refresh it using a login or refresh token process.
