@@ -1,0 +1,80 @@
+### Initial state
+
+Root: `A` (OR node). Its three alternative hyper-arcs (AND-subgraphs) are:
+
+* `A → B`  (edge cost 1) ; `B` → `{E,F}` with edges cost 1 each; leaves `E=7, F=9`.
+* `A → C`  (edge cost 1) ; `C` → `{G,H,I}` with edges cost 1 each; leaves `G=3, H=0, I=0`.
+* `A → D`  (edge cost 1) ; `D` → `{J}` with edge cost 1; leaf `J=0`.
+
+We will expand nodes in the best partial solution as AO\* prescribes.
+
+---
+
+### Step 1 — Expand root `A`
+
+* Expand `A` to generate its children `B, C, D` (i.e. the three alternative AND-groups).
+* For each alternative, estimate the total cost of that alternative by (edge from A to that node) + estimated cost of that node.
+
+We can compute exact costs for each AND-node because the children are leaves or simple:
+
+**Compute costs:**
+
+* `A→B`:
+
+  * A→B edge = 1
+  * For `B` (AND): B→E =1 + E(7) = 8; B→F =1 + F(9) = 10
+  * Sum(B) = 8 + 10 = 18
+  * Total `A→B` = 1 + 18 = **19**
+
+* `A→C`:
+
+  * A→C = 1
+  * For `C`: (1 + G=3)=4, (1 + H=0)=1, (1 + I=0)=1
+  * Sum(C) = 4 + 1 + 1 = 6
+  * Total `A→C` = 1 + 6 = **7**
+
+* `A→D`:
+
+  * A→D = 1
+  * For `D`: (D→J =1 + J=0) = 1
+  * Sum(D) = 1
+  * Total `A→D` = 1 + 1 = **2**
+
+**Best alternative at A:** `A→D` with cost **2** (lowest of 19, 7, 2).
+
+At this point AO\* chooses the best partial solution path `A → D` as the most-promising path to expand.
+
+---
+
+### Step 2 — Expand `D` (the chosen best child)
+
+* Expand `D` to generate its child `J`.
+* `J` is a terminal leaf with cost 0; compute the AND-cost for `D` precisely:
+
+`D` (AND) cost = D→J (1) + J (0) = **1**.
+
+Now back up to `A`:
+
+`A→D` total = A→D (1) + Sum(D)=1 ⇒ **2** (unchanged, now proven exact).
+
+Mark `D` **SOLVED** (its cost is exact and its AND-subgraph is fully expanded). Because `D` is solved and `A→D` is the best alternative, we check if `A` is solved.
+
+`A` is an OR node — when its best child (here `D`) is SOLVED and that child yields the cheapest proven solution, `A` becomes SOLVED.
+
+---
+
+### Termination
+
+* `D` is solved; `A` has confirmed `A→D` is the cheapest solution. AO\* stops.
+* **Solution graph**: `A → D → J`
+* **Total cost** = A→D (1) + D→J (1) + J (0) = **2**
+
+---
+
+### Minimal expansions AO\* performed
+
+AO\* only needed to:
+
+1. Expand `A` (generate `B,C,D` and evaluate alternative costs),
+2. Expand `D`,
+3. Expand `J` (leaf), then backpropagate and mark `D` and `A` solved.
