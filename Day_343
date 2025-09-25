@@ -1,0 +1,46 @@
+Perfect 🎉 you’ve got your **API key**! Now let’s wire it into your **HTTP Request node** in n8n.
+
+Here’s exactly what to fill in:
+
+---
+
+### **HTTP Request Node Setup**
+
+* **HTTP Method** → `GET`
+* **URL** →
+
+  ```
+  https://api.openweathermap.org/data/2.5/weather
+  ```
+
+---
+
+### **Query Parameters Section** (add 3 rows):
+
+| Name  | Value                            |
+| ----- | -------------------------------- |
+| q     | London                           |
+| appid | 43967e9b565d49a3fb0c53c5d0e59f9c |
+| units | metric                           |
+
+*(Replace “London” with your city — or keep it dynamic later.)*
+
+---
+
+### **Response Format**
+
+* Keep as **JSON** (default).
+
+---
+
+✅ After you run the node, you should see an output with fields like:
+
+* `main.temp` (temperature)
+* `main.feels_like`
+* `main.humidity`
+* `weather[0].description`
+* `name` (city name)
+
+---
+
+👉 Do you want me to show you how to **extract & format** just the useful bits (like “Today in London: 21°C, clear sky”) using a **Set node** next, before we move on to the email step?
