@@ -1,0 +1,11 @@
+{
+  "weather": [
+    { "main": "Clear", "description": "clear sky" }
+  ],
+  "main": {
+    "temp": 20.5,
+    "feels_like": 19.7,
+    "humidity": 55
+  },
+  "name": "London"
+}
