@@ -1,0 +1,70 @@
+### 📦 1. [IQ-OTH/NCCD - Lung Cancer Dataset](https://www.kaggle.com/datasets/adityamahimkar/iqothnccd-lung-cancer-dataset)
+
+* **Description**: Contains 1,190 CT scan images across 110 cases, categorized into three classes: normal, benign, and malignant.
+* **Use Case**: Ideal for training and evaluating VGG16 models on image classification tasks.
+
+**Integration in Google Colab**:
+
+```python
+!pip install kaggle
+from google.colab import files
+files.upload()  # Upload your kaggle.json API key here
+
+!mkdir ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+!kaggle datasets download -d adityamahimkar/iqothnccd-lung-cancer-dataset
+!unzip iqothnccd-lung-cancer-dataset.zip -d /content/dataset/
+```
+
+---
+
+### 📦 2. [Lung Cancer Dataset by Chandan Mishra](https://www.kaggle.com/datasets/chandanmsr/lung-cancer-dataset)
+
+* **Description**: Structured dataset with labeled instances for lung cancer prediction.
+* **Use Case**: Suitable for training models on structured data features.
+
+**Integration in Google Colab**:
+
+```python
+!pip install kaggle
+from google.colab import files
+files.upload()  # Upload your kaggle.json API key here
+
+!mkdir ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+!kaggle datasets download -d chandanmsr/lung-cancer-dataset
+!unzip lung-cancer-dataset.zip -d /content/dataset/
+```
+
+---
+
+### 📦 3. [Luna16 Lung Cancer Dataset](https://www.kaggle.com/datasets/fanbyprinciple/luna-lung-cancer-dataset)
+
+* **Description**: CT scan dataset with annotations for lung cancer detection.
+* **Use Case**: Suitable for training models on medical imaging data.
+
+**Integration in Google Colab**:
+
+```python
+!pip install kaggle
+from google.colab import files
+files.upload()  # Upload your kaggle.json API key here
+
+!mkdir ~/.kaggle
+!cp kaggle.json ~/.kaggle/
+!chmod 600 ~/.kaggle/kaggle.json
+
+!kaggle datasets download -d fanbyprinciple/luna-lung-cancer-dataset
+!unzip luna-lung-cancer-dataset.zip -d /content/dataset/
+```
+
+---
+
+### 🔗 Additional Resources
+
+* **Lung Cancer Dataset by Akash Nath**: [Link](https://www.kaggle.com/datasets/akashnath29/lung-cancer-dataset)
+* **Lung Cancer Dataset by Shreyas Paraj**: [Link](https://www.kaggle.com/datasets/shreyasparaj1/lung-cancer-dataset)
