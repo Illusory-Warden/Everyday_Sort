@@ -1,0 +1,10 @@
+Here’s the updated table with the **best-performing model per disease highlighted in bold**:
+
+| Disease     | Model         | Epochs | Train Loss | Train Acc | Val Loss | Val Acc    | Best Val Acc | Macro Avg F1 | Weighted Avg F1 | Comments                                                                       |
+| ----------- | ------------- | ------ | ---------- | --------- | -------- | ---------- | ------------ | ------------ | --------------- | ------------------------------------------------------------------------------ |
+| Brain Tumor | VGG16         | 2      | 0.2721     | 89.73%    | 0.2202   | 91.78%     | -            | -            | -               | Good performance with low loss; model converges quickly.                       |
+| Brain Tumor | **ResNet-50** | 2      | 0.1724     | 94.02%    | 0.0958   | **96.77%** | **96.77%**   | -            | -               | Excellent accuracy; ResNet-50 outperforms VGG16.                               |
+| Skin Cancer | VGG16         | 2      | 1.8063     | 35.08%    | -        | 44.91%     | 44.91%       | 0.276        | 0.380           | Poor performance; model struggles with complex skin cancer data.               |
+| Skin Cancer | **ResNet-50** | 2      | 0.9619     | 66.08%    | -        | **64.38%** | **64.38%**   | 0.562        | 0.636           | Better than VGG16 but still moderate; shows ResNet-50 handles features better. |
+| Lung Cancer | **VGG16**     | 3      | 0.2065     | 96.74%    | -        | 95.85%     | **99.08%**   | 0.944        | 0.961           | Excellent performance; high accuracy and F1 suggest strong generalization.     |
+| Lung Cancer | ResNet-50     | 3      | 0.6021     | 63.38%    | -        | 64.07%     | 64.07%       | 0.549        | 0.568           | Subpar compared to VGG16; may need more tuning or data for ResNet-50.          |
