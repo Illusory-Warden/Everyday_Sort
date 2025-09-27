@@ -1,0 +1,32 @@
+🔗 [Pulmonary Chest X-Ray Abnormalities Dataset on Kaggle](https://www.kaggle.com/datasets/kmader/pulmonary-chest-xray-abnormalities)
+
+### Dataset Overview
+
+* **Format**: DICOM images
+* **Content**: De-identified chest X-ray images with annotations for various pulmonary abnormalities such as effusions and miliary patterns.
+* **Usage**: Ideal for training and evaluating machine learning models for medical image analysis, particularly in the context of pulmonary diseases.
+
+### How to Download the Dataset
+
+To download the dataset, follow these steps:
+
+1. **Create a Kaggle Account**: If you don't already have one, sign up at [kaggle.com](https://www.kaggle.com/).
+2. **Accept the Dataset License**: Navigate to the dataset page and agree to the terms and conditions.
+3. **Download the Dataset**:
+
+   * On the dataset page, click on the "Download" button.
+   * You can download the dataset as a ZIP file containing the DICOM images.
+
+### Using the Dataset in Your Projects
+
+Once downloaded, you can use the dataset in your projects for tasks such as:
+
+* **Abnormality Detection**: Identifying and classifying various pulmonary abnormalities in chest X-rays.
+* **Segmentation**: Segmenting regions of interest within the X-ray images.
+* **Model Training**: Training deep learning models using frameworks like TensorFlow or PyTorch.
+
+For example, you can explore the following Kaggle notebook that demonstrates interactive X-ray segmentation using U-Net:
+
+🔗 [Interactive X-Ray Segmentation with U-Net in conx](https://www.kaggle.com/code/kmader/interactive-x-ray-segmentation-with-u-net-in-conx)
+
+This notebook provides a practical implementation that can serve as a starting point for your own projects.
