@@ -1,0 +1,193 @@
+Sample **n8n workflow JSON** that uses the CloudConvert API to accept a file + a target format, convert the file, and return the converted file. You’ll need to fill in your API key and adjust endpoints as needed. You can import this into your n8n instance and tweak.
+
+```json
+{
+  "name": "Universal File Converter",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "convert-file",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "webhookId": "some-unique-id"
+    },
+    {
+      "parameters": {
+        "url": "https://api.cloudconvert.com/v2/jobs",
+        "method": "POST",
+        "headers": {
+          "Authorization": "Bearer {{$credentials.cloudConvertApiKey}}",
+          "Content-Type": "application/json"
+        },
+        "bodyParametersJson": "={{ JSON.stringify({\n  tasks: {\n    \"import-upload\": {\n      operation: \"import/upload\"\n    },\n    \"convert-file\": {\n      operation: \"convert\",\n      input: \"import-upload\",\n      output_format: $json[\"queryParameters\"][\"format\"],\n      // Optional: specify input_format or other conversion options if needed\n      // input_format: $json[\"queryParameters\"][\"inputFormat\"],\n    },\n    \"export-url\": {\n      operation: \"export/url\",\n      input: \"convert-file\"\n    }\n  }\n}) }}",
+        "options": {}
+      },
+      "name": "Create CloudConvert Job",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.cloudconvert.com/v2/jobs/{{$node[\"Create CloudConvert Job\"].json[\"data\"][\"id\"]}}?include=tasks",
+        "method": "GET",
+        "headers": {
+          "Authorization": "Bearer {{$credentials.cloudConvertApiKey}}"
+        },
+        "options": {}
+      },
+      "name": "Check Job Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        750,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "interval": 5,
+        "maxTries": 60
+      },
+      "name": "Wait Until Job Finishes",
+      "type": "n8n-nodes-base.waitUntil",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $node[\"Check Job Status\"].json.data.tasks.find(task => task.operation === \"export/url\").result.files[0].url }}",
+        "method": "GET",
+        "encoding": "binary",
+        "options": {}
+      },
+      "name": "Download Converted File",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "binaryPropertyName": "data",
+        "sendResponse": true,
+        "responseData": "={{ $node[\"Download Converted File\"].binary.data }}",
+        "responseHeaders": {
+          "Content-Disposition": "attachment; filename={{ $node[\"Check Job Status\"].json.data.tasks.find(task => task.operation === \"export/url\").result.files[0].filename }}"
+        }
+      },
+      "name": "Respond With File",
+      "type": "n8n-nodes-base.webhookResponse",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create CloudConvert Job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create CloudConvert Job": {
+      "main": [
+        [
+          {
+            "node": "Check Job Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Job Status": {
+      "main": [
+        [
+          {
+            "node": "Wait Until Job Finishes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait Until Job Finishes": {
+      "main": [
+        [
+          {
+            "node": "Check Job Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Job Status": {
+      "main": [
+        [
+          {
+            "node": "Download Converted File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download Converted File": {
+      "main": [
+        [
+          {
+            "node": "Respond With File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "credentials": {
+    "cloudConvertApiKey": {
+      "id": "your-credentials-id",
+      "name": "CloudConvert API Key"
+    }
+  }
+}
+```
+
+---
+
+### 🔧 What you need to change/polish
+
+* Set up a **credential** in n8n for your CloudConvert API Key, and use that in HTTP Request nodes.
+* Webhook Trigger: configure so that it accepts a binary file upload.
+* In the `Create CloudConvert Job` node, I used `queryParameters["format"]` to pick the desired output format—make sure your webhook sends that field.
+* You might want to also include `"input_format"` if the user provides it or if you want CloudConvert to auto-detect.
+* Adjust the polling interval (in *Wait Until Job Finishes*) and max tries if the conversion may take longer.
+* Handle errors (if job fails, return an appropriate error response).
