@@ -1,0 +1,85 @@
+* User uploads a file.
+* User chooses the desired output format.
+* Workflow converts it and returns the converted file.
+
+Since you want **all file formats**, the most realistic way is to use a service like **CloudConvert** (or ConvertAPI, Zamzar API, etc.) because they support *hundreds of formats* (documents, audio, video, images, CAD, eBooks…).
+
+---
+
+## 🔹 n8n Workflow Plan (Universal File Converter)
+
+### 1. **Trigger Node (File Upload)**
+
+* Use a **Webhook Trigger** node.
+* The webhook accepts:
+
+  * File (`binary` data).
+  * Desired format (e.g., `pdf`, `mp3`, `png`, `docx`, etc.).
+
+---
+
+### 2. **Upload File to CloudConvert**
+
+* Add an **HTTP Request** node.
+* Method: `POST`
+* URL: `https://api.cloudconvert.com/v2/import/upload`
+* Send the file in binary format.
+* Response gives you an `import task id`.
+
+---
+
+### 3. **Start Conversion**
+
+* Another **HTTP Request** node.
+* Method: `POST`
+* URL: `https://api.cloudconvert.com/v2/jobs`
+* Body includes:
+
+  ```json
+  {
+    "tasks": {
+      "import-file": {
+        "operation": "import/upload"
+      },
+      "convert-file": {
+        "operation": "convert",
+        "input": "import-file",
+        "output_format": "<<<user_format>>>"
+      },
+      "export-file": {
+        "operation": "export/url",
+        "input": "convert-file"
+      }
+    }
+  }
+  ```
+* Replace `<<<user_format>>>` with the parameter from webhook input.
+
+---
+
+### 4. **Wait for Job Completion**
+
+* Poll CloudConvert job status using an **HTTP Request** node until it’s `finished`.
+
+---
+
+### 5. **Download Converted File**
+
+* Once finished, CloudConvert gives you a public download URL.
+* Add **HTTP Request** (GET) to fetch the file binary.
+
+---
+
+### 6. **Return File to User**
+
+* Use **Webhook Response** node to send back the converted file.
+* Alternatively, save to Google Drive, Dropbox, or S3 if you want cloud storage instead.
+
+---
+
+✅ With this setup, the workflow will:
+
+1. Accept any file.
+2. Let the user specify output format.
+3. Convert via CloudConvert.
+4. Return the converted file.
