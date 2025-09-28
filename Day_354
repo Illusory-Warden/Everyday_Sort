@@ -1,0 +1,31 @@
+There are several pre-built n8n templates that can help you set up a file conversion workflow. Here are some options you might find useful:
+
+---
+
+### 🔹 1. **Convert PDF to PDF/A Using ConvertAPI**
+
+This workflow downloads a PDF file, converts it to PDF/A format, and stores it locally. It's a straightforward example of using ConvertAPI for file conversion. ([n8n][1])
+
+---
+
+### 🔹 2. **Convert HTML to PDF Using ConvertAPI**
+
+This template converts an HTML file to a PDF and stores it locally. It's ideal for automating the conversion of HTML content into a more portable format. ([n8n][2])
+
+---
+
+### 🔹 3. **CloudConvert Integration with n8n**
+
+CloudConvert is a versatile file conversion service supporting a wide range of formats. While specific templates are not listed, CloudConvert offers integration with n8n, allowing you to automate file conversions within your workflows. ([CloudConvert][3])
+
+---
+
+### 🔹 4. **ConvertAPI Integration with n8n**
+
+ConvertAPI provides an API for file conversions. They offer tutorials and examples on integrating their service with n8n to automate file conversions. ([convertapi.com][4])
+
+---
+
+### 🔹 5. **Awesome n8n Templates GitHub Repository**
+
+This GitHub repository contains a collection of n8n workflows, including those for file conversions. You can explore and adapt these workflows for your specific needs. ([GitHub][5])
