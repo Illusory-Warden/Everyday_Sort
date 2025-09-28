@@ -1,0 +1,65 @@
+Forbidden - perhaps check your credentials?
+Invalid permissions, or the requested model was not found.
+```
+
+This is almost always related to **credentials or permissions** issues. Here’s a detailed step-by-step guide to fix it:
+
+---
+
+### 1. **Check your Airtable API key**
+
+* Make sure the API key you are using in n8n is **valid and active**.
+* In n8n, go to **Credentials → Airtable API** and verify that the key matches the one in your Airtable account under [https://airtable.com/account](https://airtable.com/account).
+
+---
+
+### 2. **Check the Base ID and Table Name**
+
+* Ensure you are referencing the **correct base** and **table name** in the node.
+* Airtable is case-sensitive. Even a small typo in the table name or Base ID can cause a 403.
+
+---
+
+### 3. **Check permissions for the API key**
+
+* Make sure the API key has **write access** to the table you are trying to create a record in.
+* If it’s a **shared API key**, ensure it hasn’t been restricted or revoked.
+
+---
+
+### 4. **Confirm the Airtable API version**
+
+* Some older nodes may use an outdated Airtable API version.
+* Using the **latest n8n Airtable V2 node** (as your logs indicate) is good, but double-check your workspace supports it.
+
+---
+
+### 5. **Test the API Key externally**
+
+* Use a tool like **Postman** or `curl` to test the endpoint:
+
+```bash
+curl -v https://api.airtable.com/v0/YOUR_BASE_ID/YOUR_TABLE_NAME \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+* If this returns `403 Forbidden`, the issue is with your API key or permissions, not n8n.
+
+---
+
+### 6. **Recreate credentials in n8n**
+
+* Sometimes credentials stored in n8n get corrupted.
+* Delete the existing Airtable credentials and **recreate them from scratch**, then reconnect the node.
+
+---
+
+### 7. **Check n8n version**
+
+* Ensure you are on a **recent version of n8n Cloud** or self-hosted.
+* Older versions might have bugs or deprecated integrations.
+
+---
+
+✅ **Summary:**
+This error is **not a bug in n8n**, it’s **either your API key, permissions, Base ID, or table name**. Double-check each of these carefully. Most 403s in Airtable are caused by either a typo in the table name/Base ID or an API key without write access.
