@@ -1,0 +1,52 @@
+### 1️⃣ Input Source
+
+How will the workflow receive the URLs? Options:
+
+* **Webhook**: send URLs in JSON.
+* **Database**: Airtable, Google Sheets, MySQL/Postgres.
+* **Static array**: hard-coded in a `Set` node.
+
+**Needed:** Which method do you want?
+
+---
+
+### 2️⃣ Output Destination
+
+Where should the converted/scraped data go? Options:
+
+* Google Sheets
+* Airtable
+* Database (MySQL/Postgres/etc.)
+* File (CSV, JSON)
+* Or just return via **Webhook response**
+
+**Needed:** Destination type and credentials (if applicable).
+
+---
+
+### 3️⃣ Firecrawl API Details
+
+* Your **API key** (can be referenced as a credential in n8n).
+* **Desired output formats**: markdown, HTML, links, or multiple formats.
+* Any specific fields you want to extract (title, description, content, links, images, etc.)
+
+---
+
+### 4️⃣ Batch Handling & Rate Limiting
+
+* Firecrawl limits: `10 requests per min` (current sticky notes mention this).
+* **Batch size** per API call? Currently 40 → 10.
+* **Wait time** between batches? Currently 45 seconds.
+
+**Needed:** Do you want to keep current batch sizes, or adjust for faster/slower processing?
+
+---
+
+### 5️⃣ Optional Enhancements
+
+Do you want:
+
+* Error handling / retries if a URL fails
+* Deduplication of URLs
+* Notifications (Slack, email) when workflow finishes
+* Conversion of markdown to another format (PDF, HTML)
