@@ -1,0 +1,195 @@
+# 🚀 Step-by-Step: Full SMTP Server on Raspberry Pi (`@synerydev.site`)
+
+## 1. 📦 Prepare Your Raspberry Pi
+
+* OS: Raspberry Pi OS Lite (Debian-based, minimal).
+* Update system:
+
+  ```bash
+  sudo apt update && sudo apt upgrade -y
+  ```
+* Set a static local IP for your Pi (so your router always assigns it the same one).
+
+---
+
+## 2. 🌍 Public Access
+
+* **Check your ISP**:
+
+  * Is **port 25 open**? Run from your Pi:
+
+    ```bash
+    nc -zv smtp.gmail.com 25
+    ```
+
+    If blocked, you can’t directly receive mail → you’d need a VPS + forwarding.
+  * Do you have a **static public IP**? If not, set up a **dynamic DNS service** (DuckDNS, No-IP, Cloudflare).
+
+* **Router Port Forwarding**:
+  Forward these ports to your Pi:
+
+  * `25` → SMTP (inbound mail)
+  * `587` → Submission (outbound authenticated mail)
+  * `993` → IMAPS (if you want mailbox access via IMAP later)
+
+---
+
+## 3. 📬 Install Postfix (Mail Transfer Agent)
+
+```bash
+sudo apt install postfix -y
+```
+
+During setup:
+
+* Select **"Internet Site"**.
+* System mail name → `synerydev.site`.
+
+Config file to check:
+
+```bash
+sudo nano /etc/postfix/main.cf
+```
+
+Key settings:
+
+```
+myhostname = mail.synerydev.site
+mydomain = synerydev.site
+myorigin = /etc/mailname
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+mynetworks = 127.0.0.0/8
+inet_interfaces = all
+inet_protocols = ipv4
+```
+
+Restart Postfix:
+
+```bash
+sudo systemctl restart postfix
+```
+
+---
+
+## 4. 🔒 Add Dovecot (IMAP/POP3 Server)
+
+This lets you read mail with clients like Thunderbird or Outlook.
+
+```bash
+sudo apt install dovecot-imapd dovecot-pop3d -y
+```
+
+Edit config:
+
+```bash
+sudo nano /etc/dovecot/dovecot.conf
+```
+
+Add:
+
+```
+protocols = imap pop3 lmtp
+```
+
+Enable and restart:
+
+```bash
+sudo systemctl enable dovecot
+sudo systemctl restart dovecot
+```
+
+---
+
+## 5. 🔑 Enable SSL/TLS
+
+Install Let’s Encrypt:
+
+```bash
+sudo apt install certbot -y
+sudo apt install python3-certbot-apache -y
+```
+
+Get a certificate:
+
+```bash
+sudo certbot certonly --standalone -d mail.synerydev.site
+```
+
+Tell Postfix/Dovecot to use it:
+
+* `/etc/postfix/main.cf`:
+
+  ```
+  smtpd_tls_cert_file=/etc/letsencrypt/live/mail.synerydev.site/fullchain.pem
+  smtpd_tls_key_file=/etc/letsencrypt/live/mail.synerydev.site/privkey.pem
+  smtpd_use_tls=yes
+  ```
+* `/etc/dovecot/conf.d/10-ssl.conf`:
+
+  ```
+  ssl = required
+  ssl_cert = </etc/letsencrypt/live/mail.synerydev.site/fullchain.pem
+  ssl_key = </etc/letsencrypt/live/mail.synerydev.site/privkey.pem
+  ```
+
+Restart both services.
+
+---
+
+## 6. 🌐 DNS Configuration (at your domain registrar)
+
+Add records for `synerydev.site`:
+
+* **MX Record**:
+
+  ```
+  synerydev.site.  IN MX 10 mail.synerydev.site.
+  mail.synerydev.site. IN A <Your Public IP>
+  ```
+
+* **SPF Record** (TXT):
+
+  ```
+  v=spf1 ip4:<Your Public IP> -all
+  ```
+
+* **DKIM**:
+  Install OpenDKIM:
+
+  ```bash
+  sudo apt install opendkim opendkim-tools -y
+  ```
+
+  Generate keys, add TXT record to DNS (I can walk you through this separately).
+
+* **DMARC** (TXT):
+
+  ```
+  _dmarc.synerydev.site. IN TXT "v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@synerydev.site"
+  ```
+
+---
+
+## 7. 🧪 Testing
+
+* From another system, try sending mail:
+
+  ```bash
+  echo "Test email" | mail -s "Hello" yourname@synerydev.site
+  ```
+* Use tools like [mail-tester.com](https://www.mail-tester.com/) to check SPF/DKIM/DMARC.
+
+---
+
+## 8. 🛡️ Security Hardening
+
+* Don’t allow unauthenticated relay (check `/etc/postfix/main.cf` → `smtpd_recipient_restrictions`).
+* Enable fail2ban to block brute-force attacks:
+
+  ```bash
+  sudo apt install fail2ban -y
+  ```
+
+---
+
+⚠️ **Reality check**: Even with perfect SPF/DKIM/DMARC, Gmail/Outlook may still spam-bin your emails if your Pi uses a **residential IP without reverse DNS**. If that’s the case, you might want to combine this with a cheap VPS (your Pi receives mail, but outgoing mail is relayed via VPS).
