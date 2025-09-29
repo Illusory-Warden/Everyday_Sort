@@ -1,0 +1,75 @@
+Since you own **synerydev.site**, you can absolutely create an email address like:
+
+**`rushidaulatkar@synerydev.site`**
+
+Here’s how it works on your Raspberry Pi mail server:
+
+---
+
+## 🛠️ Creating a Mailbox for `rushidaulatkar@synerydev.site`
+
+### 1. Add a System User
+
+Postfix + Dovecot can use normal Linux system users as mailboxes.
+On your Pi, create a user:
+
+```bash
+sudo adduser rushidaulatkar
+```
+
+This will:
+
+* Create a home directory `/home/rushidaulatkar`
+* Create a mailbox at `/var/mail/rushidaulatkar`
+
+Set a password (you’ll use it in your email client like Thunderbird, Outlook, or on your phone).
+
+---
+
+### 2. Tell Postfix/Dovecot Where Mail Goes
+
+By default:
+
+* Incoming mail for `rushidaulatkar@synerydev.site` → delivered to `/var/mail/rushidaulatkar` (or Maildir if configured).
+* Dovecot will expose that mailbox over IMAP/POP3, so you can connect with an email app.
+
+If you prefer **Maildir format** (better for IMAP), edit Postfix config:
+
+```bash
+sudo nano /etc/postfix/main.cf
+```
+
+Add:
+
+```
+home_mailbox = Maildir/
+```
+
+Then create a Maildir for the user:
+
+```bash
+sudo mkdir -p /home/rushidaulatkar/Maildir
+sudo chown -R rushidaulatkar: /home/rushidaulatkar/Maildir
+```
+
+---
+
+### 3. Access the Mailbox
+
+Now you can configure an email client:
+
+* **Username**: `rushidaulatkar` (or full email depending on config)
+* **Password**: the one you set with `adduser`
+* **IMAP server**: `mail.synerydev.site` (port 993, SSL/TLS)
+* **SMTP server**: `mail.synerydev.site` (port 587, STARTTLS or SSL/TLS)
+
+---
+
+### 4. (Optional) Use Virtual Mailboxes
+
+If you don’t want every email address to be a Linux system user, you can set up **virtual mailboxes** in Postfix/Dovecot.
+That way you can create `rushidaulatkar@synerydev.site`, `info@synerydev.site`, etc., without needing separate Pi user accounts. (This is more advanced but better if you want multiple email accounts.)
+
+---
+
+✅ So yes, you can definitely have `rushidaulatkar@synerydev.site` running on your Raspberry Pi — it’ll work like any other professional email address.
