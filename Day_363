@@ -1,0 +1,38 @@
+### ✅ Wrap Text Around an Image, Shape, or Object
+
+1. **Insert the object**
+
+   * Go to **Insert > Pictures** (or Shape/Chart/etc.).
+
+2. **Select the object**
+
+   * Click on the picture or shape.
+
+3. **Find Wrap Text options**
+
+   * Right-click the object → select **Wrap Text**
+   * Or go to the **Picture Format** (or Shape Format) tab → **Wrap Text** in the **Arrange** group.
+
+4. **Choose a wrapping style**:
+
+   * **In Line with Text** → Treats the object like a text character (default).
+   * **Square** → Text wraps neatly around the object’s bounding box.
+   * **Tight** → Text wraps closely around the edges of the object.
+   * **Through** → Text flows through any transparent areas.
+   * **Top and Bottom** → Text appears above and below the object, not beside it.
+   * **Behind Text** → Object sits behind text.
+   * **In Front of Text** → Object sits on top of text.
+
+---
+
+### ✅ Wrap Text in a Table Cell
+
+* Place the cursor inside the cell → Right-click → **Table Properties** → **Cell** tab → Check **Wrap text**.
+
+---
+
+### ✅ Wrap Text Inside a Text Box
+
+* Insert a text box (**Insert > Text Box**)
+* Type or paste text into it → The text automatically wraps inside the box.
+* You can resize the box to adjust wrapping.
