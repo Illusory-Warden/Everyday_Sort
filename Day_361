@@ -1,0 +1,183 @@
+# **Experiment No. 5**
+
+---
+
+## **Aim**
+
+You are given items, each with a weight and a value, and a knapsack with a maximum capacity. The goal is to select items that maximize the total value in the knapsack without exceeding its capacity. Each item can either be taken or not taken (0/1 property).
+
+---
+
+## **Theory**
+
+The **0/1 Knapsack Problem** is a classic problem in **combinatorial optimization** and **dynamic programming**.
+
+* **Definition**:
+  Given `n` items, each with a weight `w[i]` and a value `v[i]`, and a knapsack with capacity `W`, the task is to maximize the total value such that the total weight does not exceed `W`.
+
+* **Mathematical Formulation**:
+  Maximize:
+  [
+  V = \sum_{i=1}^{n} v[i] \cdot x[i]
+  ]
+  Subject to:
+  [
+  \sum_{i=1}^{n} w[i] \cdot x[i] \leq W
+  ]
+  Where:
+  [
+  x[i] \in {0,1}
+  ]
+
+  * `x[i] = 1` if the item is included
+  * `x[i] = 0` otherwise
+
+* **Dynamic Programming Approach**:
+  We construct a 2D table `K[n+1][W+1]`, where `K[i][j]` represents the maximum value achievable with the first `i` items and capacity `j`.
+
+  Recurrence Relation:
+  [
+  K[i][j] =
+  \begin{cases}
+  K[i-1][j] & \text{if } w[i-1] > j \
+  \max { v[i-1] + K[i-1][j - w[i-1]],; K[i-1][j] } & \text{otherwise}
+  \end{cases}
+  ]
+
+* **Complexities**:
+
+  * **Time Complexity**: ( O(nW) ), where `n` = number of items and `W` = capacity.
+  * **Space Complexity**: ( O(nW) ) (can be optimized to ( O(W) )).
+
+---
+
+## **Algorithm**
+
+1. Start.
+2. Input the number of items `n` and the maximum capacity `W`.
+3. For each item, input its value `v[i]` and weight `w[i]`.
+4. Initialize a 2D DP table `K[n+1][W+1]` with all values 0.
+5. For `i = 0` to `n`:
+
+   * For `j = 0` to `W`:
+
+     * If `i == 0` or `j == 0`, set `K[i][j] = 0`.
+     * Else if `w[i-1] <= j`:
+
+       * `K[i][j] = max(v[i-1] + K[i-1][j - w[i-1]], K[i-1][j])`.
+     * Else:
+
+       * `K[i][j] = K[i-1][j]`.
+6. The result is `K[n][W]`.
+7. Display the maximum value.
+8. Stop.
+
+---
+
+## **Code (C++)**
+
+```cpp
+// 0/1 Knapsack Problem using Dynamic Programming
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Function to solve 0/1 Knapsack
+int knapsack(int W, vector<int>& wt, vector<int>& val, int n) {
+    vector<vector<int>> K(n + 1, vector<int>(W + 1, 0));
+
+    for (int i = 0; i <= n; i++) {
+        for (int w = 0; w <= W; w++) {
+            if (i == 0 || w == 0)
+                K[i][w] = 0;
+            else if (wt[i - 1] <= w)
+                K[i][w] = max(val[i - 1] + K[i - 1][w - wt[i - 1]], K[i - 1][w]);
+            else
+                K[i][w] = K[i - 1][w];
+        }
+    }
+
+    return K[n][W];
+}
+
+int main() {
+    int n, W;
+    cout << "Enter number of items: ";
+    cin >> n;
+
+    vector<int> val(n), wt(n);
+    cout << "Enter values of items:\n";
+    for (int i = 0; i < n; i++) cin >> val[i];
+
+    cout << "Enter weights of items:\n";
+    for (int i = 0; i < n; i++) cin >> wt[i];
+
+    cout << "Enter maximum capacity of knapsack: ";
+    cin >> W;
+
+    int result = knapsack(W, wt, val, n);
+    cout << "Maximum value in Knapsack = " << result << endl;
+
+    return 0;
+}
+```
+
+---
+
+## **Input/Output Example**
+
+**Input:**
+
+```
+Enter number of items: 3
+Enter values of items:
+60 100 120
+Enter weights of items:
+10 20 30
+Enter maximum capacity of knapsack: 50
+```
+
+**Output:**
+
+```
+Maximum value in Knapsack = 220
+```
+
+**Explanation:**
+
+* Take item 2 (value=100, weight=20) and item 3 (value=120, weight=30).
+* Total weight = 20 + 30 = 50 (≤ capacity).
+* Total value = 220 (maximum).
+
+---
+
+## **Analysis of Code and Algorithm**
+
+* The algorithm builds solutions for smaller subproblems and combines them to solve larger ones.
+* **Time Complexity**:
+
+  * For each of the `n` items, we iterate over all capacities `W`.
+  * Thus, complexity = ( O(nW) ).
+* **Space Complexity**:
+
+  * DP table size = `(n+1) × (W+1)`.
+  * Thus, space = ( O(nW) ).
+  * Can be optimized to ( O(W) ) using a 1D array.
+* **Efficiency**:
+
+  * Suitable for moderate capacities `W`.
+  * Not efficient for very large `W` due to space constraints.
+
+---
+
+## **Real-Life Applications**
+
+1. **Resource Allocation**: Selecting projects under budget constraints to maximize profit.
+2. **Cargo Loading**: Deciding which goods to load into a truck or ship to maximize value within weight limits.
+3. **Investment Decisions**: Choosing stocks or assets under a fixed investment limit to maximize returns.
+
+---
+
+## **Conclusion**
+
+In this experiment, we implemented the **0/1 Knapsack Problem** using the **Dynamic Programming** approach. The algorithm efficiently maximizes the total value within a given capacity by making binary choices (include/exclude). Through this, we understood the concept of **optimal substructure**, **overlapping subproblems**, and analyzed its **time and space complexities**. This experiment strengthens the understanding of dynamic programming techniques and their real-world applicability.
