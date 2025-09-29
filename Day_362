@@ -1,0 +1,77 @@
+### **In Python**
+
+```python
+class Person:
+    # constructor
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # method
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+        
+
+# creating an object (instance of class)
+p1 = Person("Alice", 25)
+print(p1.greet())
+```
+
+---
+
+### **In Java**
+
+```java
+public class Person {
+    String name;
+    int age;
+
+    // constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // method
+    public String greet() {
+        return "Hello, my name is " + name + " and I am " + age + " years old.";
+    }
+
+    public static void main(String[] args) {
+        Person p1 = new Person("Alice", 25);
+        System.out.println(p1.greet());
+    }
+}
+```
+
+---
+
+### **In C++**
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+    // constructor
+    Person(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    // method
+    void greet() {
+        cout << "Hello, my name is " << name << " and I am " << age << " years old." << endl;
+    }
+};
+
+int main() {
+    Person p1("Alice", 25);
+    p1.greet();
+    return 0;
+}
+```
