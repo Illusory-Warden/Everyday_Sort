@@ -1,0 +1,28 @@
+## ✅ Datasets & Links
+
+1. **Lung-PET-CT-Dx — TCIA / Kaggle**
+   Kaggle mirror of the TCIA dataset: **Lung-PET-CT-Dx** ([Kaggle][1])
+   Link: [https://www.kaggle.com/datasets/anonymous1682/lung-pet-ct-dx](https://www.kaggle.com/datasets/anonymous1682/lung-pet-ct-dx) ([Kaggle][1])
+
+2. **Lung Cancer CT-PET Subset (DICOM format)**
+   This is an **image-only subset** of the TCIA Lung-PET-CT-Dx collection (i.e. only the DICOM images, without full annotations) ([Kaggle][2])
+   Link: [https://www.kaggle.com/datasets/sshhwweettaa/dicom-ld](https://www.kaggle.com/datasets/sshhwweettaa/dicom-ld) ([Kaggle][2])
+   (You can also see the “Code” tab on Kaggle for usage examples) ([Kaggle][3])
+
+3. **Lung-PET-CT-Dx-5 GB**
+   A smaller Kaggle version (5 GB) of the dataset: **Lung-PET-CT-Dx-5gb** ([Kaggle][4])
+   Link: [https://www.kaggle.com/datasets/adityaanand2005/lung-pet-ct-dx-5gb](https://www.kaggle.com/datasets/adityaanand2005/lung-pet-ct-dx-5gb) ([Kaggle][4])
+
+4. **Official TCIA collection page**
+   The official TCIA page for **Lung-PET-CT-Dx** gives details, data access (via NBIA Data Retriever), annotation, etc. ([The Cancer Imaging Archive (TCIA)][5])
+   Link: [https://www.cancerimagingarchive.net/collection/lung-pet-ct-dx/](https://www.cancerimagingarchive.net/collection/lung-pet-ct-dx/) ([The Cancer Imaging Archive (TCIA)][5])
+
+---
+
+If you like, I can package these into a CSV (with direct download links) or help you script a download. Do you want me to fetch direct data download links (if available) and share access methods?
+
+[1]: https://www.kaggle.com/datasets/anonymous1682/lung-pet-ct-dx?utm_source=chatgpt.com "Lung-PET-CT-Dx"
+[2]: https://www.kaggle.com/datasets/sshhwweettaa/dicom-ld?utm_source=chatgpt.com "Lung Cancer CT-PET Subset (DICOM format)"
+[3]: https://www.kaggle.com/datasets/sshhwweettaa/dicom-ld/code?utm_source=chatgpt.com "Lung Cancer CT-PET Subset (DICOM format)"
+[4]: https://www.kaggle.com/datasets/adityaanand2005/lung-pet-ct-dx-5gb?utm_source=chatgpt.com "Lung-PET-CT-Dx-5gb"
+[5]: https://www.cancerimagingarchive.net/collection/lung-pet-ct-dx/?utm_source=chatgpt.com "LUNG-PET-CT-DX - The Cancer Imaging Archive (TCIA)"
