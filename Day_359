@@ -1,0 +1,56 @@
+### ✅ **Condensed C++ Code**
+
+```cpp
+#include <iostream>
+#include <queue>
+#include <unordered_map>
+using namespace std;
+
+struct Node {
+    char ch; int freq;
+    Node *left, *right;
+    Node(char c, int f, Node* l=nullptr, Node* r=nullptr) : ch(c), freq(f), left(l), right(r) {}
+};
+
+struct Compare { bool operator()(Node* a, Node* b) { return a->freq > b->freq; } };
+
+void encode(Node* root, string code, unordered_map<char,string> &hCode) {
+    if (!root) return;
+    if (!root->left && !root->right) hCode[root->ch] = code;
+    encode(root->left, code + "0", hCode);
+    encode(root->right, code + "1", hCode);
+}
+
+void HuffmanCoding(string text) {
+    unordered_map<char,int> freq;
+    for (char c : text) freq[c]++;
+    priority_queue<Node*, vector<Node*>, Compare> pq;
+    for (auto p : freq) pq.push(new Node(p.first, p.second));
+
+    while (pq.size() > 1) {
+        Node *l = pq.top(); pq.pop();
+        Node *r = pq.top(); pq.pop();
+        pq.push(new Node('\0', l->freq + r->freq, l, r));
+    }
+
+    Node* root = pq.top();
+    unordered_map<char,string> hCode;
+    encode(root, "", hCode);
+
+    cout << "\nHuffman Codes:\n";
+    for (auto p : hCode) cout << p.first << " : " << p.second << endl;
+
+    cout << "\nEncoded String: ";
+    for (char c : text) cout << hCode[c];
+    cout << endl;
+}
+
+int main() {
+    string text;
+    cout << "Enter the text to encode: ";
+    getline(cin, text);
+    HuffmanCoding(text);
+    return 0;
+}
+
+
