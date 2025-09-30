@@ -1,0 +1,93 @@
+## 🔹 1. Where to Get Code & Pre-trained CNN Models
+
+You don’t have to reinvent the wheel — there are tons of ready-to-use sources:
+
+### **(a) GitHub**
+
+* Search for repositories:
+
+  * `"brain tumor classification CNN keras"`
+  * `"lung cancer CNN pytorch"`
+  * `"skin cancer classification transfer learning"`
+* Example repos (you can adapt them):
+
+  * [Brain Tumor Classification (Keras)](https://github.com/sartajbhuvaji/brain-tumor-classification-dataset)
+  * [Skin Cancer MNIST: HAM10000 dataset with CNN](https://github.com/GovindDixit/skin-cancer-detection)
+  * [Lung Cancer Detection using CNN](https://github.com/bhaveshoswal/Lung-Cancer-Detection)
+
+---
+
+### **(b) Kaggle**
+
+* Kaggle has both **datasets + code notebooks** (you can fork and run directly in the cloud).
+* Example:
+
+  * [Brain Tumor Classification using CNN (Kaggle Notebook)](https://www.kaggle.com/code)
+  * [Skin Cancer Classification with EfficientNet](https://www.kaggle.com/code)
+  * [Lung Cancer Classification (CNN + Transfer Learning)](https://www.kaggle.com/code)
+
+👉 On Kaggle, just search for your dataset name + “CNN”. You can then copy the notebook, swap in your dataset, and retrain.
+
+---
+
+### **(c) Pre-trained CNN Models in Frameworks**
+
+* **TensorFlow/Keras** → ready models in `tf.keras.applications`
+
+  ```python
+  from tensorflow.keras.applications import ResNet50, VGG16, EfficientNetB0
+  ```
+* **PyTorch** → pre-trained models in `torchvision.models`
+
+  ```python
+  import torchvision.models as models
+  resnet = models.resnet50(pretrained=True)
+  ```
+* **FastAI** → easiest for quick experiments
+
+  ```python
+  from fastai.vision.all import *
+  cnn_model = cnn_learner(dls, resnet34, metrics=accuracy)
+  ```
+
+---
+
+## 🔹 2. Where to Run the Code
+
+You don’t even need a personal GPU — here are free/cheap options:
+
+* **Google Colab (Free, Cloud-based)**
+
+  * Easiest playground for deep learning.
+  * GPU support included (enable in settings).
+  * Directly run Kaggle/GitHub notebooks.
+
+* **Kaggle Notebooks (Free, Cloud-based)**
+
+  * Similar to Colab, but more dataset-friendly.
+  * Many datasets are already hosted, so no upload hassle.
+
+* **Local Machine (if you have GPU)**
+
+  * Install TensorFlow/PyTorch.
+  * More control, but you need hardware (NVIDIA GPU recommended).
+
+---
+
+## 🔹 3. Datasets
+
+Since you already have your **Brain Tumor, Lung Cancer, and Skin Cancer datasets**, you just need to:
+
+* Upload them to **Google Drive (for Colab)** or **Kaggle Datasets (for Kaggle notebooks)**.
+* Modify the **data loading section** in the notebook (usually a few lines).
+
+---
+
+✅ **Best workflow for you:**
+
+1. Use **Kaggle or Google Colab** (no hardware setup needed).
+2. Fork a **ready-made notebook from Kaggle/GitHub**.
+3. Plug in your dataset.
+4. Train with **VGG16, ResNet, EfficientNet** using transfer learning.
+5. Collect accuracy, precision, recall, F1-score.
+6. Compare results with your target research paper.
