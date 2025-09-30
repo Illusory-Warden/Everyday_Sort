@@ -1,0 +1,150 @@
+AGM‑78 Standard ARM
+
+https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-19#post-2120229
+The AGM‑78 Standard ARM is modeled as a ~1:5 scale kit (Wildman) with a 4″ diameter fiberglass body. Wildman lists a finished length of ~70″ and dry weight ~6.0 lb
+wildmanrocketry.com
+. Components include a 33″ slotted fiberglass booster tube, a fiberglass coupler/av‑bay section, a 16″ fiberglass payload tube, a stepped fiberglass nose cone with an aluminum tip
+wildmanrocketry.com
+, fiberglass centering rings, CNC machined AV‑bay lids
+wildmanrocketry.com
+, a 54 mm fiberglass motor mount
+wildmanrocketry.com
+ and thick G‑10 fins
+wildmanrocketry.com
+. The 54 mm motor mount suggests use of mid‑power C or D motors (K’Tesh’s simulations include single C and single D configs
+rocketryforum.com
+). Wildman’s site confirms a 4″ body and a 54 mm motor mount
+wildmanrocketry.com
+.
+Dimensions: ~70″ long, 4.0″ max diameter
+wildmanrocketry.com
+. Fin span ~7″ (estimate from art).
+Mass & Materials: Dry mass ~6.0 lb
+wildmanrocketry.com
+ (~2.72 kg). Fiberglass construction for tubes and nose; aluminum tip; G‑10 (fiberglass) fins
+wildmanrocketry.com
+.
+Motor: 54 mm mount (single engine). K’Tesh’s .ork includes both single D and single C engine versions
+rocketryforum.com
+ (impulse ~D‑class); typical delays as per motor (Tobor’s file suggests standard “C” delay for a D12/J285MG on a similar model).
+CG & CP: Wildman’s RockSim gives CP ~52.69″ from nose
+rocketryforum.com
+. CG depends on build; stability margin ~2–3 calibers (roughly estimated).
+Flight (sim): (Not published.) K’Tesh reports his OpenRocket sim of the similar MRC kit (“Single D powered”) yields an apogee ~1,977 ft with a single D/motor (image data) – very high performance due to weight (image [53]). Actual flight performance will vary with motor choice.
+Launch rod: Standard high‑power rail (e.g. 6–8 ft rail) or 1–2 m rod needed for this heavy rocket to gain stabilizing speed before liftoff. Velocity off-rod ~15–20 ft/s (estimate with 54 mm motor).
+Staging/Payload: Single-stage. (No dual-stage or payload bay in stock model.)
+Download the OpenRocket file (Wildman AGM‑78) here: AGM-78 Standard ARM.ork.
+AIM‑45A Sentinel (Estes 1987)
+
+https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-6
+The Estes AIM‑45A Sentinel (1987) is a small 18 mm model rocket. Its stock configuration (single-stage) is 27.63″ long with 1.637″ diameter
+rocketreviews.com
+. The body is BT‑60 tubing with a PNC-60RL plastic nose cone, and balsa wood fins
+rocketreviews.com
+. Dry weight is ~2.7 oz
+rocketreviews.com
+; loaded (with an 18 mm motor) about 4.0 oz as seen in K’Tesh’s sim. The OpenRocket model yields a CG ≈14.09″, CP ≈23.22″, for ~5.52 calibers stability (at Mach 0.30) – ample stability
+rocketreviews.com
+【50†】. Simulated flight with a typical motor gives ~485 ft altitude, peak ~176 ft/s velocity (Mach 0.16), and ~364 ft/s² max acceleration【50†】.
+Components: BT‑60 main tube, BT‑60 coupler (if model has one), PNC-60RL nose cone (plastic), balsa fins (4 or 3‑fin can as per kit)
+rocketreviews.com
+, paper/nylon parachute. No electronics (stock).
+Dimensions: 27.63″ length, 1.64″ max body OD
+rocketreviews.com
+. Fin span ~6″ tip-to-tip.
+Mass/Materials: Dry ~2.70 oz
+rocketreviews.com
+. Plastics for nose/fin can; balsa fins; paper parachute. Materials match Estes kit (balsa fins
+rocketreviews.com
+).
+Motor: 18 mm motor, recommended motors: A8‑3, B4‑4, B6‑4, C6‑3, C6‑5
+rocketreviews.com
+. The kit is often motorized in “E” as shown by K’Tesh’s variants, but stock kit is 18 mm. Delay ~3–5 s.
+CG & CP: Stock CP ~23.8″ from nose (Rocksim method
+rocketreviews.com
+). CG from simulation ~14.09″, giving about 5.5 calibers stability【50†】.
+Variants/Staging: K’Tesh provides four OpenRocket files: stock single-stage, an E-powered clone, a two-stage D-to-E mod with payload bay, and a two-stage E-to-E mod with payload
+rocketryforum.com
+. Two-stage versions insert a payload section and a smaller second stage rocket.
+Flight (sim): As above: ~485 ft altitude, 176 ft/s top speed, 364 ft/s² accel【50†】. Total flight time ~5–6 s (0.15 Mach at peak).
+Launch rod: Uses Estes standard launch lug; a 6 ft rod is typical. Estimated lift‑off velocity ~5–7 ft/s.
+Download: Estes Sentinel 1987 (Stock).ork.
+Sources: Wildman kit spec sheet
+wildmanrocketry.com
+wildmanrocketry.com
+; Estes kit data
+rocketreviews.com
+rocketreviews.com
+; Rocketry Forum (mtnmanak, Tobor, K’Tesh posts)
+rocketryforum.com
+rocketryforum.com
+rocketryforum.com
+; OpenRocket simulations (embedded image)【50†】.
+Citations
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+K'Tesh's OpenRocket Files... | Page 19 | Rocketry Forum - Model Rocketry Forums
+
+https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-19#post-2120229
+
+Wildman AGM-78 ARM Thread | Rocketry Forum - Model Rocketry Forums
+
+https://www.rocketryforum.com/threads/wildman-agm-78-arm-thread.163436/
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+
+K'Tesh's OpenRocket Files... | Page 6 | Rocketry Forum - Model Rocketry Forums
+
+https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-6
+
+AGM-78 Standard ARM – wildmanrocketry.com
+
+https://wildmanrocketry.com/products/agm-78-standard-arm?srsltid=AfmBOoq87I5IpZq9BYGYUCYthUthFxgzfgQFpkuXkWt77VdsaR25HCoV
+
+Estes - Sentinel
+
+https://www.rocketreviews.com/sentinel---estes-1987-1988-1994.html
+All Sources
+
+wildmanrocketry
+
+rocketryforum
+
+rocketreviews
