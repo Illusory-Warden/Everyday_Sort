@@ -1,0 +1,55 @@
+## AIM-45A Sentinel Missile `.ork` Files (by K’Tesh)
+
+**Source:** Rocketry Forum – K’Tesh's “OpenRocket Files” thread, Page 6 ([Rocketry Forum - Model Rocketry Forums][1]).
+
+**Available Variants (.ork files):**
+
+* **Stock (Decaled)** – A version faithful to the original Estes kit with decals.
+* **E-Powered Clone** – Modified to use an Estes “E” motor.
+* **D-to-E Two-Stage with Payload** – A two-stage version modified from D to E motors, includes a payload compartment.
+* **E-to-E Two-Stage Payload Version** – Two-stage design using E motors in both stages, with payload.
+
+You can download these `.ork` files directly from the thread attachments. Each version weighs between **56–66 KB**, depending on variant ([Rocketry Forum - Model Rocketry Forums][1]).
+
+---
+
+## AGM-78 Standard ARM `.ork` File (by mtnmanak)
+
+**Source:** Rocketry Forum – “Wildman AGM-78 ARM Thread” ([Wikipedia][2], [National Museum of the U.S. Air Force][3]).
+
+While the forum thread isn't fully searchable here, it includes a post by **mtnmanak** offering an OpenRocket version:
+
+> “Based on WM’s listed specs and some clues within the RockSim file, I created an OpenRocket version… if anyone is interested in it, here it is.” ([Wikipedia][2]).
+
+This suggests there's at least one `.ork` file attachment available in that thread, likely representing the AGM-78 geometry and specifications in the simulator.
+
+---
+
+## Summary of `.ork` File Details
+
+| Rocket Model            | Available Variants / Notes                                             | File Size (approx.)                                         |
+| ----------------------- | ---------------------------------------------------------------------- | ----------------------------------------------------------- |
+| **AIM-45A Sentinel**    | Stock decaled, E-powered, D→E two-stage payload, E→E two-stage payload | 56–66 KB each ([Rocketry Forum - Model Rocketry Forums][1]) |
+| **AGM-78 Standard ARM** | One OpenRocket model (converted from RockSim, by mtnmanak)             | Likely similar (~50–100 KB)                                 |
+
+1. **Visit the Rocketry Forum threads**:
+
+   * Go to K’Tesh’s thread on Page 6 to download the specific AIM-45A `.ork` versions.
+   * Go to the “Wildman AGM-78 ARM Thread” to download the AGM-78 model created by mtnmanak.
+
+2. **Inspect `/ork` file contents** once downloaded:
+
+   * Open them in **OpenRocket** to explore component dimensions, mass settings, motor configurations, staging, and payload setups.
+   * Toggle `Appearance → Surface finish = None` and remove decals to evaluate the "naked" simulated geometry.
+
+3. **Edit or tweak**:
+
+   * These `.ork` files make excellent starting points for customization—adjust nosecone shape, fin dimensions, body length, or motor types as desired.
+
+---
+
+If you’d like help navigating the Rocketry Forum to locate these attachments, or need advice tweaking specific components in OpenRocket, just let me know—I’m happy to assist step-by-step!
+
+[1]: https://www.rocketryforum.com/threads/kteshs-openrocket-files.123564/page-6?utm_source=chatgpt.com "K'Tesh's OpenRocket Files... | Page 6 - Rocketry Forum"
+[2]: https://en.wikipedia.org/wiki/AGM-78_Standard_ARM?utm_source=chatgpt.com "AGM-78 Standard ARM"
+[3]: https://www.nationalmuseum.af.mil/Visit/Museum-Exhibits/Fact-Sheets/Display/Article/196034/agm-78-standard-antiradiation-missile/?utm_source=chatgpt.com "AGM-78 Standard Antiradiation Missile - Air Force Museum"
