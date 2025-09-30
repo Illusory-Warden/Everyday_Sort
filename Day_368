@@ -1,0 +1,61 @@
+Here’s how you can structure your **AI-centered literature search prompts**:
+
+---
+
+## 🔹 AI-Oriented Literature Survey Prompts
+
+### **General**
+
+* *"Convolutional neural networks for medical image classification deep learning applications brain tumor lung cancer skin cancer"*
+* *"Comparative study of CNN architectures (ResNet, VGG, EfficientNet, Inception) for cancer image classification"*
+* *"Transfer learning with CNN models in medical image datasets brain tumor lung cancer skin cancer"*
+
+---
+
+### **Dataset Specific**
+
+1. **Brain Tumor (MRI images)**
+
+   * *"Brain tumor detection using deep learning CNN architectures MRI image classification"*
+   * *"Transfer learning CNN models (ResNet, VGG, EfficientNet) for brain tumor classification"*
+
+2. **Lung Cancer (CT images)**
+
+   * *"Deep learning CNN for lung cancer detection and classification CT images"*
+   * *"Comparative CNN approaches for lung cancer diagnosis using transfer learning"*
+
+3. **Skin Cancer (Dermoscopic images – HAM10000, ISIC dataset)**
+
+   * *"Skin cancer classification CNN deep learning dermoscopy images HAM10000 ISIC dataset"*
+   * *"AI-based transfer learning for melanoma and skin lesion detection using CNNs"*
+
+---
+
+### **Comparative AI Research (Strong Fit for Your Paper)**
+
+* *"Comparative performance of deep learning CNN models in multi-cancer image classification"*
+* *"Survey of convolutional neural networks in medical image analysis with focus on brain tumor, lung cancer, and skin cancer"*
+* *"Evaluation of CNN architectures for cancer image detection transfer learning and accuracy comparison"*
+
+---
+
+## 🔹 Best AI-Centric Sources to Target
+
+* **Google Scholar** → quick access to AI + CNN papers.
+* **IEEE Xplore** → strong for CNN architecture papers applied to medical imaging.
+* **Springer (Lecture Notes in Computer Science, Medical Image Computing)** → AI-focused.
+* **ScienceDirect / Elsevier** → often publishes applied AI in healthcare.
+* **Papers With Code ([https://paperswithcode.com/](https://paperswithcode.com/))** → find CNN papers **with code + datasets**.
+
+---
+
+✅ **Tip for Writing the AI Literature Survey Section**
+
+* Begin with **overview of CNN in medical imaging** (how AI has improved diagnosis).
+* Then cover **dataset-wise applications**:
+
+  * Brain Tumor → MRI, CNN & Transfer Learning models.
+  * Lung Cancer → CT imaging, CNN-based CAD systems.
+  * Skin Cancer → Dermoscopic image datasets like ISIC, HAM10000.
+* Finally, move into **comparative works** where authors tested multiple CNN architectures.
+* Highlight gaps (e.g., lack of cross-dataset comparison) → this becomes your **research justification**.
