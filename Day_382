@@ -1,0 +1,12 @@
+The one in your screenshot is **Cronlytic Trigger**, which is an external integration for advanced cron scheduling (requires Cronlytic service).
+
+The one you want for this workflow is the **built-in Cron node** that comes with n8n by default. It looks like this:
+
+* Name: **Cron**
+* Icon: A little clock ⏰
+* Purpose: Triggers the workflow at a fixed interval or schedule (daily, hourly, custom).
+
+---
+
+👉 To find it: In your node search, just type **“Cron”** (not Cronlytic).
+That’s the one you’ll use to run your weather email at 7 AM every day.
