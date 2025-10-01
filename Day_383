@@ -1,0 +1,23 @@
+For this workflow, we’ll need just a few **core nodes** in n8n:
+
+1. **Trigger Node**:
+
+   * **Cron** → to run every day at a specific time (say, 7 AM).
+
+2. **Data Fetch Node**:
+
+   * **HTTP Request** → to call the OpenWeather API and get today’s weather data (temperature, condition, etc.).
+
+3. **Data Processing (optional, but useful)**:
+
+   * **Function (or Set node)** → to clean/format the raw API response into a nice text for the email (e.g., "Today in London: 20°C, Clear sky").
+
+4. **Action Node**:
+
+   * **Email** (or Gmail/Outlook, depending on your service) → to send the formatted weather report to yourself (or multiple recipients).
+
+---
+
+✨ So in short, the required nodes are:
+
+* **Cron → HTTP Request → (Function/Set) → Email**
