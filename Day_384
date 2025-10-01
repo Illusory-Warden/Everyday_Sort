@@ -1,0 +1,66 @@
+### 🔹 1. **Daily Weather Report to Email**
+
+* Trigger: **Cron** (every morning at 7 AM)
+* Action 1: **HTTP Request** → get today’s weather from OpenWeather API
+* Action 2: **Email** → send yourself (or a friend) the forecast
+
+👉 Teaches: triggers, HTTP requests, basic data extraction, sending an email.
+
+---
+
+### 🔹 2. **Save Gmail Attachments to Google Drive**
+
+* Trigger: **Gmail (New Email)**
+* Action: **Google Drive → Upload File**
+
+👉 Teaches: OAuth connections, handling attachments, simple data passing.
+
+---
+
+### 🔹 3. **Slack Reminder Bot**
+
+* Trigger: **Cron** (every weekday at 9 AM)
+* Action: **Slack → Send Message** (“Good morning team! Don’t forget the standup.”)
+
+👉 Teaches: chat integrations, scheduling.
+
+---
+
+### 🔹 4. **RSS Feed → Telegram Bot**
+
+* Trigger: **RSS Feed (Check every hour)**
+* Action: **Telegram → Send Message** with the new article title + link
+
+👉 Teaches: parsing feeds, connecting with bots, sending structured messages.
+
+---
+
+### 🔹 5. **Google Sheets Log**
+
+* Trigger: **Form (Webhook)** – e.g., a simple feedback form
+* Action: **Google Sheets → Add Row** with the submitted data
+
+👉 Teaches: webhooks, data collection, persistence.
+
+---
+
+### 🔹 6. **Twitter → Discord Crosspost**
+
+* Trigger: **Twitter (New Tweet from account)**
+* Action: **Discord → Send Message** with tweet content + link
+
+👉 Teaches: cross-platform automation, simple social posting.
+
+---
+
+### 🔹 7. **Daily Motivation Quote**
+
+* Trigger: **Cron (morning)**
+* Action 1: **HTTP Request** (hit a “random quote” API)
+* Action 2: **Slack/Telegram/Email → Send Message**
+
+👉 Teaches: calling free APIs, formatting responses.
+
+---
+
+⚡ Pro Tip: Start small (just 2–3 nodes). Once you’re comfortable, you can expand by adding conditions, branching, or storing data in databases.
