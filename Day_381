@@ -1,0 +1,18 @@
+### **Mode**
+
+* **Every Day**
+
+### **Values**
+
+* **Hour** → `7`
+* **Minute** → `0`
+
+That means the workflow will fire every day at **07:00** in your server’s timezone (or whatever timezone your n8n instance is set to).
+
+---
+
+⚡ If you want more flexibility (like only weekdays, or twice a day), you can switch to **Custom mode** and use standard cron syntax. For example:
+
+* `0 7 * * *` → every day at 07:00
+* `0 7,19 * * *` → at 07:00 and 19:00 daily
+* `0 7 * * 1-5` → weekdays at 07:00
