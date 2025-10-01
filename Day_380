@@ -1,0 +1,9 @@
+For the **Cron node**, once you’ve set:
+
+* **Mode** → *Every Day*
+* **Hour** → `7`
+* **Minute** → `0`
+
+…you’re basically done ✅.
+
+No extra fields are needed unless you want something fancy (like timezones, custom cron expressions, or multiple schedules). For a simple daily trigger, what we did is enough.
