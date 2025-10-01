@@ -1,0 +1,59 @@
+# 1) Get the key from OpenWeather
+
+1. Go to **openweathermap.org** and click **Sign up / Create account**.
+2. Verify your email (they’ll send a confirmation).
+3. Log in and open your account dashboard (usually under your profile menu).
+4. Find the **API keys** or **API keys management** section.
+5. Click **Create / Generate API key** (give it a name like `n8n-weather`).
+6. Copy the generated key (a long string). That’s your `YOUR_API_KEY`.
+
+> Tip: The free plan is fine for hobby usage, but it has call limits — avoid making thousands of requests per minute.
+
+---
+
+# 2) Use the key in your n8n **HTTP Request** node
+
+You have two safe/simple options:
+
+**A — Put the key in the URL (quick & simple)**
+
+* URL:
+
+```
+https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
+```
+
+Replace `YOUR_API_KEY` with the key you copied.
+
+**B — Better: use the HTTP Request node’s Query Parameters**
+
+1. In the HTTP Request node set:
+
+   * **Method:** `GET`
+   * **URL:** `https://api.openweathermap.org/data/2.5/weather`
+2. In the node’s **Query Parameters** section add:
+
+   * Key: `q` → Value: `London` (or your city)
+   * Key: `appid` → Value: `YOUR_API_KEY`
+   * Key: `units` → Value: `metric`
+3. This separates parameters from the URL and is easier to read/manage.
+
+---
+
+# 3) Make the key more secure (recommended)
+
+* **Don’t paste the key into public workflows** or share the JSON with the key inside.
+* For improved security, store the key outside of node text:
+
+  * Put it into n8n **Credentials** or into your server’s **environment variables** and reference it in the node via an expression.
+  * Example: if you store the key as an environment variable `OPENWEATHER_API_KEY`, in the **appid** query value you could use an expression to pull it in (so your workflow JSON doesn’t contain the plain key).
+  * Exact expression syntax may vary with your n8n version, but the idea is to avoid hardcoding secrets.
+
+---
+
+# 4) Quick checklist after you have the key
+
+* [ ] Confirm email verification completed.
+* [ ] Copy key and test one request in n8n HTTP Request node.
+* [ ] Verify the response comes back JSON with `main.temp`, `weather[0].description`, etc.
+* [ ] Move key to credentials/env variable if you plan to share the workflow.
