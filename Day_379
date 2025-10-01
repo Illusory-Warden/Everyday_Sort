@@ -1,0 +1,42 @@
+### **Node: HTTP Request**
+
+* **HTTP Method** → `GET`
+* **URL** →
+
+  ```
+  https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY&units=metric
+  ```
+
+  Replace `London` with your city and `YOUR_API_KEY` with your key from [OpenWeather](https://openweathermap.org/api).
+  (`units=metric` makes it Celsius. Use `imperial` for Fahrenheit.)
+
+---
+
+### **Other Fields**
+
+* **Response Format** → `JSON` (default)
+* Leave **Authentication** blank (OpenWeather just needs the API key in the query string, no OAuth).
+
+---
+
+### **Example Output**
+
+You’ll get a JSON response like:
+
+```json
+{
+  "weather": [
+    { "main": "Clear", "description": "clear sky" }
+  ],
+  "main": {
+    "temp": 20.5,
+    "feels_like": 19.7,
+    "humidity": 55
+  },
+  "name": "London"
+}
+```
+
+From here, we’ll later use a **Set** or **Function** node to format this into something like:
+
+> “Today in London: 20°C, Clear sky (Feels like 19°C, Humidity 55%).”
