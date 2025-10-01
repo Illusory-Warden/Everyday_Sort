@@ -1,0 +1,11 @@
+For the **OpenWeather API** request, you don’t need OAuth or special credentials — the API key you got is enough.
+
+So in your **HTTP Request node**:
+
+* **Authentication** → `None`
+
+Because we’re already passing the key in the **Query Parameters** (`appid=your_api_key`).
+
+---
+
+Once that’s set, you’re ready to hit **Execute Node** and test if you get JSON back with the weather data 🌤️
