@@ -1,0 +1,9 @@
+// ❌ WRONG - Creates new object with missing properties
+await Clients.Others.SendAsync("FileChunkReceived", new {
+    transferId = chunk.TransferId,
+    chunkIndex = chunk.ChunkIndex
+    // Missing encryptedData and nonce!
+});
+
+// ✅ CORRECT - Forwards entire object
+await Clients.Others.SendAsync("FileChunkReceived", chunk);
