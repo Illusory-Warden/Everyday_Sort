@@ -1,0 +1,42 @@
+```cpp
+#include <iostream>
+using namespace std;
+
+#define N 8
+
+int board[N][N];
+
+bool safe(int r,int c){
+    for(int i=0;i<c;i++) if(board[r][i]) return false;
+    for(int i=r,j=c;i>=0&&j>=0;i--,j--) if(board[i][j]) return false;
+    for(int i=r,j=c;i<N&&j>=0;i++,j--) if(board[i][j]) return false;
+    return true;
+}
+
+bool solve(int c){
+    if(c==N){ 
+        for(int i=0;i<N;i++){ 
+            for(int j=0;j<N;j++) cout<<(board[i][j]?"Q ":". "); 
+            cout<<"\n";
+        }
+        cout<<"\n"; 
+        return true; 
+    }
+    bool res=false;
+    for(int i=0;i<N;i++){
+        if(safe(i,c)){ board[i][c]=1; res=solve(c+1)||res; board[i][c]=0; }
+    }
+    return res;
+}
+
+int main(){
+    if(!solve(0)) cout<<"No solution\n";
+}
+```
+
+### What Changed:
+
+* Removed extra comments and redundant variables.
+* Merged **printSolution** directly into the base case.
+* Used global `board` for simplicity.
+* Compact formatting for clarity.
