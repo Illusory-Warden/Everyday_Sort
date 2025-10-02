@@ -1,0 +1,49 @@
+To update and finalize the workflow JSON, I just need a few missing details (mainly around credentials and topics).
+
+---
+
+### ✅ Please provide these details
+
+1. **🔑 Bright Data API Key**
+
+   * The key you shared (`40127ac3...`) seems to be a **real token** — do **not** reuse it publicly for security.
+   * Please confirm:
+
+     * Should I **keep** the current API key in the JSON?
+     * Or **replace it with a placeholder** (e.g., `"Bearer YOUR_BRIGHTDATA_API_KEY"`)?
+
+2. **📋 Google Sheets Credentials**
+
+   * Your “Save Results to Google Sheet” node doesn’t currently include credentials.
+   * Please tell me:
+
+     * Do you already have a Google Sheets credential name in n8n (e.g., `"My Google Sheets Connection"`)?
+     * Or should I set it as `"YOUR_GOOGLE_SHEETS_CREDENTIALS"` (placeholder)?
+
+3. **📘 Google Sheet Details**
+
+   * Confirm or update:
+
+     * **Spreadsheet ID** (currently: `1sOfCFsvHS9-BeE_PQ6J_jtQofCRcOv02XS7hrmFmpxQ`)
+     * **Sheet name** (currently: `"Sheet1"`)
+   * Should I keep these or replace them with placeholders?
+
+4. **🎯 Research Topic**
+
+   * Currently fixed as `"machine+learning"`.
+   * Do you want:
+
+     * To keep it **fixed**?
+     * Or make it **dynamic** (e.g., ask for input each time via a “Prompt” node or webhook parameter)?
+
+5. **💾 Output File Format (optional)**
+
+   * Currently, results are stored **only in Google Sheets**.
+   * Would you also like the workflow to:
+
+     * Save as a **CSV** or **JSON file** (in Google Drive or locally)?
+     * Or keep only Google Sheets?
+
+---
+
+Once you provide those five details,
