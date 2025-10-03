@@ -1,0 +1,75 @@
+### Updated n8n Workflow Configuration
+
+```json
+{
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brightdata.com/request",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eaf4306a9193259e5d25650f6f26d8f537d82f9"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {},
+        "bodyParametersJson": "{\"zone\": \"your_zone_name\", \"url\": \"https://example.com\", \"format\": \"raw\"}"
+      },
+      "id": "f84b0bb0-8c1d-4f74-a151-f8e273e85618",
+      "name": "Send Request to Bright Data API",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        544,
+        176
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "lUCd2z4b8mgWbDhl",
+          "name": "Bearer Auth account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Send Request to Bright Data API": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "abd8b708473c6ce8db8ba2b808eec2a097b"
+  }
+}
+```
+
+### Key Components Explained
+
+* **Authorization Header**: The `Authorization` header includes your API key. Ensure that the key is valid and has the necessary permissions for the requested operation.
+
+* **Content-Type Header**: Set to `application/json`, indicating that the request body is in JSON format.
+
+* **Request Body (`bodyParametersJson`)**:
+
+  * `zone`: Replace `"your_zone_name"` with your actual Web Unlocker zone name.
+  * `url`: The target URL you wish to access.
+  * `format`: Set to `"raw"` to receive the raw response from the target site. This is useful for scraping content directly.
+
+### Additional Notes
+
+* **API Key**: Your API key is sensitive information. Ensure it is kept secure and not exposed in public repositories or logs.
+
+* **Zone Name**: The zone name is specific to your Bright Data account and determines the proxy settings and configurations applied to your requests.
+
+
