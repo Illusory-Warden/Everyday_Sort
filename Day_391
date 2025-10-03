@@ -1,0 +1,51 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.brightdata.com/request",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer eaf4306a75ebd5f6948ef000919f9"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {},
+        "bodyParametersJson": "{}"
+      },
+      "id": "f84b0bb0-8c1d-4f74-a151-f8e273e85618",
+      "name": "Send Request to Bright Data API",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        544,
+        176
+      ],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpBearerAuth": {
+          "id": "lUCd2z4b8mgWbDhl",
+          "name": "Bearer Auth account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Send Request to Bright Data API": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "2d313b482b6a19cbbc4bcfef458f3abe8db8ba2b808eec2a097b"
+  }
+}
