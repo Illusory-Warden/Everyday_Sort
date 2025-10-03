@@ -1,0 +1,16 @@
+"bodyParameters": {
+  "parameters": [
+    {
+      "name": "zone",
+      "value": "your_zone_name"
+    },
+    {
+      "name": "url",
+      "value": "https://example.com"
+    },
+    {
+      "name": "format",
+      "value": "raw"
+    }
+  ]
+}
