@@ -1,0 +1,41 @@
+```
+PS C:\Users\rpi\Dektop\THESCAM>
+```
+
+That means you are **inside the “ THESCAM” folder**, which is located **on your Dektop**.
+
+If you want to go **to the Desktop itself**, you can move **one level up** with this command:
+
+```powershell
+cd ..
+```
+
+After that, your prompt should look like this:
+
+```
+PS C:\Users\rpi\Dektop>
+```
+
+✅ **Summary:**
+
+* `cd ..` → move **up one folder**
+* `cd Dektop` → move **into the Desktop folder** (from your user folder)
+* `cd C:\Users\rpi\Dektop` → go **directly** to the Desktop folder from anywhere
+
+---
+
+**Examples:**
+
+* From your current location (`C:\Users\rpi\Dektop\THESCAM`)
+  → Run:
+
+  ```powershell
+  cd ..
+  ```
+* From anywhere (e.g., `C:\`)
+  → Run:
+
+  ```powershell
+  cd C:\Users\rpi\Dektop
+  ```
+
