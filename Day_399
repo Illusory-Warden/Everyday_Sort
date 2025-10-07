@@ -1,0 +1,54 @@
+## **1. If Your Repo is Private**
+
+* Since your repository is private, **you don’t strictly need a public open-source license**.
+* You can continue using a **proprietary license** (like your current “All Rights Reserved + NDA”) to control usage internally.
+* Public licenses only matter if you plan to **share the repo externally** or make it open source.
+
+---
+
+## **2. If You Want Open Source / Public Release**
+
+Here’s a summary of the licenses you listed:
+
+| License                        | When to Use                                               | Key Features                                                                                       |
+| ------------------------------ | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Apache 2.0**                 | Code you want others to use freely with patent protection | Permissive, allows commercial use, requires attribution and license notice, includes patent grants |
+| **MIT**                        | Lightweight, very permissive code license                 | Simple, allows modification and commercial use, requires only attribution                          |
+| **BSD 2-Clause**               | Minimalistic, permissive                                  | Similar to MIT, fewer restrictions                                                                 |
+| **BSD 3-Clause**               | Adds non-endorsement clause                               | Prevents others from using your name to promote derived products                                   |
+| **Boost 1.0**                  | Often for C++ libraries                                   | Permissive, attribution required                                                                   |
+| **GPL v2 / GPL v3**            | Code must remain open-source if redistributed             | Strong copyleft; derived code must also be open source under same license                          |
+| **LGPL v2.1**                  | Library code                                              | Allows linking to proprietary software but changes to library remain open                          |
+| **AGPL v3**                    | Web applications                                          | Copyleft, requires sharing source even for remote use                                              |
+| **Eclipse Public License 2.0** | Business-friendly copyleft                                | Requires source of modifications, allows linking with proprietary code                             |
+| **MPL 2.0**                    | Files stay open                                           | File-level copyleft, allows combining with proprietary code                                        |
+| **CC0**                        | Public domain dedication                                  | No restrictions; anyone can use the work freely                                                    |
+| **The Unlicense**              | Public domain                                             | Similar to CC0, fully permissive                                                                   |
+
+---
+
+## **3. Recommendation Based on Use Case**
+
+* **If it’s code and you want maximum freedom for reuse:**
+  → **MIT License** (or BSD 2/3-Clause)
+
+* **If you want others to share improvements back:**
+  → **GPL v3** (strong copyleft) or **MPL 2.0** (file-level copyleft)
+
+* **If it’s documentation or research material:**
+  → **Creative Commons licenses** (e.g., **CC BY-NC-ND 4.0** for non-commercial, no derivatives; CC0 for public domain dedication)
+
+* **If it’s a mix of code + proprietary research (your current case):**
+  → Keep **proprietary + NDA** for confidential material
+  → Optionally, use **MIT** for any open-source code scripts
+  → Use **CC BY-NC-ND 4.0** for documentation/educational content
+
+---
+
+💡 **Summary:**
+
+For your case (private repo with research + some code):
+
+* **Proprietary / NDA:** Confidential research
+* **MIT License:** Technical scripts or code you may share internally or later publicly
+* **CC BY-NC-ND 4.0:** Documentation and educational material
