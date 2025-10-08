@@ -1,0 +1,36 @@
+### 1. **Quick View (read-only)**
+
+* Just drag and drop the `.docx` file into VS Code, or use **File → Open File...**.
+* By default, VS Code will open it as plain text (showing XML-like content for `.docx`).
+
+### 2. **Use an Extension**
+
+Install an extension that can preview or edit Word documents:
+
+* **"Docx Preview"** – lets you preview `.docx` files in a more readable format inside VS Code.
+* **"Office Viewer"** – can render `.docx`, `.xlsx`, `.pptx` files.
+
+  * To install:
+
+    1. Go to the Extensions panel (`Ctrl+Shift+X` / `Cmd+Shift+X`).
+    2. Search for **Docx Preview** or **Office Viewer**.
+    3. Install it and then re-open your `.docx` file.
+
+### 3. **Convert to Markdown/Plain Text**
+
+If you want to *edit* the content:
+
+* Open the `.docx` file in **Word**, **Google Docs**, or **LibreOffice**.
+* Export/Save as **Markdown (`.md`)** or **Plain Text (`.txt`)**.
+* Open that file in VS Code for editing.
+* Later, you can convert it back if needed (using Pandoc or online tools).
+
+### 4. **For Developers / Automation**
+
+If you’re processing `.docx` files in VS Code with code:
+
+* Use a library like:
+
+  * **`python-docx`** (Python)
+  * **`docx`** (Node.js)
+    These let you programmatically read/write `.docx` inside your projects.
