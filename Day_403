@@ -1,0 +1,118 @@
+Review Paper Topic Suggestions
+Software Self-Hosting and Personal Cloud Adoption: Recent studies highlight a surge in individuals hosting their own cloud storage to reclaim control over personal data
+data.mendeley.com
+. A systematic review notes that privacy and security concerns drive self-hosting interest
+data.mendeley.com
+, and empirical work shows that users’ perceived privacy risks and benefits strongly influence their willingness to use personal cloud storage
+researchgate.net
+. A review could cover self-hosted platforms (Nextcloud, Syncthing, etc.), containerized deployments (Docker, OMV), and the balance of usability vs. control in these systems.
+Zero-Trust Networking for Home/Personal Clouds: The zero-trust model (“never trust, always verify”) is increasingly applied to secure small networks and IoT environments. Reviews of zero-trust architectures emphasize continuous authentication, micro-segmentation, and identity-centric access control, which can be more robust than traditional VPNs
+cybersecurity.springeropen.com
+. A survey topic could examine how zero-trust principles (as formalized in NIST SP 800-207) are adapted for homelab or Raspberry Pi–based clouds, including technologies like software-defined perimeters and device authentication frameworks
+cybersecurity.springeropen.com
+.
+Secure Remote Access and SSH Hardening: Protecting self-hosted servers against external threats is critical. Self-hosting communities report that “security of their operations is a concern for the majority of participants”
+usenix.org
+, leading users to adopt strict SSH hardening (key-based auth, two-factor, disabling root login) and firewall policies. A review paper could survey best practices (SSH configuration, VPN vs. Tailscale/Twingate solutions, end-to-end encryption) and common vulnerabilities in home cloud setups
+usenix.org
+.
+Containerization and Virtualization in Personal Clouds: The use of containers (Docker, Podman) and lightweight VMs to deploy personal cloud services is a growing trend. A review could compare orchestration tools (e.g. Docker Compose, Kubernetes, Portainer) and evaluate performance trade-offs of running containers on SBCs versus traditional servers. Such work might also examine ready-made NAS/cloud distributions (e.g. OpenMediaVault, NextcloudPi) and their architectural patterns (microservices vs. monolith).
+Hardware Platforms and Storage Solutions: This topic would survey hardware choices for home clouds: single-board computers (Raspberry Pi, Odroid, Pine64) versus mini PCs or repurposed servers. Performance-per-watt and cost are key factors: for example, SSDs consume far less power than HDDs while offering higher performance
+ssstc.com
+, which matters for always-on installations. A review could compare energy efficiency, reliability, and capacity of SSD vs. HDD storage in small-scale servers
+ssstc.com
+, and discuss network/storage interfaces (USB, SATA HATs, SATA adapters).
+Decentralized Cloud Storage and Centralized Models: As decentralized storage platforms mature, a review could compare them with traditional centralized clouds. Decentralized cloud systems (e.g. IPFS, Filecoin, Storj, Sia) use P2P/blockchain protocols to store data, promising enhanced privacy and resilience. A recent survey calls Decentralized Cloud Storage “a disruptive force” that reshapes data storage and security
+researchgate.net
+. This topic would examine underlying architectures, incentive models, and how decentralized systems empower user data sovereignty
+researchgate.net
+.
+Edge Computing and IoT Data Processing: Many home clouds integrate IoT sensors or cameras. Edge computing – processing data on or near the device – can reduce latency and privacy risk. Reviews note that sending all IoT data to remote cloud servers raises security/privacy concerns
+huangjunqin.com
+, whereas edge/cloud hybrids can keep sensitive data local. A survey topic could cover architectures for home gateways and edge servers, real-time analytics on Raspberry Pi clusters, and how edge computing supports personal data ecosystems
+huangjunqin.com
+.
+Data Sovereignty and Privacy Regulations: This theme covers laws and standards affecting personal data control. The principle of data sovereignty – that data is governed by the laws where it is stored – is crucial for cloud deployment
+isaca.org
+. A review could analyze GDPR, ISO/IEC 27018 (cloud privacy code), and other frameworks (EU-US Privacy Shield issues, US CLOUD Act, LGPD, NDPR, etc.), discussing how individuals running personal clouds can comply with consent, localization, and access-rights requirements
+isaca.org
+isaca.org
+.
+Personal Data Ownership and Economic Value: Scholars increasingly describe personal data as a valuable economic asset. Literature frames digital personal data as “the basis of contemporary economies,” noting that Big Tech monetizes user data
+researchgate.net
+. A review here might explore legal and ethical notions of data ownership, property vs. privacy debates, and how personal cloud solutions fit into emerging data markets (e.g., self-sovereign identity, data dividends).
+User Trust, Privacy Attitudes, and Adoption Behavior: Review the human factors in using personal clouds. Studies show that perceived privacy risks and benefits, as well as trust in technology, significantly influence adoption
+researchgate.net
+. For example, one survey found that users weigh security risks heavily when considering personal cloud storage
+researchgate.net
+. A topic could cover the “privacy paradox” in cloud use, trust in self-hosted vs. public services, and social factors (e.g. community norms) affecting whether people migrate data to home clouds
+researchgate.net
+usenix.org
+.
+Each of these topics builds on recent research trends (2020–2025) and addresses gaps noted in the literature (e.g. open issues in Personal Data Clouds
+data.mendeley.com
+, decentralized storage reviews
+researchgate.net
+, or Zero Trust in IoT
+cybersecurity.springeropen.com
+). These suggestions aim to inspire comprehensive review papers that complement the Pi-Vate Cloud work by covering both the technical tools (Docker, SSH, hardware) and broader themes (privacy laws, data ownership) relevant to personal cloud ecosystems. Sources: Recent surveys and articles in cloud computing, security, and data privacy were consulted to identify these topics
+data.mendeley.com
+cybersecurity.springeropen.com
+isaca.org
+researchgate.net
+huangjunqin.com
+ssstc.com
+usenix.org
+.
+Citations
+
+Software Self-hosting: A systematic review of quantitative research - Replication package - Mendeley Data
+
+https://data.mendeley.com/datasets/8ftmmsjhdy/1
+
+Understanding Users’ Willingness to Put Their Personal Information on the Personal Cloud-Based Storage Applications: An Empirical Study | Request PDF
+
+https://www.researchgate.net/publication/327896821_Understanding_Users'_Willingness_to_Put_Their_Personal_Information_on_the_Personal_Cloud-Based_Storage_Applications_An_Empirical_Study
+Dissecting zero trust: research landscape and its implementation in IoT | Cybersecurity | Full Text
+
+https://cybersecurity.springeropen.com/articles/10.1186/s42400-024-00212-0
+
+https://www.usenix.org/system/files/usenixsecurity23-grober.pdf
+
+SSDs vs. HDDs: The Green Power Consumption Advantage with CVB SATA SSD
+
+https://www.ssstc.com/knowledge-detail/ssd-vs-hdd-power-efficiency/
+
+(PDF) Decentralized Cloud Storage: A Comprehensive Review
+
+https://www.researchgate.net/publication/380544460_Decentralized_Cloud_Storage_A_Comprehensive_Review
+
+Edge-computing-driven Internet of Things: A Survey
+
+https://huangjunqin.com/assets/pdf/KongCSUR2022Edge.pdf
+
+Industry News 2024 Cloud Data Sovereignty Governance and Risk Implications of Cross Border Cloud Storage
+
+https://www.isaca.org/resources/news-and-trends/industry-news/2024/cloud-data-sovereignty-governance-and-risk-implications-of-cross-border-cloud-storage
+
+Industry News 2024 Cloud Data Sovereignty Governance and Risk Implications of Cross Border Cloud Storage
+
+https://www.isaca.org/resources/news-and-trends/industry-news/2024/cloud-data-sovereignty-governance-and-risk-implications-of-cross-border-cloud-storage
+
+Software Self-hosting: A systematic review of quantitative research | Request PDF
+
+https://www.researchgate.net/publication/394198548_Software_Self-hosting_A_systematic_review_of_quantitative_research
+All Sources
+
+data.mendeley
+
+researchgate
+cybersec...ingeropen
+
+usenix
+
+ssstc
+
+huangjunqin
+
+isaca
