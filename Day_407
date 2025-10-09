@@ -1,0 +1,55 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cmath>
+#include <set>
+using namespace std;
+
+struct Node {
+    int x, y; float g, h, f; Node* parent;
+    Node(int x, int y, Node* p=nullptr, float g=0, float h=0)
+        : x(x), y(y), g(g), h(h), f(g+h), parent(p) {}
+};
+
+float heuristic(Node* a, Node* b) {
+    return sqrt((a->x - b->x)*(a->x - b->x) + (a->y - b->y)*(a->y - b->y));
+}
+
+void printPath(Node* n) {
+    if (!n) return; printPath(n->parent); cout << "(" << n->x << "," << n->y << ") ";
+}
+
+void aStar(vector<vector<int>>& grid, Node* start, Node* goal) {
+    priority_queue<pair<float, Node*>, vector<pair<float, Node*>>, greater<>> open;
+    set<pair<int,int>> closed;
+    open.push({start->f, start});
+
+    int dir[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
+    int r = grid.size(), c = grid[0].size();
+
+    while (!open.empty()) {
+        Node* cur = open.top().second; open.pop();
+        if (cur->x == goal->x && cur->y == goal->y) { printPath(cur); return; }
+        closed.insert({cur->x, cur->y});
+
+        for (auto& d : dir) {
+            int nx = cur->x + d[0], ny = cur->y + d[1];
+            if (nx<0||ny<0||nx>=r||ny>=c||grid[nx][ny]==1||closed.count({nx,ny})) continue;
+            float g = cur->g + 1, h = heuristic(new Node(nx,ny), goal);
+            open.push({g+h, new Node(nx,ny,cur,g,h)});
+        }
+    }
+    cout << "No path found!";
+}
+
+int main() {
+    vector<vector<int>> grid = {
+        {0,0,0,0,0},
+        {1,1,0,1,0},
+        {0,0,0,0,0},
+        {0,1,1,1,0},
+        {0,0,0,0,0}
+    };
+    Node *start = new Node(0,0), *goal = new Node(4,4);
+    cout << "Path: "; aStar(grid, start, goal); cout << endl;
+}
