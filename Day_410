@@ -1,0 +1,232 @@
+## **Experiment No. 6**
+
+### **Aim**
+
+To write a program to implement the **A*** (A-star) algorithm for finding the shortest path between two nodes in a graph.
+
+---
+
+### **Theory**
+
+The **A*** algorithm is a popular and efficient **pathfinding and graph traversal algorithm** used in artificial intelligence and computer science. It is widely used for **finding the shortest path** between nodes while minimizing the computational cost.
+
+A* is a **best-first search** algorithm that uses both **heuristic information** and **path cost** to determine the most promising route to the goal. It combines the advantages of **Dijkstra’s Algorithm** (optimality) and **Greedy Best-First Search** (speed).
+
+#### **Key Concepts**
+
+* **g(n):** The actual cost from the start node to the current node `n`.
+* **h(n):** The heuristic estimate of the cost from node `n` to the goal node.
+  (Common heuristics: Manhattan distance, Euclidean distance, etc.)
+* **f(n):** The total estimated cost of the cheapest solution through node `n`.
+  [
+  f(n) = g(n) + h(n)
+  ]
+
+A* explores the node with the **lowest f(n)** value first.
+
+#### **Properties**
+
+* **Completeness:** A* is complete if the branching factor is finite and all step costs are positive.
+* **Optimality:** A* is optimal if the heuristic function **h(n)** is **admissible** (never overestimates the true cost).
+* **Time Complexity:** ( O(b^d) ), where `b` is the branching factor and `d` is the depth of the optimal path.
+* **Space Complexity:** ( O(b^d) ), as all generated nodes are stored in memory.
+
+---
+
+### **Algorithm**
+
+**Algorithm: A* Search**
+
+1. Initialize:
+
+   * Create two sets: **Open List** (nodes to be evaluated) and **Closed List** (nodes already evaluated).
+   * Add the start node to the Open List.
+
+2. Loop until the Open List is empty:
+
+   * Select the node `n` from the Open List having the **lowest f(n)** value.
+   * If `n` is the goal node, reconstruct and return the path.
+   * Move `n` from the Open List to the Closed List.
+   * For each neighbor of `n`:
+
+     * If the neighbor is in the Closed List, skip it.
+     * Calculate tentative `g` score: `g(neighbor) = g(n) + cost(n, neighbor)`.
+     * If the neighbor is not in the Open List, add it.
+     * Calculate `f(neighbor) = g(neighbor) + h(neighbor)`.
+     * Update parent pointers accordingly.
+
+3. If the Open List becomes empty before reaching the goal:
+
+   * Return “Path not found.”
+
+---
+
+### **Code**
+
+#### **C++ Program to Implement A* Algorithm**
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cmath>
+#include <map>
+#include <set>
+using namespace std;
+
+// Structure to represent a node in the graph
+struct Node {
+    int x, y;            // Coordinates
+    float g, h, f;       // Cost values
+    Node* parent;        // Parent node for path reconstruction
+};
+
+// Function to calculate the heuristic (Euclidean distance)
+float heuristic(Node* a, Node* b) {
+    return sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2));
+}
+
+// Comparator for the priority queue (min-heap based on f value)
+struct CompareF {
+    bool operator()(Node* a, Node* b) {
+        return a->f > b->f;
+    }
+};
+
+// Function to print the final path
+void printPath(Node* node) {
+    if (node == nullptr) return;
+    printPath(node->parent);
+    cout << "(" << node->x << "," << node->y << ") ";
+}
+
+// Function implementing A* Search Algorithm
+void aStarSearch(Node* start, Node* goal, vector<vector<int>>& grid) {
+    priority_queue<Node*, vector<Node*>, CompareF> openList;
+    set<pair<int, int>> closedList;
+
+    start->g = 0;
+    start->h = heuristic(start, goal);
+    start->f = start->g + start->h;
+    start->parent = nullptr;
+
+    openList.push(start);
+
+    int rows = grid.size();
+    int cols = grid[0].size();
+
+    // Possible moves: up, down, left, right
+    int dx[4] = { -1, 1, 0, 0 };
+    int dy[4] = { 0, 0, -1, 1 };
+
+    while (!openList.empty()) {
+        Node* current = openList.top();
+        openList.pop();
+
+        // If goal reached
+        if (current->x == goal->x && current->y == goal->y) {
+            cout << "Path found: ";
+            printPath(current);
+            cout << endl;
+            return;
+        }
+
+        closedList.insert({current->x, current->y});
+
+        for (int i = 0; i < 4; i++) {
+            int newX = current->x + dx[i];
+            int newY = current->y + dy[i];
+
+            // Check boundaries and obstacles
+            if (newX < 0 || newY < 0 || newX >= rows || newY >= cols || grid[newX][newY] == 1)
+                continue;
+
+            if (closedList.find({newX, newY}) != closedList.end())
+                continue;
+
+            Node* neighbor = new Node{newX, newY, 0, 0, 0, nullptr};
+            float tentativeG = current->g + 1; // Assuming uniform cost
+
+            neighbor->g = tentativeG;
+            neighbor->h = heuristic(neighbor, goal);
+            neighbor->f = neighbor->g + neighbor->h;
+            neighbor->parent = current;
+
+            openList.push(neighbor);
+        }
+    }
+
+    cout << "No path found!" << endl;
+}
+
+int main() {
+    // 0 - free cell, 1 - obstacle
+    vector<vector<int>> grid = {
+        {0, 0, 0, 0, 0},
+        {1, 1, 0, 1, 0},
+        {0, 0, 0, 0, 0},
+        {0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    Node* start = new Node{0, 0, 0, 0, 0, nullptr};
+    Node* goal  = new Node{4, 4, 0, 0, 0, nullptr};
+
+    cout << "Implementing A* Algorithm for Pathfinding..." << endl;
+    aStarSearch(start, goal, grid);
+
+    return 0;
+}
+```
+
+---
+
+### **Input/Output Example**
+
+**Input Grid:**
+
+|   |   |   |   |   |
+| - | - | - | - | - |
+| S | 0 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 0 |
+| 0 | 0 | 0 | 0 | 0 |
+| 0 | 1 | 1 | 1 | 0 |
+| 0 | 0 | 0 | 0 | G |
+
+**Output:**
+
+```
+Implementing A* Algorithm for Pathfinding...
+Path found: (0,0) (0,1) (0,2) (1,2) (2,2) (2,3) (2,4) (3,4) (4,4)
+```
+
+---
+
+### **Analysis of Code and Algorithm**
+
+* **Logic Flow:**
+  The algorithm starts from the initial node, calculates the cost functions (`f = g + h`), and explores nodes with the lowest estimated total cost.
+  It uses a **priority queue** to efficiently pick the best candidate at each step.
+
+* **Time Complexity:**
+  ( O(E \log V) ), where `E` is the number of edges and `V` is the number of vertices.
+
+* **Space Complexity:**
+  ( O(V) ), since all nodes may be stored in memory during search.
+
+* **Efficiency:**
+  A* performs optimally when the heuristic is **admissible** (never overestimates the true distance) and **consistent**.
+
+---
+
+### **Real-Life Applications**
+
+1. **Navigation Systems:** Used in GPS systems to find the shortest driving or walking route.
+2. **Video Games:** Applied for character movement, NPC pathfinding, and obstacle avoidance.
+3. **Robotics:** Guides robots to move efficiently from one location to another while avoiding obstacles.
+
+---
+
+### **Conclusion**
+
+In this experiment, the **A*** algorithm was successfully implemented to find the shortest path between two nodes in a grid. The algorithm demonstrated the efficiency of heuristic-based search strategies in AI. Through this experiment, we learned how A* balances path cost and heuristic estimates to achieve both **optimality** and **efficiency** in pathfinding problems.
