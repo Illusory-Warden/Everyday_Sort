@@ -1,0 +1,116 @@
+### ⚙️ 1. **Service Overview**
+
+* **Description of the system or service** covered (e.g., web application, cloud service, API, database).
+* **Scope** – what components or functionalities are included/excluded from uptime measurement.
+
+**Example:**
+
+> This SLA applies to the production environment of the company’s online platform, excluding scheduled maintenance periods and third-party network outages.
+
+---
+
+### 📈 2. **Uptime Definition and Measurement**
+
+* **Definition of Uptime:** Typically expressed as the percentage of time the system is operational and accessible to users.
+* **Measurement method:** How uptime is calculated and over what period (monthly, quarterly, yearly).
+* **Formula:**
+  [
+  \text{Uptime %} = \left(1 - \frac{\text{Downtime}}{\text{Total Time}}\right) \times 100
+  ]
+
+**Example:**
+
+> Uptime is measured monthly based on system monitoring data. Downtime is any period exceeding 5 consecutive minutes during which the system is unavailable.
+
+---
+
+### 🕒 3. **Target Uptime Levels**
+
+Defines the expected uptime percentage — commonly known as the “nines” of availability.
+
+| Uptime % | Downtime per Month | Downtime per Year |
+| -------- | ------------------ | ----------------: |
+| 99%      | ~7 hours           |        ~3.65 days |
+| 99.9%    | ~43 minutes        |       ~8.76 hours |
+| 99.99%   | ~4 minutes         |       ~52 minutes |
+| 99.999%  | ~26 seconds        |        ~5 minutes |
+
+**Example:**
+
+> The system will maintain an uptime of at least **99.9% per calendar month**.
+
+---
+
+### 🧰 4. **Maintenance and Exclusions**
+
+Specifies what **does not count** toward downtime.
+
+**Common exclusions:**
+
+* Scheduled maintenance (with prior notice)
+* Force majeure events (natural disasters, war)
+* Outages caused by user errors or third-party dependencies
+* Emergency maintenance (with reasonable notice)
+
+**Example:**
+
+> Scheduled maintenance will not exceed 4 hours per month and will be communicated at least 48 hours in advance.
+
+---
+
+### 🚨 5. **Monitoring and Reporting**
+
+* **Monitoring tools:** Which systems measure uptime (e.g., Pingdom, Datadog).
+* **Reporting frequency:** How often reports are provided (e.g., monthly uptime report).
+* **Access:** Whether the customer can view real-time status dashboards.
+
+---
+
+### 💸 6. **Penalties / Service Credits**
+
+Defines **remedies** if uptime falls below target.
+
+**Example:**
+
+| Uptime Achieved | Service Credit |
+| --------------- | -------------- |
+| < 99.9%         | 10% credit     |
+| < 99.5%         | 25% credit     |
+| < 99%           | 50% credit     |
+
+---
+
+### 🤝 7. **Roles and Responsibilities**
+
+* **Service Provider:** Responsible for maintaining system availability, monitoring, and communication.
+* **Customer:** Responsible for network connectivity, account security, and providing accurate contact details.
+
+---
+
+### 📢 8. **Incident Management and Communication**
+
+* **Notification process:** How users are informed of outages or maintenance.
+* **Response and resolution times:** Target times for acknowledging and resolving incidents.
+
+**Example:**
+
+> Provider will acknowledge incidents within 30 minutes and provide hourly status updates until resolution.
+
+---
+
+### 📜 9. **Review and Revision**
+
+* **SLA review frequency** (e.g., annually).
+* **Change process** for updating uptime targets or exclusions.
+
+---
+
+### ✅ Example Summary
+
+> **SLA for System Uptime:**
+>
+> * Target uptime: 99.9% per month
+> * Measurement: Monitored continuously via Datadog
+> * Exclusions: Scheduled maintenance, force majeure events
+> * Reporting: Monthly uptime report via email
+> * Service credits: 10–50% depending on uptime shortfall
