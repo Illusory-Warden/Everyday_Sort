@@ -1,0 +1,111 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <cmath>
+#include <map>
+#include <set>
+using namespace std;
+
+// Structure to represent a node in the graph
+struct Node {
+    int x, y;            // Coordinates
+    float g, h, f;       // Cost values
+    Node* parent;        // Parent node for path reconstruction
+};
+
+// Function to calculate the heuristic (Euclidean distance)
+float heuristic(Node* a, Node* b) {
+    return sqrt(pow(a->x - b->x, 2) + pow(a->y - b->y, 2));
+}
+
+// Comparator for the priority queue (min-heap based on f value)
+struct CompareF {
+    bool operator()(Node* a, Node* b) {
+        return a->f > b->f;
+    }
+};
+
+// Function to print the final path
+void printPath(Node* node) {
+    if (node == nullptr) return;
+    printPath(node->parent);
+    cout << "(" << node->x << "," << node->y << ") ";
+}
+
+// Function implementing A* Search Algorithm
+void aStarSearch(Node* start, Node* goal, vector<vector<int>>& grid) {
+    priority_queue<Node*, vector<Node*>, CompareF> openList;
+    set<pair<int, int>> closedList;
+
+    start->g = 0;
+    start->h = heuristic(start, goal);
+    start->f = start->g + start->h;
+    start->parent = nullptr;
+
+    openList.push(start);
+
+    int rows = grid.size();
+    int cols = grid[0].size();
+
+    // Possible moves: up, down, left, right
+    int dx[4] = { -1, 1, 0, 0 };
+    int dy[4] = { 0, 0, -1, 1 };
+
+    while (!openList.empty()) {
+        Node* current = openList.top();
+        openList.pop();
+
+        // If goal reached
+        if (current->x == goal->x && current->y == goal->y) {
+            cout << "Path found: ";
+            printPath(current);
+            cout << endl;
+            return;
+        }
+
+        closedList.insert({current->x, current->y});
+
+        for (int i = 0; i < 4; i++) {
+            int newX = current->x + dx[i];
+            int newY = current->y + dy[i];
+
+            // Check boundaries and obstacles
+            if (newX < 0 || newY < 0 || newX >= rows || newY >= cols || grid[newX][newY] == 1)
+                continue;
+
+            if (closedList.find({newX, newY}) != closedList.end())
+                continue;
+
+            Node* neighbor = new Node{newX, newY, 0, 0, 0, nullptr};
+            float tentativeG = current->g + 1; // Assuming uniform cost
+
+            neighbor->g = tentativeG;
+            neighbor->h = heuristic(neighbor, goal);
+            neighbor->f = neighbor->g + neighbor->h;
+            neighbor->parent = current;
+
+            openList.push(neighbor);
+        }
+    }
+
+    cout << "No path found!" << endl;
+}
+
+int main() {
+    // 0 - free cell, 1 - obstacle
+    vector<vector<int>> grid = {
+        {0, 0, 0, 0, 0},
+        {1, 1, 0, 1, 0},
+        {0, 0, 0, 0, 0},
+        {0, 1, 1, 1, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    Node* start = new Node{0, 0, 0, 0, 0, nullptr};
+    Node* goal  = new Node{4, 4, 0, 0, 0, nullptr};
+
+    cout << "Implementing A* Algorithm for Pathfinding..." << endl;
+    aStarSearch(start, goal, grid);
+
+    return 0;
+}
