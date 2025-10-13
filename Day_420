@@ -1,0 +1,10 @@
+### ✅ Bottom line:
+
+Twingate is a **Zero Trust Network Access (ZTNA)** solution, not a reverse proxy.
+
+### 🔍 Quick distinction:
+
+* **Reverse proxy:** Sits in front of servers and manages incoming traffic (like NGINX or Cloudflare). It exposes services to the internet in a controlled way.
+* **Twingate:** Creates **secure, private, identity-based connections** directly between users and internal resources **without exposing them to the public internet**. It uses encrypted tunnels and access policies, not proxying web requests.
+
+So while both manage access to internal resources, **Twingate replaces VPNs**, not reverse proxies.
