@@ -1,0 +1,29 @@
+# If Lovable was authorized as an **OAuth App**
+
+1. Go to GitHub and sign in.
+2. Click your profile photo → **Settings**.
+3. In the left sidebar choose **Applications** → **Authorized OAuth Apps**.
+4. Find **Lovable** in the list, click it, then click **Revoke access**.
+
+   * This immediately removes Lovable’s access tokens and it can no longer access your account/repos.
+
+# If Lovable was installed as a **GitHub App**
+
+1. Profile photo → **Settings** → **Applications** → **Authorized GitHub Apps** (or go to **Installed GitHub Apps**).
+2. Find **Lovable**, click **Configure** (or the app entry) and choose **Uninstall** or **Revoke**.
+
+   * Uninstalling a GitHub App also removes its access to repositories and webhooks.
+
+# If the authorization was given to an **organization** (you’re an org member or owner)
+
+* **Org owner**: Organization → **Settings** → **Third-party access** or **OAuth Apps** (exact label varies) → find **Lovable** → **Revoke** / **Remove**.
+* If you’re not an owner, ask an org owner to remove the app.
+
+# Optional: Revoke via GitHub API (advanced)
+
+If you prefer CLI/API and have the app’s `client_id` and your access token, there are API endpoints to revoke grants/tokens — but that requires credentials and is more advanced. If you want this, tell me and I’ll give exact curl commands.
+
+# After revocation (recommended)
+
+* Check your repo settings / webhooks to ensure no leftover webhooks or integrations remain.
+* If Lovable provided any OAuth tokens to you (or you generated PATs for it), delete those tokens on the Lovable side if possible.
