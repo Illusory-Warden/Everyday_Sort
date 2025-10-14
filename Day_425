@@ -1,0 +1,15 @@
+**Twingate is *not* a traditional VPN**, but you can think of it as a **modern, software-defined or “Zero Trust” VPN alternative.**
+
+### Here’s the breakdown:
+
+| Feature              | Traditional VPN                                              | Twingate                                                             |
+| -------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------- |
+| **Network exposure** | Connects you to the *entire* internal network once logged in | Gives access *only* to specific apps/resources you’re allowed to use |
+| **Architecture**     | Centralized gateway (can bottleneck traffic)                 | Decentralized, peer-to-peer tunnels via connectors                   |
+| **Security model**   | “Trust but verify” (once you’re in, you’re trusted)          | “Never trust, always verify” (continuous identity-based access)      |
+| **Setup**            | Requires complex network configs                             | Quick setup, works with identity providers (Okta, Google, etc.)      |
+| **Performance**      | Routes all traffic through a VPN server                      | Splits traffic — only private resources go through Twingate          |
+
+### 🧩 Bottom line:
+
+Twingate is **not a VPN**, but a **modern, zero-trust upgrade to VPNs** — you can think of it as a *“VPN reimagined for security and simplicity.”*
