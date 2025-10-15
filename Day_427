@@ -1,0 +1,29 @@
+### What I found about Lovable’s export / publishing
+
+* You can **publish** your project via Lovable’s “Publish” button so that it’s live on the web. ([Lovable Documentation][1])
+* Lovable supports **connecting your project to GitHub**, so that your code is versioned and can be edited externally. ([DataCamp][2])
+* There are tutorials/video guides showing how to export the **source code files** from Lovable. ([YouTube][3])
+* Some users report challenges when uploading the exported files to a hosting — e.g. they get a “white screen” if something is misconfigured. ([Reddit][4])
+
+---
+
+### Suggested steps to download your Lovable project
+
+Here’s a step-by-step you can try:
+
+1. **Connect to GitHub**
+   In your Lovable project interface, look for an option like “Edit Code” or “Connect to GitHub.” After linking, Lovable should push your project’s code (frontend + backend) to a GitHub repository.
+   Once it’s in GitHub, you can clone or download (as a ZIP) from there.
+
+2. **Export/Download source files directly**
+   Some versions let you export your project files (HTML, CSS, JS, assets). The video “How to Download Website Files From Lovable?” walks through connecting Lovable to GitHub and then downloading your files. ([YouTube][5])
+   Another video “How To EXPORT Source Code Files From Lovable.dev” shows a more direct export method. ([YouTube][6])
+
+3. **Publish first (if required)**
+   Sometimes, the “publish” process finalizes the build, after which downloading or exporting becomes possible. Use the “Publish” (or “Update”) button in Lovable. ([Lovable Documentation][1])
+
+4. **Download from GitHub (if exported there)**
+   Once your project is on GitHub, you can go to the repository page → “Code” → “Download ZIP” (or clone using `git clone`) to your computer.
+
+5. **Host locally or deploy manually**
+   After downloading the files, you should be able to run the project locally (if it’s a static or React build) or deploy it to a hosting service. Be careful about environment configurations (e.g. API keys, paths) — missing or misconfigured settings often cause a blank page (“white screen”) when you upload. ([Reddit][4])
