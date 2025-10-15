@@ -1,0 +1,29 @@
+## 🔍 What Lovable supports now
+
+* Lovable allows **GitHub integration / export of code** so your project’s code is versioned and portable. ([Lovable Documentation][1])
+* In their FAQ, they explicitly ask “Can I export my project and host it elsewhere?” — the answer is **yes**. ([Lovable Documentation][2])
+* There are video tutorials that show step-by-step how to export source code from Lovable to download locally. ([YouTube][3])
+* One video titled *“How to Download Website Files From Lovable?”* shows connecting to GitHub then downloading the files locally. ([YouTube][4])
+* Also, a Chrome extension “Lovable.dev Project Downloader – Export as ZIP (One Click)” claims to let you export the full project as a ZIP without using GitHub. ([Chrome Stats][5])
+
+---
+
+## ✅ Steps to download the Lovable project locally
+
+Here’s a general procedure you can follow:
+
+| Step | What to do                                      | Notes / Tips                                                                                                                                                                                                                                      |
+| ---- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | **Connect your Lovable project to GitHub**      | In Lovable, look for “Edit Code” → “GitHub Integration” or “Transfer to Repository.” This pushes your project code (frontend, backend, assets) to a GitHub repo. ([Lovable Documentation][1])                                                     |
+| 2    | **Clone or Download from GitHub**               | Once the project is in GitHub, go to that repo → **Code** → **Download ZIP** or clone (`git clone <repo-url>`).                                                                                                                                   |
+| 3    | **Open/run locally**                            | Navigate into the project folder on your machine and install dependencies (e.g. `npm install` or similar) then run the dev server (e.g. `npm run dev` or `npm start`) depending on the stack. The video tutorials show doing this. ([YouTube][6]) |
+| 4    | **(Optional) Use the ZIP downloader extension** | If you don’t want to go via GitHub, try the “lovable.dev project downloader” extension which claims to let you export the entire project as ZIP directly from Lovable. ([Chrome Stats][5])                                                        |
+
+---
+
+## ⚠️ Things to watch out for
+
+* **Private project / permission restrictions**: Some export features may only work for projects that are public or when certain settings (like “remix / export allowed”) are enabled.
+* **Build configuration / environment variables**: When running locally, environment variables, API keys, or backend configurations might not be present by default — you may need to set them up.
+* **Missing files or assets**: Sometimes images, media, or static assets may not be included unless the export process includes them explicitly.
+* **Extension risks**: The ZIP export Chrome extension is a third-party tool — use caution, ensure it's from a reliable source, and check permissions before installing.
