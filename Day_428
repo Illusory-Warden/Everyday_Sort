@@ -1,0 +1,45 @@
+### 🔹 **TCO**
+
+**Full form:** *Total Cost of Ownership*
+
+**Meaning:**
+TCO represents the **complete cost of owning and operating** something (like hardware, software, or infrastructure) over its lifetime — not just the purchase price.
+
+**Includes:**
+
+* Initial purchase or setup cost
+* Maintenance and support
+* Upgrades or replacements
+* Energy consumption
+* Staff/labor/training costs
+
+**Example:**
+When comparing cloud storage vs. a self-hosted NAS, TCO would include not only hardware costs but also electricity, time spent maintaining servers, and subscription fees.
+
+---
+
+### 🔹 **LUKS**
+
+**Full form:** *Linux Unified Key Setup*
+
+**Meaning:**
+LUKS is a **disk encryption standard** used on Linux systems. It protects data on storage devices by encrypting entire block devices (like hard drives or partitions).
+
+**Key Points:**
+
+* Provides strong encryption (often AES-based).
+* Supports multiple user passphrases.
+* Commonly used with tools like `cryptsetup`.
+* Ensures data confidentiality if the drive is stolen or lost.
+
+**Example:**
+You might encrypt a Raspberry Pi’s external drive using LUKS to keep all stored files secure.
+
+---
+
+In short:
+
+| Acronym  | Full Form               | Primary Use                                   |
+| -------- | ----------------------- | --------------------------------------------- |
+| **TCO**  | Total Cost of Ownership | Financial evaluation of total costs over time |
+| **LUKS** | Linux Unified Key Setup | Disk encryption for Linux-based systems       |
