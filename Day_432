@@ -1,0 +1,63 @@
+# Example — original (readable) `example.js`
+
+```javascript
+// example.js - demo of some functions
+function greet(name) {
+  const greeting = `Hello, ${name}!`;
+  console.log(greeting);
+  return greeting;
+}
+
+function sumArray(numbers) {
+  if (!Array.isArray(numbers)) throw new TypeError('numbers must be an array');
+  let total = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    total += Number(numbers[i]) || 0;
+  }
+  return total;
+}
+
+const data = [1, 2, 3, 4, 5];
+const message = greet('Alice');
+const total = sumArray(data);
+console.log('Total:', total);
+```
+
+# Uglified / minified (typical `uglify-js -m -c`) — `example.min.js`
+
+```javascript
+function greet(n){const t=`Hello, ${n}!`;return console.log(t),t}function sumArray(n){if(!Array.isArray(n))throw new TypeError("numbers must be an array");for(var t=0,e=0;e<n.length;e++)t+=Number(n[e])||0;return t}const data=[1,2,3,4,5],message=greet("Alice"),total=sumArray(data);console.log("Total:",total);
+```
+
+# Uglified + mangled variable names (more compact / harder to read)
+
+```javascript
+function a(b){const c=`Hello, ${b}!`;return console.log(c),c}function d(b){if(!Array.isArray(b))throw new TypeError("numbers must be an array");for(var c=0,e=0;e<b.length;e++)c+=Number(b[e])||0;return c}const f=[1,2,3,4,5],g=a("Alice"),h=d(f);console.log("Total:",h);
+```
+
+# Command-line (UglifyJS) examples
+
+* Minify + compress + mangle variable names:
+
+```
+uglifyjs example.js -o example.min.js -m -c
+```
+
+* Keep function names (avoid mangling top-level function names):
+
+```
+uglifyjs example.js -o example.min.js -m reserved=['greet','sumArray'] -c
+```
+
+* Produce a source map:
+
+```
+uglifyjs example.js -o example.min.js --source-map "filename=example.min.js.map" -m -c
+```
+
+# Notes / tips
+
+* `-c` runs compressor optimizations (dead-code removal, collapse vars, etc.).
+* `-m` (mangle) shortens variable and function names — gives the biggest size reduction but reduces readability.
+* If you need to debug after uglifying, generate a source map so you can map minified code back to originals.
+* For stronger obfuscation beyond minification consider specialized obfuscators (they change control flow, string encodings, etc.), but be mindful of resulting size and runtime cost.
