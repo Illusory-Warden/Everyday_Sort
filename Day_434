@@ -1,0 +1,59 @@
+## **Q1. Explain Prospect Theory & illustrate its principles with examples.**
+
+### **Answer:**
+
+**Definition:**
+Prospect Theory, developed by Daniel Kahneman and Amos Tversky (1979), is a behavioral economics theory that explains how people make decisions under risk and uncertainty. Unlike classical economics, which assumes rational decision-making, Prospect Theory shows that people’s choices are influenced by psychological biases and perceptions of gains and losses.
+
+---
+
+### **Key Principles of Prospect Theory**
+
+1. **Reference Dependence:**
+
+   * People evaluate outcomes relative to a reference point (usually their current state), not in absolute terms.
+   * Example: A salary increase from $30,000 to $35,000 feels better than a $100,000 to $105,000 increase, even though both are +$5,000.
+
+2. **Loss Aversion:**
+
+   * Losses loom larger than equivalent gains.
+   * Example: Losing ₹500 feels more painful than the pleasure of gaining ₹500.
+
+3. **Diminishing Sensitivity:**
+
+   * The psychological impact of changes decreases as we move further from the reference point.
+   * Example: The difference between gaining ₹100 and ₹200 feels bigger than between ₹1,100 and ₹1,200.
+
+4. **Probability Weighting:**
+
+   * People tend to overweight small probabilities and underweight large probabilities.
+   * Example: Buying lottery tickets (overestimating small chance of winning) or ignoring high-probability risks like accidents.
+
+---
+
+### **Graphical Representation (optional if time in exam):**
+
+* The value function is **S-shaped**:
+
+  * **Concave** for gains → risk-averse in gains.
+  * **Convex** for losses → risk-seeking in losses.
+  * **Steeper in losses** → shows loss aversion.
+
+---
+
+### **Illustrative Examples:**
+
+* **Gambling / Lotteries:**
+  People buy lottery tickets despite low chances of winning, because they overweight small probabilities.
+
+* **Insurance:**
+  People buy insurance to avoid small-probability, high-loss events, showing risk-averse behavior in losses.
+
+* **Salary Negotiations:**
+  Employees may reject a pay cut, even if it comes with better perks, due to strong aversion to losses.
+
+---
+
+### **Conclusion:**
+
+Prospect Theory challenges the classical assumption of rationality by showing that decision-making is influenced by psychological factors like **loss aversion, reference points, and probability distortions**. It provides a more realistic understanding of human behavior in economics and finance.
