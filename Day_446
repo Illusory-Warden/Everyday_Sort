@@ -1,0 +1,11 @@
+### 🔄 **AI Model Comparison Dashboard**
+
+This workflow takes a single user prompt, sends it to multiple AI models (such as OpenAI, Google Gemini, and Meta Llama), and aggregates their responses into a clean, CSS-styled HTML dashboard. It's designed for comparing AI outputs side-by-side in a user-friendly format.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/3711-compare-different-llm-responses-side-by-side-with-google-sheets/)
+
+---
+
+This template provides a complete, ready-to-use web application for generating high-quality AI prompts. It features a user-friendly web form where you can describe your goal, and it leverages an AI model (Google Gemini) to create a structured, reusable prompt for you.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/5289-ai-prompt-maker/)
