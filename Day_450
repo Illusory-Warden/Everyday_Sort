@@ -1,0 +1,52 @@
+### 1️⃣ Request Method
+
+In your `Tongyi 30B` and `GPT-OSS 20B` nodes, the **Request Method is set to GET**.
+
+* **OpenRouter chat completion API only accepts POST requests**.
+* That’s why it returns:
+
+  ```
+  The resource you are requesting could not be found
+  ```
+* Change the **Request Method** to **POST** in all HTTP Request nodes.
+
+---
+
+### 2️⃣ URL Typo
+
+In the screenshot, the URL you used is:
+
+```
+https://openrouter.ai/api/v1/chat/completions
+```
+
+* That part is correct, but double-check there’s no **extra slash or typo**.
+* OpenRouter expects exactly `/api/v1/chat/completions` with **POST**.
+
+---
+
+### 3️⃣ JSON Parameters
+
+* Make sure **JSON/RAW Parameters** is enabled (which it looks like you did).
+* Body should look like:
+
+```json
+{
+  "model": "openai/gpt-oss-20b",
+  "messages": [
+    {"role": "user", "content": "={{$json.prompt}}"}
+  ]
+}
+```
+
+---
+
+### ✅ Quick Fix Steps
+
+1. Open each HTTP Request node.
+2. Set **Request Method → POST**.
+3. Verify the URL: `https://openrouter.ai/api/v1/chat/completions`
+4. Keep **JSON/RAW Parameters ON**.
+5. Add header: `Authorization: Bearer {{$env.OPENROUTER_API_KEY}}`
+
+After these changes, your workflow should stop returning “resource not found.”
