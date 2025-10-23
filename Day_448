@@ -1,0 +1,37 @@
+### 🔍 1. **Compare Different LLM Responses Side-by-Side with Google Sheets**
+
+This workflow allows you to easily evaluate and compare the outputs of two language models (LLMs) before choosing one for production.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/3711-compare-different-llm-responses-side-by-side-with-google-sheets/)
+
+---
+
+### 🛒 2. **AI-Powered Product Research & Price Comparison with Google Search and OpenAI**
+
+This intelligent workflow acts as your personal shopping assistant, helping you quickly research products and find potential purchasing options based on your detailed descriptions.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/6664-ai-powered-product-research-and-price-comparison-with-google-search-and-openai/)
+
+---
+
+### 🧠 3. **Automate Competitor Research with Exa.ai, Notion, and AI Agents**
+
+This template automates competitor research by sending a source company to Exa.ai to find competitors. Each competitor is then analyzed by three AI agents to retrieve specific data points, which are compiled into a report and inserted into a Notion database.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/2354-automate-competitor-research-with-exaai-notion-and-ai-agents/)
+
+---
+
+### 🧩 4. **Visual Regression Testing with Apify and AI Vision Model**
+
+This proof-of-concept template explores how to work with multimodal LLMs and their multi-image analysis capabilities. It compares two screenshots of a webpage taken at different timestamps and passes both to a multimodal LLM for a visual comparison of differences.
+
+🔗 [Explore the workflow](https://n8n.io/workflows/2419-visual-regression-testing-with-apify-and-ai-vision-model/)
+
+---
+
+### 📚 5. **Tutorial: Build an AI Workflow in n8n**
+
+This introductory tutorial guides you through building AI workflows with n8n. It shows how to construct a working AI-powered chat agent, which you can easily customize for your own purposes.
+
+🔗 [Read the tutorial](https://docs.n8n.io/advanced-ai/intro-tutorial/)
