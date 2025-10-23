@@ -1,0 +1,15 @@
+1. Takes a **prompt input** (`Prompt Input` node).
+2. Sends the prompt to **three different AI models** (`DeepSeek R1`, `Google Gemini`, `Llama 3.3 70B`) via HTTP requests.
+3. Merges the responses (`Merge AI Responses`).
+4. Generates a **styled HTML dashboard** (`Generate HTML`).
+5. Converts the HTML to a **file** (`Convert to File`).
+
+This is a fully working template for **AI response comparison dashboards** in n8n.
+
+---
+
+I can also provide **ready-to-use variations** if you want, like:
+
+* A **currency or stock price checker** using live APIs.
+* A **multi-AI summary generator** for texts or news.
+* A **daily report automation** that emails HTML dashboards.
