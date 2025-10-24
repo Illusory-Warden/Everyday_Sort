@@ -1,0 +1,42 @@
+Here’s how to **undo** what you did with
+`git add .` (i.e., you added files to the staging area but haven’t committed yet).
+
+---
+
+### 🧭 Scenario 1: You only ran `git add .` (no commit yet)
+
+To **unstage all files**, run:
+
+```bash
+git reset
+```
+
+✅ This will unstage everything you just added — your working directory (the actual files) will remain unchanged.
+
+If you want to unstage a specific file:
+
+```bash
+git reset <filename>
+```
+
+---
+
+### 🧭 Scenario 2: You also want to discard file changes completely
+
+If you want to **discard changes** (go back to how the files were in the last commit):
+
+```bash
+git restore .
+```
+
+⚠️ This will delete all modifications you made after the last commit.
+
+---
+
+### 🔄 Summary:
+
+| Action                  | Command                |
+| ----------------------- | ---------------------- |
+| Unstage all added files | `git reset`            |
+| Unstage one file        | `git reset <filename>` |
+| Discard local changes   | `git restore .`        |
