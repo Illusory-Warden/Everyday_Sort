@@ -1,0 +1,25 @@
+### 🟢 **Easiest Azure Experiments (equivalent to your AWS ones)**
+
+| **AWS Practical No.** | **AWS Task**                  | **Azure Equivalent**                              | **Difficulty** | **Notes / What to Do in Azure Portal**                                        |
+| --------------------- | ----------------------------- | ------------------------------------------------- | -------------- | ----------------------------------------------------------------------------- |
+| 1                     | *Intro to Cloud Computing*    | Same — overview of **Azure, AWS, GCP**            | ⭐ Very Easy    | Just theoretical — can write about “Azure services & regions”                 |
+| 2                     | *EC2 Windows Instance*        | **Create Azure Virtual Machine (Windows)**        | ⭐ Easy         | Go to “Virtual Machines” → Create VM → Select Windows OS → Connect via RDP    |
+| 3                     | *S3 Bucket and upload file*   | **Create Azure Storage Account → Blob Container** | ⭐ Easy         | Create a storage account → Blob container → Upload file                       |
+| 5                     | *IAM User, Group, Policy*     | **Create Azure AD User & Role Assignments**       | ⭐ Easy         | Go to “Microsoft Entra ID” → Add user → Assign role (like Reader/Contributor) |
+| 6                     | *Elastic Block Storage (EBS)* | **Attach Managed Disk to VM**                     | ⭐⭐ Medium Easy | Create disk → Attach to VM → Verify from OS                                   |
+| 7                     | *Elastic/Static IP*           | **Assign Public IP to Azure VM**                  | ⭐⭐ Medium Easy | In VM networking → Associate a static public IP                               |
+| 8                     | *Elastic Load Balancer*       | **Azure Load Balancer**                           | 🔸 Medium      | Create 2 VMs → Load Balancer → Add backend pool                               |
+| (extra)               | *Docker + Elastic Beanstalk*  | **Azure App Service (with Docker)**               | 🔸 Medium      | Use “App Service” → Deploy a simple Docker container                          |
+
+---
+
+### ✅ **If you need to do 6 easy Azure practicals, choose these:**
+
+1. Intro to Cloud Computing (Theoretical)
+2. Create Azure Virtual Machine (Windows)
+3. Create Azure Storage Account & Blob Container
+4. Create Azure AD User and Assign Role
+5. Attach Managed Disk to VM
+6. Assign Static Public IP to VM
+
+These are all GUI-based and quick to do using the **Azure Portal (no CLI required)**.
