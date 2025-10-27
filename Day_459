@@ -1,0 +1,72 @@
+## 🧠 **What Is a “User” in Microsoft Entra ID (Azure Active Directory)?**
+
+* **Microsoft Entra ID** (formerly **Azure Active Directory / Azure AD**) is **Azure’s identity and access management service**.
+* A **User** in Entra ID is anyone who can **sign in** to your organization’s resources (like Azure Portal, Microsoft 365, VMs, or applications).
+* Each user has:
+
+  * A **username / email (UPN)** (like `name@mydomain.onmicrosoft.com`)
+  * **Password** or authentication method
+  * **Roles / permissions** that decide what they can do
+
+---
+
+## 🧑‍💻 **Types of Users**
+
+1. **Member Users**
+   → Users created *inside your own organization’s Entra tenant*.
+   (Example: your classmates or internal team members.)
+
+2. **Guest Users**
+   → External users added from outside (e.g. Gmail, another Azure tenant).
+   (Useful for collaborations.)
+
+---
+
+## ⚙️ **How to Add a User (Member) in Entra ID**
+
+Here’s the **step-by-step** method from the Azure Portal:
+
+1. **Go to Azure Portal:**
+   👉 [https://portal.azure.com](https://portal.azure.com)
+
+2. **Open Microsoft Entra ID:**
+
+   * In the left menu, click **Microsoft Entra ID** (or search for it).
+
+3. **Select “Users”** from the side menu.
+
+4. Click **➕ New user → Create new user**
+
+5. Fill in details:
+
+   * **User name** → e.g. `student1@yourtenant.onmicrosoft.com`
+   * **Name** → Full name
+   * **Password** → Auto-generated or custom
+   * Optionally assign a **Role** (like *User*, *Global Reader*, *Contributor*)
+
+6. Click **Review + Create → Create**
+
+✅ The new user is now added to your tenant.
+
+---
+
+## 👥 **How to Add Other Members (Existing Users or Guests)**
+
+If you want to invite external users:
+
+1. In Entra ID → **Users → New user → Invite external user**
+2. Enter their **email address**
+3. They’ll get an **invitation email** to join your tenant as a **Guest**.
+
+They’ll appear under **Users** with the *user type = Guest*.
+
+---
+
+## 🧾 **Optional Step – Add to Group**
+
+If you’re organizing users:
+
+1. Go to **Groups → New group**
+2. Choose **Security** group
+3. Add members (the users you created)
+4. Use this group to assign access permissions together.
