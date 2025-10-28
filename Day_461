@@ -1,0 +1,91 @@
+## 🧩 **Assignment 1 vs DAA Innovative Method 1**
+
+**Instruction File:** *DAA Innovative Method 1.pdf*
+**Student File:** *Assignment_1.pdf*
+
+### ✅ Matching Requirements:
+
+| Instruction Section          | Present in Assignment_1 | Remarks                                                                                       |
+| ---------------------------- | ----------------------- | --------------------------------------------------------------------------------------------- |
+| **1. Problem Definition**    | ✔️                      | Clearly explains the real-world problem (clique detection in social networks, biology, etc.). |
+| **2. Algorithm Explanation** | ✔️                      | Bron–Kerbosch algorithm described with main technique (backtracking) and step-by-step logic.  |
+| **3. Inputs & Outputs**      | ✔️                      | Input and output examples for graph cliques are provided.                                     |
+| **4. Performance Analysis**  | ✔️                      | Discusses time complexity (O(3^{n/3})), space complexity, and efficiency trade-offs.          |
+| **5. Conclusion**            | ✔️                      | Summarizes use-cases and limitations clearly.                                                 |
+| **6. Class of Problem**      | ✔️                      | Correctly classified as NP-Complete.                                                          |
+| **Formatting & Length**      | ✔️                      | Two-page structured report with relevant content.                                             |
+
+### ⚠️ Minor Suggestions:
+
+* Could include a **simple diagram or example visualization** to enhance clarity (as suggested in instructions).
+* “Efficiency” and “Limitations” could be formatted as bullet points for readability.
+
+**✅ Verdict:** Fully compliant — **Excellent implementation** of Innovative Method 1.
+
+---
+
+## 💻 **Assignment 2 vs DAA Innovative Method 2**
+
+**Instruction File:** *DAA Innovative Method 2.pdf*
+**Student File:** *Assignment_2.pdf*
+
+### ✅ Matching Requirements:
+
+| Component                      | Present | Remarks                                                                          |
+| ------------------------------ | ------- | -------------------------------------------------------------------------------- |
+| **Pseudocode / Source Code**   | ✔️      | Well-written pseudocode (Bron–Kerbosch with pivot) + full Java code.             |
+| **Dry Run / Trace Table**      | ✔️      | Step-by-step trace table with example graph (A–E) and intermediate sets.         |
+| **Flowchart / Visualization**  | ✔️      | ASCII flowchart structure included — meets the visualization requirement.        |
+| **Code Explanation**           | ✔️      | Explains functions, recursion, and stopping conditions thoroughly.               |
+| **Complexity & Problem Class** | ✔️      | Time and space complexity correctly stated; mentions NP-complete classification. |
+
+### ⚠️ Missing / Improvement Points:
+
+* **Video Demonstration:** The instruction mentions a *1–2 minute video explanation* with voice and code execution — not referenced in the PDF.
+* **Flowchart Format:** While an ASCII flowchart is acceptable, a **visual diagram (draw.io / Canva / PowerPoint)** would align more closely with the “visualization” part of the Innovative Method.
+
+**✅ Verdict:** **Almost perfect.** All technical and documentation requirements met; only the **video** component and **neat visual flowchart** are missing.
+
+---
+
+## 🎨 **Assignment 3 vs DAA Innovative Method 3**
+
+**Instruction File:** *DAA Innovative Method 3.pdf*
+**Student File:** *Assignment_3.pdf*
+
+### ✅ Matching Requirements:
+
+| Component                          | Present | Remarks                                                                                      |
+| ---------------------------------- | ------- | -------------------------------------------------------------------------------------------- |
+| **Algorithm Name**                 | ✔️      | “Graph Clique Detection Algorithm” clearly mentioned.                                        |
+| **Problem / Objective**            | ✔️      | States community detection and dense network identification.                                 |
+| **High-Level Flowchart / Diagram** | ✔️      | Flowchart included (structured and readable).                                                |
+| **Pseudocode**                     | ✔️      | Clean step-by-step Bron–Kerbosch algorithm provided.                                         |
+| **Real-World Application / Image** | ⚠️      | Real-world examples described textually, but **no visual image or infographic** is included. |
+| **Complexity (Time & Space)**      | ✔️      | Included as (O(3^{n/3})) and (O(n)).                                                         |
+| **Algorithm Class**                | ✔️      | Marked as NP-Complete.                                                                       |
+| **References & Footer Info**       | ✔️      | Proper citations, UID, faculty name, and submission details given.                           |
+
+### ⚠️ Missing / Improvement Points:
+
+* Poster layout should be **graphically designed (A3 format)** with icons or diagrams — current version is text-heavy.
+* Including **real-world application image(s)** (e.g., a social network graph) would fulfill the poster’s visual requirement.
+
+**✅ Verdict:** Meets all informational requirements; **needs creative visual formatting** to be considered a “poster presentation.”
+
+---
+
+## 🧾 **Final Summary**
+
+| Assignment       | Corresponding Instruction | Overall Fit | Major Flaws                                 |
+| ---------------- | ------------------------- | ----------- | ------------------------------------------- |
+| **Assignment_1** | DAA Innovative Method 1   | ✅ Excellent | None                                        |
+| **Assignment_2** | DAA Innovative Method 2   | ✅ Very Good | Missing video + visual flowchart            |
+| **Assignment_3** | DAA Innovative Method 3   | ✅ Good      | Not visually styled as poster; lacks images |
+
+---
+
+### 🏁 **Final Evaluation**
+
+All three of your assignments **follow the core academic and technical instructions** very well.
+Only **presentation and multimedia components** (video + visuals) need minor adjustments to reach *full compliance* with the Innovative Method expectations of Prof. Pradnya Moon.
