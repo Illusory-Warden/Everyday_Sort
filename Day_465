@@ -1,0 +1,70 @@
+### 🧮 Scenario
+
+* You **buy** a stock for ₹1000 (delivery, i.e. CNC order).
+* Tomorrow, you **sell** it when the price has increased **11%**, so:
+  [
+  \text{Sell price} = 1000 \times 1.11 = ₹1110
+  ]
+* You make a **₹110 profit** before charges.
+
+Now let’s calculate **Groww’s actual delivery trading charges**.
+
+---
+
+### ⚙️ Groww Delivery (CNC) Charges Breakdown
+
+| Type                                 | Charge                                   | Notes                                |
+| ------------------------------------ | ---------------------------------------- | ------------------------------------ |
+| **Brokerage**                        | ₹0                                       | Groww offers *free* equity delivery. |
+| **STT (Securities Transaction Tax)** | 0.1% on both buy & sell                  | Applied by government.               |
+| **Exchange Transaction Charges**     | ~0.00345% (NSE)                          | Exchange fee.                        |
+| **SEBI Charges**                     | ₹10 per crore (≈ 0.0001%)                | Negligible.                          |
+| **Stamp Duty (Buy side only)**       | 0.015%                                   | On purchase value.                   |
+| **GST**                              | 18% on (brokerage + transaction charges) | Small amount.                        |
+
+---
+
+### 🧾 Step-by-Step Costing
+
+#### 1️⃣ Buy Side:
+
+| Component        | Rate                | Amount      |
+| ---------------- | ------------------- | ----------- |
+| STT              | 0.1% of ₹1000       | ₹1.00       |
+| Exchange Charges | 0.00345% of ₹1000   | ₹0.0345     |
+| SEBI             | 0.0001% of ₹1000    | ₹0.001      |
+| Stamp Duty       | 0.015% of ₹1000     | ₹0.15       |
+| GST              | 18% of (0 + 0.0345) | ₹0.0062     |
+| **Total (Buy)**  |                     | **≈ ₹1.19** |
+
+---
+
+#### 2️⃣ Sell Side:
+
+| Component        | Rate                | Amount      |
+| ---------------- | ------------------- | ----------- |
+| STT              | 0.1% of ₹1110       | ₹1.11       |
+| Exchange Charges | 0.00345% of ₹1110   | ₹0.0383     |
+| SEBI             | 0.0001% of ₹1110    | ₹0.0011     |
+| GST              | 18% of (0 + 0.0383) | ₹0.0069     |
+| **Total (Sell)** |                     | **≈ ₹1.16** |
+
+---
+
+### ✅ Final Summary
+
+| Description                    |      Amount |
+| ------------------------------ | ----------: |
+| **Buy Price**                  |    ₹1000.00 |
+| **Sell Price**                 |    ₹1110.00 |
+| **Gross Profit**               |     ₹110.00 |
+| **Total Charges (Buy + Sell)** |       ₹2.35 |
+| **Net Profit**                 | **₹107.65** |
+
+---
+
+### 💡 Conclusion
+
+If you buy a stock at ₹1000 on Groww and sell it the next day at ₹1110 (11% rise):
+
+> 🏁 **Your take-home profit ≈ ₹107.65** after all charges.
