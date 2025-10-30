@@ -1,0 +1,29 @@
+Let’s find the first five terms step by step.
+
+We’re told:
+[
+a = 1 \quad \text{(first term)}, \quad r = \frac{1}{2} \quad \text{(common ratio)}
+]
+
+---
+
+### Formula for the ( n )th term of a geometric progression:
+
+[
+u_n = a , r^{,n-1}
+]
+
+Now calculate each term:
+
+* ( u_1 = 1 \times \left(\frac{1}{2}\right)^{0} = 1 )
+* ( u_2 = 1 \times \left(\frac{1}{2}\right)^{1} = \frac{1}{2} )
+* ( u_3 = 1 \times \left(\frac{1}{2}\right)^{2} = \frac{1}{4} )
+* ( u_4 = 1 \times \left(\frac{1}{2}\right)^{3} = \frac{1}{8} )
+* ( u_5 = 1 \times \left(\frac{1}{2}\right)^{4} = \frac{1}{16} )
+
+---
+
+✅ **First five terms:**
+[
+1, ; \frac{1}{2}, ; \frac{1}{4}, ; \frac{1}{8}, ; \frac{1}{16}
+]
