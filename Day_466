@@ -1,0 +1,51 @@
+Let’s solve this carefully step by step.
+
+We’re given the GP:
+[
+2, -6, 18, \ldots
+]
+
+---
+
+### 🔹 Step 1: Identify the first term and common ratio
+
+[
+a = 2
+]
+
+To find the common ratio (r):
+[
+r = \frac{-6}{2} = -3
+]
+
+---
+
+### 🔹 Step 2: Formula for the (n)th term of a geometric progression
+
+[
+u_n = a , r^{,n-1}
+]
+
+Substitute (a = 2), (r = -3), and (n = 7):
+
+[
+u_7 = 2 \times (-3)^{7 - 1} = 2 \times (-3)^6
+]
+
+---
+
+### 🔹 Step 3: Simplify
+
+[
+(-3)^6 = 729
+]
+[
+u_7 = 2 \times 729 = 1458
+]
+
+---
+
+✅ **Final Answer:**
+[
+\boxed{u_7 = 1458}
+]
