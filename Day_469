@@ -1,0 +1,20 @@
+1. Make sure you’re still inside the project folder:
+
+   ```
+   C::\Users\Invoice\simple-invoice
+   ```
+2. Run this:
+
+   ```bash
+   npm run serve
+   ```
+3. Wait a few seconds — you’ll see something like:
+
+   ```
+   App running at:
+     - Local: http://localhost:3000/
+   ```
+4. Open that address in your browser (usually [http://localhost:3000](http://localhost:3000)).
+
+🎉 Your **invoice generator website** will now be live locally!
+
