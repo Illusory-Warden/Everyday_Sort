@@ -1,0 +1,8 @@
+# Go to your project folder
+cd C:\Users\....
+
+# Set the Node legacy OpenSSL option
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+
+# Start the dev server
+npm run serve
