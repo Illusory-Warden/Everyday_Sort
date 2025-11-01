@@ -1,0 +1,12 @@
+Recursive Control Structures
+ Handled differently—by recurrence relations.
+ Example:
+ int fact(int n) 
+{ if (n == 0) return 1; 
+return n * fact(n - 1); } 
+Time Complexity: T(n) = T(n-1) + O(1)
+ T(n) = O(n)
+
+
+A fun fact....
+DAA is easy....
