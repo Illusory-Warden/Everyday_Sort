@@ -1,0 +1,23 @@
+Analysis of Code and Algorithm
+
+Approach: Bottom-up Dynamic Programming.
+
+Optimal Substructure: Each subproblem’s optimal solution contributes to the global optimal solution.
+
+Overlapping Subproblems: Subproblems are reused, avoiding redundant computation.
+
+Time Complexity:
+
+O(nW), where n = number of items, and W = knapsack capacity.
+
+Space Complexity:
+
+O(nW), due to the 2D DP table.
+
+Can be optimized to O(W) using a 1D array (space optimization).
+
+Efficiency Discussion:
+
+Efficient for moderate values of W.
+
+For very large W, the pseudo-polynomial time can be a limitation.
