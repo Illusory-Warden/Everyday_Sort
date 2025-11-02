@@ -1,0 +1,20 @@
+Algorithm
+
+Algorithm: 0/1 Knapsack (Dynamic Programming)
+
+Input:
+Number of items n, arrays profit[] and weight[], and knapsack capacity W.
+
+Initialize:
+Create a 2D array K[n+1][W+1].
+
+For i = 0 to n
+a. For w = 0 to W
+  • If i == 0 or w == 0, then K[i][w] = 0
+  • Else if weight[i-1] <= w
+    → K[i][w] = max(profit[i-1] + K[i-1][w - weight[i-1]], K[i-1][w])
+  • Else
+    → K[i][w] = K[i-1][w]
+
+Output:
+K[n][W] → maximum achievable profit.
