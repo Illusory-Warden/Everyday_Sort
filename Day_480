@@ -1,0 +1,39 @@
+* **P** = “He is poor”
+* **C** = “He is clever”
+* **H** = “He is honest”
+
+---
+
+### Step 2: Understand the English sentence
+
+> “It is false that he is poor or clever but not honest.”
+
+Let’s rephrase in simpler logical English:
+
+> It is **not true** that [(he is poor or clever) and (he is not honest)].
+
+---
+
+### Step 3: Build the inner part first
+
+* “He is poor or clever” → ( P \lor C )
+* “He is not honest” → ( \neg H )
+* “(He is poor or clever) but not honest” → ( (P \lor C) \land \neg H )
+
+---
+
+### Step 4: Add the outer negation
+
+“It is false that …” means we put a negation (¬) in front.
+
+[
+\neg[(P \lor C) \land \neg H]
+]
+
+---
+
+### ✅ Final Logical Formula:
+
+[
+\boxed{\neg[(P \lor C) \land \neg H]}
+]
