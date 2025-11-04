@@ -1,0 +1,13 @@
+Simplifying  **¬(p ∨ q)** step by step using **De Morgan’s Law**:
+
+[
+¬(p ∨ q) ≡ (¬p) ∧ (¬q)
+]
+
+✅ **Final Answer:**
+[
+¬(p ∨ q) = (¬p) ∧ (¬q)
+]
+
+**Meaning:**
+The negation of “p or q” is logically equivalent to “not p and not q.”
