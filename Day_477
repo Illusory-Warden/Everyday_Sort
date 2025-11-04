@@ -1,0 +1,31 @@
+* (B): “It’s your birthday.”
+* (C): “There will be a cake.”
+* (P): “There is a party.”
+
+Then the sentence “It’s your birthday **or** there will be a cake, **then** there is a party” translates to the implication:
+
+[
+(B \lor C) \to P
+]
+
+### Equivalent forms
+
+* Using implication-as-disjunction:
+  [
+  (B \lor C) \to P \equiv \lnot(B \lor C)\ \lor\ P
+  ]
+  which by De Morgan is
+  [
+  (\lnot B \land \lnot C)\ \lor\ P.
+  ]
+
+* Contrapositive (logically equivalent):
+  [
+  \lnot P \to (\lnot B \land \lnot C).
+  ]
+
+### Useful inferences
+
+* If you know (B) is true, then (B \lor C) is true, and by modus ponens you get (P).
+  (So: if it *is* your birthday, there must be a party.)
+* If (\lnot P) is true (no party), contrapositive tells you both (\lnot B) and (\lnot C) must hold (not your birthday and no cake).
