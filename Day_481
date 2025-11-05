@@ -1,0 +1,124 @@
+## **Experiment No. 10**
+
+### **Aim**
+
+To understand the concept of **NP (Non-deterministic Polynomial time)**, **NP-Complete**, and **NP-Hard** problems, and to study examples illustrating their classifications and relationships in computational complexity theory.
+
+---
+
+### **Theory**
+
+#### **1. Introduction to Computational Complexity**
+
+In algorithm design and analysis, problems are classified based on the **resources required** to solve them — primarily **time** and **space**. The study of computational complexity focuses on determining how efficiently a problem can be solved and whether it can be solved in **polynomial time** (i.e., in time proportional to a polynomial function of the input size).
+
+#### **2. Classes of Problems**
+
+1. **P (Polynomial Time)**
+
+   * Problems that can be solved by a **deterministic Turing machine** in polynomial time.
+   * Example: Sorting algorithms, Matrix multiplication, Shortest path (Dijkstra’s algorithm).
+
+2. **NP (Non-deterministic Polynomial Time)**
+
+   * Problems for which a given solution can be **verified** in polynomial time, even if finding the solution may not necessarily be polynomial.
+   * Example: Hamiltonian Cycle, Subset Sum Problem, Travelling Salesman Problem (TSP).
+
+3. **NP-Complete Problems**
+
+   * These are the **hardest problems in NP**.
+   * A problem is **NP-Complete** if:
+
+     * It is in **NP**, and
+     * Every other problem in NP can be **reduced** to it in polynomial time.
+   * Example: Satisfiability Problem (SAT), 3-SAT, Travelling Salesman Problem (decision version).
+
+4. **NP-Hard Problems**
+
+   * Problems that are **at least as hard as NP-Complete problems**, but **not necessarily in NP** (i.e., they may not have solutions that can be verified in polynomial time).
+   * Example: Optimization version of TSP, Halting Problem.
+
+#### **3. Relationship Between P, NP, NP-Complete, and NP-Hard**
+
+The relationship among these classes is generally depicted as:
+
+```
+P ⊆ NP ⊆ NP-Complete ⊆ NP-Hard
+```
+
+However, whether **P = NP** remains one of the greatest **open questions in computer science**.
+
+#### **4. Polynomial-Time Reduction**
+
+* A method to transform one problem into another in **polynomial time**.
+* It is used to prove that a problem is **NP-Complete** by reducing a known NP-Complete problem to it.
+
+---
+
+### **Algorithm (Example: Polynomial-Time Verification for Subset Sum Problem)**
+
+**Problem Statement:**
+Given a set of integers, determine if there exists a subset whose sum equals a given target value.
+
+**Algorithm Steps:**
+
+1. Start with a set of integers `S` and a target value `T`.
+2. Generate all possible subsets of `S`.
+3. For each subset, calculate the sum of its elements.
+4. If any subset sum equals `T`, return **true** (solution exists).
+5. If no such subset exists, return **false**.
+6. End.
+
+*(Note: The decision version is in NP because verifying a given subset’s sum can be done in polynomial time, even though generating all subsets takes exponential time.)*
+
+---
+
+
+Given subset sums to target? true
+```
+
+**Edge Case:**
+If `target = 5` and subset `{1, 2}`, output will be `false`.
+
+---
+
+### **Analysis of Code and Algorithm**
+
+* **Logic Flow:**
+
+  * The algorithm accepts a subset as a proposed solution and checks if its sum equals the target value.
+  * This verification can be done in **O(k)** time, where `k` is the size of the subset.
+
+* **Time Complexity:**
+
+  * Verification step: **O(k)** → Polynomial in input size.
+  * Finding the subset (not part of this code) would require **O(2^n)**, which is exponential.
+
+* **Space Complexity:**
+
+  * **O(1)** additional space (ignoring input storage).
+
+* **Significance:**
+
+  * Demonstrates that even though finding the subset is hard (exponential), verifying a given subset is polynomial — thus fitting the definition of an **NP problem**.
+
+---
+
+### **Real-Life Applications**
+
+1. **Cryptography:**
+   Many cryptographic systems (e.g., RSA, knapsack-based systems) rely on the hardness of NP problems for security.
+
+2. **Scheduling and Resource Allocation:**
+   NP-hard problems like Job Scheduling, Bin Packing, and Travelling Salesman are used in logistics and manufacturing optimization.
+
+3. **Artificial Intelligence & Machine Learning:**
+   Problems involving combinatorial optimization, such as feature selection or path planning, often fall under NP-hard categories.
+
+---
+
+### **Conclusion**
+
+In this experiment, the concepts of **P**, **NP**, **NP-Complete**, and **NP-Hard** problems were studied and analyzed.
+We understood their **hierarchical relationships**, the idea of **polynomial-time verification**, and the importance of **reductions** in classifying problem complexities.
+This practical highlights the distinction between **solving** and **verifying** problems and the theoretical foundation underlying many real-world computational challenges.
