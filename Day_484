@@ -1,0 +1,33 @@
+[
+T(n) = \sum_{i=0}^{\log_2 n} 2^i \cdot C
+]
+
+This is a **geometric series** of the form:
+
+[
+\sum_{i=0}^{m} r^i
+]
+
+where:
+
+* (r) = **common ratio** of the geometric series. It’s how much each term is multiplied by to get the next term.
+* (m) = **last exponent** in the series. It determines how many terms there are.
+
+In our case:
+
+* (r = 2) because each level doubles the number of nodes, so the work goes (C, 2C, 4C, 8C, \dots)
+* (m = \log_2 n) because the recursion ends when the subproblem size becomes 1, which happens at level (\log_2 n).
+
+So the formula:
+
+[
+\sum_{i=0}^{m} r^i = \frac{r^{m+1}-1}{r-1}
+]
+
+becomes:
+
+[
+\sum_{i=0}^{\log_2 n} 2^i = \frac{2^{\log_2 n + 1}-1}{2-1} = 2n - 1
+]
+
+Hence, total work (T(n) = C \cdot (2n-1) = O(n)).
