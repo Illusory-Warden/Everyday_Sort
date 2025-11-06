@@ -1,0 +1,20 @@
+Level 0:             T(n)
+                     Work = C
+
+Level 1:       T(n/2)           T(n/2)
+               Work = C          Work = C
+               Total Work = 2C
+
+Level 2:    T(n/4)   T(n/4)   T(n/4)   T(n/4)
+            Work=C   Work=C   Work=C   Work=C
+            Total Work = 4C
+
+Level 3:  T(n/8) T(n/8) T(n/8) T(n/8) T(n/8) T(n/8) T(n/8) T(n/8)
+          Work=C  ...                              
+          Total Work = 8C
+
+...
+
+Level log2(n):  T(1) T(1) T(1) ... T(1)   (n nodes)
+                Work = C per node
+                Total Work = n*C
