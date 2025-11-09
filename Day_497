@@ -1,0 +1,33 @@
+### Step 1: Given statements
+
+1. ( a = b )
+2. ( b = c )
+
+---
+
+### Step 2: Deduction
+
+From those two, we can **logically conclude**:
+[
+a = c
+]
+
+---
+
+### Step 3: Expressing it as a logical formula
+
+We can write the whole rule like this:
+
+[
+[(a = b) \land (b = c)] \rightarrow (a = c)
+]
+
+---
+
+### ✅ Explanation
+
+* ( \land ) means “and.”
+* ( \rightarrow ) means “implies.”
+  So the formula reads:
+
+> “If ( a = b ) and ( b = c ), then ( a = c ).”
