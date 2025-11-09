@@ -1,0 +1,53 @@
+### Step 1: Define the propositions
+
+Let:
+
+* **C** = “I will go to class.”
+* **U** = “You come.”
+
+---
+
+### Step 2: Understand the sentence
+
+> “I will not go to class unless you come.”
+
+“Unless” can be tricky in logic!
+The phrase **‘A unless B’** means **‘If not B, then not A’** — or equivalently, **‘If A, then B.’**
+
+So here:
+
+> “I will not go to class unless you come”
+> means
+> “If you do not come, then I will not go to class.”
+
+---
+
+### Step 3: Write that in symbols
+
+“If not U, then not C” →
+[
+\neg U \rightarrow \neg C
+]
+
+---
+
+### Step 4 (Equivalent form):
+
+You can also express it as
+[
+C \rightarrow U
+]
+which reads: “If I go to class, then you come.”
+
+Both are logically equivalent.
+
+---
+
+✅ **Final logical formula:**
+[
+\boxed{\neg U \rightarrow \neg C}
+]
+or equivalently
+[
+\boxed{C \rightarrow U}
+]
