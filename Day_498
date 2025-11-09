@@ -1,0 +1,36 @@
+### Step 1: Assign propositions
+
+Let:
+
+* **P** = “He is poor”
+* **H** = “He is honest”
+
+---
+
+### Step 2: Understand the connector
+
+The word **“but”** in logic usually means the same as **“and” (∧)** — it just adds a contrast in English, not in logic.
+
+So,
+
+> “He is poor but he is honest”
+
+means logically the same as
+
+> “He is poor and he is honest.”
+
+---
+
+### ✅ Logical formula:
+
+[
+P \land H
+]
+
+---
+
+If you wanted to show the **contrast** implied by “but” (though it’s not formal logic), you could write something like:
+[
+P \land H \text{ with implied contrast between } P \text{ and } H
+]
+—but in strict propositional logic, it’s simply **P ∧ H**.
