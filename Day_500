@@ -1,0 +1,25 @@
+What is the purpose of the `novalidate` attribute on a `
+` element?
+
+It validates the form using Bootstrap's built-in rules.
+It disables the browser's native HTML5 form validation.
+It ensures the form cannot be submitted.
+It marks all fields as optional.  
+
+
+✅ **Correct answer:**
+**It disables the browser's native HTML5 form validation.**
+
+**Explanation:**
+Adding the **`novalidate`** attribute to a `<form>` tells the browser **not to perform its built-in HTML5 validation** when the form is submitted.
+
+This is useful if you want to **handle validation entirely with JavaScript** or a server-side process instead of relying on the browser’s default behavior.
+
+Example:
+
+```html
+<form novalidate>
+  <input type="email" required>
+  <button type="submit">Submit</button>
+</form>
+```
