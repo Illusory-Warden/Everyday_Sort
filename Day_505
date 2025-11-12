@@ -1,0 +1,13 @@
+If so, the **maximum wattage** depends on the specific **model** of Raspberry Pi. Here’s a quick breakdown:
+
+| Raspberry Pi Model                  | Typical Power Draw | Max Power (Watts)                     | Recommended PSU      |
+| ----------------------------------- | ------------------ | ------------------------------------- | -------------------- |
+| **Raspberry Pi Zero / Zero W**      | 0.5–1.5 W          | ~2.5 W                                | 5 V ⎓ 1 A            |
+| **Raspberry Pi 3 Model B / B+**     | 2.5–4 W            | ~6 W                                  | 5 V ⎓ 2.5 A          |
+| **Raspberry Pi 4 Model B (2–8 GB)** | 3–6 W              | ~15 W                                 | 5 V ⎓ 3 A (USB-C)    |
+| **Raspberry Pi 5**                  | 5–8 W              | ~25 W (under full load + peripherals) | 5 V ⎓ 5 A (USB-C PD) |
+
+🔹 **Important notes:**
+
+* The **max wattage** includes CPU, GPU, USB devices, and HDMI output under full load.
+* If you attach high-power peripherals (like SSDs, cameras, or displays), you should use a **higher-rated power supply** to prevent undervoltage.
