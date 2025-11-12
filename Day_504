@@ -1,0 +1,15 @@
+Here’s the detailed breakdown:
+
+| Specification                         | Detail                                                    |
+| ------------------------------------- | --------------------------------------------------------- |
+| **Power Supply Input**                | 5 V ⎓ 3 A (via USB-C)                                     |
+| **Typical Power Use**                 | 3 – 6 W (idle to moderate use)                            |
+| **Maximum Power Draw**                | ≈ 7.5 – 15 W (under full CPU + GPU + USB + HDMI load)     |
+| **Recommended PSU**                   | Official Raspberry Pi USB-C power supply (5 V 3 A = 15 W) |
+| **Absolute Max Current (board only)** | ~2.8 A at 5 V (without peripherals)                       |
+
+### ⚡ Key Points
+
+* The **maximum wattage** the Raspberry Pi 4 Model B can safely handle is **about 15 W**.
+* If you power heavy USB devices (like external SSDs or Wi-Fi dongles), use a **powered USB hub** or ensure your PSU can sustain the full 3 A.
+* Undervoltage warnings (lightning bolt icon) appear if power dips below 4.8 V — a sign your PSU or cable isn’t strong enough.
