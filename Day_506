@@ -1,0 +1,51 @@
+##  Bellman-Ford Algorithm Trace
+
+**Source Node:** 1
+**Total Vertices ($V$):** 7
+**Passes Required:** $V-1 = 6$
+
+### 1. Initialization (Before Pass 1)
+
+| Node $(v)$ | $\text{dist}[v]$ | $\text{pred}[v]$ |
+| :--------: | :--------------: | :---------------: |
+| 1          | 0                | NIL               |
+| 2          | $\infty$         | NIL               |
+| 3          | $\infty$         | NIL               |
+| 4          | $\infty$         | NIL               |
+| 5          | $\infty$         | NIL               |
+| 6          | $\infty$         | NIL               |
+| 7          | $\infty$         | NIL               |
+
+---
+
+### 2. Iterative Passes (Pass 1 through Pass 6)
+
+The table below tracks the final $\text{dist}$ and $\text{pred}$ values **after** each complete pass of relaxing all edges. Changes are **bolded**.
+
+| Node $(v)$ | Initial $\text{dist}$ | Pass 1 $\text{dist}$ | Pass 2 $\text{dist}$ | Pass 3 $\text{dist}$ | Pass 4 $\text{dist}$ | Pass 5 $\text{dist}$ | Pass 6 $\text{dist}$ |
+| :--------: | :-------------------: | :------------------: | :------------------: | :------------------: | :------------------: | :------------------: | :------------------: |
+| 1          | 0                     | 0                    | 0                    | 0                    | 0                    | 0                    | 0                    |
+| 2          | $\infty$              | **6** $(\mathbf{1})$ | **3** $(\mathbf{3})$ | **1** $(\mathbf{3})$ | 1 (3)                | 1 (3)                | 1 (3)                |
+| 3          | $\infty$              | **5** $(\mathbf{1})$ | **3** $(\mathbf{4})$ | 3 (4)                | 3 (4)                | 3 (4)                | 3 (4)                |
+| 4          | $\infty$              | **5** $(\mathbf{1})$ | 5 (1)                | 5 (1)                | 5 (1)                | 5 (1)                | 5 (1)                |
+| 5          | $\infty$              | **5** $(\mathbf{2})$ | **2** $(\mathbf{2})$ | **0** $(\mathbf{2})$ | 0 (2)                | 0 (2)                | 0 (2)                |
+| 6          | $\infty$              | **4** $(\mathbf{4})$ | 4 (4)                | 4 (4)                | 4 (4)                | 4 (4)                | 4 (4)                |
+| 7          | $\infty$              | **7** $(\mathbf{6})$ | **5** $(\mathbf{5})$ | **3** $(\mathbf{5})$ | 3 (5)                | 3 (5)                | 3 (5)                |
+
+*(The number in parentheses indicates the **predecessor node ($\text{pred}[v]$)** established in that pass.)*
+
+---
+
+## 3. Final Shortest Paths
+
+Since no relaxation occurred in Pass 4, 5, or 6, the final shortest paths are stable and there are **no negative cycles**.
+
+| Node $(v)$ | Final $\text{dist}[v]$ | Final $\text{pred}[v]$ | Shortest Path (from 1) | Weight Check |
+| :--------: | :--------------------: | :--------------------: | :--------------------: | :----------: |
+| **1** | $\mathbf{0}$             | NIL                    | **1** | 0            |
+| **2** | $\mathbf{1}$             | 3                      | **1 → 4 → 3 → 2** | $5 - 2 - 2 = 1$ |
+| **3** | $\mathbf{3}$             | 4                      | **1 → 4 → 3** | $5 - 2 = 3$ |
+| **4** | $\mathbf{5}$             | 1                      | **1 → 4** | $5$          |
+| **5** | $\mathbf{0}$             | 2                      | **1 → 4 → 3 → 2 → 5** | $5 - 2 - 2 - 1 = 0$ |
+| **6** | $\mathbf{4}$             | 4                      | **1 → 4 → 6** | $5 - 1 = 4$ |
+| **7** | $\mathbf{3}$             | 5                      | **1 → 4 → 3 → 2 → 5 → 7** | $5 - 2 - 2 - 1 + 3 = 3$ |
