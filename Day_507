@@ -1,0 +1,23 @@
+##  How it Handles Graph Types
+
+### 1. Directed Graphs (Digraphs)
+The Bellman-Ford algorithm is fundamentally designed for **directed, weighted graphs**.
+
+* **Operation:** It processes each edge $(u, v)$ in a single direction and uses the weight $w(u, v)$ for relaxation:
+    $$\text{dist}[v] = \min(\text{dist}[v], \text{dist}[u] + w(u, v))$$
+* **Application:** It correctly finds the shortest path distance from the source to all other nodes and can detect **negative cycles** if they exist.
+
+### 2. Undirected Graphs
+The algorithm can be applied to an undirected graph by converting it into an equivalent directed graph.
+
+* **Conversion:** For every undirected edge $(u, v)$ with weight $w$ in the original graph, you replace it with **two directed edges**:
+    1.  A directed edge $(u, v)$ with weight $w$.
+    2.  A directed edge $(v, u)$ with weight $w$.
+* **Negative Cycles in Undirected Graphs:** You must be extremely careful if the undirected graph contains **negative-weight edges**.
+    * If an undirected edge $(u, v)$ has a **negative weight** $w < 0$, the conversion creates a **negative cycle** of length 2: $u \to v \to u$ with a total weight of $w + w = 2w < 0$.
+    * Since Bellman-Ford's primary job is to **detect and signal** a negative cycle, if you apply it to an undirected graph with any negative-weight edge, it will correctly identify a negative cycle (the $u \leftrightarrow v$ pair) and typically will **not** yield the true shortest path, as the path length can be infinitely decreased by traversing this two-edge cycle repeatedly.
+
+**In summary:**
+
+* **Positive/Zero Weights:** It works perfectly.
+* **Negative Weights:** It works, but if a single negative edge exists in the undirected graph, it will immediately find a negative cycle (the two-edge cycle created by the conversion). For this reason, the **Dijkstra's algorithm** is usually preferred for undirected graphs with non-negative weights due to its superior efficiency.
