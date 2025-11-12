@@ -1,0 +1,38 @@
+### 🔍 1. Power limits of the Raspberry Pi 4 USB ports
+
+* The Pi 4’s **total USB power output** (for all ports combined) is **up to 1.2 A at 5 V = 6 W**, *if* your power supply is strong enough.
+* That’s shared across all USB devices — not per port.
+
+---
+
+### ⚙️ 2. Power draw of a Seagate Barracuda HDD
+
+* **2.5" drives (laptop-sized, USB-powered):**
+
+  * Idle: ~0.8 W
+  * Active (read/write): 2–5 W
+  * Spin-up surge: up to **1 A at 5 V = 5 W** or more (briefly)
+* **3.5" drives (desktop-sized):**
+
+  * Require **12 V** as well as **5 V**, meaning they **cannot** be powered by USB alone.
+  * Must be connected via an **external powered enclosure** or **separate adapter**.
+
+---
+
+### ⚠️ 3. What this means for your setup
+
+If your Seagate Barracuda HDD is **USB-powered (2.5")**, you are *right at the upper limit* of what the Raspberry Pi 4 can provide.
+When the HDD spins up or the CPU is also under load, it can:
+
+* Trigger **undervoltage warnings** (⚡ lightning icon).
+* Cause the HDD to **disconnect or corrupt data**.
+
+If it’s a **3.5" Barracuda**, you **must** use a **powered USB enclosure** or a **self-powered USB hub** — the Pi cannot power it directly.
+
+---
+
+### ✅ Recommended solution
+
+* Use the **official Raspberry Pi 4 power supply (5 V ⎓ 3 A)** — no third-party adapters.
+* If your HDD is **2.5"**, consider a **Y-cable (USB power booster)** or a **powered USB hub**.
+* If it’s **3.5"**, **external power is mandatory**.
