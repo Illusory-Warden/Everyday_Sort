@@ -1,0 +1,56 @@
+QUESTION BANK 
+Artificial Intelligence 
+Unit - 1 
+1. What is “Artificial Intelligence and Artificial Intelligence Technique”? Briefly explain 
+how AI Technique can be represented and list out some of the task domain of AI. 
+2. Define an intelligent agent and its types. 
+3. Define goal based agent. 
+4. Define learning agent. 
+5. Define utility agent. 
+6. Define reactive and proactive agent. 
+7. Define rational agent? 
+8. List down the characteristics of intelligent agent? 
+9. What are the four components to define a problem? Define them. 
+10. Explain in detail, the structure of different intelligent agents. 
+11. Define the following problem: 
+A) Tic-Tac-Toe problem B) 8 Puzzle Problem C) 8 Queens Problem 
+12. Define environment in AI. 
+13. What is PEAS representation of AI model? Explain with the help of example. 
+14. Discuss few examples of PEAS representation of AI model. 
+15. Discuss problem characteristics. 
+Unit – 2 
+16. How to define a problem as state space search? Discuss it with the help of an example. 
+17. Enumerate Classical “Water jug Problem”. Describe the state space for this problem and 
+also give the solution. 
+18. What is production system? Explain it with an example. Discuss the Characteristics of a 
+production system. 
+19. What are the design issues of searching problem? 
+20. Write productions rules for solving water jug problem. 
+21. Define monolithic and non-monolithic production system with the help of example. 
+22. Define partially commutative and non-partially commutative production system with the 
+help of example. 
+Unit – 3 
+23. Define uniformed search. 
+24. Define informed search. 
+25. Differentiate between uniformed and informed search. 
+26. Define BFS with the help of example. 
+27. Define DFS with the help of example. 
+28. Discuss the following search Technique with the help of an example. Also discuss the 
+benefits and shortcoming of each.  
+I. 
+II. 
+Breadth First Search.  
+Depth First Search. 
+29. Give an example of a problem for which breadth first search would work better than 
+depth first search. 
+30. What are the applications of BFS? 
+31. What are the applications of DFS?  
+32. How will you measure the problem-solving performance?  
+ANS:-Problem solving performance is measured with 4 factors. 
+1) Completeness - Does the algorithm (solving procedure) surely finds solution if really 
+the solution exists.  
+2) Optimality – If multiple solutions exits then do the algorithm returns optimal amongst 
+them. 
+3) Time requirement. 
+4) Space requirement. 
+33. Explain the concept of Bidirectional Search.
