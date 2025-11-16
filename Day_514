@@ -1,0 +1,10 @@
+An **Arithmetic Sequence** and an **Arithmetic Series** both use the **same formula for the nᵗʰ term**:
+
+[
+T_n = a + (n - 1)d
+]
+
+✔ **Arithmetic Sequence** = the sequence itself
+✔ **Arithmetic Series** = the *sum* of the terms
+
+The nᵗʰ term formula belongs to the **sequence**, but it is also used when working with the **series**, because you often need (T_n) to find the sum.
