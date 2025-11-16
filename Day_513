@@ -1,0 +1,118 @@
+# Full Binary Tree
+
+Definition: every node has **0 or 2 children** (no node has exactly 1 child).
+
+Example (ASCII, root = A):
+
+```
+      A
+     / \
+    B   C
+   / \  / \
+  D  E F  G
+```
+
+Properties:
+
+* Internal nodes have exactly two children.
+* Leaves may be at different levels.
+* Not necessarily complete or perfect.
+
+---
+
+# Perfect Binary Tree
+
+Definition: all internal nodes have 2 children **and** all leaves are at the **same depth** (every level is completely filled).
+
+Example (height = 2, root = A):
+
+```
+        A
+      /   \
+     B     C
+    / \   / \
+   D  E  F  G
+```
+
+Properties / formula:
+
+* Number of nodes = (2^{h+1} - 1) where (h) = height (root at height 0).
+* Also a full tree and complete.
+
+---
+
+# Complete Binary Tree
+
+Definition: all levels are completely filled **except possibly the last**, and the last level’s nodes are filled **from left to right** with no gaps between nodes.
+
+Example (last level partially filled left-to-right):
+
+```
+        A
+      /   \
+     B     C
+    / \   /
+   D  E  F
+```
+
+Properties:
+
+* Good for array representation: nodes indexed 1..n with parent/child index formulas.
+* Every node except those on the last level has two children.
+* Last level fills left → right.
+
+---
+
+# Almost Complete Binary Tree (aka Nearly-Complete)
+
+Note: terminology varies. Many sources use “almost complete” interchangeably with **complete**. Sometimes it means “nearly complete but may violate strict left-filling by a small amount.” The **standard** definition used in most algorithms = **Complete Binary Tree** (see above).
+
+If someone distinguishes it, they might mean: “every level except maybe the last is full, and on the last level nodes are as far left as possible, but one or two structural relaxations allowed.” Because this is ambiguous, prefer the **Complete** definition unless a problem states otherwise.
+
+Small example (same as complete):
+
+```
+        A
+      /   \
+     B     C
+    / \   /
+   D  E  F
+```
+
+---
+
+# Binary Search Tree (BST)
+
+Definition: a **binary tree** where for every node:
+
+* all keys in the left subtree < node’s key, and
+* all keys in the right subtree > node’s key
+  (assuming strict ordering and no duplicates; duplicates have conventions).
+
+Example (inserting 8, 3, 10, 1, 6, 14, 4, 7):
+
+```
+        8
+       / \
+      3   10
+     / \    \
+    1   6    14
+       / \
+      4   7
+```
+
+Properties:
+
+* Inorder traversal gives sorted order.
+* Not necessarily balanced — worst-case height = n (degenerated linked list).
+* Balanced variants (AVL, Red-Black) enforce height guarantees.
+
+---
+
+# Quick comparison / checklist
+
+* Full? → every node has 0 or 2 children.
+* Perfect? → full **and** all leaves at same depth (completely filled).
+* Complete? → all levels full except last; last level filled left to right.
+* Almost complete? → usually same as complete; clarify if problem distinguishes.
+* BST? → ordering property (left < root < right).
