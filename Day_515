@@ -1,0 +1,38 @@
+## **📌 Formula for the nᵗʰ Term of an Arithmetic Sequence**
+
+If:
+
+* **a** = first term
+* **d** = common difference
+* **n** = term number
+
+Then the **nᵗʰ term** (**Tₙ**) is:
+
+[
+T_n = a + (n - 1)d
+]
+
+---
+
+## **🔍 Explanation**
+
+* The first term is **a**.
+* Each time you move to the next term, you add **d**.
+* After (n – 1) steps, you’ve added (n – 1)d.
+
+---
+
+## **✨ Example**
+
+**Sequence:** 5, 9, 13, 17, ...
+
+Here:
+
+* ( a = 5 )
+* ( d = 4 )
+
+Find the **7th term**:
+
+[
+T_7 = 5 + (7 - 1) \cdot 4 = 5 + 24 = 29
+]
