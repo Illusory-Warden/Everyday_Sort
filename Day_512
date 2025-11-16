@@ -1,0 +1,58 @@
+# ✅ **1. Brute Force**
+
+Try all possible permutations of cities.
+
+* Number of possible tours: ((n-1)!)
+* **Time Complexity:**
+  [
+  O(n!)
+  ]
+
+---
+
+# ✅ **2. Dynamic Programming — Held-Karp Algorithm**
+
+Uses bitmask DP to reduce work dramatically.
+
+* **Time Complexity:**
+  [
+  O(n^2 \cdot 2^n)
+  ]
+* **Space Complexity:**
+  [
+  O(n \cdot 2^n)
+  ]
+
+➡️ This is the fastest known exact solution.
+
+---
+
+# ✅ **3. Approximation / Heuristics**
+
+These don’t guarantee the optimal answer but run faster.
+
+### **Nearest Neighbor Heuristic**
+
+* **Time Complexity:**
+  [
+  O(n^2)
+  ]
+
+### **Christofides Algorithm** (for metric TSP)
+
+* **Time Complexity:**
+  [
+  O(n^3)
+  ]
+* Guaranteed ≤ 1.5× optimal.
+
+---
+
+# 📌 Summary Table
+
+| Algorithm        | Type          | Time Complexity |
+| ---------------- | ------------- | --------------- |
+| Brute Force      | Exact         | (O(n!))         |
+| Held–Karp DP     | Exact         | (O(n^2 2^n))    |
+| Nearest Neighbor | Heuristic     | (O(n^2))        |
+| Christofides     | Approximation | (O(n^3))        |
