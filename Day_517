@@ -1,0 +1,62 @@
+# ✅ **1. What are V, E, b, and m?**
+
+### **V and E (Graph Terminology)**
+
+Used in typical graph theory:
+
+* **V** = number of vertices (nodes)
+* **E** = number of edges
+  DFS time/space complexity in graph theory is:
+* Time: **O(V + E)**
+* Space: **O(V)**
+
+---
+
+# ✅ **2. b and m (Search Tree Terminology)**
+
+Used in *state-space search* (AI algorithms like DFS, BFS, A*, etc.):
+
+* **b = branching factor**
+  Number of children each node has on average.
+
+* **m = maximum depth**
+  How deep the search tree can go.
+
+This notation is used when DFS is applied as a **tree search**, not a graph traversal.
+
+---
+
+# ✅ **3. So what is O(bᵐ)?**
+
+### **O(bᵐ)** means:
+
+> The number of nodes DFS might explore in the **worst case**, for a tree of branching factor *b* and maximum depth *m*.
+
+Why?
+
+At each level, the number of nodes grows by a factor of **b**, so:
+
+* Level 0: 1 node
+* Level 1: b nodes
+* Level 2: b² nodes
+* …
+* Level m: bᵐ nodes
+
+DFS may go all the way to the bottom → exploring up to **bᵐ nodes**.
+
+Therefore:
+
+* **Time Complexity = O(bᵐ)**
+* **Space Complexity = O(bm)** (depth of the recursion stack)
+
+This applies in AI search textbooks (Russell & Norvig, etc.), not typical graph DFS.
+
+---
+
+# ✅ Summary Table
+
+| Context                 | Meaning              | DFS Time     | DFS Space |
+| ----------------------- | -------------------- | ------------ | --------- |
+| **Graph Theory (V, E)** | Real graph traversal | **O(V + E)** | **O(V)**  |
+| **AI Search (b, m)**    | Ideal branching tree | **O(bᵐ)**    | **O(bm)** |
+
