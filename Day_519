@@ -1,0 +1,43 @@
+## ✅ **Time Complexity of DFS**
+
+The time complexity depends on how the graph is represented.
+
+### **1. Adjacency List Representation**
+
+* Visiting every vertex: **O(V)**
+* Traversing every edge: **O(E)**
+  ➡️ **Total: O(V + E)**
+
+This is the most common representation.
+
+### **2. Adjacency Matrix Representation**
+
+* For each vertex, scanning an entire row of size V
+  ➡️ **O(V²)**
+
+---
+
+## ✅ **Space Complexity of DFS**
+
+DFS requires space for:
+
+### **1. Recursion stack** (or an explicit stack)
+
+* Worst-case depth of recursion = **O(V)**
+
+### **2. Visited array / bookkeeping**
+
+* Also **O(V)**
+
+➡️ **Total Space: O(V)**
+
+> If the graph is very deep (like a long chain), DFS recursion stack can reach V calls.
+
+---
+
+## 📌 **Final Summary**
+
+| Representation   | Time Complexity | Space Complexity |
+| ---------------- | --------------- | ---------------- |
+| Adjacency List   | **O(V + E)**    | **O(V)**         |
+| Adjacency Matrix | **O(V²)**       | **O(V)**         |
