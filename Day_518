@@ -1,0 +1,37 @@
+## ✅ Meaning of **O(b^m)**
+
+* **b** = *branching factor*:
+  the average number of children each node has.
+
+* **m** = *maximum depth* of the search (or the depth limit, if DFS).
+
+So **O(b^m)** describes how the number of nodes grows **exponentially** with depth.
+
+More depth → exponentially more nodes → more time and memory.
+
+---
+
+## 📌 Why O(b^m)?
+
+If each node has **b** children, then:
+
+* Level 0 has 1 node
+* Level 1 has b nodes
+* Level 2 has b² nodes
+* …
+* Level m has b^m nodes
+
+Total nodes explored in the worst case ≈ b^m
+➡️ Hence **O(b^m)**.
+
+---
+
+## 📘 Examples
+
+* If each node has **b = 3** children and depth **m = 5**, then:
+  nodes ≈ 3⁵ = 243
+
+* If you increase depth by just 1 →
+  nodes multiply by 3 (exponential!).
+
+---
