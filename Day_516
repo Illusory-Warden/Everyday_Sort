@@ -1,0 +1,56 @@
+Issue 1: Forward vs Backward Search
+
+
+
+“The tree can be searched forward from the initial node to the goal state or backwards from the goal state to the initial state.”
+
+
+2-unit
+
+Forward Search (Goal-directed search)
+
+Start from initial state
+
+Apply operators
+
+Move towards the goal
+
+✔ Used when:
+
+Initial state is known
+
+Goal test is easy
+
+Many possible goals
+
+Examples:
+
+8-puzzle
+
+Water jug
+
+Navigation problems
+
+Backward Search (Reverse search)
+
+Start from goal state
+
+Apply inverse operators
+
+Search backward until reaching the initial state
+
+✔ Used when:
+
+Goal state is clearly defined
+
+Fewer possible goal states
+
+Inverse rules are easy to compute
+
+Examples:
+
+Propositional logic proof
+
+Expert systems
+
+IDA* on some puzzles
