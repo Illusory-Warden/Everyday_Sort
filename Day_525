@@ -1,0 +1,26 @@
+
+│
+├── frontend/
+│
+├── Security/
+│
+├── backend/
+│   ├── __pycache_env/
+│   ├── __
+│   ├── mai
+│   ├── py
+│   └── requir
+├── frontend/
+│   ├── node_modules/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── componesx
+│   │   │   ├── PdfV
+│   │   │   └── Secu
+│   │   ├── App.jsx
+│   │   ├── index.jsx
+│   │   └──s
+│   ├── package-n
+│   └── pa/
+    └── __init__.py
