@@ -1,0 +1,54 @@
+# ✅ **Install Node.js 22 on Parrot OS (VM)**
+
+NodeSource provides the latest Node builds for Debian/Ubuntu, and Parrot OS works with them perfectly.
+
+### **1. Remove old Node (optional but clean)**
+
+```bash
+sudo apt remove nodejs -y
+sudo apt autoremove -y
+```
+
+### **2. Add NodeSource repo for Node 22**
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+```
+
+### **3. Install Node.js 22**
+
+```bash
+sudo apt install -y nodejs
+```
+
+### **4. Confirm version**
+
+```bash
+node -v
+npm -v
+```
+
+You should see:
+
+```
+v22.x.x
+```
+
+---
+
+# ✅ After installing Node 22
+
+Try running Gemini again:
+
+```bash
+gemini
+```
+
+It should now work — no more **"Invalid regular expression flags"** error.
+
+---
+
+# ⚠️ If you're inside a VM
+
+Sometimes VM networking or system time causes issues during installs. If you get errors, I can help fix them — just paste them here.
+
