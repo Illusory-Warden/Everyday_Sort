@@ -1,0 +1,78 @@
+# ❗ **Port 3001 is already in use**
+
+Your server is trying to start on port **3001**, but **something else is already running on that port** (maybe another instance of your backend).
+
+---
+
+# ✔ Fix 1 — Kill whatever is using port 3001
+
+Run this:
+
+```bash
+sudo lsof -i :3001
+```
+
+You will see something like:
+
+```
+node    1234   warden   3001
+```
+
+Kill it:
+
+```bash
+sudo kill -9 1234
+```
+
+Then try:
+
+```bash
+npm start
+```
+
+---
+
+# ✔ Fix 2 — Close all Node servers (quick fix)
+
+```bash
+sudo pkill node
+```
+
+Then run:
+
+```bash
+npm start
+```
+
+---
+
+# ✔ Fix 3 — Change your backend port temporarily
+
+Open your `server.js` and find something like:
+
+```js
+const PORT = 3001;
+```
+
+Change to:
+
+```js
+const PORT = 4000;
+```
+
+Then:
+
+```bash
+npm start
+```
+
+---
+
+# If you want, paste your **server.js** (only the part with `app.listen`)
+
+I can help adjust it or make it support **automatic port fallback** like:
+
+```js
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+```
