@@ -1,0 +1,203 @@
+---
+
+```python
+# app.py
+import os
+import uuid
+import json
+import time
+import asyncio
+import pdfplumber
+import aiohttp
+from pathlib import Path
+from fastapi import FastAPI, UploadFile, File, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from sentence_transformers import SentenceTransformer
+import chromadb
+from chromadb.config import Settings
+from sqlmodel import SQLModel, Field, Session, select, create_engine
+
+CONTEXT:
+{context}
+
+QUESTION:
+{query}
+
+If there is insufficient info in the context, say 'Not enough information in the document.' Provide a concise answer.
+"""
+
+    # call Perplexity (non-streaming)
+    if not PERPLEXITY_API_KEY:
+        answer = "PERPLEXITY_API_KEY not configured on server."
+    else:
+        async with aiohttp.ClientSession() as session:
+            headers = {"Authorization": f"Bearer {PERPLEXITY_API_KEY}", "Content-Type": "application/json"}
+            payload2 = {"model": "pplx-70b-chat", "messages": [{"role": "user", "content": prompt}]}
+            try:
+                async with session.post(PERPLEXITY_API_URL, json=payload2, headers=headers, timeout=60) as resp:
+                    if resp.status != 200:
+                        text = await resp.text()
+                        answer = f"Perplexity API returned status {resp.status}: {text}"
+                    else:
+                        data = await resp.json()
+                        answer = (
+                            data.get("choices", [{}])[0].get("message", {}).get("content")
+                            or data.get("answer")
+                            or json.dumps(data)
+                        )
+            except Exception as e:
+                answer = f"Error calling Perplexity: {e}"
+
+    save_message(chat_id, "assistant", answer)
+    return {"chat_id": chat_id, "response": answer}
+
+
+# ---------- STREAMING chat endpoint ----------
+@app.post("/chat-stream")
+async def chat_stream(request: Request):
+    """
+    Expects JSON body: { "chat_id": optional, "message": "...", "top_k": 4 }
+    Returns a chunked text/plain response that the frontend will read progressively.
+    """
+    payload = await request.json()
+    query = payload.get("message")
+    if not query:
+        raise HTTPException(status_code=400, detail="Missing 'message' in payload.")
+    chat_id = payload.get("chat_id") or str(uuid.uuid4())
+    top_k = int(payload.get("top_k", 4))
+
+    save_message(chat_id, "user", query)
+
+    qv = embed_query(query)
+    res = retrieve(qv, top_k)
+    docs = res.get("documents", [[]])[0] if res else []
+    metas = res.get("metadatas", [[]])[0] if res else []
+
+    context = ""
+    if docs:
+        context = "\n\n".join([f"Source: {metas[i].get('source','unknown')}\n{docs[i]}" for i in range(len(docs))])
+
+    prompt = f"""You are an assistant that must answer using ONLY the provided document context. Cite sources inline as SOURCE:filename when you use them.
+
+CONTEXT:
+{context}
+
+QUESTION:
+{query}
+
+If there is insufficient info in the context, say 'Not enough information in the document.' Provide a concise answer.
+"""
+
+    async def event_stream():
+        """
+        Generator that yields bytes/text chunks to client.
+        It accumulates the full assistant output and saves to DB at the end.
+        """
+        # Accumulate text to save final assistant message
+        buffer = ""
+
+        # If no API key configured -> immediate error text
+        if not PERPLEXITY_API_KEY:
+            yield "PERPLEXITY_API_KEY not configured on server."
+            return
+
+        headers = {"Authorization": f"Bearer {PERPLEXITY_API_KEY}", "Content-Type": "application/json"}
+        payload2 = {"model": "pplx-70b-chat", "messages": [{"role": "user", "content": prompt}], "stream": True}
+
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(PERPLEXITY_API_URL, json=payload2, headers=headers, timeout=120) as resp:
+                    if resp.status != 200:
+                        text = await resp.text()
+                        yield f"Error from Perplexity: {resp.status} {text}"
+                        return
+
+                    # Try to stream raw bytes. Different providers stream differently.
+                    # We read chunks, decode and yield them.
+                    async for raw_chunk in resp.content.iter_chunked(1024):
+                        if not raw_chunk:
+                            continue
+                        text_chunk = raw_chunk.decode(errors="ignore")
+                        if not text_chunk.strip():
+                            continue
+                        buffer += text_chunk
+                        # Yield the raw text chunk to the client
+                        yield text_chunk
+
+        except Exception as e:
+            # Streaming failed: fallback to a synchronous call
+            try:
+                async with aiohttp.ClientSession() as session2:
+                    payload_sync = {"model": "pplx-70b-chat", "messages": [{"role": "user", "content": prompt}]}
+                    async with session2.post(PERPLEXITY_API_URL, json=payload_sync, headers=headers, timeout=60) as r2:
+                        if r2.status != 200:
+                            txt = await r2.text()
+                            full = f"[Error calling Perplexity fallback: {r2.status} {txt}]"
+                        else:
+                            data = await r2.json()
+                            full = (
+                                data.get("choices", [{}])[0].get("message", {}).get("content")
+                                or data.get("answer")
+                                or json.dumps(data)
+                            )
+            except Exception as e2:
+                full = f"[Error calling Perplexity stream fallback: {e2}]"
+
+            # yield in smaller pieces to simulate streaming but without long sleeps
+            for i in range(0, len(full), 120):
+                chunk = full[i : i + 120]
+                buffer += chunk
+                yield chunk
+                await asyncio.sleep(0.01)
+
+        # After streaming completes, save assistant message to DB
+        try:
+            if buffer:
+                save_message(chat_id, "assistant", buffer)
+        except Exception:
+            # Do not crash the stream on DB save errors
+            pass
+
+        return
+
+    return StreamingResponse(event_stream(), media_type="text/plain")
+
+
+# If run directly, start uvicorn (optional convenience)
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)
+```
+
+---
+
+## Summary of fixes & improvements
+
+1. **Missing imports**: added `asyncio` and `Path` usage; ensure `aiohttp` is imported and used safely.
+2. **SQLite `create_engine`**: added `connect_args={"check_same_thread": False}` so the DB can be used in async contexts (FastAPI + sync SQLModel).
+3. **list_chats sorting bug**: previously sorted by `chat_id`; now returns chats sorted by most recent message timestamp.
+4. **Safe upload filenames**: upload now prefixes filenames with a UUID to avoid accidental overwrites and to keep multiple uploads of same name.
+5. **Robust ingest**:
+
+   * Skips unreadable/empty PDFs.
+   * Handles duplicate IDs in Chroma (tries to remove existing ids before adding).
+   * Catches `chroma.persist()` errors (some backends auto-persist).
+6. **Streaming endpoint robustness**:
+
+   * Fixed missing asyncio usage.
+   * Accumulates streamed chunks in `buffer` and saves the final assistant message into the DB at the end of the stream.
+   * Better fallback if streaming fails (makes a synchronous call and streams smaller chunks to client).
+7. **Safer retrieval**: `retrieve()` returns a safe structure on error to avoid KeyError.
+8. **Input validation**: endpoints validate presence of `message` in payloads.
+9. **Minor improvements**: path normalization via `pathlib`, error handling for API calls, more conservative timeouts.
+
+---
+
+## Running notes & things you may want to adjust
+
+* **PERPLEXITY_API_KEY** must be set in your environment for the app to call Perplexity. If you don't have it configured, the endpoints will return an explanatory message.
+* **Chroma DB & model**: the `all-MiniLM-L6-v2` model must be available; embeddings may consume RAM/time. Consider async or background workers for large ingestion tasks (but that's beyond this immediate fix).
+* **Production**: tighten CORS `allow_origins`, secure upload filenames, and consider authentication/authorization.
+* **Chroma behavior**: different Chroma versions/backends may behave slightly differently for `query`, `add`, `delete` operations; adapt error handling if your Chroma client differs.
