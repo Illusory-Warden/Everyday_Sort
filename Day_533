@@ -1,0 +1,32 @@
+This error, `Error: Cannot find module 't\node_modules\vite\bin\vite.js'`, indicates that the **Vite package is missing or corrupted** in your project's `node_modules` directory.
+
+The most common solution is to **reinstall your project's dependencies**.
+
+Here is the step-by-step fix:
+
+##  Solution: Reinstall Dependencies
+
+Since you are using `pnpm`, run the following command in the **`\apps\papra-client`** directory:
+
+```bash
+pnpm install
+```
+
+### Why this works:
+
+1.  The `pnpm install` command will read the dependencies listed in your `package.json` file.
+2.  It will download and correctly place all necessary packages, including **Vite**, into the `node_modules` folder, fixing the missing file error.
+
+### Next Step
+
+After the installation completes successfully, try running your development script again:
+
+```bash
+pnpm run dev
+```
+
+If the error persists, you might need to try a clean installation:
+
+1.  **Delete** the `node_modules` folder and the `pnpm-lock.yaml` file within `\apps\papra-client`.
+2.  Run `pnpm install` again.
+
