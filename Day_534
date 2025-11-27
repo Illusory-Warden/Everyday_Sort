@@ -1,0 +1,82 @@
+:root {
+  /* BACKGROUND / FOREGROUND (Pure White Theme) */
+  --background: 0 0% 100%; /* CHANGED: Pure White (0 0% 100%) */
+  --foreground: 0 0% 3.9%; /* Text Color (Near Black) */
+
+  --card: 0 0% 100%; /* CHANGED: Pure White Cards (0 0% 100%) */
+  --card-foreground: 0 0% 3.9%; /* Card Text Color (Near Black) */
+
+  --popover: 0 0% 100%; /* CHANGED: Pure White Popovers (0 0% 100%) */
+  --popover-foreground: 0 0% 3.9%; /* Popover Text Color (Near Black) */
+
+  /* PRIMARY ACCENT COLOR (New Strong Blue: H=220, S=93%, L=57%) */
+  --primary: 220 93% 57%; /* CHANGED: Strong Blue Accent */
+  --primary-foreground: 0 0% 100%; /* CHANGED: White text on primary button */
+
+  /* SECONDARY / MUTED */
+  --secondary: 0 0% 96.1%; /* Very Light Gray for secondary elements */
+  --secondary-foreground: 0 0% 9%;
+
+  --muted: 0 0% 96.1%; /* Muted backgrounds (e.g., info boxes) */
+  --muted-foreground: 0 0% 45.1%; /* Gray text on muted backgrounds */
+
+  --accent: 0 0% 96.1%; /* Accent backgrounds */
+  --accent-foreground: 0 0% 9%;
+
+  /* STATUS COLORS (Kept the original values) */
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 0%;
+
+  --warning: 31 98% 50%;
+  --warning-foreground: 0 0% 0%;
+
+  /* BORDERS / FOCUS */
+  --border: 0 0% 89.8%; /* Light gray borders */
+  --input: 0 0% 96.1%; /* CHANGED: Slightly lighter input background for contrast */
+  --ring: 220 93% 57%; /* CHANGED: Focus ring matches the new primary blue */
+
+  --radius: 0.5rem;
+}
+
+/* ------------------------------------------------------------------- */
+/* Dark Theme (UNTOUCHED - Copied Exactly) */
+/* ------------------------------------------------------------------- */
+[data-kb-theme="dark"] {
+  --background: 240 4% 10%;
+  --foreground: 0 0% 98%;
+
+  --card: 240 4% 8%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 240 4% 8%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 77 100% 74%;
+  --primary-foreground: 0 0% 9%;
+
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+
+  --warning: 31 98% 50%;
+  --warning-foreground: 0 0% 0%;
+
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+}
+
+* {
+  @apply border-border;
+}
+body {
+  @apply bg-background text-foreground;
+}
