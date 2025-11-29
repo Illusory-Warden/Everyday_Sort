@@ -1,0 +1,88 @@
+### **Core problems from your log**
+
+| Issue                                       | Why it failed                                                                                 |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `Error: Cannot find module 'simple-concat'` | Missing dependency in node_modules (corrupted install)                                        |
+| `node-gyp rebuild` fails                    | Because **Visual Studio C++ build tools are not installed**                                   |
+| Node **v22.20.0**                           | Canvas may not provide prebuilt binaries yet for such a new Node version → forces compilation |
+| EPERM cleanup warnings                      | Some old modules couldn’t be removed due to permissions                                       |
+
+---
+
+## FIX – Follow these steps in order
+
+### **STEP 1 — Remove corrupted node_modules**
+
+```sh
+rm -rf node_modules package-lock.json
+```
+
+or on Windows PowerShell:
+
+```ps
+rmdir -Force -Recurse node_modules
+del package-lock.json
+```
+
+---
+
+### **STEP 2 — Install Visual Studio C++ Build Tools (Required for canvas)**
+
+You **must install**:
+
+☑ *Desktop development with C++*
+☑ *MSVC v143 or later*
+☑ *Windows 10/11 SDK*
+
+Download Visual Studio Build Tools here:
+🔗 [https://visualstudio.microsoft.com/visual-cpp-build-tools/](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+
+---
+
+### **STEP 3 — Install Windows Build Tools (Alternative shortcut)**
+
+If you want an easier command-line install:
+
+```sh
+npm install --global windows-build-tools
+```
+
+(Requires Admin PowerShell)
+
+---
+
+### **STEP 4 — Install missing dependency manually**
+
+```sh
+npm install simple-concat simple-get
+```
+
+---
+
+### **STEP 5 — Try installing again**
+
+```sh
+npm install pdfjs-dist canvas
+```
+
+---
+
+## ⚠ Recommended (Important!)
+
+`canvas` may still fail on Node 22.
+Many users run it safely on **Node 18 or Node 20 LTS**.
+
+### If errors continue, switch Node version:
+
+```sh
+npm install -g nvm
+nvm install 20
+nvm use 20
+```
+
+Then reinstall:
+
+```sh
+npm install canvas
+```
+
