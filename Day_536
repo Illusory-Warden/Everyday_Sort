@@ -1,0 +1,39 @@
+### 🟩 **Power Factor (PF)**
+
+It is the ratio of **active power (kW)** to **apparent power (kVA)**:
+
+[
+\text{Power Factor} = \cos\phi = \frac{kW}{kVA}
+]
+
+It indicates how efficiently electrical power is being converted into useful work.
+
+---
+
+### 🟦 **Load Power Factor**
+
+This specifically refers to the **power factor of the load connected to the system**.
+
+Examples of loads:
+✔ Motors
+✔ Heaters
+✔ Transformers
+✔ Industrial machinery
+
+So,
+
+[
+\text{Load Power Factor} = \text{Power factor of the consuming load}
+]
+
+---
+
+### 🟨 Conclusion
+
+| Term                  | Meaning                  | Difference    |
+| --------------------- | ------------------------ | ------------- |
+| **Power Factor**      | General term for kW/kVA  | Common word   |
+| **Load Power Factor** | PF of the connected load | More specific |
+
+### 💬 So yes, they are same → **PF = Load PF**
+
