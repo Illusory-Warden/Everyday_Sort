@@ -1,0 +1,19 @@
+* Many routers support a feature called **Quality of Service (QoS)**, which lets you prioritise bandwidth for certain devices or types of traffic (e.g. gaming or video-calls) over others. ([Airtel][1])
+* Through the router’s admin settings (by logging in via its local IP, e.g. `192.168.1.1`) you can often **view all connected devices** and — depending on features — **block/unblock** or **disconnect** particular devices. ([Airtel][2])
+* Some newer routers / firmware versions might allow you to **pause internet access** for selected devices (e.g. “guest” devices), though this is more about blocking access rather than fine-tuned “slow-speed” throttling. ([YouTube][3])
+
+### ⚠️ What may **not** be possible (or is limited)
+
+* Not all routers — even those provided with Xstream Fiber — support speed-limiting for individual devices. Some only let you prioritise or deprioritise traffic but not strictly cap speeds. Users on forums of Xstream Fiber report that “there’s no easy option to manage individual device bandwidth.” ([Reddit][4])
+* Even if QoS is available, it does not guarantee that you can assign a fixed low speed (e.g. “restrict this device to 2 Mbps”). QoS typically prioritises one device over another, rather than enforcing strict caps. ([Broadband Forum][5])
+
+### 🔍 What you should do to check for yourself
+
+1. **Login to your router’s admin panel** — usually by visiting an IP like `192.168.1.1` (or as written on your router) on a web browser. Use your router username/password. ([Airtel][2])
+2. Look for settings like **“QoS”**, **“Bandwidth control/management”**, **“Connected devices / Attached devices”**, or **“MAC address filtering / device block”**.
+3. If available, enable QoS and try to *prioritise* one device (e.g. your PC or phone) — that helps you get better speed when many devices are connected.
+4. If QoS or bandwidth-control is not present, you can still **change the Wi-Fi password** (to prevent unwanted users) or **block specific devices** — which indirectly improves speeds for allowed users. ([Airtel][6])
+
+---
+
+
