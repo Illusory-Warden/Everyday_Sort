@@ -1,0 +1,174 @@
+# **Q1. Differentiate between Microservice Architecture and Traditional Monolithic Architecture.**
+
+Modern applications can be designed using either a **Monolithic** approach or a **Microservice** architecture. The difference between the two lies in how the application is structured, deployed, scaled, and maintained.
+
+---
+
+# ✅ **1. Definition**
+
+### **Monolithic Architecture**
+
+* The entire application is built as **one single, tightly-coupled unit**.
+* All modules (UI, business logic, database access, etc.) run together in the same codebase and same process.
+* A small change requires rebuilding and redeploying the entire application.
+
+### **Microservice Architecture**
+
+* The application is divided into **small, independent services**, each responsible for a specific business function.
+* Each microservice has its **own codebase**, may use **its own database**, and communicates using **lightweight APIs** (REST, gRPC, messaging).
+* Each service can be developed, deployed, scaled, and maintained independently.
+
+---
+
+# ✅ **2. Architecture Style**
+
+### **Monolithic**
+
+* **Single-tiered** and **tightly coupled**.
+* All features are packaged together (e.g., WAR/JAR file).
+* Scaling requires replicating the entire application.
+
+### **Microservices**
+
+* **Loosely coupled**, distributed architecture.
+* Each service can be written in different languages, versions, or frameworks.
+* Scaling is done **per service**; only the required service is scaled.
+
+---
+
+# ✅ **3. Deployment**
+
+### **Monolithic**
+
+* One large deployment unit.
+* Even minor updates require **redeployment of entire application**.
+* Downtime is more likely.
+
+### **Microservices**
+
+* Each microservice is deployed independently.
+* Supports **continuous deployment**, DevOps, and CI/CD pipelines.
+* Updates to one service do not bring down the entire system.
+
+---
+
+# ✅ **4. Technology Stack**
+
+### **Monolithic**
+
+* Must use **the same technology stack** end-to-end.
+* Hard to adopt new technologies gradually.
+
+### **Microservices**
+
+* Each service can choose **its own tech stack**.
+* Easier to experiment, adopt new frameworks, and evolve.
+
+---
+
+# ✅ **5. Scalability**
+
+### **Monolithic**
+
+* **Vertical scaling** (adding more CPU/RAM).
+* Inefficient because entire app is scaled even if only one module needs resources.
+
+### **Microservices**
+
+* **Horizontal scaling** (adding more instances of specific microservices).
+* Efficient & cost-effective scaling.
+
+---
+
+# ✅ **6. Fault Isolation**
+
+### **Monolithic**
+
+* A failure in one component can crash the **entire system**.
+* Debugging becomes complex due to tightly-coupled code.
+
+### **Microservices**
+
+* Failures are isolated to the **affected service only**.
+* Other services continue to run normally.
+
+---
+
+# ✅ **7. Development Process**
+
+### **Monolithic**
+
+* Hard for multiple teams to work simultaneously.
+* Merging code becomes complicated.
+* Slower development cycle.
+
+### **Microservices**
+
+* Each service can be handled by a **separate team** (“You build it, you run it”).
+* Enables **agile development**, parallel work, and faster releases.
+
+---
+
+# ✅ **8. Maintenance & Upgradability**
+
+### **Monolithic**
+
+* Hard to modify because all components are interconnected.
+* Technical debt increases over time.
+
+### **Microservices**
+
+* Easy to update or rewrite a single service without affecting others.
+* Supports long-term maintainability.
+
+---
+
+# ✅ **9. Database Management**
+
+### **Monolithic**
+
+* Usually uses **one common shared database**.
+* Leads to tightly coupled schema and data access.
+
+### **Microservices**
+
+* **Each service may have its own database** (SQL/NoSQL).
+* Reduces coupling, improves autonomy, but requires distributed data management.
+
+---
+
+# ✅ **10. Performance & Communication**
+
+### **Monolithic**
+
+* All modules communicate in-memory → **fast**.
+* But once size grows, performance degrades.
+
+### **Microservices**
+
+* Services communicate via network calls → **slightly slower**.
+* Needs API gateways, service discovery, and load balancing.
+
+---
+
+# 💡 **Summary Table — Monolithic vs Microservices**
+
+| Aspect              | Monolithic Architecture | Microservice Architecture        |
+| ------------------- | ----------------------- | -------------------------------- |
+| **Structure**       | Single unified codebase | Many small independent services  |
+| **Coupling**        | Tightly coupled         | Loosely coupled                  |
+| **Scalability**     | Scale whole app         | Scale individual services        |
+| **Deployment**      | One deployment unit     | Independent deployment           |
+| **Tech Stack**      | Same for all modules    | Different per service            |
+| **Database**        | Usually one shared DB   | Each service may have its own DB |
+| **Fault Isolation** | Poor                    | Excellent                        |
+| **Performance**     | Fast in early stages    | Network overhead                 |
+| **Maintenance**     | Hard for large apps     | Easier, modular                  |
+| **Team Structure**  | One big team            | Many small autonomous teams      |
+
+---
+
+# **Final Answer Summary (Exam-Ready)**
+
+Microservice architecture breaks an application into small, independent services that can be developed, deployed, scaled, and updated individually. It provides better scalability, fault isolation, agility, and flexibility in choosing technologies. In contrast, monolithic architecture bundles the entire application into a single unit, making it simpler initially but harder to scale, update, and maintain as the system grows. Microservices support modern DevOps, CI/CD, distributed systems, and cloud-native environments, whereas monolithic systems are more suited for small or less complex applications.
+
