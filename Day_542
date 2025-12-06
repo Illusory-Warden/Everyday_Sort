@@ -1,0 +1,71 @@
+3.2 Module Specification
+
+Below are the functional modules of the Pi-Vate Cloud system, each with purpose, inputs, outputs, main functions, and key nonfunctional concerns.
+
+1. Core OS & Platform Module
+
+   * Purpose: Host services and provide base OS functionality.
+   * Components: Raspberry Pi OS, Docker Engine, OpenMediaVault.
+   * Inputs: Device hardware, microSD OS image, user credentials.
+   * Outputs: Running containers, network interfaces.
+   * Concerns: Stability, automatic updates, resource limits, system backups.
+
+2. Storage Management Module (OpenMediaVault)
+
+   * Purpose: Manage physical disks and shared storage (SMB/CIFS), users, groups, and quotas.
+   * Inputs: Disk devices, administrator configurations.
+   * Outputs: Mounted filesystems, SMB network shares.
+   * Concerns: Filesystem integrity, access permissions, disk health monitoring.
+
+3. Authentication and Access Control Module
+
+   * Purpose: Authenticate users (local and ZTNA) and enforce access rules.
+   * Inputs: SSH keys, Twingate identities, OMV user accounts.
+   * Outputs: Authentication tokens, audit logs.
+   * Concerns: Key rotation, two-factor authentication, minimizing exposed ports.
+
+4. Remote Access / Zero-Trust Network Access Module
+
+   * Purpose: Provide secure remote connectivity without port forwarding.
+   * Components: Twingate Connector (Docker container or host service).
+   * Inputs: Connector configuration, user identity.
+   * Outputs: Encrypted remote tunnels with policy-based access.
+   * Concerns: Uplink availability, connector updates, user provisioning.
+
+5. Media Service Module (Plex)
+
+   * Purpose: Index and serve media files to clients using direct play where possible.
+   * Inputs: Media files from network shares, Plex library configuration.
+   * Outputs: Media streaming endpoints, transcoding jobs (if required).
+   * Concerns: Avoid live transcoding on Raspberry Pi; use direct play or pre-transcoded media.
+
+6. Backup and Resilience Module
+
+   * Purpose: Configure automated backups using tools like rsync or Borg, including offline copies.
+   * Inputs: Backup rules, schedules, destination paths.
+   * Outputs: Incremental backups and restore data.
+   * Concerns: Regular verification of restore processes, encryption before offsite storage.
+
+7. Monitoring and Logging Module
+
+   * Purpose: Collect system metrics (CPU, disk, temperature), logs, and alerts.
+   * Inputs: Node Exporter, Netdata, log files.
+   * Outputs: Dashboards, alert notifications, retained log data.
+   * Concerns: Storage for logs, privacy of monitoring data, proper alert thresholds.
+
+8. Web UI and Administration Module
+
+   * Purpose: Provide OMV web interface and optional custom dashboard for administration tasks.
+   * Inputs: Administrator commands and configurations via web browser.
+   * Outputs: System configuration changes, status reports.
+   * Concerns: Secure access using HTTPS, limiting administrative accounts.
+
+9. Database and Metadata Module
+
+   * Purpose: Store metadata about files, user actions, shares, backups, and logs.
+   * Inputs: Events from various modules (file added, removed, access events).
+   * Outputs: Queryable metadata and audit trails.
+   * Concerns: Privacy of metadata, data retention policies.
+
+For each module, configuration files should be maintained as Docker volumes whenever possible to ensure portability, easier backup, and simplified upgrades.
+
