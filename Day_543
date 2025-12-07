@@ -1,0 +1,60 @@
+```cpp
+while (low < high)
+```
+
+### ✅ **What the condition *should* be**
+
+For a correct binary search, the loop must continue **as long as `low <= high`**, not `<`.
+
+### ❌ Your condition
+
+Stops the loop too early and fails to check the final possible element.
+
+### ✔ Correct condition
+
+```cpp
+while (low <= high)
+```
+
+---
+
+### 🔍 **Why this is an error**
+
+Binary search works by reducing the range `[low, high]`.
+If you use `low < high`, the search stops *before checking the last remaining index*, which may contain the key.
+
+Example:
+If `low = high = 4`, the condition `low < high` becomes `4 < 4` → **false**,
+so the loop exits **without checking index 4**.
+
+---
+
+### Minor issues (not errors but good to fix)
+
+* `mid = (low + high) / 2;` should ideally be
+
+  ```cpp
+  mid = low + (high - low) / 2;   // avoids overflow
+  ```
+
+---
+
+### ✔ Corrected loop part
+
+```cpp
+while (low <= high) {
+    mid = (low + high) / 2;
+
+    if (arr[mid] == key) {
+        found = mid;
+        break;
+    }
+    else if (arr[mid] < key) {
+        low = mid + 1;
+    }
+    else {
+        high = mid - 1;
+    }
+}
+```
+
