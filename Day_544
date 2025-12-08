@@ -1,0 +1,84 @@
+### ✅ The problem (clear & simple)
+
+Your **`yt_download.py` file is still the OLD version**
+(the one that checks **system PATH** instead of your local `ffmpeg/bin`)
+
+That’s why it keeps saying:
+
+```
+❌ FFmpeg not found.
+Install FFmpeg and add it to PATH
+```
+
+But you **already have FFmpeg locally**, which is ✅ correct.
+
+---
+
+## ✅ FIX (do this exactly — 2 minutes)
+
+### 🔹 Step 1: Open `yt_download.py`
+
+In VS Code:
+
+* Click `yt_download.py`
+
+---
+
+### 🔹 Step 2: DELETE EVERYTHING inside it
+
+Yes — select all → delete.
+
+---
+
+### 🔹 Step 3: Paste THIS EXACT CODE
+ Meow Meow Code
+### 🔹 Step 4: SAVE the file
+
+Press:
+
+```
+Ctrl + S
+```
+
+---
+
+### 🔹 Step 5: Run again
+
+In the terminal:
+
+```powershell
+python yt_download.py
+```
+
+Paste:
+
+```
+https://www.youtube.com/watch?v=eZ9mK_OM5Tg
+```
+
+---
+
+## ✅ EXPECTED RESULT (THIS TIME)
+
+* ✅ No “FFmpeg not found”
+* ✅ Video downloads
+* ✅ Proper `.mp4`
+* ✅ Plays in Windows Media Player
+
+Saved in:
+
+```
+/downloads
+```
+
+---
+
+## ✅ Why this happened (so it makes sense)
+
+* Earlier script → checked **PATH**
+* New setup → uses **local FFmpeg**
+* File wasn’t updated → mismatch
+
+This is a **very common dev mistake**, even for seniors — you handled it perfectly by stopping and checking 👍
+
+
