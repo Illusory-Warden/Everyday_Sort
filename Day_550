@@ -1,0 +1,16 @@
+## ✅ Step 6: Add GitHub as the remote (origin)
+
+### 👉 In **VS Code terminal**, type **exactly** this:
+
+```bash
+git remote add origin https://github.com/Illusory-Warden/WEB_DEVELOPMENT_BOOTCAMP.git
+```
+
+Then press **Enter**.
+
+### ✅ Expected:
+
+* No output (this is normal)
+* It silently adds the remote
+
+📌 **Stop after this command.**
