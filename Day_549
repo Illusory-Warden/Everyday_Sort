@@ -1,0 +1,30 @@
+## ✅ Step 7 (FINAL): Push your code to GitHub 🚀
+
+Right now:
+
+* Local branch: `master`
+* GitHub expects: `main` (best practice)
+
+We’ll **rename + push** safely.
+
+### 👉 Run these commands **one by one**:
+
+#### 1️⃣ Rename branch to `main`
+
+```bash
+git branch -M main
+```
+
+#### 2️⃣ Push to GitHub and set upstream
+
+```bash
+git push -u origin main
+```
+
+⚠️ If GitHub asks for login:
+
+* Use **GitHub username**
+* Use a **Personal Access Token** (not password)
+
+📌 **Stop after push completes.**
+
