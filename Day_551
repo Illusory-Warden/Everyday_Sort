@@ -1,0 +1,23 @@
+folder **`WEB_DEVELOPMENT_BOOTCAMP`** is now:
+
+* ✅ A local Git repository
+* ✅ Connected to GitHub
+* ✅ Pushed successfully
+* ✅ Tracking `origin/main`
+
+Refresh your GitHub repo page now, you’ll see your **PDF files live on GitHub** 🚀
+
+---
+
+## ✅ What you have achieved (important to know)
+
+* `git init` → turned folder into a repo
+* `git add .` → staged files
+* `git commit` → saved snapshot
+* `git remote add origin` → linked GitHub
+* `git branch -M main` → matched GitHub standard
+* `git push -u origin main` → uploaded & linked branches
+
+
+
+
