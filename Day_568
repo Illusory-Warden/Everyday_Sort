@@ -1,0 +1,17 @@
+The line **“Done uploading.”** confirms your code is now inside the Arduino.
+
+So your UNO is running the tracker firmware right now.
+
+---
+
+⚠️ **BUT — important warning (don’t ignore this):**
+
+Your memory is **99% full**
+That means:
+
+• GSM may freeze
+• GPS may stop
+• Random resets will happen
+• SMS will fail randomly
+
+The code is running — but **not reliably**.
