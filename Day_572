@@ -1,0 +1,93 @@
+Tavily API only accepts this parameter:
+
+```
+include_raw_content = true | false | "markdown" | "text"
+```
+
+But your HTTP Request node is sending **something else** (usually `"yes"`, `"full"`, `1`, `"true"` as string, or empty).
+
+So Tavily rejects the entire request.
+
+---
+
+# ✅ Fix (exact settings)
+
+Open your **Tavily API (HTTP Request) node** in n8n.
+
+### Set it like this:
+
+### METHOD
+
+```
+POST
+```
+
+### URL
+
+```
+https://api.tavily.com/search
+```
+
+---
+
+### HEADERS
+
+| Name          | Value                      |
+| ------------- | -------------------------- |
+| Content-Type  | application/json           |
+| Authorization | Bearer YOUR_TAVILY_API_KEY |
+
+---
+
+### BODY → JSON
+
+Use **exactly this**:
+
+```json
+{
+  "query": "latest AI research papers",
+  "search_depth": "advanced",
+  "max_results": 5,
+  "include_raw_content": "markdown"
+}
+```
+
+⚠️ IMPORTANT:
+
+* `include_raw_content` must be **markdown** or **text** or true/false
+* Do NOT send numbers or yes/no strings
+
+---
+
+# Common Mistake
+
+These ❌ will break Tavily:
+
+```
+"include_raw_content": "full"
+"include_raw_content": "yes"
+"include_raw_content": 1
+"include_raw_content": "true"
+```
+
+These ✅ are valid:
+
+```
+"include_raw_content": true
+"include_raw_content": false
+"include_raw_content": "markdown"
+"include_raw_content": "text"
+```
+
+---
+
+# After you fix this
+
+Your Tavily node will return:
+
+* full page content
+* clean markdown/text
+* ready for LLM ingestion
+
+---
+
