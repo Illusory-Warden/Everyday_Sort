@@ -1,0 +1,14 @@
+# CLEAN WIPE AroGuard from Pi
+
+Run **exactly this**:
+
+```bash
+cd ~
+rm -rf aroguard
+```
+
+Now verify:
+
+```bash
+ls
+```
