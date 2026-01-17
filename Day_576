@@ -1,0 +1,113 @@
+# PART 1 – DNS (Most Important)
+
+Login to **Hostinger → Domain → DNS Zone**
+
+Add these records 👇
+(Replace NOTHING except exactly as shown)
+
+### 1️⃣ Mail exchanger (MX)
+
+| Type | Name | Value               | Priority |
+| ---- | ---- | ------------------- | -------- |
+| MX   | @    | mail.synerydev.site | 10       |
+
+---
+
+### 2️⃣ Mail host A record
+
+| Type | Name | Value          |
+| ---- | ---- | -------------- |
+| A    | mail | 223.185.41.255 |
+
+---
+
+### 3️⃣ SPF (prevents spam flag)
+
+| Type | Name | Value                          |
+| ---- | ---- | ------------------------------ |
+| TXT  | @    | v=spf1 ip4:223.185.41.255 ~all |
+
+---
+
+### 4️⃣ DMARC (mail reputation)
+
+| Type | Name   | Value            |
+| ---- | ------ | ---------------- |
+| TXT  | _dmarc | v=DMARC1; p=none |
+
+---
+
+Save all.
+
+Wait **5–10 minutes**.
+
+---
+
+# PART 2 – Install Mail Server on Pi
+
+Run:
+
+```bash
+sudo apt update
+sudo apt install -y postfix dovecot-imapd dovecot-pop3d
+```
+
+During Postfix setup choose:
+
+• Internet Site
+• System mail name → `synerydev.site`
+
+---
+
+# PART 3 – Configure hostname
+
+```bash
+sudo hostnamectl set-hostname mail.synerydev.site
+```
+
+Edit hosts file:
+
+```bash
+sudo nano /etc/hosts
+```
+
+Add:
+
+```
+223.185.41.255   mail.synerydev.site
+```
+
+Reboot:
+
+```bash
+sudo reboot
+```
+
+---
+
+# PART 4 – Create your first mailbox
+
+```bash
+sudo adduser you
+```
+
+Your first email becomes:
+
+```
+you@synerydev.site
+```
+
+---
+
+# PART 5 – Test mail
+
+From Pi:
+
+```bash
+echo "My Pi Mail Server Works" | mail -s "Test Mail" yourgmail@gmail.com
+```
+
+If it arrives in Gmail inbox/spam — your server is LIVE 🌍📧
+
+
+
