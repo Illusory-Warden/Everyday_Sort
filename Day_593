@@ -1,0 +1,14 @@
+:root {
+  --bg-main: #0B141A;
+  --bg-sidebar: #111B21;
+  --bg-panel: #202C33;
+  --bg-hover: #2A3942;
+
+  --text-primary: #E9EDEF;
+  --text-secondary: #8696A0;
+
+  --accent-green: #00A884;
+  --accent-green-soft: #1F7F5C;
+
+  --border-color: #2A3942;
+}
