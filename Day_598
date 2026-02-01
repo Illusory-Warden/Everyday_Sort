@@ -1,0 +1,87 @@
+### What’s going on (plain English)
+
+SSH remembers the **identity (host key)** of every server you connect to.
+That machine at `192.168.100.100` now presents a *different* key than last time, so SSH freaks out to protect you from a possible **man-in-the-middle attack**.
+
+Most common harmless reasons:
+
+* The server was **reinstalled**
+* SSH keys were **regenerated**
+* The IP now points to a **different machine**
+* You rolled back / cloned a VM snapshot
+
+---
+
+## If you *expect* this change (very likely in a local network)
+
+You just need to remove the old key.
+
+### ✅ Fix (Windows – safest & easiest)
+
+Run this in **Command Prompt or PowerShell**:
+
+```bash
+ssh-keygen -R 192.168.100.100
+```
+
+You should see something like:
+
+```
+# Host 192.168.100.100 found: line 8
+# Host removed.
+```
+
+Now reconnect:
+
+```bash
+ssh warden@192.168.100.100
+```
+
+Type **yes** when asked to trust the new key.
+
+---
+
+## Manual fix (if you want to see the file)
+
+1. Open the file:
+
+```
+C:\Users\rushi\.ssh\known_hosts
+```
+
+2. Delete **line 8** (it literally tells you that):
+
+```
+Offending ECDSA key in ...known_hosts:8
+```
+
+3. Save → reconnect via SSH
+
+---
+
+## ⚠️ When should you *NOT* blindly fix it?
+
+Stop and verify if:
+
+* This is a **production server**
+* You’re on an **untrusted network**
+* You didn’t expect *any* change
+
+In that case, confirm the fingerprint:
+
+```
+SHA256:SswYFysYBt4fOcasH6nPfKwzP7WpQ+eG5iomxpi1low
+```
+
+with the server admin or by logging in locally.
+
+---
+
+## TL;DR
+
+For local / lab / VM setups:
+
+```bash
+ssh-keygen -R 192.168.100.100
+ssh warden@192.168.100.100
+```
