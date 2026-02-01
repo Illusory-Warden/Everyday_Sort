@@ -1,0 +1,31 @@
+### **MCX Gold Ten Futures (e.g., 27 Feb Fut)**
+
+* **Lot size:** **10 grams of gold** per contract. ([Upstox - Online Stock and Share Trading][1])
+* **Tick size:** ₹1 per 10 g movement (i.e., ₹1 per contract movement). ([Upstox - Online Stock and Share Trading][1])
+
+### **Margin (Approximate)**
+
+MCX margins are set by the exchange and can vary daily based on price volatility and risk. There’s no official published static margin on the exchange site for every contract, but typical margin levels for *Gold Ten* (based on industry margin calculators) are around:
+
+* **Initial/Span margin:** ~**8–11% of contract value** (varies by broker/exchange SPAN). ([Zerodha][2])
+* **Extreme loss margin:** ~**1%** (as per standard bullion futures norms). ([ICICI Direct][3])
+
+> Contract value ≈ (Gold price per gram × 10 g).
+> So if market price is ₹1,750/gram → contract value ≈ ₹17,500.
+> An 8–11% margin on that ≈ **₹1,400–₹1,925** may be required (this is indicative only — actual margin is set by the exchange SPAN system and your broker).
+
+### **Summary**
+
+| Parameter                  | Value                                                       |
+| -------------------------- | ----------------------------------------------------------- |
+| **Contract**               | MCX Gold Ten 27 Feb Fut                                     |
+| **Lot Size**               | **10 grams** ([Upstox - Online Stock and Share Trading][1]) |
+| **Typical Margin Approx.** | **₹1,400–₹1,900 per lot** (varies daily) ([Zerodha][2])     |
+| **Tick Size**              | ₹1 per 10g ([Upstox - Online Stock and Share Trading][1])   |
+
+### **Note**
+
+* Exact margin figures for a specific expiry (like 27 Feb) change daily based on volatility, price, and exchange risk parameters. Brokers usually show the *SPAN + ELM* margin in their platforms.
+* Always check your broker’s margin widget for the precise SPAN margin before trading.
+
+
