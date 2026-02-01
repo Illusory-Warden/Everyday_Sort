@@ -1,0 +1,99 @@
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### ✅ What it DOES
+
+* Updates the package list (`apt update`)
+* Upgrades **already-installed packages** *without*:
+
+  * changing dependencies
+  * removing packages
+* Safe for running services (OMV, Plex, Docker won’t break)
+
+### ❌ What it DOES NOT do
+
+* ❌ Kernel & firmware upgrades (often skipped)
+* ❌ OpenMediaVault core upgrades
+* ❌ Docker container image updates
+* ❌ Orphaned package cleanup
+* ❌ Bootloader updates
+
+Think of it as **“basic maintenance”**, not a full system refresh.
+
+---
+
+## What you should run NEXT (recommended order)
+
+### 1️⃣ Finish the OS upgrade properly
+
+```bash
+sudo apt full-upgrade -y
+```
+
+Why?
+
+* Allows kernel + dependency changes
+* Needed for real OS updates
+
+Then clean up:
+
+```bash
+sudo apt autoremove --purge -y
+sudo apt autoclean
+```
+
+---
+
+### 2️⃣ Update OpenMediaVault (CRITICAL)
+
+```bash
+sudo omv-upgrade
+```
+
+If OMV isn’t updated, the web UI can lag behind the system packages.
+
+---
+
+### 3️⃣ Reboot (don’t skip this)
+
+```bash
+sudo reboot
+```
+
+This applies:
+
+* New kernel
+* Updated system services
+* OMV changes
+
+---
+
+### 4️⃣ Update Docker containers (Plex, etc.)
+
+Go to your docker-compose folder and run:
+
+```bash
+docker compose pull
+docker compose up -d
+docker image prune -af
+```
+
+---
+
+## ✅ Minimal “do it right” checklist
+
+If you want the **short, correct version**, bookmark this:
+
+```bash
+sudo apt update
+sudo apt full-upgrade -y
+sudo omv-upgrade
+sudo apt autoremove --purge -y
+sudo reboot
+```
+
+Then update Docker containers.
+
+---
+
