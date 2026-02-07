@@ -1,0 +1,250 @@
+# Legislate AI - Your Legal Assistant
+
+**Legislate AI** is an AI-powered legal assistance platform designed to democratize access to justice in India. This platform addresses the critical gap in legal awareness and accessibility, especially for rural and underprivileged communities.
+
+---
+
+## 📋 Table of Contents
+
+- [Problem Statement](#problem-statement)
+- [Key Features](#key-features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Future Scope](#future-scope)
+- [Team](#team)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## 🚨 Problem Statement
+
+India's legal system faces significant challenges that prevent millions from accessing justice:
+
+- **📊 Massive Case Backlog**: Over 4 crore (40 million) pending cases
+- **📚 Low Legal Awareness**: 90% of citizens don't know their rights
+- **🌐 Language Barriers**: Legal help rarely available in regional languages
+- **💰 High Costs**: Legal services unaffordable for low-income families
+- **😰 Fear & Mistrust**: People avoid police and courts due to intimidation
+- **🔍 Complex Procedures**: Legal processes are difficult to understand
+- **🏘️ Limited Access**: Few legal resources available in rural areas
+
+These barriers disproportionately affect rural communities, leaving millions with unresolved issues like land disputes, domestic violence, labor abuse, and pension denial.
+
+---
+
+## ✨ Key Features
+
+### 1. **Ask a Question** 🤖
+AI-powered chatbot providing instant legal guidance and answers to common legal queries.
+
+### 2. **Case Tracker** 📊
+Track your case status and important dates in real-time.
+
+### 3. **Document Generator** 📝
+Generate legal documents including:
+- FIR (First Information Report)
+- RTI (Right to Information)
+- Other legal documents
+
+### 4. **NGO Directory** 🏢
+Find legal aid organizations near you for affordable assistance.
+
+### 5. **Document Translator** 🌍
+Translate and understand legal documents in regional languages.
+
+### 6. **Legal Dictionary** 📖
+Search legal terms and definitions in simple language.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React** - UI framework
+- **Vite** - Build tool
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web application framework
+
+### AI & Automation
+- **Ollama** - Fine-tuned Local LLM with legal data
+- **n8n** - AI workflow automation
+
+### Infrastructure & DevOps
+- **Ubuntu Server LTS** - Server operating system
+- **NGINX** - Reverse proxy & web server
+- **SSH** - Secure remote administration
+- **Docker** - Containerization & service isolation
+- **Self-Hosted Private Cloud** - Data privacy and control
+
+### Security
+- **Twingate** - Zero-trust remote access
+- **ZTNA Architecture** - Zero-trust network access
+- **Identity-Based Access Control** - Secure authentication
+- **Encrypted Tunnel Communication** - Secure data transmission
+- **Role-Based Access Control** - Lawyers, admins, and end users
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐
+│   React Frontend│
+│   (Vite + TS)   │
+└────────┬────────┘
+         │
+    ┌────▼────┐
+    │  NGINX  │
+    └────┬────┘
+         │
+┌────────▼─────────┐
+│  Express.js API  │
+└────────┬─────────┘
+         │
+    ┌────▼────────────┐
+    │  Ollama LLM     │
+    │  n8n Workflows  │
+    └─────────────────┘
+```
+
+**Security Layer**: Twingate ZTNA ensures encrypted, role-based access without port forwarding.
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+- Node.js (v18 or higher)
+- Docker & Docker Compose
+- Ubuntu Server LTS (for production)
+- Git
+
+### Local Development Setup
+
+1. **Clone the repository**
+```bash
+git clone <repository-url>
+cd legislate-ai
+```
+
+2. **Install frontend dependencies**
+```bash
+cd frontend
+npm install
+```
+
+3. **Install backend dependencies**
+```bash
+cd ../backend
+npm install
+```
+
+4. **Set up environment variables**
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+5. **Start the development servers**
+
+Frontend:
+```bash
+cd frontend
+npm run dev
+```
+
+Backend:
+```bash
+cd backend
+npm run dev
+```
+
+### Docker Deployment
+
+```bash
+docker-compose up -d
+```
+
+---
+
+## 🚀 Usage
+
+1. **Access the Platform**: Navigate to `http://localhost:5173` (development) or your deployed URL
+2. **Choose a Service**: Select from Ask Questions, Case Tracker, Document Generator, etc.
+3. **Get Legal Help**: Interact with the AI assistant or generate documents
+4. **Track Progress**: Monitor your cases and document status
+
+---
+
+## 🔮 Future Scope
+
+### Planned Features
+
+#### 1. **Direct Authority Mapping & Tracking**
+- Automatically identify the correct police station or PIO
+- Enable submission status tracking
+
+#### 2. **AI-Powered Court Hearing Q&A**
+- Simplified explanations of court proceedings
+- Easy-to-understand legal document summaries
+
+#### 3. **Verified Advocate Partnership Network**
+- Connect users with trusted advocates
+- Affordable and accessible legal assistance
+
+#### 4. **Blockchain-Based Tamper-Proof Records**
+- Secure, immutable storage of FIRs, RTIs, and complaints
+- Prevent manipulation or loss of critical documents
+
+#### 5. **Voice-to-Text FIR & RTI Drafting**
+- Enable low-literacy users to file complaints
+- Voice input support in regional languages
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from the community! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow TypeScript best practices
+- Write meaningful commit messages
+- Add tests for new features
+- Update documentation as needed
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- Thanks to all contributors and supporters
+- Indian legal system documentation and resources
+- Open-source community for amazing tools
+
+---
+
+<div align="center">
+
+**Justice for All** 🏛️
+
+*Making legal assistance accessible to every Indian citizen*
+
+</div>
