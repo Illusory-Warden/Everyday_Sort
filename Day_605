@@ -1,0 +1,7 @@
+Blockchain-Linked Smart Energy Meter
+Since you track gold and silver prices, you might enjoy a project that treats energy as a commodity.
+The Idea: A smart meter that tracks electricity usage and "bills" the user in real-time based on a simulated market price.
+Key Features:
+Hardware: ESP32 + ZMPT101B (Voltage sensor) + ACS712 (Current sensor).
+Dynamic Pricing: Program the system to fetch "simulated" electricity prices (which fluctuate like silver/gold prices) and toggle heavy loads (using your relay experience) when prices are too high.
+Visuals: An OLED display showing real-time "Cost per Hour."
