@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fee Payment AI Agent</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>🤖 Fee Payment AI Agent</h1>
+        <p>Ask me anything about fee payments!</p>
+      </div>
+
+      <!-- Chat Container -->
+      <div class="chat-container" id="chatContainer">
+        <!-- Welcome Message -->
+        <div class="message bot-message">
+          <div class="message-content">
+            <strong>Agent:</strong> Hello! I'm your Fee Payment AI Agent. 👋<br /><br />
+            I can help you with:<br />
+            • Show pending payments<br />
+            • Check student payment status<br />
+            • View fee type summaries<br />
+            • Generate reports<br /><br />
+            Type 'help' to see all commands!
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your question here..."
+          autocomplete="off"
+        />
+        <button id="sendBtn" onclick="sendMessage()">Send</button>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <button
+          class="quick-btn"
+          onclick="quickMessage('Show pending payments')"
+        >
+          📋 Pending Payments
+        </button>
+        <button
+          class="quick-btn"
+          onclick="quickMessage('Generate summary report')"
+        >
+          📊 Summary Report
+        </button>
+        <button
+          class="quick-btn"
+          onclick="quickMessage('How much total pending amount?')"
+        >
+          💰 Total Pending
+        </button>
+        <button class="quick-btn" onclick="quickMessage('help')">
+          ❓ Help
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
