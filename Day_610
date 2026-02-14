@@ -1,0 +1,21 @@
+⚠️ First: Reality Check
+
+With only 800MB usable RAM:
+
+❌ 7B models → Not possible
+
+❌ Most 3B models → Still too large
+
+❌ Anything with context >4k → risky
+
+You must go with:
+
+0.5B–1.3B models
+
+Heavy quantization (Q4 or lower)
+
+llama.cpp backend
+
+Small context window (512–1024)
+
+Swap will help, but relying on swap heavily will make responses very slow.
