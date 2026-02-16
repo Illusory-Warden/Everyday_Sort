@@ -1,0 +1,30 @@
+## Best Options
+
+**Pingvin Share** - Modern WeTransfer alternative
+
+- Clean UI, drag-and-drop uploads
+- Password protection, expiry dates, download limits
+- Share links publicly or with specific people
+- Very lightweight, perfect for old laptop
+
+**Send (Timvisee's fork)** - Mozilla Firefox Send clone
+
+- End-to-end encrypted file sharing
+- Set expiry time and download count limits
+- Simple, beautiful interface
+- Auto-deletes after conditions met
+
+**FileBrowser** - Web-based file manager with sharing
+
+- Browse your files through web UI
+- Generate public share links for any file/folder
+- Built-in file editor, previews
+- Can also work as a private file manager
+
+**XBackBone** - ShareX/Imgur alternative
+
+- Perfect for screenshots and quick file uploads
+- Custom domains, short URLs
+- API support for automation
+- Nice gallery view
+
