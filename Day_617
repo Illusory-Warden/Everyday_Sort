@@ -1,0 +1,186 @@
+# 🏠 1️⃣ Your homelab (best starting point)
+
+This is where most self-hosters begin.
+
+You can use your SSO to log into:
+
+### Infrastructure tools
+
+* Grafana
+* Prometheus
+* Portainer
+* Proxmox
+* Kibana
+
+👉 Result: one login for your entire lab.
+
+**This is the easiest and most common use case.**
+
+---
+
+# 🌐 2️⃣ Self-hosted apps
+
+Many popular apps support OIDC/SAML.
+
+Examples that work great with Keycloak:
+
+### Productivity & storage
+
+* Nextcloud
+* OwnCloud
+* Seafile
+
+### Development
+
+* GitLab
+* Gitea
+* Jenkins
+
+### Media & home services
+
+* Jellyfin
+* Immich
+* Home Assistant
+
+👉 Your SSO becomes the central login for your whole personal cloud.
+
+---
+
+# 🏢 3️⃣ Internal company tools (small org / startup)
+
+If you ever run a team or startup, your SSO can manage access to:
+
+* internal dashboards
+* admin panels
+* company wiki
+* VPN access
+* Kubernetes dashboard
+
+This is how real companies use Keycloak/Okta.
+
+---
+
+# 🔐 4️⃣ Protect apps behind Twingate (your current stack)
+
+This is **very powerful** for you.
+
+### Architecture
+
+```text
+User → Twingate → Keycloak (SSO) → Internal apps
+```
+
+OR
+
+```text
+User → App → Keycloak login → access
+```
+
+You can:
+
+* require SSO before network access
+* enforce MFA centrally
+* control user permissions
+
+👉 This is basically zero-trust architecture at home.
+
+---
+
+# 🌍 5️⃣ Your own websites or web apps
+
+If you build websites (Node, Django, etc.), you can:
+
+* add “Login with your SSO”
+* manage users centrally
+* avoid writing auth yourself
+
+Developers love this.
+
+---
+
+# 📱 6️⃣ Mobile apps (advanced)
+
+OIDC works for mobile too.
+
+You could build:
+
+* Android app
+* Flutter app
+* React Native app
+
+…and use your SSO as the login provider.
+
+⚠️ More advanced but totally possible.
+
+---
+
+# 🧪 7️⃣ Learning enterprise IAM (HUGE career value)
+
+Honestly, one of the **best reasons** to self-host SSO is learning.
+
+Skills you gain:
+
+* OAuth2 / OIDC
+* SAML
+* Identity federation
+* Zero Trust
+* Access management
+* MFA
+
+These are **high-demand DevOps/Security skills**.
+
+---
+
+# 🚫 Where you usually CANNOT use your SSO
+
+Important reality check.
+
+Your self-hosted SSO generally **cannot replace**:
+
+* Google account login for Gmail
+* Microsoft account
+* random third-party sites
+
+Because those services don’t trust your IdP.
+
+SSO works when:
+
+✅ you control the app
+✅ or the app allows custom OIDC/SAML
+
+---
+
+# 🎯 Best practical use cases for YOU right now
+
+Given your Ubuntu + Twingate setup, the smartest path is:
+
+**Phase 1 (easy win)**
+
+* Keycloak
+* Grafana
+* Portainer
+* One test app
+
+**Phase 2**
+
+* Nextcloud
+* Gitea
+* MFA
+
+**Phase 3 (advanced)**
+
+* integrate with Twingate
+* zero-trust policies
+* WebAuthn keys
+
+---
+
+## 💬 Bottom line
+
+Your self-hosted SSO is most useful for:
+
+* your homelab
+* your self-hosted apps
+* your own websites
+* small teams
+* learning enterprise identity
