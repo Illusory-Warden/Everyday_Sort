@@ -1,0 +1,167 @@
+**SSO (Single Sign-On)** is an authentication system that lets you **log in once and access multiple applications without signing in again**.
+
+---
+
+## 🧠 Simple idea
+
+Instead of:
+
+* Login to Gmail
+* Login to YouTube
+* Login to Drive
+
+👉 With SSO:
+
+* Login **once**
+* Access all services automatically
+
+---
+
+## 🔐 How it works (concept)
+
+There are three main parts:
+
+1. **User** — you
+2. **Identity Provider (IdP)** — the login authority
+3. **Applications (Service Providers)** — apps you want to use
+
+### Flow
+
+```text
+You → App → redirected to SSO login → authenticated → access granted
+```
+
+The IdP gives the app a **token** proving you are authenticated.
+
+---
+
+## 🧩 Real-world examples you already use
+
+### Google ecosystem
+
+When you log into:
+
+* Gmail
+* YouTube
+* Google Drive
+
+👉 That’s Google SSO in action.
+
+You logged in once, but many apps trust Google.
+
+---
+
+### “Login with Google / GitHub / Facebook”
+
+When websites show:
+
+* Continue with Google
+* Sign in with GitHub
+
+👉 That is SSO using OAuth/OIDC.
+
+---
+
+## 🏢 Where SSO is used
+
+### 1️⃣ Companies (VERY common)
+
+Employees log in once and access:
+
+* email
+* VPN
+* internal dashboards
+* HR systems
+* cloud apps
+
+**Why companies love it:**
+
+* fewer passwords
+* easier user management
+* better security
+* faster onboarding/offboarding
+
+---
+
+### 2️⃣ Universities
+
+Students log in once to access:
+
+* student portal
+* library
+* LMS
+* email
+
+---
+
+### 3️⃣ Cloud platforms
+
+Examples:
+
+* AWS SSO
+* Microsoft Entra ID
+* Okta
+
+Used to manage access to many cloud services.
+
+---
+
+### 4️⃣ Home labs & self-hosting (your case)
+
+People use SSO to protect:
+
+* Nextcloud
+* Grafana
+* Portainer
+* internal dashboards
+* homelab apps
+
+👉 This is exactly what you’re building with Ubuntu + Twingate.
+
+---
+
+## 🔥 Why SSO is powerful
+
+### Benefits
+
+✅ One password to remember
+✅ Centralized security
+✅ Easy MFA enforcement
+✅ Easy user management
+✅ Better audit logging
+✅ Faster login experience
+
+---
+
+### Downsides (important)
+
+⚠️ If SSO goes down → everything stops
+⚠️ If SSO account compromised → many apps exposed
+⚠️ Setup complexity
+
+Good systems mitigate these with MFA and redundancy.
+
+---
+
+## 🧪 Common SSO technologies
+
+You’ll see these a lot:
+
+* **OAuth2** → authorization framework
+* **OpenID Connect (OIDC)** → modern SSO (most common today)
+* **SAML** → older enterprise SSO
+
+👉 For your lab: **OIDC with Keycloak** is the best path.
+
+---
+
+## 🎯 In your Ubuntu + Twingate lab
+
+SSO would let you:
+
+* login once to Keycloak
+* access all your internal apps
+* protect services behind Twingate
+* add MFA easily
+
+---
