@@ -1,0 +1,92 @@
+# 🔥 FINAL CLEAN RESET (Guaranteed Fix)
+
+## ✅ STEP 1 — Delete .git again
+
+Run:
+
+```powershell
+Remove-Item -Recurse -Force .git
+```
+
+---
+
+## ✅ STEP 2 — Clear notebook outputs (VERY IMPORTANT)
+
+Open:
+
+```
+Code/Course_Recommendation.ipynb
+```
+
+Then:
+
+* Click top right `...`
+* Click **Clear All Outputs**
+* Save the file
+
+Then search again:
+
+```
+Ctrl + F → gsk_
+```
+
+Make sure it does NOT exist anywhere.
+
+Save again.
+
+---
+
+## ✅ STEP 3 — Reinitialize Git
+
+```bash
+git init
+```
+
+---
+
+## ✅ STEP 4 — Add files
+
+```bash
+git add .
+```
+
+---
+
+## ✅ STEP 5 — Create ONE fresh commit
+
+```bash
+git commit -m "Initial clean commit"
+```
+
+---
+
+## ✅ STEP 6 — Rename branch
+
+```bash
+git branch -M main
+```
+
+---
+
+## ✅ STEP 7 — Force push
+
+```bash
+git remote add origin https://github.com/DM_Abhijeet.git
+git push -u origin main --force
+```
+
+---
+
+🚨 IMPORTANT
+
+If it STILL blocks after this, then:
+
+That means the API key is still present somewhere inside the notebook JSON (even in hidden metadata).
+
+In that case I will give you a nuclear fix:
+Convert notebook → new notebook → copy code only.
+
+But first try this full clean reset.
+
+---
+
