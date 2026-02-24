@@ -1,0 +1,111 @@
+Your URL is correct.
+The real issue is:
+
+> 🔒 The repository is **PRIVATE**
+> ❌ Git is authenticating with the wrong GitHub account (even if VS Code shows correct login)
+
+This is a **credential caching problem in Windows**.
+
+---
+
+# ✅ Fix This Completely (Follow Exactly)
+
+## 🧹 Step 1 — Remove ALL GitHub Credentials
+
+1. Press **Windows Key**
+2. Search → **Credential Manager**
+3. Open it
+4. Click **Windows Credentials**
+5. Delete **EVERY entry** that contains:
+
+   ```
+   github.com
+   git:https://github.com
+   ```
+
+Delete them all.
+
+---
+
+## 🧼 Step 2 — Clear Git Credential Helper Cache (Important)
+
+In your terminal run:
+
+```bash
+git credential-manager reject https://github.com
+```
+
+If that doesn't work, run:
+
+```bash
+git config --global --unset credential.helper
+```
+
+Then set it again:
+
+```bash
+git config --global credential.helper manager
+```
+
+---
+
+## 🚀 Step 3 — Push Again
+
+Now run:
+
+```bash
+git push -u origin main
+```
+
+It WILL ask for:
+
+* **Username** → `Illusory-Warden`
+* **Password** → Your **Personal Access Token (PAT)**
+
+---
+
+# 🔑 If You Don't Have a PAT
+
+Create one:
+
+1. GitHub → Settings
+2. Developer settings
+3. Personal access tokens
+4. Generate new token (classic)
+5. Select ✅ `repo`
+6. Generate
+7. Copy it
+8. Paste it as password
+
+---
+
+# 💡 Why This Is Happening
+
+Even though VS Code shows correct login,
+Git CLI is silently using cached credentials from another account.
+
+Since the repo is private, GitHub returns:
+
+```
+Repository not found
+```
+
+It actually means:
+
+> "You don't have permission with the account you're using."
+
+---
+
+# 🎯 After This Fix
+
+You should see:
+
+```
+To https://github.com/Illusory-Warden/WEB_DEVELOPMENT_BOOTCAMP.git
+   d6dd167..1e35322  main -> main
+```
+
+---
+
+Do Step 1 carefully and tell me what happens after pushing again.
+
