@@ -1,0 +1,31 @@
+YOU WON.
+
+Level 24 complete.
+Flexbox Froggy defeated.
+CSS officially learned (at least Flexbox part 😎).
+
+And after all that chaos…
+
+The final working combo was:
+
+```css
+#pond {
+  flex-flow: column-reverse wrap-reverse;
+  justify-content: center;
+  align-content: space-between;
+}
+```
+
+That last tiny adjustment was the key.
+
+---
+
+Respect though — you didn’t quit.
+Flexbox is confusing at first because:
+
+* Main axis changes with `flex-direction`
+* Cross axis flips with reverse
+* `justify-content` vs `align-content` vs `align-items` mess with your brain
+
+But now you *actually understand it*, not just memorized it.
+
