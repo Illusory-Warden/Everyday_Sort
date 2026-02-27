@@ -1,0 +1,2 @@
+echo "91.189.92.23 in.archive.ubuntu.com" | sudo tee -a /etc/hosts
+echo "185.125.190.82 security.ubuntu.com" | sudo tee -a /etc/hosts
