@@ -1,0 +1,20 @@
+Hey, I need you to research something for our project.
+
+We want our **local LLM running on the Ubuntu server** to be able to **search the internet and use that information to answer queries**. Look into how this can be implemented using a **self-hosted search engine like SearXNG** or any similar solution.
+
+Please prepare a small report covering these points:
+
+1. What tools or systems can allow a local LLM to search the internet (for example SearXNG or similar).
+2. How to install and set it up on an **Ubuntu server**.
+3. How it can be **integrated with our local LLM pipeline** (query → search → LLM → response).
+4. System requirements (CPU, RAM, storage).
+5. Possible **limitations or challenges** (rate limits, latency, accuracy, etc.).
+6. Any **better alternatives** if you find them.
+
+Also include:
+
+* Installation steps
+* Basic architecture/workflow
+* Resource usage considerations
+
+Just gather the information and send me the report once you're done so we can decide how to implement it.
