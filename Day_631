@@ -1,0 +1,243 @@
+# Physical Structures
+
+### Basic Idea
+
+**Physical structure refers to how devices are physically connected in a network.**
+
+It describes the **actual layout of network devices and cables**.
+
+Physical structures mainly include:
+
+1️⃣ **Type of Connection**
+2️⃣ **Physical Topology**
+
+---
+
+# PART 1: Type of Connection
+
+There are **two types of connections between devices**.
+
+### 1️⃣ Point-to-Point Connection
+
+### Definition
+
+A **point-to-point connection** connects **two devices directly using a dedicated link**.
+
+```text
+Device A  ─────────  Device B
+```
+
+Only these **two devices share the link**.
+
+### Examples
+
+* Telephone connection
+* Direct cable between two computers
+* Router-to-router connection
+
+### Key Characteristics
+
+* Dedicated link
+* High speed
+* Secure communication
+
+---
+
+### 2️⃣ Multipoint Connection
+
+### Definition
+
+A **multipoint connection** connects **multiple devices using a single shared link**.
+
+```text
+Device A
+     │
+Device B ───── Shared Link
+     │
+Device C
+```
+
+All devices **share the same communication channel**.
+
+### Examples
+
+* WiFi network
+* Bus topology networks
+* Shared Ethernet networks
+
+### Key Characteristics
+
+* Shared medium
+* Lower cost
+* Bandwidth shared among devices
+
+---
+
+# PART 2: Physical Topology
+
+**Network topology describes the physical arrangement of devices in a network.**
+
+Your notes list **four major topologies**. 
+
+1️⃣ Mesh
+2️⃣ Star
+3️⃣ Bus
+4️⃣ Ring
+
+---
+
+# 1️⃣ Mesh Topology
+
+### Definition
+
+In **mesh topology**, every device is connected to **every other device**.
+
+```text
+A ─── B
+│ ╲  │
+│  ╲ │
+C ─── D
+```
+
+Each connection is **point-to-point**.
+
+### Formula
+
+Number of links required:
+
+[
+n(n-1)/2
+]
+
+where **n = number of devices**
+
+### Advantages
+
+✔ Very reliable
+✔ No traffic congestion
+✔ High security
+
+### Disadvantages
+
+❌ Expensive
+❌ Complex installation
+❌ Requires many cables
+
+---
+
+# 2️⃣ Star Topology
+
+### Definition
+
+In **star topology**, all devices connect to a **central device**.
+
+Central device can be:
+
+* Switch
+* Hub
+* Router
+
+```text
+        A
+        │
+B ── Switch ── C
+        │
+        D
+```
+
+### Advantages
+
+✔ Easy to install
+✔ Easy to manage
+✔ Failure of one device doesn't affect others
+
+### Disadvantages
+
+❌ Central device failure stops network
+❌ More cable required
+
+---
+
+# 3️⃣ Bus Topology
+
+### Definition
+
+In **bus topology**, all devices share a **single backbone cable**.
+
+```text
+A ── B ── C ── D ── E
+      │ Backbone Cable │
+```
+
+### Advantages
+
+✔ Low cost
+✔ Simple design
+
+### Disadvantages
+
+❌ Backbone failure stops entire network
+❌ Difficult to troubleshoot
+❌ Performance decreases with more devices
+
+---
+
+# 4️⃣ Ring Topology
+
+### Definition
+
+In **ring topology**, devices are connected in a **circular loop**.
+
+```text
+A ── B
+│    │
+D ── C
+```
+
+Data travels **around the ring**.
+
+### Advantages
+
+✔ Organized communication
+✔ No collision
+
+### Disadvantages
+
+❌ One device failure can stop the network
+❌ Difficult to add new devices
+
+---
+
+# 📊 Topology Comparison
+
+| Topology | Structure              | Main Feature        |
+| -------- | ---------------------- | ------------------- |
+| Mesh     | Every device connected | High reliability    |
+| Star     | Central hub/switch     | Easy management     |
+| Bus      | Single backbone cable  | Low cost            |
+| Ring     | Circular connection    | Organized data flow |
+
+---
+
+**Physical Structures**
+
+Physical structure refers to the physical layout of devices and communication links in a network.
+
+It includes:
+
+**1. Type of Connection**
+
+* Point-to-Point
+* Multipoint
+
+**2. Physical Topology**
+
+* Mesh
+* Star
+* Bus
+* Ring
+
+Each topology defines how devices are connected and how data flows within the network.
+
+---
+
