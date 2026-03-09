@@ -1,0 +1,131 @@
+# Network Criteria
+
+### Basic Idea
+
+When we design or evaluate a **computer network**, we need to check whether the network works **efficiently and safely**.
+
+These evaluation conditions are called **Network Criteria**. 
+
+---
+
+
+**Network criteria are the standards used to measure the performance and effectiveness of a network system.**
+
+A good network should satisfy **three main criteria**:
+
+1. Performance
+2. Reliability
+3. Security
+
+---
+
+# 1️⃣ Performance
+
+### Meaning
+
+**Performance refers to how fast and efficiently a network can transmit data.**
+
+It measures the **speed and efficiency** of communication.
+
+### Factors affecting performance
+
+* Number of users
+* Transmission medium
+* Hardware capability
+* Software efficiency
+
+### Important Terms
+
+**Throughput**
+Actual data transfer rate.
+
+Example
+
+```
+Internet speed = 100 Mbps
+Actual speed = 80 Mbps
+```
+
+80 Mbps = **Throughput**
+
+**Delay (Latency)**
+Time required for data to travel from **source to destination**.
+
+Example:
+
+* Online gaming delay
+* Video streaming delay
+
+---
+
+# 2️⃣ Reliability
+
+### Meaning
+
+**Reliability refers to how dependable and stable a network is.**
+
+A reliable network should:
+
+* Operate **without frequent failures**
+* **Recover quickly** from errors
+* Maintain **consistent performance**
+
+### Factors affecting reliability
+
+* Failure frequency
+* Recovery time
+* Network robustness
+
+Example:
+
+If a server crashes every hour → **Low reliability**
+
+---
+
+# 3️⃣ Security
+
+### Meaning
+
+**Security refers to protecting network data from unauthorized access, misuse, or attacks.**
+
+Security ensures:
+
+* **Confidentiality** → Data remains private
+* **Integrity** → Data is not altered
+* **Availability** → Data is accessible when needed
+
+### Examples of security mechanisms
+
+* Encryption
+* Password authentication
+* Firewalls
+* Network monitoring
+
+Example:
+
+Online banking uses **encryption to secure transactions**.
+
+---
+
+# 📊 Summary Table
+
+| Network Criteria | Meaning                                     |
+| ---------------- | ------------------------------------------- |
+| Performance      | Speed and efficiency of data transfer       |
+| Reliability      | Stability and failure recovery              |
+| Security         | Protection of data from unauthorized access |
+
+---
+
+
+**Network Criteria**
+
+Network criteria are the factors used to evaluate the effectiveness of a network.
+
+The three main network criteria are:
+
+1. **Performance** – Measures how fast data is transmitted across the network.
+2. **Reliability** – Indicates how dependable the network is and how often failures occur.
+3. **Security** – Ensures protection of data from unauthorized access and attacks.
+
+---
