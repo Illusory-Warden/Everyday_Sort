@@ -1,0 +1,148 @@
+# Network Types
+
+### Basic Idea
+
+Networks can be classified based on **geographical size and coverage area**.
+
+Two important network types covered in your syllabus are:
+
+1️⃣ **Local Area Network (LAN)**
+2️⃣ **Wide Area Network (WAN)**
+
+---
+
+# 1️⃣ Local Area Network (LAN)
+
+### Definition
+
+A **Local Area Network (LAN)** is a network that connects devices within a **small geographical area**.
+
+Examples of small areas:
+
+* Home
+* School
+* Office
+* Computer lab
+* Building
+
+---
+
+### Example
+
+A college computer lab:
+
+```
+Computer ── Switch ── Computer
+     │          │
+ Computer    Printer
+```
+
+All devices are connected within **one building**.
+
+---
+
+### Characteristics of LAN
+
+✔ Small geographical area
+✔ High data transfer speed
+✔ Usually privately owned
+✔ Low latency
+
+---
+
+### Technologies used in LAN
+
+* Ethernet
+* WiFi
+* Switches
+* Routers
+
+---
+
+### Real Life Examples
+
+* School computer lab network
+* Office network
+* Home WiFi network
+
+---
+
+# 2️⃣ Wide Area Network (WAN)
+
+### Definition
+
+A **Wide Area Network (WAN)** connects devices over a **large geographical area** such as cities, countries, or continents.
+
+---
+
+### Example
+
+```
+City A Network ─── Internet ─── City B Network
+```
+
+The **Internet itself is the largest WAN**.
+
+---
+
+### Characteristics of WAN
+
+✔ Covers large geographical areas
+✔ Connects multiple LANs
+✔ Uses public communication networks
+✔ Slower than LAN
+
+---
+
+### Technologies used in WAN
+
+* Fiber optic networks
+* Satellite communication
+* Telephone networks
+* Internet backbone
+
+---
+
+### Real Life Examples
+
+* Internet
+* Bank ATM networks
+* International corporate networks
+
+---
+
+# LAN vs WAN (Very Important for Exam)
+
+| Feature   | LAN            | WAN              |
+| --------- | -------------- | ---------------- |
+| Coverage  | Small area     | Large area       |
+| Speed     | High           | Lower            |
+| Ownership | Private        | Public or shared |
+| Example   | School network | Internet         |
+
+---
+
+# Simple Way to Remember
+
+```
+LAN → Small area network
+WAN → Large area network
+```
+
+Example:
+
+```
+Home WiFi = LAN
+Internet = WAN
+```
+
+
+**Network Types**
+
+Networks can be classified based on their geographical coverage into two types:
+
+**1. Local Area Network (LAN)**
+A LAN connects computers within a small geographical area such as a building, office, or campus. It provides high speed communication and is usually privately owned.
+
+**2. Wide Area Network (WAN)**
+A WAN connects computers over a large geographical area such as cities or countries. It connects multiple LANs together. The Internet is the largest example of a WAN.
