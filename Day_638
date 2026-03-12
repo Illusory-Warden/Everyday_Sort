@@ -1,0 +1,33 @@
+1️⃣ Denial of Service (DoS)
+
+Attackers flood a server with huge traffic so the server cannot respond to legitimate users.
+
+Example:
+
+Attacker → sends millions of requests → server crashes
+
+Result:
+
+normal users cannot access the system.
+
+2️⃣ Distributed Denial of Service (DDoS)
+
+Similar to DoS but from many machines at once.
+
+Example:
+
+Thousands of infected computers attack one server.
+
+3️⃣ System Failures
+
+Availability can also be affected by:
+
+hardware failure
+
+power failure
+
+software bugs
+
+Example:
+
+Hard disk crash → database unavailable.
