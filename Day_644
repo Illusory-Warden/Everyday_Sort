@@ -1,0 +1,101 @@
+### Question
+
+A **Statistical TDM system has 4 users**.
+Each user is **active for 25% of the time**.
+
+Find the **probability that all 4 users are idle simultaneously**.
+
+---
+
+# Step 1: Understand the probabilities
+
+Each user is **active 25% of the time**.
+
+[
+P(\text{active}) = 0.25
+]
+
+So the probability that a user is **idle**:
+
+[
+P(\text{idle}) = 1 - 0.25
+]
+
+[
+= 0.75
+]
+
+---
+
+# Step 2: Probability that all users are idle
+
+There are **4 users**.
+
+For independent users:
+
+[
+P(\text{all idle}) = (P(\text{idle}))^4
+]
+
+---
+
+# Step 3: Substitute values
+
+[
+= (0.75)^4
+]
+
+[
+= 0.3164
+]
+
+---
+
+# Step 4: Convert to percentage
+
+[
+0.3164 \times 100
+]
+
+[
+= 31.64%
+]
+
+---
+
+# Final Answer (Exam Style)
+
+**Given**
+
+Number of users = 4
+Probability of active = 0.25
+
+Probability of idle:
+
+[
+1 - 0.25 = 0.75
+]
+
+Probability that all 4 users are idle:
+
+[
+(0.75)^4 = 0.3164
+]
+
+✅ **Probability = 0.3164 (or 31.64%)**
+
+---
+
+# Quick Summary of All Questions on Your Page
+
+| Question                          | Result              |
+| --------------------------------- | ------------------- |
+| (a) Frame duration                | **8 ms**            |
+| (b) TDM bit rate                  | **320 kbps**        |
+| (c) Channel efficiency            | **66.7%**           |
+| (d) Maximum users                 | **31 users**        |
+| (e) Frame transmission time       | **0.256 ms**        |
+| (f) Probability (Statistical TDM) | **0.3164 (31.64%)** |
+
+---
+
