@@ -1,0 +1,205 @@
+
+# Topic 2 — Identity & Identity Management
+
+This topic answers **Question 4 to Question 13** from the question bank. 
+
+We will study it in this order:
+
+1. Identity in Information Security
+2. Types of Identity
+3. Identity Representation Methods
+4. Identity Management Components (AAA Model)
+5. Authentication Methods
+6. Tokens and Smart Cards
+7. Single-factor vs Multi-factor Authentication
+
+---
+
+# 1️⃣ Identity in Information Security
+
+### Definition
+
+**Identity is the representation of a user or entity interacting with a computer system.**
+
+In simple terms:
+
+> Identity tells the system **who is requesting access**.
+
+Examples of entities with identity:
+
+* User
+* Program
+* Device
+* Organization
+
+Example:
+
+When you log into **Gmail**, the system identifies you using:
+
+* email ID
+* password
+* authentication verification
+
+So the system knows **which user is accessing the account**.
+
+---
+
+# 2️⃣ Types of Identities
+
+A system may represent identity in several ways.
+
+### 1️⃣ User Identity
+
+A **unique identifier assigned to a user**.
+
+Examples:
+
+* Username
+* Employee ID
+* Student ID
+
+Example:
+
+```
+User ID: rushkk_2023
+```
+
+This identifies **one specific user in the system**.
+
+---
+
+### 2️⃣ Process Identity
+
+Every running program in a system has an identity called a **Process ID (PID)**.
+
+Example:
+
+When you open a browser:
+
+```
+Process ID = 2145
+```
+
+The operating system uses this to manage programs.
+
+---
+
+### 3️⃣ Group Identity
+
+Users can belong to **groups with shared permissions**.
+
+Example:
+
+| Group    | Permissions         |
+| -------- | ------------------- |
+| Students | View study material |
+| Faculty  | Upload content      |
+| Admin    | Manage system       |
+
+Users inherit permissions from their group.
+
+---
+
+### 4️⃣ Role-Based Identity
+
+Identity can also depend on **roles assigned to users**.
+
+Example roles:
+
+* Administrator
+* Manager
+* Student
+* Employee
+
+Example:
+
+```
+User: Rushkkk
+Role: Student
+```
+
+The system decides access based on the role.
+
+---
+
+# 3️⃣ Identity Representation Methods
+
+Systems must **represent identity in a verifiable way**.
+
+Common methods include:
+
+### 1️⃣ Usernames
+
+Most basic identity representation.
+
+Example:
+
+```
+username: rushkk123
+```
+
+---
+
+### 2️⃣ Digital Certificates
+
+Used in **secure communication and websites**.
+
+Example:
+
+* SSL certificates
+* HTTPS websites
+
+Certificates verify identity using **cryptography**.
+
+---
+
+### 3️⃣ Biometric Identity
+
+Uses **physical characteristics of users**.
+
+Examples:
+
+* Fingerprint
+* Face recognition
+* Iris scan
+
+Used in:
+
+* Smartphones
+* biometric attendance systems
+
+---
+
+### 4️⃣ Smart Cards
+
+Physical cards with embedded chips.
+
+Examples:
+
+* ATM cards
+* SIM cards
+* employee access cards
+
+These store identity data securely.
+
+---
+
+### 5️⃣ Token-Based Identity
+
+Uses **security tokens**.
+
+Examples:
+
+* OTP generator
+* hardware security token
+
+Example login:
+
+```
+Password + OTP
+```
+
+OTP acts as an identity verification token. 
+
+---
+
