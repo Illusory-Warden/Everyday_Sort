@@ -1,0 +1,43 @@
+UNIT 3 — Systems Design
+
+├── Topic 1: Security Design Principles
+│     ├ Least Privilege
+│     ├ Defence in Depth
+│     ├ Separation of Privilege
+│     ├ Fail Safe Defaults
+│     ├ Economy of Mechanism
+│     ├ Complete Mediation
+│     ├ Least Common Mechanism
+│     └ Psychological Acceptability
+
+├── Topic 2: Identity & Identity Management
+│     ├ Identity
+│     ├ Digital Identity
+│     ├ Authentication
+│     ├ Authentication Methods
+│     ├ Tokens & Smart Cards
+│     ├ Identity Representation
+│     └ Identity Management System
+
+├── Topic 3: Access Control
+│     ├ Access Control Basics
+│     ├ Access Control Models
+│     │     ├ DAC
+│     │     ├ MAC
+│     │     ├ RBAC
+│     │     └ TBAC
+│     └ Reference Monitor
+
+├── Topic 4: Information Flow Control
+│     ├ Direct Flow
+│     ├ Indirect Flow
+│     ├ Bell-LaPadula Model
+│     └ Biba Model
+
+└── Topic 5: Confinement Problem
+      ├ Confinement Problem
+      ├ Covert Channels
+      ├ Storage Channels
+      ├ Timing Channels
+      ├ Sandboxing
+      └ Data Leakage Prevention
