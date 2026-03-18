@@ -1,0 +1,21 @@
+RewardsPilot/
+├── README.md                   Project overview
+├── PROJECT_CONTEXT.md          ⭐ Load this in every new Claude session
+├── PROGRESS.md                 Development log + roadmap
+├── SETUP_GUIDE.md              Step-by-step setup for both parts
+├── .gitignore
+│
+├── desktop/
+│   └── edge_rewards_bot.py     Your working desktop bot (unchanged)
+│
+├── mobile/                     React Native app (Expo)
+│   ├── App.tsx                 Root + tab navigation
+│   ├── package.json / app.json / tsconfig.json / babel.config.js
+│   └── src/
+│       ├── screens/            HomeScreen · SearchScreen · SettingsScreen
+│       ├── services/           SearchService · SchedulerService
+│       ├── utils/              storage.ts · topics.ts
+│       └── types/              index.ts
+│
+└── docs/
+    └── architecture.md         Technical decisions
