@@ -1,0 +1,5 @@
+🔹 Why FP-Growth is Better
+Apriori	FP-Growth
+Generates many combinations ❌	No combinations ✔
+Slow ❌	Fast ✔
+Multiple scans ❌	Fewer scans ✔
