@@ -1,0 +1,41 @@
+UNIT 2 COMPLETE STUDY STRUCTURE
+
+UNIT 2 — Induction Motor Drives
+│
+├── Topic 1 — Construction
+│  ├── Stator
+│  ├── Rotor
+│  ├── Squirrel cage rotor
+│  ├── Slip ring rotor
+│
+├── Topic 2 — Working Principle
+│  ├── Rotating magnetic field
+│  ├── Slip
+│  ├── Synchronous speed
+│  ├── Rotor speed
+│  ├── Rotor frequency
+│  ├── Direction reversal
+│
+├── Topic 3 — Types of Induction Motor
+│  ├── Squirrel cage motor
+│  ├── Slip ring motor
+│
+├── Topic 4 — Starting Methods
+│  ├── DOL starter (extra but important)
+│  ├── Star–Delta starter
+│  ├── Auto-transformer starter
+│  ├── Reactor starter
+│  ├── Rotor resistance starter
+│
+├── Topic 5 — Speed Control
+│  ├── Pole changing
+│  ├── Stator voltage control
+│  ├── Supply frequency control
+│  ├── Rotor resistance control
+│
+├── Topic 6 — Braking
+│  ├── Regenerative braking
+│  ├── Dynamic braking
+│  ├── Plugging
+│
+└── Topic 7 — Advantages of Induction Motor
