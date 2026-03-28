@@ -1,0 +1,1 @@
+illusory-warden@atomiccloud:~$ cd ~/finsight && source venv/bin/activate                                                                                                (venv) illusory-warden@atomiccloud:~/finsight$ uvicorn main:app --host 0.0.0.0 --port 45000 --reload   
