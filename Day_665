@@ -1,0 +1,6 @@
+What changed, nothing else:
+
+ollama_keepalive() function deleted, task removed from lifespan
+keep_alive: "30m" added to all 5 remaining Ollama calls — Ollama will hold the model in RAM for 30 minutes after each call instead of unloading it
+categorize_with_ollama now has num_ctx: 256 (was missing entirely)
+Anomaly explanations now fire in parallel via asyncio.gather — if you have 3 anomalies, all 3 Ollama calls go out simultaneously instead of sequentially
