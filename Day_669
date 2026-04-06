@@ -1,0 +1,43 @@
+1
+Practical No 4
+Aim: Configure routers in a network using Static routing protocol in Cisco
+Packet Tracer and show transmission of packet from one network to another.
+Theory:
+Static routing is a routing technique in which routes are manually configured by the
+network administrator. In static routing, the administrator specifies the destination
+network and the next-hop IP address or exit interface to reach that network.
+Devices Required
+ Two Routers
+ Two PCs
+ Copper Straight-Through Cables
+ Copper Cross-Over Cable
+IP Addressing Table
+Device Interface IP Address Subnet Mask
+PC0 NIC 192.168.1.2 255.255.255.0
+Router0 G0/0 192.168.1.1 255.255.255.0
+Router0 G0/1 10.0.0.1 255.255.255.252
+Router1 G0/0 10.0.0.2 255.255.255.252
+Router1 G0/1 192.168.2.1 255.255.255.0
+PC1 NIC 192.168.2.2 255.255.255.0
+Procedure:
+Step 1: Network Creation
+1. Open Cisco Packet Tracer.
+2. Place two routers and two PCs in the workspace.
+3. Connect PC0 to Router0 using straight-through cable.
+4. Connect Router0 to Router1 using cross-over cable.
+5. Connect Router1 to PC1 using straight-through cable.
+2
+Step 2: PC Configuration
+ Configure PC0 with IP address 192.168.1.2, subnet mask 255.255.255.0 and default
+gateway 192.168.1.1.
+ Configure PC1 with IP address 192.168.2.2, subnet mask 255.255.255.0 and default
+gateway 192.168.2.1.
+Step 3: Router Configuration
+ Configure IP addresses on all router interfaces as per the IP addressing table.
+ Enable all router interfaces.
+ Configure static routes on both routers to reach the remote networks.
+Result:-
+Conclusion: Static routing was successfully configured on the routers and communication
+between different networks was achieved.
+Attendance Performance Viva Total
+3 7 5 15
