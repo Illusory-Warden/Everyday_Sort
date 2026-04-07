@@ -1,0 +1,28 @@
+// var bellboy1 = {
+//     name : "Rashmin",
+//     yearsOfExperience : 0.5,
+//     sex : "other",
+//     age : 12,
+//     hasWorkPermit : "False",
+//     langauges : ["tamil" , "banjara"]
+// }
+
+// var houseKeeper1 = {
+//     name : "Avantee",
+//     yearsOfExperience : 0.00,
+//     sex : "Female",
+//     age : 19,
+//     hasWorkPermit : "False",
+//     langauges : ["Brahmin" , "Marathi"]
+// }
+
+// function HouseKeeperProd (name , yearsOfExperience , sex , age , hasWorkPermit , langauges){
+//     this.name = name;
+//     this.yearsOfExperience = yearsOfExperience;
+//     this.sex = sex;
+//     this.age = age;
+//     this.hasWorkPermit = hasWorkPermit;
+//     this.langauges = langauges;
+// }
+
+// var houseKeeper1 = new HouseKeeperProd  ("Avantee" , 0.00 , "Female" , 19 , "False" , ["Brahmin" , "Marathi"]);
