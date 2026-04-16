@@ -1,0 +1,29 @@
+## Go with Lubuntu 64-bit!
+
+Since your Compaq Presario C700 supports 64-bit, **absolutely download the 64-bit version** instead. It's the better choice.
+
+### Why 64-bit is Better:
+
+| | 32-bit | 64-bit ✅ |
+|---|---|---|
+| Performance | Slower | Faster |
+| RAM usage | Less efficient | More efficient |
+| Software support | Fading out | Fully supported |
+| Future updates | Limited | Long-term support |
+| Browser compatibility | Some issues | Perfect |
+
+---
+
+### ✏️ Update to Your Rufus Steps:
+
+Just **one change** from the previous guide — when downloading the ISO:
+
+1. Go to 👉 **https://lubuntu.me/downloads/**
+2. Download **Lubuntu 24.04 LTS — 64-bit (AMD64)** ✅
+3. Everything else in Rufus stays the same — **MBR + FAT32**
+
+---
+
+> 💡 The Bing result does mention only 320MB RAM support which is **incorrect** — that's just a bad AI snippet. You told me earlier you have **3GB RAM**, which works perfectly with 64-bit Lubuntu. Trust your actual specs, not that Bing answer!
+
+You're good to go — proceed with the same installation guide! 🚀
