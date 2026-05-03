@@ -1,0 +1,7 @@
+Final Conclusion
+You compute gain by:
+Finding entropy of full dataset
+Splitting by attribute
+Calculating weighted entropy
+Subtracting
+The attribute with highest gain (Age = 0.246) becomes the root node
