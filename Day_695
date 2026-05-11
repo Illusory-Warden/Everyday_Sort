@@ -1,0 +1,5 @@
+Advantage	Explanation
+Detects Noise	Identifies unusual transactions
+No Need of k	Number of clusters not required
+Handles Arbitrary Shapes	Works on irregular transaction patterns
+Works with Large Data	Suitable for banking databases
