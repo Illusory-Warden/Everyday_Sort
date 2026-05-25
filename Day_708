@@ -1,0 +1,45 @@
+Removing intermediate container 972ab1631d5f
+ ce06bb747d53
+Step 5/7 : COPY . .
+ d8fc2c850059
+Step 6/7 : EXPOSE 8080
+ Running in 2be82e01495d
+Removing intermediate container 2be82e01495d
+ 76068243cf79
+Step 7/7 : CMD [ "node", "src/server.js" ]
+ Running in 359d1daff96a
+Removing intermediate container 359d1daff96a
+ 70f499b47f55
+Successfully built 70f499b47f55
+Successfully tagged gcr.io/qwiklabs-gcp-02-d9058a6a951c/fancy-monolith-161:1.0.0
+PUSH
+Pushing gcr.io/qwiklabs-gcp-02-d9058a6a951c/fancy-monolith-161:1.0.0
+The push refers to repository [gcr.io/qwiklabs-gcp-02-d9058a6a951c/fancy-monolith-161]
+c16afd60114d: Preparing
+b0fcba8bf63c: Preparing
+a2110b58c660: Preparing
+adeb0d657511: Preparing
+be322b479aee: Preparing
+d41bcd3a037b: Preparing
+fe0d845e767b: Preparing
+f25ec1d93a58: Preparing
+794ce8b1b516: Preparing
+3220beed9b06: Preparing
+684f82921421: Preparing
+9af5f53e8f62: Preparing
+684f82921421: Waiting
+9af5f53e8f62: Waiting
+fe0d845e767b: Layer already exists
+794ce8b1b516: Layer already exists
+3220beed9b06: Layer already exists
+d41bcd3a037b: Layer already exists
+f25ec1d93a58: Layer already exists
+9af5f53e8f62: Layer already exists
+684f82921421: Layer already exists
+adeb0d657511: Pushed
+be322b479aee: Pushed
+a2110b58c660: Pushed
+c16afd60114d: Pushed
+b0fcba8bf63c: Pushed
+1.0.0: digest: sha256:eedd5e1da92d30e60ddf2b6d70125422eea170a7804ecc3aca6743731f8f2687 size: 2841
+DONE
