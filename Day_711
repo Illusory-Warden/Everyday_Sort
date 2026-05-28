@@ -1,0 +1,8 @@
+The architecture I'm proposing in my head:
+
+CAT6 → Switch → RPi's ethernet port (RPi gets internet from main router)
+RPi uses your USB WiFi adapter to broadcast a small hotspot
+MIFI's "Internet Wi-Fi" connects to that RPi hotspot as its upstream
+MIFI recreates 192.168.100.x exactly as before
+MIFI's ethernet port → CAT5e → Compaq → 192.168.100.100 ✓ stable ethernet ✓
+Laptop connects to MIFI_6034 WiFi as usual
