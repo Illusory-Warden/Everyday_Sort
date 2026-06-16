@@ -1,0 +1,24 @@
+Browser visits "/"
+        ↓
+app.get() runs
+        ↓
+SQL query executes
+        ↓
+result.rows =
+[
+  { country_code: "IN" },
+  { country_code: "US" },
+  { country_code: "JP" }
+]
+        ↓
+Extract country_code values
+        ↓
+countries = ["IN", "US", "JP"]
+        ↓
+Render index.ejs with:
+{
+  countries: ["IN", "US", "JP"],
+  total: 3
+}
+        ↓
+Browser receives rendered HTML
