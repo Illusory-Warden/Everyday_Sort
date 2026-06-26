@@ -1,0 +1,16 @@
+  db.query(
+    "SELECT * FROM users WHERE email = $1 AND password = $2",
+    [email, password],
+    (err, result) => {
+      if (err) {
+        console.error("Error querying user:", err);
+        res.status(500).send("Error logging in");
+      } else if (result.rows.length > 0) {
+        console.log("User logged in successfully");
+        res.render("secrets.ejs");
+      } else {
+        console.log("Invalid email or password");
+        res.status(401).send("Invalid email or password");
+      }
+    },
+  );
