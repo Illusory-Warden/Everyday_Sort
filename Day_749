@@ -1,0 +1,41 @@
+(venv) illusory-warden@finsight:~/finsight$ uvicorn main:app --host 0.0.0.0 --port 45000 --reload
+INFO:     Will watch for changes in these directories: ['/home/illusory-warden/finsight']
+INFO:     Uvicorn running on http://0.0.0.0:45000 (Press CTRL+C to quit)
+INFO:     Started reloader process [6597] using StatReload
+INFO:     Started server process [6603]
+INFO:     Waiting for application startup.
+[Startup] Warming up Ollama...
+INFO:     Application startup complete.
+[Startup] Ollama is warm and ready
+INFO:     103.220.215.209:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /recurring HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /goals HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /conversations HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /streaks HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /categories HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /auth/me HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /categories HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /conversations HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /streaks HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /health HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /recurring HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     2401:4900:ac88:507:20e7:81ff:feff:d723:0 - "GET /goals HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "GET /stats/monthly HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "OPTIONS /transactions HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "OPTIONS /stats/monthly HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "GET /transactions HTTP/1.1" 200 OK
+INFO:     103.220.215.209:0 - "GET /stats/monthly HTTP/1.1" 200 OK
