@@ -1,0 +1,755 @@
+The spinner mate :
+
+import { LoaderIcon } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+
+  return (
+
+    <LoaderIcon
+
+      role="status"
+
+      aria-label="Loading"
+
+      className={cn("size-4 animate-spin", className)}
+
+      {...props}
+
+    />
+
+  )
+
+}
+
+export function SpinnerCustom() {
+
+  return (
+
+    <div className="flex items-center gap-4">
+
+      <Spinner />
+
+    </div>
+
+  )
+
+}
+
+
+
+The switch buttons mate :
+import {
+  Field,
+  FieldContent,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+  FieldTitle,
+} from "@/components/ui/field"
+import { Switch } from "@/components/ui/switch"
+
+export function SwitchChoiceCard() {
+  return (
+    <FieldGroup className="w-full max-w-sm">
+      <FieldLabel htmlFor="switch-share">
+        <Field orientation="horizontal">
+          <FieldContent>
+            <FieldTitle>Share across devices</FieldTitle>
+            <FieldDescription>
+              Focus is shared across devices, and turns off when you leave the
+              app.
+            </FieldDescription>
+          </FieldContent>
+          <Switch id="switch-share" />
+        </Field>
+      </FieldLabel>
+      <FieldLabel htmlFor="switch-notifications">
+        <Field orientation="horizontal">
+          <FieldContent>
+            <FieldTitle>Enable notifications</FieldTitle>
+            <FieldDescription>
+              Receive notifications when focus mode is enabled or disabled.
+            </FieldDescription>
+          </FieldContent>
+          <Switch id="switch-notifications" defaultChecked />
+        </Field>
+      </FieldLabel>
+    </FieldGroup>
+  )
+}
+
+
+Actions#
+A table showing actions for each row using a <DropdownMenu /> component.
+
+import { MoreHorizontalIcon } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+export function TableActions() {
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Product</TableHead>
+          <TableHead>Price</TableHead>
+          <TableHead className="text-right">Actions</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell className="font-medium">Wireless Mouse</TableCell>
+          <TableCell>$29.99</TableCell>
+          <TableCell className="text-right">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="size-8">
+                  <MoreHorizontalIcon />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem variant="destructive">
+                  Delete
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell className="font-medium">Mechanical Keyboard</TableCell>
+          <TableCell>$129.99</TableCell>
+          <TableCell className="text-right">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="size-8">
+                  <MoreHorizontalIcon />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem variant="destructive">
+                  Delete
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell className="font-medium">USB-C Hub</TableCell>
+          <TableCell>$49.99</TableCell>
+          <TableCell className="text-right">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="size-8">
+                  <MoreHorizontalIcon />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>Edit</DropdownMenuItem>
+                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem variant="destructive">
+                  Delete
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  )
+}
+
+
+Range Picker#
+A date picker component for selecting a range of dates.
+"use client"
+
+import * as React from "react"
+import { addDays, format } from "date-fns"
+import { CalendarIcon } from "lucide-react"
+import { type DateRange } from "react-day-picker"
+
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import { Field, FieldLabel } from "@/components/ui/field"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+
+export function DatePickerWithRange() {
+  const [date, setDate] = React.useState<DateRange | undefined>({
+    from: new Date(new Date().getFullYear(), 0, 20),
+    to: addDays(new Date(new Date().getFullYear(), 0, 20), 20),
+  })
+
+  return (
+    <Field className="mx-auto w-60">
+      <FieldLabel htmlFor="date-picker-range">Date Picker Range</FieldLabel>
+      <Popover>
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            id="date-picker-range"
+            className="justify-start px-2.5 font-normal"
+          >
+            <CalendarIcon />
+            {date?.from ? (
+              date.to ? (
+                <>
+                  {format(date.from, "LLL dd, y")} -{" "}
+                  {format(date.to, "LLL dd, y")}
+                </>
+              ) : (
+                format(date.from, "LLL dd, y")
+              )
+            ) : (
+              <span>Pick a date</span>
+            )}
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-auto p-0" align="start">
+          <Calendar
+            mode="range"
+            defaultMonth={date?.from}
+            selected={date}
+            onSelect={setDate}
+            numberOfMonths={2}
+          />
+        </PopoverContent>
+      </Popover>
+    </Field>
+  )
+}
+
+
+
+
+Destructive#
+Use the AlertDialogAction component to add a destructive action button to the alert dialog.
+
+import { Trash2Icon } from "lucide-react"
+
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+import { Button } from "@/components/ui/button"
+
+export function AlertDialogDestructive() {
+  return (
+    <AlertDialog>
+      <AlertDialogTrigger asChild>
+        <Button variant="destructive">Delete Chat</Button>
+      </AlertDialogTrigger>
+      <AlertDialogContent size="sm">
+        <AlertDialogHeader>
+          <AlertDialogMedia className="bg-destructive/10 text-destructive dark:bg-destructive/20 dark:text-destructive">
+            <Trash2Icon />
+          </AlertDialogMedia>
+          <AlertDialogTitle>Delete chat?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This will permanently delete this chat conversation. View{" "}
+            <a href="#">Settings</a> delete any memories saved during this chat.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel variant="outline">Cancel</AlertDialogCancel>
+          <AlertDialogAction variant="destructive">Delete</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  )
+}
+
+
+
+Line Chart - Label
+January - June 2024
+
+"use client"
+
+import { TrendingUp } from "lucide-react"
+import { CartesianGrid, LabelList, Line, LineChart, XAxis } from "recharts"
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart"
+
+export const description = "A line chart with a label"
+
+const chartData = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
+]
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "var(--chart-1)",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig
+
+export function ChartLineLabel() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Line Chart - Label</CardTitle>
+        <CardDescription>January - June 2024</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <ChartContainer config={chartConfig}>
+          <LineChart
+            accessibilityLayer
+            data={chartData}
+            margin={{
+              top: 20,
+              left: 12,
+              right: 12,
+            }}
+          >
+            <CartesianGrid vertical={false} />
+            <XAxis
+              dataKey="month"
+              tickLine={false}
+              axisLine={false}
+              tickMargin={8}
+              tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <ChartTooltip
+              cursor={false}
+              content={<ChartTooltipContent indicator="line" />}
+            />
+            <Line
+              dataKey="desktop"
+              type="natural"
+              stroke="var(--color-desktop)"
+              strokeWidth={2}
+              dot={{
+                fill: "var(--color-desktop)",
+              }}
+              activeDot={{
+                r: 6,
+              }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Line>
+          </LineChart>
+        </ChartContainer>
+      </CardContent>
+      <CardFooter className="flex-col items-start gap-2 text-sm">
+        <div className="flex gap-2 leading-none font-medium">
+          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+        </div>
+        <div className="leading-none text-muted-foreground">
+          Showing total visitors for the last 6 months
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}
+
+
+
+Radar Chart - Custom Label
+Showing total visitors for the last 6 months
+"use client"
+
+import { TrendingUp } from "lucide-react"
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts"
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@/components/ui/chart"
+
+export const description = "A radar chart with a custom label"
+
+const chartData = [
+  { month: "January", desktop: 186, mobile: 80 },
+  { month: "February", desktop: 305, mobile: 200 },
+  { month: "March", desktop: 237, mobile: 120 },
+  { month: "April", desktop: 73, mobile: 190 },
+  { month: "May", desktop: 209, mobile: 130 },
+  { month: "June", desktop: 214, mobile: 140 },
+]
+
+const chartConfig = {
+  desktop: {
+    label: "Desktop",
+    color: "var(--chart-1)",
+  },
+  mobile: {
+    label: "Mobile",
+    color: "var(--chart-2)",
+  },
+} satisfies ChartConfig
+
+export function ChartRadarLabelCustom() {
+  return (
+    <Card>
+      <CardHeader className="items-center pb-4">
+        <CardTitle>Radar Chart - Custom Label</CardTitle>
+        <CardDescription>
+          Showing total visitors for the last 6 months
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="pb-0">
+        <ChartContainer
+          config={chartConfig}
+          className="mx-auto aspect-square max-h-[250px]"
+        >
+          <RadarChart
+            data={chartData}
+            margin={{
+              top: 10,
+              right: 10,
+              bottom: 10,
+              left: 10,
+            }}
+          >
+            <ChartTooltip
+              cursor={false}
+              content={<ChartTooltipContent indicator="line" />}
+            />
+            <PolarAngleAxis
+              dataKey="month"
+              tick={({ x, y, textAnchor, index, ...props }) => {
+                const data = chartData[index]
+                const yValue = typeof y === "number" ? y : 0
+
+                return (
+                  <text
+                    x={x}
+                    y={yValue + (index === 0 ? -10 : 0)}
+                    textAnchor={textAnchor}
+                    fontSize={13}
+                    fontWeight={500}
+                    {...props}
+                  >
+                    <tspan>{data.desktop}</tspan>
+                    <tspan className="fill-muted-foreground">/</tspan>
+                    <tspan>{data.mobile}</tspan>
+                    <tspan
+                      x={x}
+                      dy={"1rem"}
+                      fontSize={12}
+                      className="fill-muted-foreground"
+                    >
+                      {data.month}
+                    </tspan>
+                  </text>
+                )
+              }}
+            />
+
+            <PolarGrid />
+            <Radar
+              dataKey="desktop"
+              fill="var(--color-desktop)"
+              fillOpacity={0.6}
+            />
+            <Radar dataKey="mobile" fill="var(--color-mobile)" />
+          </RadarChart>
+        </ChartContainer>
+      </CardContent>
+      <CardFooter className="flex-col gap-2 text-sm">
+        <div className="flex items-center gap-2 leading-none font-medium">
+          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+        </div>
+        <div className="flex items-center gap-2 leading-none text-muted-foreground">
+          January - June 2024
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}
+
+
+Separator#
+Use the <InputOTPSeparator /> component to add a separator between input groups.
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp"
+
+export function InputOTPWithSeparator() {
+  return (
+    <InputOTP maxLength={6}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={2} />
+        <InputOTPSlot index={3} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+    </InputOTP>
+  )
+}
+
+
+
+Card
+Displays a card with header, content, and footer.
+Login and Sign up card 
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
+export function CardDemo() {
+  return (
+    <Card className="w-full max-w-sm">
+      <CardHeader>
+        <CardTitle>Login to your account</CardTitle>
+        <CardDescription>
+          Enter your email below to login to your account
+        </CardDescription>
+        <CardAction>
+          <Button variant="link">Sign Up</Button>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <form>
+          <div className="flex flex-col gap-6">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="m@example.com"
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <a
+                  href="#"
+                  className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  Forgot your password?
+                </a>
+              </div>
+              <Input id="password" type="password" required />
+            </div>
+          </div>
+        </form>
+      </CardContent>
+      <CardFooter className="flex-col gap-2">
+        <Button type="submit" className="w-full">
+          Login
+        </Button>
+        <Button variant="outline" className="w-full">
+          Login with Google
+        </Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+
+A login page with a muted background color
+app/login/page.tsx
+import { GalleryVerticalEnd } from "lucide-react"
+
+import { LoginForm } from "@/components/login-form"
+
+export default function LoginPage() {
+  return (
+    <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-muted p-6 md:p-10">
+      <div className="flex w-full max-w-sm flex-col gap-6">
+        <a href="#" className="flex items-center gap-2 self-center font-medium">
+          <div className="flex size-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+            <GalleryVerticalEnd className="size-4" />
+          </div>
+          Acme Inc.
+        </a>
+        <LoginForm />
+      </div>
+    </div>
+  )
+}
+components/login-form.tsx
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Field,
+  FieldDescription,
+  FieldGroup,
+  FieldLabel,
+  FieldSeparator,
+} from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
+
+export function LoginForm({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("flex flex-col gap-6", className)} {...props}>
+      <Card>
+        <CardHeader className="text-center">
+          <CardTitle className="text-xl">Welcome back</CardTitle>
+          <CardDescription>
+            Login with your Apple or Google account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <form>
+            <FieldGroup>
+              <Field>
+                <Button variant="outline" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Login with Apple
+                </Button>
+                <Button variant="outline" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                      d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Login with Google
+                </Button>
+              </Field>
+              <FieldSeparator className="*:data-[slot=field-separator-content]:bg-card">
+                Or continue with
+              </FieldSeparator>
+              <Field>
+                <FieldLabel htmlFor="email">Email</FieldLabel>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="m@example.com"
+                  required
+                />
+              </Field>
+              <Field>
+                <div className="flex items-center">
+                  <FieldLabel htmlFor="password">Password</FieldLabel>
+                  <a
+                    href="#"
+                    className="ml-auto text-sm underline-offset-4 hover:underline"
+                  >
+                    Forgot your password?
+                  </a>
+                </div>
+                <Input id="password" type="password" required />
+              </Field>
+              <Field>
+                <Button type="submit">Login</Button>
+                <FieldDescription className="text-center">
+                  Don&apos;t have an account? <a href="#">Sign up</a>
+                </FieldDescription>
+              </Field>
+            </FieldGroup>
+          </form>
+        </CardContent>
+      </Card>
+      <FieldDescription className="px-6 text-center">
+        By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
+        and <a href="#">Privacy Policy</a>.
+      </FieldDescription>
+    </div>
+  )
+}
