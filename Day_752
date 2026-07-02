@@ -1,0 +1,7 @@
+Terminal 1 : SSH :
+
+illusory-warden@atomiccloud:~$ cd ~/finsight && source venv/bin/activate                                                                                                (venv) illusory-warden@atomiccloud:~/finsight$ uvicorn main:app --host 0.0.0.0 --port 45000 --reload 
+
+Terminal 2 : SSH :
+
+(venv) illusory-warden@atomiccloud:~/finsight$ python3 -m http.server 45001 --directory ~/finsight/static/       
