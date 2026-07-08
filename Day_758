@@ -1,0 +1,2 @@
+5 bugs — 2 Critical, 3 High. App version updated to 1.0.38 for all!
+Also worth noting — BUG-078 where the raw JSON is exposed is particularly embarrassing from a dev perspective. That's internal API structure being leaked directly to end users. Flag it clearly in the sheet
