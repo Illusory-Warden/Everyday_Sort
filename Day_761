@@ -1,0 +1,834 @@
+package com.fasalmitra.app.ui.screens.main
+
+import androidx.compose.animation.core.*
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavController
+import coil.compose.AsyncImage
+import com.fasalmitra.app.data.model.DailyForecast
+import com.fasalmitra.app.data.model.HomeUiState
+import com.fasalmitra.app.navigation.NavGraph
+import com.fasalmitra.app.ui.screens.home.HomeViewModel
+import com.fasalmitra.app.ui.screens.home.toTimeString
+import com.fasalmitra.app.ui.theme.Green900
+import com.fasalmitra.app.utils.LanguageHelper
+import com.fasalmitra.app.utils.PreferenceHelper
+
+import androidx.compose.material.icons.filled.ArrowForward
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SHIMMER HELPER
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+fun shimmerBrush(): Brush {
+    val shimmerColors = listOf(
+        Color(0xFFE0E0E0),
+        Color(0xFFF5F5F5),
+        Color(0xFFE0E0E0)
+    )
+    val transition = rememberInfiniteTransition(label = "shimmer")
+    val translateAnim by transition.animateFloat(
+        initialValue   = 0f,
+        targetValue    = 1000f,
+        animationSpec  = infiniteRepeatable(
+            animation = tween(durationMillis = 1200, easing = LinearEasing),
+            repeatMode = RepeatMode.Restart
+        ),
+        label = "shimmerTranslate"
+    )
+    return Brush.linearGradient(
+        colors = shimmerColors,
+        start  = Offset(translateAnim - 400f, 0f),
+        end    = Offset(translateAnim, 0f)
+    )
+}
+
+@Composable
+private fun ShimmerBox(modifier: Modifier) {
+    Box(modifier = modifier.background(shimmerBrush(), RoundedCornerShape(12.dp)))
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// MAIN SCREEN
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+fun MainScreen(navController: NavController) {
+
+    val context       = LocalContext.current
+    val viewModel: HomeViewModel = viewModel()
+    val uiState    by viewModel.uiState.collectAsState()
+    val farmerName by viewModel.farmerName.collectAsState()
+    val crop       by viewModel.crop.collectAsState()
+    val language   by viewModel.language.collectAsState()
+    val landSize   by viewModel.landSize.collectAsState()
+    val irrigation by viewModel.irrigation.collectAsState()
+
+    val strings = LanguageHelper.getStrings(language)
+
+    val lifecycleOwner = LocalLifecycleOwner.current
+    DisposableEffect(lifecycleOwner) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) {
+                viewModel.reloadPrefs(context)
+            }
+        }
+        lifecycleOwner.lifecycle.addObserver(observer)
+        onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.loadData(context)
+    }
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFF0F4F0))
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState())
+        ) {
+
+            // ── Top Header ──────────────────────────────────────────────────
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(Color(0xFF2D5016), Green900)
+                        )
+                    )
+                    .statusBarsPadding()
+                    .padding(horizontal = 20.dp, vertical = 18.dp)
+            ) {
+                Column {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier          = Modifier.fillMaxWidth()
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                text       = "${strings.greeting}, $farmerName!",
+                                color      = Color.White,
+                                fontSize   = 20.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                text     = strings.todayReport,
+                                color    = Color.White.copy(alpha = 0.72f),
+                                fontSize = 13.sp
+                            )
+                        }
+                        IconButton(
+                            onClick  = { navController.navigate(NavGraph.SETTINGS) },
+                            modifier = Modifier
+                                .size(42.dp)
+                                .background(Color.White.copy(alpha = 0.18f), CircleShape)
+                        ) {
+                            Icon(
+                                imageVector        = Icons.Default.Settings,
+                                contentDescription = strings.settings,
+                                tint               = Color.White,
+                                modifier           = Modifier.size(22.dp)
+                            )
+                        }
+                    }
+                    if (!uiState.isLoadingWeather && uiState.locationName.isNotEmpty()) {
+                        Spacer(modifier = Modifier.height(6.dp))
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Icon(
+                                Icons.Default.LocationOn,
+                                contentDescription = null,
+                                tint               = Color.White.copy(alpha = 0.75f),
+                                modifier           = Modifier.size(14.dp)
+                            )
+                            Spacer(modifier = Modifier.width(4.dp))
+                            Text(
+                                text     = uiState.locationName,
+                                color    = Color.White.copy(alpha = 0.75f),
+                                fontSize = 13.sp
+                            )
+                        }
+                    }
+                }
+            }
+
+            Spacer(modifier = Modifier.height(14.dp))
+
+            // ── ERROR / EMPTY STATE ─────────────────────────────────────────
+            if (uiState.errorMessage != null && !uiState.isLoadingWeather) {
+                ErrorEmptyState(
+                    message  = uiState.errorMessage!!,
+                    language = language,
+                    onRetry  = { viewModel.refresh(context) }
+                )
+                Spacer(modifier = Modifier.height(14.dp))
+            }
+
+            // ── Farm Info Card ──────────────────────────────────────────────
+            if (crop != "General" || landSize.isNotEmpty()) {
+                FarmInfoCard(
+                    crop       = crop,
+                    landSize   = landSize,
+                    irrigation = irrigation,
+                    language   = language,
+                    strings    = strings
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+            }
+
+            // ── Irrigation Advisory Button ──────────────────────────────────
+            val irrigationLabel = when (language) {
+                "hi" -> "💧 सिंचाई सलाह देखें"
+                "mr" -> "💧 सिंचन सल्ला पाहा"
+                else -> "💧 View Irrigation Advisory"
+            }
+            val irrigationSub = when (language) {
+                "hi" -> "AI आधारित सिंचाई निर्णय सहायता"
+                "mr" -> "AI आधारित सिंचन निर्णय सहाय्य"
+                else -> "AI-Based Irrigation Decision Support"
+            }
+
+            Card(
+                onClick   = { navController.navigate(NavGraph.IRRIGATION) },
+                modifier  = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                shape     = RoundedCornerShape(18.dp),
+                colors    = CardDefaults.cardColors(containerColor = Color(0xFF1B4332)),
+                elevation = CardDefaults.cardElevation(4.dp)
+            ) {
+                Row(
+                    modifier          = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 20.dp, vertical = 16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text       = irrigationLabel,
+                            color      = Color.White,
+                            fontSize   = 15.sp,
+                            fontWeight = FontWeight.Bold
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text     = irrigationSub,
+                            color    = Color.White.copy(alpha = 0.75f),
+                            fontSize = 12.sp
+                        )
+                    }
+                    Icon(
+                        imageVector        = Icons.Default.ArrowForward,
+                        contentDescription = null,
+                        tint               = Color.White,
+                        modifier           = Modifier.size(22.dp)
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // ── Weather Hero (shimmer while loading) ────────────────────────
+            if (uiState.isLoadingWeather) {
+                WeatherShimmer()
+            } else if (uiState.errorMessage == null) {
+                WeatherHeroCard(uiState = uiState, strings = strings)
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // ── Stats Grid (shimmer while loading) ──────────────────────────
+            if (uiState.isLoadingWeather) {
+                StatsShimmer()
+            } else if (uiState.errorMessage == null) {
+                StatsGrid(uiState = uiState, strings = strings)
+                Spacer(modifier = Modifier.height(12.dp))
+                SunInfoCard(uiState = uiState, strings = strings)
+            }
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // ── AI Insights ─────────────────────────────────────────────────
+            AiInsightsCard(
+                uiState  = uiState,
+                crop     = crop,
+                language = language,
+                strings  = strings
+            )
+            Spacer(modifier = Modifier.height(12.dp))
+
+            // ── 5-Day Forecast ──────────────────────────────────────────────
+            if (!uiState.isLoadingWeather && uiState.dailyForecast.isNotEmpty() && uiState.errorMessage == null) {
+                ForecastCard(forecast = uiState.dailyForecast, strings = strings)
+                Spacer(modifier = Modifier.height(12.dp))
+            }
+
+            // ── Refresh ─────────────────────────────────────────────────────
+            OutlinedButton(
+                onClick  = { viewModel.refresh(context) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp)
+                    .height(48.dp),
+                shape  = RoundedCornerShape(12.dp),
+                border = BorderStroke(1.5.dp, Green900)
+            ) {
+                Icon(Icons.Default.Refresh, null, tint = Green900, modifier = Modifier.size(18.dp))
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(strings.refresh, color = Green900, fontWeight = FontWeight.Medium)
+            }
+
+            Spacer(modifier = Modifier.height(28.dp))
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// ERROR / EMPTY STATE
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun ErrorEmptyState(message: String, language: String, onRetry: () -> Unit) {
+    // ── Dedicated offline-mode branch — this isn't an error, so it gets a
+    // calmer tone, no warning icon, and points to what still works instead
+    // of just offering retry (retrying without internet will just fail again).
+    if (message == "OFFLINE_MODE") {
+        val title = when (language) {
+            "hi" -> "आप ऑफ़लाइन हैं"
+            "mr" -> "तुम्ही ऑफलाइन आहात"
+            else -> "You're Offline"
+        }
+        val subtitle = when (language) {
+            "hi" -> "मौसम और AI सलाह के लिए इंटरनेट चाहिए। लेकिन सिंचाई सलाह अभी भी ऑफ़लाइन मोड में काम करती है।"
+            "mr" -> "हवामान आणि AI सल्ल्यासाठी इंटरनेट लागते. पण सिंचन सल्ला ऑफलाइन मोडमध्येही काम करतो."
+            else -> "Weather and AI advice need internet. Irrigation Advisory still works offline using the on-device model."
+        }
+        val retryLabelOffline = when (language) { "hi" -> "फिर कोशिश करें"; "mr" -> "पुन्हा प्रयत्न करा"; else -> "Try Again" }
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            shape     = RoundedCornerShape(18.dp),
+            colors    = CardDefaults.cardColors(containerColor = Color(0xFFEFF4EF)),
+            elevation = CardDefaults.cardElevation(2.dp)
+        ) {
+            Column(
+                modifier            = Modifier.fillMaxWidth().padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Icon(
+                    imageVector        = Icons.Default.CloudOff,
+                    contentDescription = null,
+                    tint               = Color(0xFF5C7A5C),
+                    modifier           = Modifier.size(36.dp)
+                )
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    text       = title,
+                    fontSize   = 15.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color      = Color(0xFF33463A),
+                    textAlign  = TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(6.dp))
+                Text(
+                    text      = subtitle,
+                    fontSize  = 12.sp,
+                    color     = Color(0xFF5C7A5C),
+                    textAlign = TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Button(
+                    onClick  = onRetry,
+                    colors   = ButtonDefaults.buttonColors(containerColor = Green900),
+                    shape    = RoundedCornerShape(10.dp)
+                ) {
+                    Icon(Icons.Default.Refresh, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(retryLabelOffline, color = Color.White, fontWeight = FontWeight.Bold)
+                }
+            }
+        }
+        return
+    }
+
+    // ── Genuine error branch (unchanged, plus a timeout-specific hint) ────
+    val retryLabel = when (language) { "hi" -> "फिर कोशिश करें"; "mr" -> "पुन्हा प्रयत्न करा"; else -> "Try Again" }
+    val hint = when {
+        message.contains("location", ignoreCase = true) || message.contains("GPS", ignoreCase = true) ->
+            when (language) { "hi" -> "GPS चालू करें और फिर कोशिश करें"; "mr" -> "GPS चालू करा आणि पुन्हा प्रयत्न करा"; else -> "Please enable GPS and try again" }
+        message.contains("internet", ignoreCase = true) || message.contains("host", ignoreCase = true) || message.contains("network", ignoreCase = true) ->
+            when (language) { "hi" -> "इंटरनेट कनेक्शन जांचें"; "mr" -> "इंटरनेट कनेक्शन तपासा"; else -> "Check your internet connection" }
+        message.contains("too long", ignoreCase = true) || message.contains("timed", ignoreCase = true) ->
+            when (language) { "hi" -> "कनेक्शन धीमा है, दोबारा कोशिश करें"; "mr" -> "कनेक्शन संथ आहे, पुन्हा प्रयत्न करा"; else -> "Connection seems slow, please retry" }
+        else ->
+            when (language) { "hi" -> "कुछ गलत हुआ, दोबारा कोशिश करें"; "mr" -> "काहीतरी चुकले, पुन्हा प्रयत्न करा"; else -> "Something went wrong, please retry" }
+    }
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(18.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color(0xFFFFF3E0)),
+        elevation = CardDefaults.cardElevation(2.dp)
+    ) {
+        Column(
+            modifier          = Modifier
+                .fillMaxWidth()
+                .padding(24.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text("⚠️", fontSize = 40.sp)
+            Spacer(modifier = Modifier.height(10.dp))
+            Text(
+                text       = hint,
+                fontSize   = 15.sp,
+                fontWeight = FontWeight.SemiBold,
+                color      = Color(0xFF5D4037),
+                textAlign  = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            Text(
+                text      = message,
+                fontSize  = 12.sp,
+                color     = Color(0xFF8D6E63),
+                textAlign = TextAlign.Center
+            )
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(
+                onClick  = onRetry,
+                colors   = ButtonDefaults.buttonColors(containerColor = Color(0xFFE65100)),
+                shape    = RoundedCornerShape(10.dp)
+            ) {
+                Icon(Icons.Default.Refresh, null, tint = Color.White, modifier = Modifier.size(16.dp))
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(retryLabel, color = Color.White, fontWeight = FontWeight.Bold)
+            }
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SHIMMER PLACEHOLDERS
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun WeatherShimmer() {
+    val brush = shimmerBrush()
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(24.dp),
+        elevation = CardDefaults.cardElevation(4.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(160.dp)
+                .background(brush)
+        )
+    }
+}
+
+@Composable
+private fun StatsShimmer() {
+    val brush = shimmerBrush()
+    Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+        Row(
+            modifier              = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Box(modifier = Modifier.weight(1f).height(100.dp).background(brush, RoundedCornerShape(16.dp)))
+            Box(modifier = Modifier.weight(1f).height(100.dp).background(brush, RoundedCornerShape(16.dp)))
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Row(
+            modifier              = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Box(modifier = Modifier.weight(1f).height(100.dp).background(brush, RoundedCornerShape(16.dp)))
+            Box(modifier = Modifier.weight(1f).height(100.dp).background(brush, RoundedCornerShape(16.dp)))
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// FARM INFO CARD
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun FarmInfoCard(
+    crop: String,
+    landSize: String,
+    irrigation: String,
+    language: String,
+    strings: LanguageHelper.AppStrings
+) {
+    val emoji         = LanguageHelper.getCropEmoji(crop)
+    val cropLocalName = LanguageHelper.getCropLocalName(crop, language)
+
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(20.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color(0xFFE8F5E9)),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Row(
+            modifier          = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier         = Modifier
+                    .size(60.dp)
+                    .background(Green900.copy(alpha = 0.1f), CircleShape),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(emoji, fontSize = 30.sp)
+            }
+            Spacer(modifier = Modifier.width(14.dp))
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text       = strings.myFarm,
+                    color      = Green900.copy(alpha = 0.7f),
+                    fontSize   = 11.sp,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    text       = cropLocalName,
+                    color      = Green900,
+                    fontSize   = 22.sp,
+                    fontWeight = FontWeight.Bold
+                )
+                if (cropLocalName != crop) {
+                    Text(text = crop, color = Green900.copy(alpha = 0.55f), fontSize = 12.sp)
+                }
+            }
+            Column(horizontalAlignment = Alignment.End) {
+                if (landSize.isNotEmpty()) {
+                    FarmChip("$landSize ${strings.acres}")
+                    Spacer(modifier = Modifier.height(5.dp))
+                }
+                if (irrigation.isNotEmpty()) {
+                    FarmChip(irrigation)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun FarmChip(text: String) {
+    Box(
+        modifier = Modifier
+            .background(Green900.copy(alpha = 0.1f), RoundedCornerShape(8.dp))
+            .padding(horizontal = 10.dp, vertical = 5.dp)
+    ) {
+        Text(text, color = Green900, fontSize = 12.sp, fontWeight = FontWeight.Medium)
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// WEATHER HERO
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun WeatherHeroCard(uiState: HomeUiState, strings: LanguageHelper.AppStrings) {
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(24.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color.Transparent),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(
+                    brush = Brush.linearGradient(colors = listOf(Green900, Color(0xFF4A8A28))),
+                    shape = RoundedCornerShape(24.dp)
+                )
+        ) {
+            Row(
+                modifier          = Modifier.padding(22.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(
+                        text       = "${uiState.temperature.toInt()}°C",
+                        color      = Color.White,
+                        fontSize   = 64.sp,
+                        fontWeight = FontWeight.Bold,
+                        lineHeight = 68.sp
+                    )
+                    Text(
+                        text     = uiState.condition,
+                        color    = Color.White.copy(alpha = 0.9f),
+                        fontSize = 16.sp
+                    )
+                    Spacer(modifier = Modifier.height(10.dp))
+                    Row {
+                        Text(
+                            text       = "↑ ${uiState.tempMax.toInt()}°  ",
+                            color      = Color.White,
+                            fontSize   = 14.sp,
+                            fontWeight = FontWeight.Medium
+                        )
+                        Text(
+                            text     = "↓ ${uiState.tempMin.toInt()}°",
+                            color    = Color.White.copy(alpha = 0.65f),
+                            fontSize = 14.sp
+                        )
+                    }
+                }
+                if (uiState.conditionIcon.isNotEmpty()) {
+                    AsyncImage(
+                        model              = "https://openweathermap.org/img/wn/${uiState.conditionIcon}@4x.png",
+                        contentDescription = uiState.condition,
+                        modifier           = Modifier.size(110.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// STATS GRID
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun StatsGrid(uiState: HomeUiState, strings: LanguageHelper.AppStrings) {
+    Column(modifier = Modifier.padding(horizontal = 16.dp)) {
+        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            StatCard(Modifier.weight(1f), "💧", strings.humidity,  "${uiState.humidity}%",          humidityLabel(uiState.humidity))
+            StatCard(Modifier.weight(1f), "💨", strings.wind,      "${uiState.windSpeed} km/h",     uiState.windDeg.toCompassDir())
+        }
+        Spacer(modifier = Modifier.height(10.dp))
+        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            StatCard(Modifier.weight(1f), "☀️", strings.uvIndex,   uiState.uvIndex.toInt().toString(), uiState.uvIndex.uvLabel())
+            StatCard(Modifier.weight(1f), "🌡️", strings.feelsLike, "${uiState.feelsLike.toInt()}°C",   feelsLikeLabel(uiState.temperature, uiState.feelsLike))
+        }
+    }
+}
+
+@Composable
+private fun StatCard(modifier: Modifier, emoji: String, label: String, value: String, subValue: String) {
+    Card(
+        modifier  = modifier,
+        shape     = RoundedCornerShape(16.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Text(emoji, fontSize = 16.sp)
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(label, color = Color.Gray, fontSize = 11.sp)
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(value, fontWeight = FontWeight.Bold, fontSize = 24.sp, color = Color(0xFF1A1A2E))
+            Text(subValue, color = Color.Gray, fontSize = 11.sp)
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// SUN INFO CARD
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun SunInfoCard(uiState: HomeUiState, strings: LanguageHelper.AppStrings) {
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(16.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Row(
+            modifier              = Modifier.fillMaxWidth().padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly,
+            verticalAlignment     = Alignment.CenterVertically
+        ) {
+            SunItem("🌅", strings.sunrise,  uiState.sunrise.toTimeString())
+            Box(modifier = Modifier.width(1.dp).height(44.dp).background(Color(0xFFE0E0E0)))
+            SunItem("🌇", strings.sunset,   uiState.sunset.toTimeString())
+            Box(modifier = Modifier.width(1.dp).height(44.dp).background(Color(0xFFE0E0E0)))
+            SunItem("🔵", strings.pressure, "${uiState.pressure} mb")
+        }
+    }
+}
+
+@Composable
+private fun SunItem(emoji: String, label: String, value: String) {
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+        Text(emoji, fontSize = 20.sp)
+        Spacer(modifier = Modifier.height(4.dp))
+        Text(value, fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color(0xFF1A1A2E))
+        Text(label, color = Color.Gray, fontSize = 11.sp)
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// AI INSIGHTS CARD
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun AiInsightsCard(
+    uiState: HomeUiState,
+    crop: String,
+    language: String,
+    strings: LanguageHelper.AppStrings
+) {
+    val cropEmoji     = LanguageHelper.getCropEmoji(crop)
+    val cropLocalName = LanguageHelper.getCropLocalName(crop, language)
+    val titleText     = if (crop == "General") strings.aiAdviceFor
+    else "${strings.aiAdviceFor}  $cropEmoji $cropLocalName"
+
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(20.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                Text("🤖", fontSize = 20.sp)
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text       = titleText,
+                    fontWeight = FontWeight.Bold,
+                    fontSize   = 14.sp,
+                    color      = Color(0xFF1A1A2E),
+                    modifier   = Modifier.weight(1f)
+                )
+                if (!uiState.isLoadingInsights && uiState.insightSource.isNotEmpty()) {
+                    val badgeColor = when (uiState.insightSource) {
+                        "Groq"   -> Color(0xFF6366F1)
+                        "Gemini" -> Color(0xFF4285F4)
+                        else     -> Color.Gray
+                    }
+                    Box(
+                        modifier = Modifier
+                            .background(badgeColor.copy(alpha = 0.1f), RoundedCornerShape(6.dp))
+                            .padding(horizontal = 8.dp, vertical = 3.dp)
+                    ) {
+                        Text(uiState.insightSource, color = badgeColor, fontSize = 11.sp, fontWeight = FontWeight.SemiBold)
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            HorizontalDivider(color = Color(0xFFEEEEEE))
+            Spacer(modifier = Modifier.height(12.dp))
+
+            if (uiState.isLoadingInsights) {
+                // Shimmer for AI insights
+                val brush = shimmerBrush()
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Box(modifier = Modifier.fillMaxWidth().height(16.dp).background(brush, RoundedCornerShape(8.dp)))
+                    Box(modifier = Modifier.fillMaxWidth(0.85f).height(16.dp).background(brush, RoundedCornerShape(8.dp)))
+                    Box(modifier = Modifier.fillMaxWidth(0.9f).height(16.dp).background(brush, RoundedCornerShape(8.dp)))
+                }
+            } else {
+                val lines = (uiState.aiInsight ?: strings.noData)
+                    .lines()
+                    .map { it.trim() }
+                    .filter { it.isNotEmpty() }
+
+                lines.forEach { line ->
+                    Row(modifier = Modifier.padding(vertical = 5.dp), verticalAlignment = Alignment.Top) {
+                        Text("•", color = Green900, fontSize = 18.sp, fontWeight = FontWeight.Bold, modifier = Modifier.padding(top = 0.dp, end = 10.dp))
+                        Text(
+                            text       = line.trimStart('•', '*', '-', ' ').trim(),
+                            color      = Color(0xFF2D2D2D),
+                            fontSize   = 14.sp,
+                            lineHeight = 22.sp,
+                            modifier   = Modifier.weight(1f)
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// 5-DAY FORECAST CARD
+// ══════════════════════════════════════════════════════════════════════════════
+@Composable
+private fun ForecastCard(forecast: List<DailyForecast>, strings: LanguageHelper.AppStrings) {
+    Card(
+        modifier  = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+        shape     = RoundedCornerShape(20.dp),
+        colors    = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(strings.forecast, fontWeight = FontWeight.Bold, fontSize = 14.sp, color = Color(0xFF1A1A2E))
+            Spacer(modifier = Modifier.height(10.dp))
+            forecast.forEachIndexed { index, day ->
+                Row(
+                    modifier          = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(day.dayName, modifier = Modifier.width(48.dp), fontWeight = FontWeight.SemiBold, fontSize = 14.sp, color = Color(0xFF1A1A2E))
+                    AsyncImage(
+                        model              = "https://openweathermap.org/img/wn/${day.conditionIcon}@2x.png",
+                        contentDescription = null,
+                        modifier           = Modifier.size(36.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(day.conditionDesc.replaceFirstChar { it.uppercase() }, color = Color.Gray, fontSize = 13.sp, modifier = Modifier.weight(1f))
+                    Text("${day.tempMax.toInt()}°", fontWeight = FontWeight.Bold, fontSize = 15.sp, color = Color(0xFF1A1A2E))
+                    Text(" / ${day.tempMin.toInt()}°", fontSize = 14.sp, color = Color.Gray)
+                }
+                if (index < forecast.size - 1) HorizontalDivider(color = Color(0xFFF0F0F0))
+            }
+        }
+    }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// LOCAL HELPERS
+// ══════════════════════════════════════════════════════════════════════════════
+private fun Int.toCompassDir(): String {
+    val dirs = listOf("N", "NE", "E", "SE", "S", "SW", "W", "NW")
+    return dirs[((this + 22) / 45) % 8]
+}
+
+private fun Double.uvLabel(): String = when {
+    this < 3  -> "Low"
+    this < 6  -> "Moderate"
+    this < 8  -> "High"
+    this < 11 -> "Very High"
+    else      -> "Extreme"
+}
+
+private fun humidityLabel(h: Int): String = when {
+    h < 30 -> "Very Dry"
+    h < 50 -> "Comfortable"
+    h < 70 -> "Moderate"
+    h < 85 -> "Humid"
+    else   -> "Very Humid"
+}
+
+private fun feelsLikeLabel(actual: Double, feels: Double): String = when {
+    feels - actual > 3  -> "Warmer than actual"
+    actual - feels > 3  -> "Cooler than actual"
+    else                -> "Similar to actual"
+}
