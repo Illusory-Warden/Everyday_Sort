@@ -1,0 +1,12 @@
+This is what I can see on the termianl output mate.
+
+ubuntu@ip-172-31-8-194:~$ 
+
+ubuntu@ip-172-31-8-194:~$ grep -n "sms/structured" ~/finsight/main.py
+
+434:    This is a NEW, additive endpoint (POST /sms/structured) rather than a
+
+1539:@app.post("/sms/structured", status_code=201)
+
+ubuntu@ip-172-31-8-194:~$ 
+
