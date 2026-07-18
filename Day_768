@@ -1,0 +1,51 @@
+2026-07-17 11:24:38.057 29698-29725 SmsObserverService      com.rushi.finsight                   D  Notification ignored — sender= did not match bank filter. Body: Messages is doing work in the background
+2026-07-17 11:24:39.301 29698-29725 SmsObserverService      com.rushi.finsight                   D  Bank SMS notification detected from: AX-ICICIT-S
+2026-07-17 11:24:41.224 29698-30242 SmsObserverService      com.rushi.finsight                   D  POST success: 201 (attempt 1)
+2026-07-17 11:25:07.653 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|com.google.android.apps.messaging|2|com.google.android.apps.messaging:incoming_message:995|10234)
+2026-07-17 11:25:08.563 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:26.401 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:26.439 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:26.750 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:26.775 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:27.357 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:27.370 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:27.635 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:27.676 29698-29698 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+---------------------------- PROCESS ENDED (29698) for package com.rushi.finsight ----------------------------
+2026-07-17 11:25:32.513  1907-1950  NotificationListeners   system_server                        D  Removing active service ComponentInfo{com.rushi.finsight/com.rushi.finsight.SmsObserverService}
+2026-07-17 11:25:32.524  1907-4575  ActivityManager         system_server                        W  Scheduling restart of crashed service com.rushi.finsight/.SmsObserverService in 1000ms for connection
+2026-07-17 11:25:33.542  1907-2218  Boost                   system_server                        D  hostingType=service, hostingName={com.rushi.finsight/com.rushi.finsight.SmsObserverService}, callerPackage=android, isSystem=true, isBoostNeeded=false.
+2026-07-17 11:25:33.542  1907-2218  ActivityManager         system_server                        I  Start proc 32288:com.rushi.finsight/u0a819 for service {com.rushi.finsight/com.rushi.finsight.SmsObserverService} caller=android
+---------------------------- PROCESS STARTED (32288) for package com.rushi.finsight ----------------------------
+2026-07-17 11:25:34.595 32288-32288 SmsObserverService      com.rushi.finsight                   D  SmsObserverService (NotificationListenerService) created
+2026-07-17 11:25:34.603 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification listener connected
+2026-07-17 11:25:42.101 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:42.704 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:42.718 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:43.161 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:43.199 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:43.618 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:43.659 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:59.799 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:25:59.815 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:00.466 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:00.491 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:00.874 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:00.883 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:03.997 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:26:04.014 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.504 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.537 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.619 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.658 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.761 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.777 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.871 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+2026-07-17 11:29:52.883 32288-32288 SmsObserverService      com.rushi.finsight                   D  Notification key already processed — skipping repost (key=0|android|17303698|HOTSPOT_NOTIFICATION|1000)
+---------------------------- PROCESS ENDED (32288) for package com.rushi.finsight ----------------------------
+2026-07-17 11:29:59.712  1907-2824  NotificationListeners   system_server                        D  Removing active service ComponentInfo{com.rushi.finsight/com.rushi.finsight.SmsObserverService}
+2026-07-17 11:29:59.739  1907-4602  ActivityManager         system_server                        W  Scheduling restart of crashed service com.rushi.finsight/.SmsObserverService in 88892ms for connection
+2026-07-17 11:30:03.543  1907-2203  ActivityManager         system_server                        W  Rescheduling restart of crashed service com.rushi.finsight/.SmsObserverService in 0ms for mem-pressure-event
+---------------------------- PROCESS STARTED (12068) for package com.rushi.finsight ----------------------------
+2026-07-17 11:30:05.066 12068-12068 SmsObserverService      com.rushi.finsight                   D  SmsObserverService (NotificationListenerService) created
+2026-07-17 11:30:05.107 12068-12068 SmsObserverService      com.rushi.finsight                   D  Notification listener connected
