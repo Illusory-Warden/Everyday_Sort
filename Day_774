@@ -1,0 +1,2 @@
+1. App Installable on Vulnerable Android Versions (minSdk=24) — SEC-001
+The app still uses minSdk=24, meaning it can be installed on Android 7.0 (Nougat), which no longer receives security patches from Google. The tracker confirms this is unchanged from v1.0.24 to v1.0.40.
