@@ -1,0 +1,4 @@
+ollama pull qwen2.5:3b-instruct
+ollama pull qwen2.5-coder:7b-instruct-q4_K_M
+
+Lets get some juice from those boys now !!!!
