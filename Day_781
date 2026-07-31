@@ -1,0 +1,2 @@
+sudo pm2 status
+sudo pm2 logs
