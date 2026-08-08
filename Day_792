@@ -1,0 +1,15 @@
+curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+echo 'deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared any main' | sudo tee /etc/apt/sources.list.d/cloudflared.list
+sudo apt-get update && sudo apt-get install cloudflared -y
+sudo cloudflared service install eyJhIjoiMDUxOGE1YzM0MWYzMWU5NzU1MDcxYzMyMTJkNmRhNTciLCJ0IjoiMzQwMzJjN2YtMjkzNi00MGExLWFkY2UtYzc4NzQwZDQ2MGQzIiwicyI6Ik1UWmxaRE0wWldJdE1qbGpZaTAwTXpJNExXRTRNekF0TW1ReU5tRXlNRGd4TTJaaiJ9
+sudo systemctl status cloudflared
+sudo shutdown now
+cd /
+(crontab -l 2>/dev/null; echo "0 3 * * 0 sudo -- sh -c 'apt update && apt install -yq twingate-connector && systemctl restart twingate-connector'") | crontab -
+sudo docker ps -a
+ls /data/
+sudo ss -tuln | grep 45004
+mkdir -p /data/portfolio
+sudo mkdir -p /data/portfolio
+sudo mv /tmp/portfolio-upload/* /data/portfolio/
+sudo chown -R bumblebee:bumblebee /data/portfolio
