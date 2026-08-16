@@ -1,0 +1,350 @@
+import os
+import sqlite3
+import secrets
+from datetime import datetime, timedelta
+
+from fastapi import Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from jose import JWTError, jwt
+from passlib.context import CryptContext
+from pydantic import BaseModel
+from google.oauth2 import id_token as google_id_token
+from google.auth.transport import requests as google_requests
+
+# ── Config ────────────────────────────────────────────────────────────────────
+#SECRET_KEY = os.getenv("FINSIGHT_SECRET", "dev-secret-change-in-prod")
+
+SECRET_KEY = os.getenv("FINSIGHT_SECRET")
+if not SECRET_KEY:
+    raise RuntimeError(
+        "FINSIGHT_SECRET environment variable is not set. "
+        "Refusing to start with an undefined/weak JWT signing key. "
+        "Set it via systemd (Environment=) in production, or "
+        "`export FINSIGHT_SECRET=...` for local dev. "
+        "Generate one with: python3 -c \"import secrets; print(secrets.token_hex(32))\""
+    )
+
+
+ALGORITHM = "HS256"
+TOKEN_EXPIRE_DAYS = 30
+DB_PATH = os.path.expanduser("~/finsight/finsight.db")
+
+# Google OAuth — Web Client ID is the audience every Google ID token must be
+# issued for, whether the sign-in happened on Android (via Credential Manager's
+# Server Client ID) or on the web (Google Identity Services). Same value on
+# both clients, verified here independently of what either client claims.
+GOOGLE_WEB_CLIENT_ID = os.getenv(
+    "FINSIGHT_GOOGLE_CLIENT_ID",
+    "73665492304-d8uv9qjq87cucr2ho7rro06gauh894n7.apps.googleusercontent.com"
+)
+
+# ── Crypto ────────────────────────────────────────────────────────────────────
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+bearer_scheme = HTTPBearer()
+
+
+# ── DB Init ───────────────────────────────────────────────────────────────────
+def init_users_table():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    # Fresh installs get the correct nullable password_hash from the start.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT NOT NULL UNIQUE,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    for migration in [
+        "ALTER TABLE transactions ADD COLUMN user_id INTEGER REFERENCES users(id)",
+        "ALTER TABLE user_corrections ADD COLUMN user_id INTEGER REFERENCES users(id)",
+        "ALTER TABLE users ADD COLUMN auth_provider TEXT DEFAULT 'local'",
+        "ALTER TABLE users ADD COLUMN google_sub TEXT",
+    ]:
+        try:
+            cursor.execute(migration)
+        except sqlite3.OperationalError:
+            pass
+    # SQLite's ALTER TABLE ADD COLUMN can't carry a UNIQUE constraint directly,
+    # so uniqueness on google_sub is enforced via a separate unique index
+    # instead (also doubles as the lookup index for find_or_create_google_user).
+    try:
+        cursor.execute(
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_users_google_sub ON users(google_sub) WHERE google_sub IS NOT NULL"
+        )
+    except sqlite3.OperationalError:
+        pass
+
+    _migrate_password_hash_nullable(cursor)
+
+    conn.commit()
+    conn.close()
+
+
+def _migrate_password_hash_nullable(cursor: sqlite3.Cursor):
+    """
+    Existing databases (created before Google Sign-In existed) still have
+    password_hash declared NOT NULL at the SQLite engine level — confirmed
+    via `.schema users` in production. Earlier migration attempts only added
+    new columns alongside the old constraint via ALTER TABLE, which doesn't
+    work for *removing* a NOT NULL — SQLite simply doesn't support that as
+    an ALTER. The actual fix needs a table rebuild: create a new table with
+    the correct (nullable) constraint, copy every row across, drop the old
+    table, rename the new one into place. Same migration shape as the
+    Phase 11 user_corrections UNIQUE-constraint fix.
+
+    Runs once — detects whether the live constraint still says NOT NULL by
+    inspecting PRAGMA table_info, and only rebuilds if needed, so this is
+    safe to call on every startup without doing repeated work.
+    """
+    cursor.execute("PRAGMA table_info(users)")
+    columns = cursor.fetchall()
+    password_hash_col = next((c for c in columns if c[1] == "password_hash"), None)
+    if password_hash_col is None:
+        return  # shouldn't happen — table always has this column
+    is_not_null = bool(password_hash_col[3])  # PRAGMA table_info: index 3 = notnull flag
+    if not is_not_null:
+        return  # already fixed, nothing to do
+
+    cursor.execute("""
+        CREATE TABLE users_new (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT NOT NULL UNIQUE,
+            email TEXT NOT NULL UNIQUE,
+            password_hash TEXT,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            auth_provider TEXT DEFAULT 'local',
+            google_sub TEXT
+        )
+    """)
+    cursor.execute("""
+        INSERT INTO users_new (id, username, email, password_hash, created_at, auth_provider, google_sub)
+        SELECT id, username, email, password_hash, created_at, auth_provider, google_sub FROM users
+    """)
+    cursor.execute("DROP TABLE users")
+    cursor.execute("ALTER TABLE users_new RENAME TO users")
+    cursor.execute(
+        "CREATE UNIQUE INDEX IF NOT EXISTS idx_users_google_sub ON users(google_sub) WHERE google_sub IS NOT NULL"
+    )
+
+
+# ── Password helpers ──────────────────────────────────────────────────────────
+def hash_password(password: str) -> str:
+    return pwd_context.hash(password)
+
+def verify_password(plain: str, hashed: str) -> bool:
+    return pwd_context.verify(plain, hashed)
+
+
+# ── JWT helpers ───────────────────────────────────────────────────────────────
+def create_token(user_id: int, username: str) -> str:
+    expire = datetime.utcnow() + timedelta(days=TOKEN_EXPIRE_DAYS)
+    payload = {"sub": str(user_id), "username": username, "exp": expire}
+    return jwt.encode(payload, SECRET_KEY, algorithm=ALGORITHM)
+
+def decode_token(token: str) -> dict:
+    try:
+        return jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid or expired token")
+
+
+# ── FastAPI dependency ────────────────────────────────────────────────────────
+def get_current_user(
+    credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme),
+) -> dict:
+    return decode_token(credentials.credentials)
+
+
+# ── Pydantic models ───────────────────────────────────────────────────────────
+class RegisterRequest(BaseModel):
+    username: str
+    email: str
+    password: str
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+class GoogleAuthRequest(BaseModel):
+    id_token: str
+    is_signup: bool = False  # True when tapped from the Sign Up screen, False from Sign In
+
+
+# ── Route handlers ────────────────────────────────────────────────────────────
+def register_user(body: RegisterRequest):
+    if len(body.password) < 6:
+        raise HTTPException(status_code=400, detail="Password must be at least 6 characters.")
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    try:
+        cursor.execute(
+            "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)",
+            (body.username.strip(), body.email.strip(), hash_password(body.password)),
+        )
+        conn.commit()
+        user_id = cursor.lastrowid
+    except sqlite3.IntegrityError as e:
+        conn.close()
+        field = "username" if "username" in str(e) else "email"
+        raise HTTPException(status_code=409, detail=f"That {field} is already taken.")
+    finally:
+        conn.close()
+    token = create_token(user_id, body.username)
+    return {"token": token, "username": body.username, "user_id": user_id}
+
+
+def login_user(body: LoginRequest):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users WHERE username = ?", (body.username.strip(),))
+    user = cursor.fetchone()
+    conn.close()
+    if not user or not user["password_hash"] or not verify_password(body.password, user["password_hash"]):
+        raise HTTPException(status_code=401, detail="That username or password isn't right.")
+    token = create_token(user["id"], user["username"])
+    return {"token": token, "username": user["username"], "user_id": user["id"]}
+
+
+def _unique_username_from_email(cursor, email: str) -> str:
+    """
+    Derives a username from the local part of the email (before @), then
+    appends a short random suffix if that base is already taken — usernames
+    must stay UNIQUE in the schema, but we don't want to block sign-in on a
+    collision, and asking a Google user to pick a username defeats the point
+    of one-tap sign-in.
+    """
+    base = email.split("@")[0].strip().lower() or "user"
+    # Strip characters the rest of the app doesn't expect in a username
+    base = "".join(c for c in base if c.isalnum() or c in ("_", ".", "-")) or "user"
+
+    cursor.execute("SELECT 1 FROM users WHERE username = ?", (base,))
+    if not cursor.fetchone():
+        return base
+
+    for _ in range(5):
+        candidate = f"{base}{secrets.randbelow(9000) + 1000}"
+        cursor.execute("SELECT 1 FROM users WHERE username = ?", (candidate,))
+        if not cursor.fetchone():
+            return candidate
+
+    # Extremely unlikely fallback — fully random suffix
+    return f"{base}{secrets.token_hex(4)}"
+
+
+def google_auth_user(body: GoogleAuthRequest):
+    """
+    Verifies the Google ID token SERVER-SIDE against Google's own servers —
+    the token's signature, expiry, and audience (must match our Web Client
+    ID) are all independently checked here. We never trust a client's
+    unverified claim about who they are; this is the only point where a
+    Google identity becomes a FinSight identity.
+
+    Find-or-create is keyed on google_sub (Google's stable, permanent user
+    ID — the `sub` claim), not email, since a Google account's email can in
+    principle change while sub never does. Returns the exact same
+    {token, username, user_id} shape as /auth/login and /auth/register so
+    both Android and web can reuse their existing token-handling code with
+    zero special-casing for "how did this user sign in".
+
+    is_signup distinguishes which screen the user tapped from:
+      - Sign In  (is_signup=False): only succeeds for an email/Google
+        identity that already has an account. An unrecognized email gets a
+        clear "no account found, please sign up" message instead of
+        silently creating one — matches how every other app's Google
+        button behaves, and avoids someone accidentally creating a
+        duplicate-looking account by mistyping which screen they're on.
+      - Sign Up  (is_signup=True): creates a new account for an unrecognized
+        email/identity, same as today. If the email already has an account,
+        we still log them in rather than erroring — accidentally hitting
+        "Sign Up" with an existing email shouldn't be a dead end.
+    """
+    try:
+        idinfo = google_id_token.verify_oauth2_token(
+            body.id_token, google_requests.Request(), GOOGLE_WEB_CLIENT_ID
+        )
+    except ValueError:
+        raise HTTPException(
+            status_code=401,
+            detail="We couldn't verify that with Google. Please try again."
+        )
+
+    google_sub = idinfo.get("sub")
+    email = idinfo.get("email")
+    email_verified = idinfo.get("email_verified", False)
+
+    if not google_sub or not email:
+        raise HTTPException(
+            status_code=401,
+            detail="Google didn't share the account details we need. Please try again."
+        )
+    if not email_verified:
+        raise HTTPException(
+            status_code=401,
+            detail="Please verify your email with Google before signing in."
+        )
+
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+    try:
+        # 1) Already linked to this Google account — straightforward login,
+        #    regardless of which button (Sign In or Sign Up) was tapped.
+        cursor.execute("SELECT * FROM users WHERE google_sub = ?", (google_sub,))
+        user = cursor.fetchone()
+        if user:
+            token = create_token(user["id"], user["username"])
+            return {"token": token, "username": user["username"], "user_id": user["id"]}
+
+        # 2) Existing local-password account with the same email — link
+        #    the Google identity to it rather than creating a duplicate
+        #    account, so a user who originally signed up with a password
+        #    can also use "Sign in with Google" afterwards.
+        cursor.execute("SELECT * FROM users WHERE email = ?", (email.strip(),))
+        user = cursor.fetchone()
+        if user:
+            cursor.execute(
+                "UPDATE users SET google_sub = ?, auth_provider = ? WHERE id = ?",
+                (google_sub, "google", user["id"])
+            )
+            conn.commit()
+            token = create_token(user["id"], user["username"])
+            return {"token": token, "username": user["username"], "user_id": user["id"]}
+
+        # 3) No matching account found.
+        if not body.is_signup:
+            raise HTTPException(
+                status_code=404,
+                detail="We couldn't find a FinSight account for that Google account. Please sign up first."
+            )
+
+        # Brand new user via Sign Up — create the account, no password set.
+        username = _unique_username_from_email(cursor, email)
+        try:
+            cursor.execute(
+                "INSERT INTO users (username, email, password_hash, auth_provider, google_sub) "
+                "VALUES (?, ?, NULL, 'google', ?)",
+                (username, email.strip(), google_sub)
+            )
+            conn.commit()
+        except sqlite3.IntegrityError:
+            # Defense in depth — _migrate_password_hash_nullable() should
+            # already have fixed this at startup, but if the DB was somehow
+            # left on the old schema, fail with a real sentence instead of
+            # a bare 500.
+            raise HTTPException(
+                status_code=500,
+                detail="We couldn't create your account just now. Please try again in a moment."
+            )
+        user_id = cursor.lastrowid
+        token = create_token(user_id, username)
+        return {"token": token, "username": username, "user_id": user_id}
+    finally:
+        conn.close()
+
+
+def get_me(current_user: dict = Depends(get_current_user)):
+    return {"user_id": int(current_user["sub"]), "username": current_user["username"]}
