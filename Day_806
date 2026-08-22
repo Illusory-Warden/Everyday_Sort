@@ -1,0 +1,7 @@
+What's still genuinely blocked
+
+Wiring this into the actual app still needs:
+
+Sowing date input (annual crops) + orchard maturity selector (Citrus) — new UI in FarmSetupScreen.kt/SettingsScreen.kt
+Storage for those two new fields — PreferenceHelper.kt needs new keys, BackendApiService.kt/FarmRepository.kt/farm.js need to carry them to Postgres
+Then IrrigationViewModel.kt calls GrowthStageCalculator and sends the resulting Kc + root_zone_depth_m to the server (extending MlPredictRequest/main.py the same way we did for farm_area_m2)
