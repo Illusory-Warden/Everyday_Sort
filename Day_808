@@ -1,0 +1,9 @@
+WordGen_V3/
+  Data/               <- word list .txt files live here (words_alpha.txt, etc.)
+  Docs/               <- this README and other reference docs
+  output/
+    batches/          <- each generate.js run lands here automatically
+    merged/           <- merge.js writes the final deduped file here
+  generate.js
+  merge.js
+  verify.js
