@@ -1,0 +1,36 @@
+1. First: What is a Stream Cipher?
+
+Before ChaCha20 and Salsa20, understand stream cipher.
+
+A stream cipher encrypts data as a continuous stream, rather than taking a large fixed block at a time.
+
+The basic idea is:
+
+$$ \boxed{C=P\oplus K} $$
+
+Where:
+
+\(P\) = plaintext
+\(K\) = keystream
+\(C\) = ciphertext
+\(\oplus\) = XOR
+
+Think:
+
+Plaintext + secret-generated keystream → XOR → ciphertext
+
+Example:
+
+Plaintext  ───────┐
+                  XOR ───→ Ciphertext
+Keystream ────────┘
+
+For decryption:
+
+$$ \boxed{P=C\oplus K} $$
+
+because:
+
+$$ (P\oplus K)\oplus K=P $$
+
+That's why XOR is so useful.
