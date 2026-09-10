@@ -1,0 +1,7 @@
+At a high level, the application follows a client-server architecture. The frontend communicates with the backend through REST APIs. The backend is built using Node.js and Express.js.
+
+The backend handles requests, business logic, authentication and database operations. PostgreSQL is used for persistent data storage.
+
+The AI/ML components are also hosted and integrated through AWS, so the backend can communicate with those services when required.
+
+Finally, the backend sends the processed result back to the frontend through the API.
