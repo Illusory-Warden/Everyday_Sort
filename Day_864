@@ -1,0 +1,7 @@
+Today's work update : 
+Built a skills system: Eigi-Edge can now add / enable / update / remove skills from a folder, a zip or GitHub (pinned to a commit)
+Two kinds: plugin skills that add tools to a chosen device, and Agent Skills (the SKILL.md format Google, Gemini and Claude use) that guide the AIsystems
+Enabling a skill needs my PIN + authenticator code; signed skills are checked against trusted keys
+Fixed 2 false alarms in the health checks (polkit on the Pi, ssh on the test VM)
+
+Live: a real Google skill from GitHub was used in a question, its scripts never run, tampered updates are refused, and everything is audited. 730 tests passed.
