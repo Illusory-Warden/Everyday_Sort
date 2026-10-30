@@ -1,0 +1,6 @@
+Hi sir
+Today's report 
+Philips Hue skill + new "device" target (v0.10.2, 786 tests green)
+On the Pi 4 (fake Hue bridge, no bulb yet): "Turn on the desk light" → dry run → PIN + TOTP → light on, audeted
+Main brain (VM) on my laptop synced to 0.10.2; audit verified from a second machine (Muse)
+next: comfort approvals (no PIN for small safe actions, within limits).
